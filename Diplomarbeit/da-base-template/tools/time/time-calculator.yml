@@ -1,0 +1,45 @@
+# Author: Marko Schrempf
+name: Git Time Calculator
+
+on:
+  workflow_dispatch:
+
+jobs:
+  calculate-time:
+    runs-on: ubuntu-latest
+
+    env:
+      TIME_CALCULATOR_PATH: Diplomarbeit/da-base-template/tools/time/time-calculator.py
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Get UTC Date
+      id: date
+      run: echo "date=$(date -u +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+    - name: Set Up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Calculate User Time
+      run: python $TIME_CALCULATOR_PATH -u -a -e > user-time-report-${{ steps.date.outputs.date }}.json
+        
+    - name: Calculate Issue Time
+      run: python $TIME_CALCULATOR_PATH -i -a -e > issue-time-report-${{ steps.date.outputs.date }}.json
+
+    - name: Upload User Time
+      uses: actions/upload-artifact@v4
+      with:
+        name: user-time-report-${{ steps.date.outputs.date }}
+        path: user-time-report-${{ steps.date.outputs.date }}.json
+
+    - name: Upload Issue Time
+      uses: actions/upload-artifact@v4
+      with:
+        name: issue-time-report-${{ steps.date.outputs.date }}
+        path: issue-time-report-${{ steps.date.outputs.date }}.json

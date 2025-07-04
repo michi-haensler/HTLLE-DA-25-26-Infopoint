@@ -1,0 +1,16 @@
+# Default global ownership
+* @bytebang
+
+# Github Actions, tests and CI
+.github/ @bitsneak
+action.yml @bitsneak
+
+# Tools
+tools/docker/ @bitsneak @bytebang
+tools/github/ @bitsneak
+tools/time/ @bitsneak
+
+# Docs
+CODEOWNERS @bitsneak
+CODE_OF_CONDUCT.md @bitsneak
+CONTRIBUTING.md @bitsneak
