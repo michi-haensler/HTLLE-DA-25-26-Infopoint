@@ -1,3 +1,6 @@
 # Einleitung
-Hier schreiben Sie eine Einleitung zu Ihrem Thema
-Das ist quasi der Problemaufriss
+Viele von ihnen kennen es bestimmt. Sie kommen zu einer Veranstaltung wie einem Tag der offenen Tür. Da die durchschnittliche Schule nicht nur aus 3 Räumen besteht und meistens solche Veranstaltungen über das ganze Gebäude verteilt sind, kann das als Besucher sehr schnell unübersichtlich und überfordernd werden, was sowohl für Erwachsen als auch für unsere jüngeren Besucher für Stress sorgen kann. Seien wir uns ehrlich. An einem Tag der offenen Tür will sich niemand mühsam durch viele Räume kämpfen nur um irgendwann festzustellen, dass man immer noch nicht das gesehen hat was man sich gewünscht hat. Dabei ist es umso ärgerlicher wenn man es nur nicht gefunden hat, deshalb is es an solchen Tagen wichtig eine klare Organisation und Struktur zu haben. Auch für Schulerinnen und Schüler ist der Informationsfluss von großer Bedeutung. Wenn man beispielsweise einen Lehrer sucht, ist es nicht sinnvoll durch das ganze Schulhaus zu laufen und an jeder Klasse zu klopfen. Auch hier ist Organistaion und Information wichtig. Eine einfache übersichtliche und moderne Lösung zu diesen Problemen ist ein Infopoint, welcher immer aktuelle Informationen 
+wie Raumpläne, Stundenpläne und vieles mehr darstellen kann und rund um die Uhr zur Verfügung steht. Er entlastet nicht nur die Geschäftsführung, das Lehrpersonal, die Schülerinne und Schüler und unsere Besucher sondern auch unsere Umwelt, da man sich viel Druckertinte und Papier sparen kann. Was man sonst mühsam an eine Pinnwand heften würde, kann man mit einem Infopoint unkompliziert und einfach darstellen ohne zusätzlich unsere Umwelt zu belasten.
+
+
+(Problemaufriss)
