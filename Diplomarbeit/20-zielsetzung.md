@@ -1,4 +1,4 @@
-# Zielsetzung
+## Zielsetzung
 
 Das Ziel unserer Arbeit ist ein vollständig funktionierender Infopoint, welcher im Schulgebäude aufgestellt wird und Schülerinnen und Schülern aber auch Lehrkräften wichtige Informationen zur Verfügung stellt
 
