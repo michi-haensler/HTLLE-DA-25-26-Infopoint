@@ -5,26 +5,48 @@
 
 ### Projektauftrag
 
-Hier beschreiben Sie die allgemeinen Informationen zu Ihrem Maturaprojekt. Hier beschreiben sie den Projektkontext, nämlich die Ausgangssituation und Problembeschreibung
+------ ToDo (KI) ------
+
+Ziel des Projekts ist die Entwicklung eines digitalen Infopoints für die HTL Leoben. Dieser Infopoint soll zentrale schulrelevante Informationen wie z. B. Stundenplanänderungen, Vertretungen und schulinterne News anzeigen. Die Informationen werden über ein Touch-Display bereitgestellt, das an einem zentralen Ort im Schulgebäude montiert wird. 
+
+Die Hardware wird nicht selbst gebaut. Stattdessen wird nach einer All-in-One-Lösung gesucht, die idealerweise keine eigene Software mitbringt, sodass unsere eigene Webanwendung direkt darauf deployt werden kann. Als Verwaltungssystem für Inhalte ist die Integration eines Open-Source-CMS geplant – konkrete Entscheidungen dazu stehen allerdings noch aus.
+
+Ein besonderer Fokus liegt auf der barrierefreien Gestaltung der Benutzeroberfläche sowie auf Mehrsprachigkeit, um eine möglichst inklusive und zukunftsfähige Lösung zu bieten.
 
 
 #### Projektziele
 
-Das Projektziel beschreibt den erwünschten Zustand (Sollzustand) nach dem erfolgreichen Abschluss des Projektes. Das Ziel wird wohlbedacht formuliert und durch aktives Handeln aller Projektbeteiligten erreicht. Projektziele sollten gemeinsam mit allen Projektbeteiligten erarbeitet werden.
+------ ToDo (KI) ------
+
+* Entwicklung eines funktionalen Infopoint-Systems für Touch-Displays
+
+* Anzeige von aktuellen schulischen Informationen (Vertretungen, News, Social Media etc.)
+
+* Einfache Administrierbarkeit durch ein CMS (Open Source angestrebt)
+
+* UI/UX-Design mit Fokus auf Barrierefreiheit und Mehrsprachigkeit (Deutsch & Englisch)
+
+* Zukunftssichere Lösung, die einfach erweiterbar ist
 
 #### Nicht-Ziele bzw. nicht Inhalte
+
+------ ToDo ------
 
 Nicht-Ziele sind aus mehreren Gründen wichtig. Erstens helfen sie beim Erwartungsmanagement. Zweitens schaffen sie Klarheit darüber, was erledigt werden soll. Und drittens erhöhen Nicht-Ziele die Transparenz. Denn wenn man schon früh im Projekt explizit die Bereiche definiert, die das Projekt nicht bearbeiten soll, kann dadurch eine Diskussion über genau diese Randbereiche entstehen. 
 
 #### Projektnutzen
 
-Wie soll ein Außenstehender ein Projekt genehmigen, wenn nicht klar formuliert ist, WARUM das Projekt überhaupt durchgeführt werden soll? Auch hier ist es wichtig, möglichst konkret zu werden. Einen Projektnutzen z.B. mit „neueste Technik“ zu bezeichnen, ist nicht ausreichend.
+------ ToDo (KI) ------
 
-#### Projektauftraggeber/in
+Die derzeitige Informationsverteilung erfolgt oft über Aushänge oder verschiedene digitale Plattformen. Das führt zu Ineffizienz und Unübersichtlichkeit. Durch die zentrale Anzeige über den Infopoint soll dieser Zustand verbessert werden.
 
-Hier beschreiben Sie wer der Projektauftraggeber ist. Falls es eine externe Firma ist können Sie hier eine kurze Beschreibung des Unternehmens (sofern Projektrelevant) einfügen.
+#### Projektauftraggeber
+
+Der Auftraggeber dieses Projektes, ist die HTL Leoben. Die Geschäftsführung ist stehts bemüht den Schülerinnen und Schülern an der Schule einen mehrwert zu bieten und den Schulalltag zu erleichtern.
 
 #### Projekttermine
+
+------ ToDo ------
 
 Welche Termine sind Fixtermine und was sollte an diesen Terminen stattfinden ? Beispiele hierfür sind z.B: Präsentationen, Projektende, Zwischenabgaben, fest eingeplante Besprechungen / Reviews (die auch Projektrelevant sind) die auf keinen Fall vergessen werden dürfen
 
@@ -32,17 +54,16 @@ Welche Termine sind Fixtermine und was sollte an diesen Terminen stattfinden ? B
 
 | Termin     | Inhalt                          |
 |-----------:|:--------------------------------|
-| 2020-12-24 | Weihnachten                     |
-| 20XX-12-24 | Projektstart                    |
-| 20XX-10-24 | Projektpräsentation             |
-| 20XX-10-24 | Erreichung Meilenstein I        |
-| 20XX-10-24 | Erste Zwischenpräsentation      |
-| 20XX-10-24 | Erreichung Meilenstein II       |
-| 20XX-10-24 | Erreichung Meilenstein III      |
-| 20XX-10-24 | Zweite Zwischenpräsentation     |
-| 20XX-10-24 | Abgabe Endversion an Betreuer   |
-| 20XX-10-24 | Abgabe Gebundene Version        |
-| 20XX-10-24 | ...                             |
+| 24-06-2025 | Erstpräsentation                |
+| 01-07-2025 | Projektstart                    |
+| 05-09-2025 | Antrag Diplomarbeitsportal stellen|
+| 01-11-2025 | 1. Zwischenpräsentation|
+| 09-01-2026 | Abgabe der ersten Gesamtversion der Arbeit|
+| 23-02-2026 | 2. Zwischenpräsentation |
+| 06-03-2026 | Abgabe der finalen Korrekturversion in Papierform|
+| 07-04-2026 | Abgabeschluss der Bibliotheksversion |
+| 08-04-2026 | DA-Präsentation|
+|||
 
 : Projektterminübersicht
 
