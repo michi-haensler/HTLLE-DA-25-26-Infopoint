@@ -5,24 +5,19 @@
 
 ### Projektauftrag
 
------- ToDo (KI) ------
-
-Ziel des Projekts ist die Entwicklung eines digitalen Infopoints für die HTL Leoben. Dieser Infopoint soll zentrale schulrelevante Informationen wie z. B. Stundenplanänderungen, Vertretungen und schulinterne News anzeigen. Die Informationen werden über ein Touch-Display bereitgestellt, das an einem zentralen Ort im Schulgebäude montiert wird. 
-
-Die Hardware wird nicht selbst gebaut. Stattdessen wird nach einer All-in-One-Lösung gesucht, die idealerweise keine eigene Software mitbringt, sodass unsere eigene Webanwendung direkt darauf deployt werden kann. Als Verwaltungssystem für Inhalte ist die Integration eines Open-Source-CMS geplant – konkrete Entscheidungen dazu stehen allerdings noch aus.
-
-Ein besonderer Fokus liegt auf der barrierefreien Gestaltung der Benutzeroberfläche sowie auf Mehrsprachigkeit, um eine möglichst inklusive und zukunftsfähige Lösung zu bieten.
+Unser Auftrag ist die Entwicklung eines digitalen Infopoints für die HTL Leoben. Dieser Infopoint soll zentrale schulrelevante Informationen wie z. B. Stundenplanänderungen, Vertretungen und schulinterne News anzeigen. Die Informationen werden über ein Touch-Display bereitgestellt, das an einem zentralen Ort im Schulgebäude montiert wird. Die Hardware wird nicht selbst gebaut. Stattdessen wird nach einer All-in-One-Lösung gesucht, die idealerweise keine eigene Software mitbringt, sodass unsere eigene Anwendung direkt darauf deployt werden kann. Als Verwaltungssystem für Inhalte ist die Integration eines Open-Source-CMS geplant.
+Ein besonderer Fokus liegt auf der barrierefreien Gestaltung der Benutzeroberfläche sowie auf Mehrsprachigkeit, um eine möglichst zukunftsfähige Lösung zu schaffen.
 
 
 #### Projektziele
 
------- ToDo (KI) ------
+* Auswahl eines geeigneten Hardware Systems für den Schulbetrieb im Innenbereich.
 
 * Entwicklung eines funktionalen Infopoint-Systems für Touch-Displays
 
-* Anzeige von aktuellen schulischen Informationen (Vertretungen, News, Social Media etc.)
+* Anzeige von aktuellen schulischen Informationen wie Veranstaltungen, Raumpläne, Stundenplan, Aufenthalt von Lehrpersonen, Social Media Feed
 
-* Einfache Administrierbarkeit durch ein CMS (Open Source angestrebt)
+* Einfache Administrierbarkeit durch ein Content Managent System (CMS) 
 
 * UI/UX-Design mit Fokus auf Barrierefreiheit und Mehrsprachigkeit (Deutsch & Englisch)
 
@@ -30,27 +25,21 @@ Ein besonderer Fokus liegt auf der barrierefreien Gestaltung der Benutzeroberfl�
 
 #### Nicht-Ziele bzw. nicht Inhalte
 
------- ToDo ------
+* Zusammensetzung eines eigenen Hardware Systems 
 
-Nicht-Ziele sind aus mehreren Gründen wichtig. Erstens helfen sie beim Erwartungsmanagement. Zweitens schaffen sie Klarheit darüber, was erledigt werden soll. Und drittens erhöhen Nicht-Ziele die Transparenz. Denn wenn man schon früh im Projekt explizit die Bereiche definiert, die das Projekt nicht bearbeiten soll, kann dadurch eine Diskussion über genau diese Randbereiche entstehen. 
+* Anzeige der vollständigen Stundentafel der Lehrpersonen
+
+* Anpassung unseres Systems auf alle Sprachen
 
 #### Projektnutzen
-
------- ToDo (KI) ------
 
 Die derzeitige Informationsverteilung erfolgt oft über Aushänge oder verschiedene digitale Plattformen. Das führt zu Ineffizienz und Unübersichtlichkeit. Durch die zentrale Anzeige über den Infopoint soll dieser Zustand verbessert werden.
 
 #### Projektauftraggeber
 
-Der Auftraggeber dieses Projektes, ist die HTL Leoben. Die Geschäftsführung ist stehts bemüht den Schülerinnen und Schülern an der Schule einen mehrwert zu bieten und den Schulalltag zu erleichtern.
+Der Auftraggeber dieses Projektes, ist die HTL Leoben. Die Geschäftsführung, Direktion und Lehrpersonen sind stehts bemüht den Schülerinnen und Schülern an der Schule einen mehrwert zu bieten und den Schulalltag zu erleichtern.
 
 #### Projekttermine
-
------- ToDo ------
-
-Welche Termine sind Fixtermine und was sollte an diesen Terminen stattfinden ? Beispiele hierfür sind z.B: Präsentationen, Projektende, Zwischenabgaben, fest eingeplante Besprechungen / Reviews (die auch Projektrelevant sind) die auf keinen Fall vergessen werden dürfen
-
-
 
 | Termin     | Inhalt                          |
 |-----------:|:--------------------------------|
@@ -70,7 +59,7 @@ Welche Termine sind Fixtermine und was sollte an diesen Terminen stattfinden ? B
 
 #### Projektkosten
 
-Hier dokumentieren Sie welche Kosten fallen Für Ihr Projekt an und wer kommt für diese Kosten auf ?
+##### Projektkosten (geplant)
 
 | Meilenstein  | Kostenart | Menge  | Preis   | Gesamtkosten | Deckung durch |
 |:-------------|:---------:|:------:|--------:|-------------:|---------------|
@@ -83,6 +72,7 @@ Hier dokumentieren Sie welche Kosten fallen Für Ihr Projekt an und wer kommt f�
 Am ende sollten Sie eine Projektkostensumme ermitteln und hier angeben damit man sagen kann
 __Das Projekt kostet in Summe so und so viel Euro__. 
 
+##### Projektkosten (tatsächlich)
 
 Am Ende der Diplomarbeit fügen Sie hier noch eine Liste der tatsächlich angefallenen Kosten ein.
 
@@ -104,28 +94,28 @@ Hier ein Beispiel:
 ### Projektorganisation
 
 #### Projektbeteiligte
-Hier wird definiert wer (welche Personen) an diesem Projekt beteiligt im Prinzip beteiligt ist.
 
 | Vorname     | Nachname     | Organisation | Kontaktinfos      |
 |:------------|:-------------|:-------------|:------------------|
-| Joltawan    | Barodscheff  | HTL Leoben   | jb@htl-leoben.at  |
-| Frank       | Borland      | Firma XY     | frank@borla.nd    |
-| ...         | ...          | ...          | ...               |
+| Michael | Hänsler | HTL Leoben | 211witb08@o365.htl-leoben.at |
+| Simon | Moser | HTL Leoben     | 220131@o365.htl-leoben.at |
+| Lukas | Fellegger | HTL Leoben | 211witb05@o365.htl-leoben.at |
+| Zacharias | Markus | HTL Leoben | zama@o365.htl-leoben.at |
+| Sebastian | Steiner | HTL Leoben | stse@o365.htl-leoben.at |
+| Christian | Hofer | HTL Leoben | hch@o365.htl-leoben.at|
 
 : Projektbeteiligte
 
-Unter Kontaktinfos können neben der Emailadresse natürlich auch noch andere Informationen wie Telefonnunmmer, Postanschrift, usw. stehen. ... Im Prinzip alles was notwendig ist um die Person zu erreichen wenn es notwendig ist. 
-
 #### Projektrollen
-
-Hier werden den Kontakten von oben konkrete Rollen zuewiesen.
 
 | Projektrolle           | Rollenbeschreibung     | Name              |
 |------------------------|------------------------|-------------------|
-| Projektleiter | Verantwortlicher für Einhaltung des Projektrahmens | Joltawan Barodscheff |
-| Auftraggeber | Auftraggeber der internen Diplomarbeit | Frank Borland |
-| Betreuer | Schulischer Betreuer | G. Hutter |
-| Betreuer | Schulischer Betreuer | A. Poetscher |
+| Projektleiter | Verantwortlicher für Einhaltung des Projektrahmens | Michael Hänsler |
+| Auftraggeber | Auftraggeber der internen Diplomarbeit | Christian Hofer |
+| Betreuer | Schulischer Betreuer | Markus Zacharias |
+| Betreuer Stv. | Schulischer Betreuer | Sebastian Steiner |
+| Projektmitglied | Backend Entwickler | Simon Moser |
+| Projektmitglied | Frontend Entwickler | Lukas Fellegger|
 
 : Projektrollen
 
