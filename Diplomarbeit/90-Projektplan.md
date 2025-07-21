@@ -5,8 +5,8 @@
 
 ### Projektauftrag
 
-Unser Auftrag ist die Entwicklung eines digitalen Infopoints für die HTL Leoben. Dieser Infopoint soll zentrale schulrelevante Informationen wie z. B. Stundenplanänderungen, Vertretungen und schulinterne News anzeigen. Die Informationen werden über ein Touch-Display bereitgestellt, das an einem zentralen Ort im Schulgebäude montiert wird. Die Hardware wird nicht selbst gebaut. Stattdessen wird nach einer All-in-One-Lösung gesucht, die idealerweise keine eigene Software mitbringt, sodass unsere eigene Anwendung direkt darauf deployt werden kann. Als Verwaltungssystem für Inhalte ist die Integration eines Open-Source-CMS geplant.
-Ein besonderer Fokus liegt auf der barrierefreien Gestaltung der Benutzeroberfläche sowie auf Mehrsprachigkeit, um eine möglichst zukunftsfähige Lösung zu schaffen.
+Unser Auftrag ist die Entwicklung eines digitalen Infopoints für die HTL Leoben. Dieser Infopoint soll zentrale schulrelevante Informationen wie z. B. Stundenplanänderungen, Vertretungen und schulinterne News anzeigen. Die Informationen werden über ein Touch-Display bereitgestellt, das an einem zentralen Ort im Schulgebäude montiert wird. Die Hardware wird nicht selbst gebaut. Stattdessen wird nach einer All-in-One-Lösung gesucht, die idealerweise keine eigene Software mitbringt, sodass unsere eigene Anwendung direkt darauf deployed werden kann. Als Verwaltungssystem für Inhalte ist die Integration eines Open-Source-CMS geplant.
+Ein besonderer Fokus liegt auf der benutzerfreundlichen Gestaltung der Oberfläche sowie auf Mehrsprachigkeit, um eine möglichst zukunftsfähige Lösung zu schaffen.
 
 
 #### Projektziele
@@ -31,9 +31,11 @@ Ein besonderer Fokus liegt auf der barrierefreien Gestaltung der Benutzeroberfl�
 
 * Anpassung unseres Systems auf alle Sprachen
 
+* Erstellung eines eigenen CMS-Systems
+
 #### Projektnutzen
 
-Die derzeitige Informationsverteilung erfolgt oft über Aushänge oder verschiedene digitale Plattformen. Das führt zu Ineffizienz und Unübersichtlichkeit. Durch die zentrale Anzeige über den Infopoint soll dieser Zustand verbessert werden.
+Die derzeitige Informationsverteilung erfolgt oft über Aushänge oder verschiedene digitale Plattformen. Das führt zu Ineffizienz und Unübersichtlichkeit. Durch die zentrale Anzeige über den Infopoint soll dieser Zustand verbessert werden und bestenfalls auch Zeit einsparen. 
 
 #### Projektauftraggeber
 
@@ -61,33 +63,33 @@ Der Auftraggeber dieses Projektes, ist die HTL Leoben. Die Geschäftsführung, D
 
 ##### Projektkosten (geplant)
 
-| Meilenstein  | Kostenart | Menge  | Preis   | Gesamtkosten | Deckung durch |
+| Kostenpunkt | Kostenart | Menge  | Preis   | Gesamtkosten | Deckung durch |
 |:-------------|:---------:|:------:|--------:|-------------:|---------------|
-| Prototyp     | Personal  |  10.00 |   15.00 | 150.00      | Schüler       |
-| Prototyp     | Hardware  |  1     |  254.00 | 254.00      | Projektpartner|
-| DA-Schreiben | Druck     |  3     |   26.00 |  53.00      | Schüler       |
+| Hardware     | Hardware  |  1 |   0 | 0     | Auftraggeber       |
+| Personal | Personalkosten | 3 | 8100.00 | 24300.00 | Auftraggeber|
+| Chat-GPT Plus| Sonstiges  |  1    |  23.00 | 0      | Schüler |
+| DA-Binden | Druck |  1     |   50.00 |  50.00      | Schüler |
+
 
  : Geplante Projektkosten
  
-Am ende sollten Sie eine Projektkostensumme ermitteln und hier angeben damit man sagen kann
-__Das Projekt kostet in Summe so und so viel Euro__. 
+Das gesamte Projekt kostet in Summe  __X__  Euro. 
 
 ##### Projektkosten (tatsächlich)
+
+--- ToDo ---
 
 Am Ende der Diplomarbeit fügen Sie hier noch eine Liste der tatsächlich angefallenen Kosten ein.
 
 #### Projektrisiken
 
-Hier geben Sie an welche Risiken auf Ohr Projekt zutreffen können, und auch wie wahrscheinlich es ist das dieses Risiko eintritt.
-Eine Übersicht über Risiken finden sie hier: https://projekte-leicht-gemacht.de/blog/pm-in-der-praxis/130-projektrisiken-beispiele/
-
-Hier ein Beispiel:
-
 | Risiko         | EW  | Auswirkungen     | Maßnahmen     |
 |:--------------:|:---:| :----------------|:--------------|
-| Überziehen der Kosten | 15% | Erhöhte Kosten für Schüler | Budgetierung |
-| Ungenaue Schätzungen | 30% | Ungenaue Schätzungen führen zu Problem bezüglich Terminen und Budget. | Schätzungen mit Fachkollegen absprechen|
-| Verzögerungen beim Aufbau von Hard- und Software | 10% | Prototyp wird nicht rechtzeitig zur Endpräsentation fertig | Früh genug anfangen |
+| Grafische Oberfläche nicht einfach zu verstehen| 10% | Infopoint wird kaum genutzt | An best practice beispielen orientieren und gegebenenfalls Usabillity Test durchführen |
+| Fehlende Kommunikation mit dem Betreuer | 10% | Entscheidungen verzögern sich und es entstehen Unsicherheiten | Regelmäßige Besprechungen einplannen| Lieferferzögerung der Hardware | 20% | Verzögerung des Zeitplans | Lieferanten mit angegeben Lieferzeitraum suchen |
+| Probleme mit der Webuntis Schnittstelle  | 20% | Feature um Lehrer zu finden und Stundenpläne anzuzeigen kann nicht umgesetzt werden| Früh genug mit der Schnittstelle befassen und diese testen|
+| Verzögerung im Zeitplan | 30% | Das Projekt kann nicht rechtzeitig abgeschlossen werden | Früh genug anfangen und genügend Puffer einplannen |
+| Fehlende Motivation | 30%| Zeitplan kann nicht eingehalten werden| Genügend Meilensteine setzen und sich gegenseitig im Team kontrollieren |
 
 : Projektrisiken
 
@@ -119,71 +121,55 @@ Hier ein Beispiel:
 
 : Projektrollen
 
-Gerne können Sie hier auch noch zusätzlich eine Grafik oder ein Organisationsdiagramm einbauen.
-
 ![Projektorganisationsdiagramm](img/projektorganisation.png){width=50%}
 
 ### Vorgehen bei Änderungen
 
-Hier dokumentieren sie betreffend des Meilensteinplans oder der Anwendungsfälle: 
+Alle Änderungen am Projektumfang, den Meilensteinen oder Anwendungsfällen müssen mit dem Betreuer (und ggf. dem Auftraggeber) abgesprochen werden.
 
-* Wer wird informiert, 
-* wer muss zustimmen, 
-* wo werden die Änderungen wie vermerkt?
+Informationsfluss:
 
-Das dient in erster Linie dazu um ein einheitliches Vorgehen definiert zu haben.
+Änderungen werden im Team-Chat und in Besprechungen dokumentiert.
+Betreuer und Projektleiter müssen über alle Änderungen informiert werden.
+Änderungen werden schriftlich im Änderungsprotokoll (Github Repository) vermerkt.
 
 ## Meilensteine
 
-Der Begriff taucht im Projektmanagement sehr häufig auf. Meilensteine sind wichtige Punkte im Projektverlauf. Oft werden sie auch als Prüfpunkte bezeichnet.
+### 31.07.2025: Recherche Abgeschlossen
 
-Generell kann ein Meilenstein ein Ereignis sein, an dem
+- Recherche zu verschiedenen Infopoint Systemen in unterschiedlichen Preiskategorien abgeschlossen
+- Auswahl wird dem Auftraggeber vorgelegt
 
-* etwas abgeschlossen ist,
-* etwas begonnen wird oder
-* über die weitere Vorgehensweise entschieden wird
+### 05-09-2025: Antrag Diplomarbeitsportal gestellt
 
-Meilensteine werden meist am Ende von Projektphasen definiert. Auch innerhalb von Phasen kann es zusätzliche Meilensteine geben.
+- Antrag Diplomarbeitsportal gestellt
 
-Meilensteine verlaufen nie über eine Zeitdauer. Nie. Sie sind lediglich Entscheidungspunkte
+### 06.08.2025: Technologie Auswahl und Mockups
 
-Hier ein Beispiel wie die Meilensteine im Fall einer aussehen können
+- Erstellung funktionaler Mockups abgeschlossen
+- Software Auswahl für Front und Backend abgeschlossen
 
-### 2020-09-15: Projektmanagement abgeschlossen
+### 31.08.2025: Fertigstellung Rohversionen Front und Backend
 
-- Projekthandbuch ist fertig
-- Serverinfrastruktur ist hergestellt
-- Bestellungen sind abgessendet
+- Fertigstellung der ersten Versionen von Front und Backend 
 
-### 2020-11-01: Genehmigung der DA
+### 14.09.2025: Anbindung eines CMS Systems abgeschlossen
 
-- Einreichen des Antrags durch die Schüler/innen
-- DA Dokumentation wurde ausgefüllt und unterschrieben
-
-### 2020-11-26: Literaturrecherche abgeschlossen
-
-- Literatur zum Thema XY gesucht und in bibtex vermerkt
-- Aktellen Stand der Forschung erhoben
-- Verschriftlichung des Literaturteils begonnen 
-
-### 2020-12-17: Prototyp ist funktionell
-
-- DB mit Tabelle für Benutzer.
-- DB Kommunikation zur Anwendung (inkl. Dokumentation)
-- Es gibt in der Anwendung einen /Admin/ Benutzer. Dieser Benutzer kann weitere Benutzer in den Rollen /Lehrende/ und bzw. oder /Studierende/ anlegen.
+- Ein CMS System wurde über REST Schnittstellen angebunden
       
-### 2021-01-10: Applikation fertiggestellt
+### 30.09.2025: Vereinigung von Front und Backend
 
-- Lehrende sind dazu in der Lage Tests anzulegen.
-- Studenten können einen ihnen zugewiesenen Test absolvieren.
+- Vereinigung von Front und Backend Abgeschlossen
 
-### 2021-01-10: Review und Überarbeitung fertig
+### 31.10.2025: Testphase auf Endgerät abgeschlossen
 
-- Der Quellcode ist gemeinsam mit den Projektpartnern reviewt
-- Quellcodedokumentation abgeschlossen (Javadoc)
-- Projekt baut auf eigenem Buildserver (Continous Integration)
+- Feedback eingeholt um möglich verbesserungen vorzunehmen.
 
-### 2021-02-03: Diploarbeit fertig verschriftlicht 
+### 20.11.2025: Verbesserungen umgesetzt
+
+- Feedback eingeholt um möglich verbesserungen vorzunehmen.
+
+### 30.11.2025: Diplomarbeit fertig verschriftlicht 
 
 - Stilfehler sind behoben
 - DA Dokumentationsblatt ist unterschrieben, eingescannt und im Hauptdokument enthalten 

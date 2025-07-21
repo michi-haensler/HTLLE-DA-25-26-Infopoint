@@ -3,7 +3,7 @@ da-titel: Infopoint
 
 da-jahr: 2025/2026
 
-da-keywords: HTLLE, Informationen, Bildschirm, Keyword3
+da-keywords: HTLLE, Informationen, Bildschirm, Infopoint
 
 #lang: english
 
@@ -16,7 +16,7 @@ da-author:
   thema: Recherche, Konzeption & Design, Projektmanagement
   ki-tools:
   - name: ChatGPT4o
-    zweck: Informationsbeschaffung
+    zweck: Informationsbeschaffung und Bildgenerierung 
 
 - vorname: Simon 
   nachname: Moser
