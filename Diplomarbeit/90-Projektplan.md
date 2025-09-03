@@ -5,7 +5,7 @@
 
 ### Projektauftrag
 
-Unser Auftrag ist die Entwicklung eines digitalen Infopoints für die HTL Leoben. Dieser Infopoint soll zentrale schulrelevante Informationen wie z. B. Stundenplanänderungen, Vertretungen und schulinterne News anzeigen. Die Informationen werden über ein Touch-Display bereitgestellt, das an einem zentralen Ort im Schulgebäude montiert wird. Die Hardware wird nicht selbst gebaut. Stattdessen wird nach einer All-in-One-Lösung gesucht, die idealerweise keine eigene Software mitbringt, sodass unsere eigene Anwendung direkt darauf deployed werden kann. Als Verwaltungssystem für Inhalte ist die Integration eines Open-Source-CMS geplant.
+Unser Auftrag ist die Entwicklung eines digitalen Infopoints für die HTL Leoben. Dieser Infopoint soll zentrale schulrelevante Informationen wie z. B. Stundenplanänderungen, Vertretungen und schulinterne News anzeigen. Die Informationen werden über ein Touch-Display bereitgestellt, das an einem zentralen Ort im Schulgebäude montiert werden soll. Die Hardware wird nicht selbst gebaut. Stattdessen wird nach einer All-in-One-Lösung gesucht, die idealerweise keine eigene Software mitbringt, sodass unsere eigene Anwendung direkt darauf deployed werden kann. Als Verwaltungssystem für Inhalte ist die Integration eines Open-Source-CMS geplant.
 Ein besonderer Fokus liegt auf der benutzerfreundlichen Gestaltung der Oberfläche sowie auf Mehrsprachigkeit, um eine möglichst zukunftsfähige Lösung zu schaffen.
 
 
@@ -66,9 +66,9 @@ Der Auftraggeber dieses Projektes, ist die HTL Leoben. Die Geschäftsführung, D
 | Kostenpunkt | Kostenart | Menge  | Preis   | Gesamtkosten | Deckung durch |
 |:-------------|:---------:|:------:|--------:|-------------:|---------------|
 | Hardware     | Hardware  |  1 |   0 | 0     | Auftraggeber       |
-| Personal | Personalkosten | 3 | 8100.00 | 24300.00 | Auftraggeber|
+| Personal | Personalkosten | 3 | 8.100,00 | 24.300,00 | Auftraggeber|
 | Chat-GPT Plus| Sonstiges  |  1    |  23.00 | 0      | Schüler |
-| DA-Binden | Druck |  1     |   50.00 |  50.00      | Schüler |
+| DA-Binden | Druck |  1     |   50,00 |  50,00      | Schüler |
 
 
  : Geplante Projektkosten
@@ -135,41 +135,45 @@ Betreuer und Projektleiter müssen über alle Änderungen informiert werden.
 
 ## Meilensteine
 
-### 31.07.2025: Recherche Abgeschlossen
+### 05.09.2025: Antrag Diplomarbeitsportal gestellt
+
+- Antrag Diplomarbeitsportal gestellt
+
+### 10.09.2025: Recherche Abgeschlossen
 
 - Recherche zu verschiedenen Infopoint Systemen in unterschiedlichen Preiskategorien abgeschlossen
 - Auswahl wird dem Auftraggeber vorgelegt
 
-### 05-09-2025: Antrag Diplomarbeitsportal gestellt
-
-- Antrag Diplomarbeitsportal gestellt
-
-### 06.08.2025: Technologie Auswahl und Mockups
+### 22.09.2025: Technologie Auswahl und Mockups
 
 - Erstellung funktionaler Mockups abgeschlossen
 - Software Auswahl für Front und Backend abgeschlossen
 
-### 31.08.2025: Fertigstellung Rohversionen Front und Backend
+### 13.10.2025: Fertigstellung Rohversionen Front und Backend
 
 - Fertigstellung der ersten Versionen von Front und Backend 
 
-### 14.09.2025: Anbindung eines CMS Systems abgeschlossen
+### 20.10.2025: Anbindung eines CMS Systems abgeschlossen
 
 - Ein CMS System wurde über REST Schnittstellen angebunden
       
-### 30.09.2025: Vereinigung von Front und Backend
+### 27.10.2025: Vereinigung von Front und Backend
 
 - Vereinigung von Front und Backend Abgeschlossen
 
-### 31.10.2025: Testphase auf Endgerät abgeschlossen
+### 01.11.2025: 1. Zwischenpräsentation
+
+- Präsentation des aktuellen Stands
+
+### 10.11.2025: Testphase auf Endgerät abgeschlossen
 
 - Feedback eingeholt um möglich verbesserungen vorzunehmen.
 
-### 20.11.2025: Verbesserungen umgesetzt
+### 24.11.2025: Verbesserungen umgesetzt
 
 - Feedback eingeholt um möglich verbesserungen vorzunehmen.
 
-### 30.11.2025: Diplomarbeit fertig verschriftlicht 
+### 23.12.2025: Diplomarbeit fertig verschriftlicht 
 
 - Stilfehler sind behoben
 - DA Dokumentationsblatt ist unterschrieben, eingescannt und im Hauptdokument enthalten 
@@ -177,6 +181,23 @@ Betreuer und Projektleiter müssen über alle Änderungen informiert werden.
 - Informationen sind im DA Portal eingegeben
 - Unterschriebene DA Betreuungsprotokolle sind in der DA enthalten
 - DA liegt dem Betreuer in ausgedruckter Form vor
+
+### 01.01.2026: Projektabschluss
+
+### 09.01.2026: Abgabe der ersten Gesamtversion der Arbeit
+
+- Abgabe der ersten Gesamtversion
+
+
+### 23.02.2026: 2. Zwischenpräsentation
+
+- Präsentation des aktuellen Standes 
+
+### 06.03.2026: Abgabe der finalen Korrekturversion in Papierform
+
+### 07-04-2026: Abgabeschluss der Bibliotheksversion
+
+### 08.04.2026: Diplomarbeits Abschluss Präsentation
     
 
 ## Anwendungsfälle
@@ -219,34 +240,34 @@ Der Zustand, der nach einem erfolglosen Durchlauf des Anwendungsfalls erwartet w
 
 
 \newpage
-### Benutzer Anlegen
-
+### Informationen beschaffen
 #### Kurzbeschreibung
-Der Benutzer "Admin" kann auf Anfrage einen neuen Benutzer als "Lehrende" und bzw. oder "Studierende" anlegen
+Als Endverbraucher (User) beschafft man sich über den Infopoint Informationen zu aktuellen Veranstalltungen, Events, Vertretungen oder Raumplänen. 
 
 #### Trigger
-Admin legt auf Anfrage eines Benutzers einen neuen Account an
+Der User tippt auf den Startbildschirm, um auf die Oberfläche zu gelangen.
 
 #### Vorbedingung
-Benutzer als "Admin" angemeldet
+Der Infopoint ist eingeschaltet, betriebsbereit und der Endverbraucher steht davor.
       
 #### Nachbedingung
-Es existiert ein Eintrag in der DB Benutzer Tabelle für den neu erstellten Benutzer. (Dieser kann sich anschließend in der Anwendung anmelden)
+Der User hat alle benötigten Informationen gefunden.
 
 #### Akteure
-* Admin
+* Endverbraucher (User)
 
 #### Fehlersituationen
-Admin bricht die Aktion ab
+Der Infopoint hat keinen Zugriff zu aktuellen Daten aufgrund von fehlender Internetverbindung oder anderen Fehlern.
 
 #### Systemzustand im Fehlerfall
-Benutzer wird nicht angelegt und wird verworfen
+Der User bekommt eine Fehlermeldung angezeigt.
 
 #### Standardablauf:
 
-1. Admin drückt Button, um einen neuen Benutzer anzulegen
-2. Es öffnet sich ein Formular, indem die nötigen Benutzer-Informationen eingegeben werden (Name, Adresse, Telephonnummer, E-Mail, Geburtsdatum, Passwort-Hash, Rolle). Der neue Benutzer muss mindestens einer der Rollen "Lehrende" und "Studierende" angehören
+1. User geht auf den Infopoint zu und klickt auf den Bildschirm, um den Bildschirmschoner zu deaktivieren.
+2. Auf dem Homescreen steht nun eine Auswahl an Funktionen zur Verfügung aus welcher ausgewählt werden kann.
+3. Durch durch klicken auf die Funktion, werden alle gewünschten Informationen angezeigt
 
 #### Alternativabläufe:
 
-* Admin drückt den Button, um die Aktion abzubrechen 
+*  Durch klicken auf die Funktion wird einen Fehlermeldung ausgegeben.
