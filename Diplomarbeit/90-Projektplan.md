@@ -17,7 +17,7 @@ Ein besonderer Fokus liegt auf der benutzerfreundlichen Gestaltung der Oberfläc
 
 * Anzeige von aktuellen schulischen Informationen wie Veranstaltungen, Raumpläne, Stundenplan, Aufenthalt von Lehrpersonen, Social Media Feed
 
-* Einfache Administrierbarkeit durch ein Content Managent System (CMS) 
+* Einfache Administrierbarkeit durch ein Content Management System (CMS) 
 
 * UI/UX-Design mit Fokus auf Barrierefreiheit und Mehrsprachigkeit (Deutsch & Englisch)
 
@@ -39,7 +39,7 @@ Die derzeitige Informationsverteilung erfolgt oft über Aushänge oder verschied
 
 #### Projektauftraggeber
 
-Der Auftraggeber dieses Projektes, ist die HTL Leoben. Die Geschäftsführung, Direktion und Lehrpersonen sind stehts bemüht den Schülerinnen und Schülern an der Schule einen mehrwert zu bieten und den Schulalltag zu erleichtern.
+Der Auftraggeber dieses Projektes ist die HTL Leoben. Die Geschäftsführung, Direktion und Lehrpersonen sind stets bemüht, den Schülerinnen und Schülern an der Schule einen Mehrwert zu bieten und den Schulalltag zu erleichtern.
 
 #### Projekttermine
 
@@ -47,13 +47,13 @@ Der Auftraggeber dieses Projektes, ist die HTL Leoben. Die Geschäftsführung, D
 |-----------:|:--------------------------------|
 | 24-06-2025 | Erstpräsentation                |
 | 01-07-2025 | Projektstart                    |
-| 05-09-2025 | Antrag Diplomarbeitsportal stellen|
-| 01-11-2025 | 1. Zwischenpräsentation|
-| 09-01-2026 | Abgabe der ersten Gesamtversion der Arbeit|
+| 05-09-2025 | Antrag Diplomarbeitsportal stellen |
+| 01-11-2025 | 1. Zwischenpräsentation |
+| 09-01-2026 | Abgabe der ersten Gesamtversion der Arbeit |
 | 23-02-2026 | 2. Zwischenpräsentation |
-| 06-03-2026 | Abgabe der finalen Korrekturversion in Papierform|
+| 06-03-2026 | Abgabe der finalen Korrekturversion in Papierform |
 | 07-04-2026 | Abgabeschluss der Bibliotheksversion |
-| 08-04-2026 | DA-Präsentation|
+| 08-04-2026 | DA-Präsentation |
 |||
 
 : Projektterminübersicht
@@ -67,13 +67,13 @@ Der Auftraggeber dieses Projektes, ist die HTL Leoben. Die Geschäftsführung, D
 |:-------------|:---------:|:------:|--------:|-------------:|---------------|
 | Hardware     | Hardware  |  1 |   0 | 0     | Auftraggeber       |
 | Personal | Personalkosten | 3 | 8.100,00 | 24.300,00 | Auftraggeber|
-| Chat-GPT Plus| Sonstiges  |  1    |  23.00 | 0      | Schüler |
+| Chat-GPT Plus| Sonstiges  |  1    |  23,00 | 23,00      | Schüler |
 | DA-Binden | Druck |  1     |   50,00 |  50,00      | Schüler |
 
 
  : Geplante Projektkosten
  
-Das gesamte Projekt kostet in Summe  __X__  Euro. 
+Das gesamte Projekt kostet in Summe 24.373,00 Euro. 
 
 ##### Projektkosten (tatsächlich)
 
@@ -85,10 +85,11 @@ Am Ende der Diplomarbeit fügen Sie hier noch eine Liste der tatsächlich angefa
 
 | Risiko         | EW  | Auswirkungen     | Maßnahmen     |
 |:--------------:|:---:| :----------------|:--------------|
-| Grafische Oberfläche nicht einfach zu verstehen| 10% | Infopoint wird kaum genutzt | An best practice beispielen orientieren und gegebenenfalls Usabillity Test durchführen |
-| Fehlende Kommunikation mit dem Betreuer | 10% | Entscheidungen verzögern sich und es entstehen Unsicherheiten | Regelmäßige Besprechungen einplannen| Lieferferzögerung der Hardware | 20% | Verzögerung des Zeitplans | Lieferanten mit angegeben Lieferzeitraum suchen |
-| Probleme mit der Webuntis Schnittstelle  | 20% | Feature um Lehrer zu finden und Stundenpläne anzuzeigen kann nicht umgesetzt werden| Früh genug mit der Schnittstelle befassen und diese testen|
-| Verzögerung im Zeitplan | 30% | Das Projekt kann nicht rechtzeitig abgeschlossen werden | Früh genug anfangen und genügend Puffer einplannen |
+| Grafische Oberfläche nicht einfach zu verstehen| 10% | Infopoint wird kaum genutzt | An Best-Practice-Beispielen orientieren und gegebenenfalls Usability-Test durchführen |
+| Fehlende Kommunikation mit dem Betreuer | 10% | Entscheidungen verzögern sich und es entstehen Unsicherheiten | Regelmäßige Besprechungen einplanen |
+| Lieferverzögerung der Hardware | 20% | Verzögerung des Zeitplans | Lieferanten mit angegebenen Lieferzeitraum suchen |
+| Probleme mit der WebUntis-Schnittstelle  | 20% | Feature, um Lehrer zu finden und Stundenpläne anzuzeigen, kann nicht umgesetzt werden | Früh genug mit der Schnittstelle befassen und diese testen |
+| Verzögerung im Zeitplan | 30% | Das Projekt kann nicht rechtzeitig abgeschlossen werden | Früh genug anfangen und genügend Puffer einplanen |
 | Fehlende Motivation | 30%| Zeitplan kann nicht eingehalten werden| Genügend Meilensteine setzen und sich gegenseitig im Team kontrollieren |
 
 : Projektrisiken
@@ -139,47 +140,47 @@ Betreuer und Projektleiter müssen über alle Änderungen informiert werden.
 
 - Antrag Diplomarbeitsportal gestellt
 
-### 10.09.2025: Recherche Abgeschlossen
+### 19.09.2025: Recherche Abgeschlossen
 
 - Recherche zu verschiedenen Infopoint Systemen in unterschiedlichen Preiskategorien abgeschlossen
 - Auswahl wird dem Auftraggeber vorgelegt
 
-### 22.09.2025: Technologie Auswahl und Mockups
+### 25.09.2025: Technologie Auswahl und Mockups
 
 - Erstellung funktionaler Mockups abgeschlossen
-- Software Auswahl für Front und Backend abgeschlossen
+- Software-Auswahl für Front- und Backend abgeschlossen
 
-### 13.10.2025: Fertigstellung Rohversionen Front und Backend
+### 13.10.2025: Fertigstellung Rohversionen Front- und Backend
 
-- Fertigstellung der ersten Versionen von Front und Backend 
+- Fertigstellung der ersten Versionen von Front- und Backend 
 
 ### 20.10.2025: Anbindung eines CMS Systems abgeschlossen
 
-- Ein CMS System wurde über REST Schnittstellen angebunden
+- Ein CMS-System wurde über REST-Schnittstellen angebunden
       
-### 27.10.2025: Vereinigung von Front und Backend
+### 27.10.2025: Vereinigung von Front- und Backend
 
-- Vereinigung von Front und Backend Abgeschlossen
+- Vereinigung von Front- und Backend abgeschlossen
 
-### 01.11.2025: 1. Zwischenpräsentation
+### 10.11.2025: 1. Zwischenpräsentation
 
 - Präsentation des aktuellen Stands
 
-### 10.11.2025: Testphase auf Endgerät abgeschlossen
+### 17.11.2025: Testphase auf Endgerät abgeschlossen
 
-- Feedback eingeholt um möglich verbesserungen vorzunehmen.
+- Feedback eingeholt, um mögliche Verbesserungen vorzunehmen.
 
 ### 24.11.2025: Verbesserungen umgesetzt
 
-- Feedback eingeholt um möglich verbesserungen vorzunehmen.
+- Feedback eingeholt, um mögliche Verbesserungen vorzunehmen.
 
 ### 23.12.2025: Diplomarbeit fertig verschriftlicht 
 
 - Stilfehler sind behoben
-- DA Dokumentationsblatt ist unterschrieben, eingescannt und im Hauptdokument enthalten 
-- Praxisteil ist ebgeschlossen und verschriftlicht
-- Informationen sind im DA Portal eingegeben
-- Unterschriebene DA Betreuungsprotokolle sind in der DA enthalten
+- DA-Dokumentationsblatt ist unterschrieben, eingescannt und im Hauptdokument enthalten 
+- Praxisteil ist abgeschlossen und verschriftlicht
+- Informationen sind im DA-Portal eingegeben
+- Unterschriebene DA-Betreuungsprotokolle sind in der DA enthalten
 - DA liegt dem Betreuer in ausgedruckter Form vor
 
 ### 01.01.2026: Projektabschluss
@@ -197,7 +198,7 @@ Betreuer und Projektleiter müssen über alle Änderungen informiert werden.
 
 ### 07-04-2026: Abgabeschluss der Bibliotheksversion
 
-### 08.04.2026: Diplomarbeits Abschluss Präsentation
+### 08.04.2026: Diplomarbeits-Abschlusspräsentation
     
 
 ## Anwendungsfälle
@@ -218,7 +219,7 @@ Anwendungsfälle haben einen eindeutigen Namen aus dem man auf den Inhalt des An
 Hier erfolgt eine kurze Beschreibung, was im Anwendungsfall passiert. Kurz bedeutet, dass es zwei oder drei Zeilen sind, selten mehr.
       
 #### Trigger
-Der fachliche Grund bzw. die Gründe dafür, dass dieser Anwendungsfall ausgeführt 
+Der fachliche Grund bzw. die Gründe dafür, dass dieser Anwendungsfall ausgeführt wird. 
 
 #### Vorbedingung
 Alle Bedingungen, die erfüllt sein müssen, damit dieser Anwendungsfall ausgeführt werden kann. Gibt es keine Vorbedingungen, so steht hier "keine".
@@ -242,7 +243,7 @@ Der Zustand, der nach einem erfolglosen Durchlauf des Anwendungsfalls erwartet w
 \newpage
 ### Informationen beschaffen
 #### Kurzbeschreibung
-Als Endverbraucher (User) beschafft man sich über den Infopoint Informationen zu aktuellen Veranstalltungen, Events, Vertretungen oder Raumplänen. 
+Als Endverbraucher (User) beschafft man sich über den Infopoint Informationen zu aktuellen Veranstaltungen, Events, Vertretungen oder Raumplänen. 
 
 #### Trigger
 Der User tippt auf den Startbildschirm, um auf die Oberfläche zu gelangen.
@@ -265,9 +266,9 @@ Der User bekommt eine Fehlermeldung angezeigt.
 #### Standardablauf:
 
 1. User geht auf den Infopoint zu und klickt auf den Bildschirm, um den Bildschirmschoner zu deaktivieren.
-2. Auf dem Homescreen steht nun eine Auswahl an Funktionen zur Verfügung aus welcher ausgewählt werden kann.
-3. Durch durch klicken auf die Funktion, werden alle gewünschten Informationen angezeigt
+2. Auf dem Homescreen steht nun eine Auswahl an Funktionen zur Verfügung, aus welcher ausgewählt werden kann.
+3. Durch Klicken auf die Funktion werden alle gewünschten Informationen angezeigt.
 
 #### Alternativabläufe:
 
-*  Durch klicken auf die Funktion wird einen Fehlermeldung ausgegeben.
+*  Durch Klicken auf die Funktion wird eine Fehlermeldung ausgegeben.
