@@ -60,7 +60,7 @@ export default function InfoPage() {
 
   return (
     <main className={styles.wrap}>
-      <h1 className={styles.h1}>Informationen</h1>
+      <h1 className={styles.title}>Informationen</h1>
 
       {!online && (
         <ErrorBanner message="Keine Internetverbindung – zeige lokale/letzte bekannte Daten." />

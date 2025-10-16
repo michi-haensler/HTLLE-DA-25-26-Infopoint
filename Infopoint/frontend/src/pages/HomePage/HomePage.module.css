@@ -1,3 +1,36 @@
-.container { padding: 24px; min-height: calc(100vh - 56px); background: #121212; }
-.title { color: #fff; text-align: center; margin: 12px 0 20px; }
-.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.container {
+    padding: 24px;
+    min-height: calc(100vh - 56px);
+    background: #121212;
+  }
+  
+  .title {
+    color: #fff;
+    text-align: center;
+    margin: 12px 0 20px;
+    margin-bottom: 32px;
+  }
+  
+  .subtitle {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 16px;
+  }
+
+  /* genau 3 Spalten, 2 Reihen */
+  .grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(3, 1fr); /* 3 Karten pro Zeile */
+    grid-auto-rows: 1fr;
+    margin-top: 100px;
+  }
+  
+  /* Responsiv: auf kleineren Bildschirmen automatisch 2 bzw. 1 Spalte */
+  @media (max-width: 1100px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 680px) {
+    .grid { grid-template-columns: 1fr; }
+  }

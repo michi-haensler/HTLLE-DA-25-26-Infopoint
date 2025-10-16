@@ -1,14 +1,78 @@
 .header {
-    position: sticky; top: 0; z-index: 10;
-    display: flex; align-items: center; gap: 24px;
-    padding: 12px 20px; background: #151515; border-bottom: 1px solid #2a2a2a;
-  }
-  .brand { color: #eaeaea; font-weight: 700; letter-spacing: .3px; }
-  .brand span { color: #4da3ff; }
-  .nav { display: flex; gap: 12px; flex-wrap: wrap; }
-  .link {
-    color: #c8c8c8; text-decoration: none; padding: 6px 10px;
-    border-radius: 10px; transition: background .15s ease;
-  }
-  .link:hover { background: #232323; color: #fff; }
-  .active { background: #2b2b2b; color: #fff; }
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #181818;
+  color: #eaeaea;
+  padding: 0 20px;
+  height: 50px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+/* HTL Logo */
+.logo {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.highlight {
+  color: #4da3ff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Menüleiste */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+/* Navigationslinks */
+.navLink {
+  color: #c8c8c8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navLink:hover {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.active {
+  background: #333;
+  color: #4da3ff;
+}
+
+/* ⚙️ Einstellungsicon */
+.settingsIcon {
+  margin-left: auto; /* schiebt es ganz nach rechts */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c8c8c8;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 6px;
+  border-radius: 6px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.settingsIcon:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+.settingsIcon.active {
+  color: #4da3ff;
+}

@@ -1,19 +1,23 @@
-import styles from './HomePage.module.css'
-import Card from '../../components/Card/Card'
+import styles from "./HomePage.module.css";
+import Card from "../../components/Card/Card";
 
 export default function HomePage() {
   return (
     <main className={styles.container}>
-      <h1 className={styles.title}>Informationsportal</h1>
+      <h1 className={styles.title}>Informations Portal</h1>
+      <h2 className={styles.subtitle}>Alle Informationen auf einen Blick</h2>
+      
+      {/* 3 × 2 Karten, feste Reihenfolge */}
       <section className={styles.grid}>
-        <Card title="Informationen" to="/info" />
+        {/* Reihe 1 */}
+        <Card title="Events" to="/events" />
         <Card title="Lageplan" to="/map" />
-        <Card title="Aktuelles" to="/news" />
-        <Card title="Insta Feed" to="/insta" />
-        <Card title="Lehrer finden" to="/teachers" />
-        <Card title="Anstehende Termine" to="/events" />
-        <Card title="Einstellungen" to="/settings" />
+        <Card title="News" to="/news" />
+
+        {/* Reihe 2 */}
+        <Card title="Insta" to="/insta" />
+        <Card title="Lehrer" to="/teachers" />
       </section>
     </main>
-  )
+  );
 }

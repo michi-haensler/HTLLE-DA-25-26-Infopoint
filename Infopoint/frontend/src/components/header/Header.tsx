@@ -1,33 +1,78 @@
-import { Link, useLocation } from 'react-router-dom'
-import styles from './Header.module.css'
-
-const links = [
-  { to: '/', label: 'Home' },
-  { to: '/info', label: 'Informationen' },
-  { to: '/map', label: 'Lageplan' },
-  { to: '/news', label: 'Aktuelles' },
-  { to: '/insta', label: 'Insta' },
-  { to: '/teachers', label: 'Lehrer' },
-  { to: '/events', label: 'Termine' },
-  { to: '/settings', label: 'Einstellungen' },
-]
+import { Link, useLocation } from "react-router-dom";
+import styles from "./Header.module.css";
 
 export default function Header() {
-  const { pathname } = useLocation()
+  const location = useLocation();
+
   return (
     <header className={styles.header}>
-      <div className={styles.brand}>HTL <span>Leoben</span></div>
+      {/* Logo links */}
+      <div className={styles.logo}>
+        <strong>HTL</strong> <span className={styles.highlight}>Leoben</span>
+      </div>
+
+      {/* Navigation – bleibt unverändert */}
       <nav className={styles.nav}>
-        {links.map(l => (
-          <Link
-            key={l.to}
-            to={l.to}
-            className={[styles.link, pathname === l.to ? styles.active : ''].join(' ')}
-          >
-            {l.label}
-          </Link>
-        ))}
+        <Link
+          to="/"
+          className={`${styles.navLink} ${
+            location.pathname === "/" ? styles.active : ""
+          }`}
+        >
+          Home
+        </Link>
+        <Link
+          to="/events"
+          className={`${styles.navLink} ${
+            location.pathname === "/events" ? styles.active : ""
+          }`}
+        >
+          Events
+        </Link>
+        <Link
+          to="/map"
+          className={`${styles.navLink} ${
+            location.pathname === "/map" ? styles.active : ""
+          }`}
+        >
+          Lageplan
+        </Link>
+        <Link
+          to="/news"
+          className={`${styles.navLink} ${
+            location.pathname === "/news" ? styles.active : ""
+          }`}
+        >
+          News
+        </Link>
+        <Link
+          to="/insta"
+          className={`${styles.navLink} ${
+            location.pathname === "/insta" ? styles.active : ""
+          }`}
+        >
+          Insta
+        </Link>
+        <Link
+          to="/teachers"
+          className={`${styles.navLink} ${
+            location.pathname === "/teachers" ? styles.active : ""
+          }`}
+        >
+          Lehrer
+        </Link>
+
+        {/* 🧭 NEU: Settings-Icon ganz rechts */}
+        <Link
+          to="/settings"
+          className={`${styles.settingsIcon} ${
+            location.pathname === "/settings" ? styles.active : ""
+          }`}
+          title="Einstellungen"
+        >
+          <span className="material-icons">settings</span>
+        </Link>
       </nav>
     </header>
-  )
+  );
 }
