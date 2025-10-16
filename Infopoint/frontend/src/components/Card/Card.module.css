@@ -1,0 +1,10 @@
+.card {
+    display: block; text-decoration: none;
+    background: #1c1c1c; border: 1px solid #2a2a2a;
+    border-radius: 16px; padding: 16px;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+  .title { color: #eaeaea; font-weight: 600; margin-bottom: 10px; }
+  .body { min-height: 110px; }
+  .placeholder { height: 100%; width: 100%; background: #252525; border-radius: 12px; }

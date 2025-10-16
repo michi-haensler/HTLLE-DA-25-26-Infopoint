@@ -1,0 +1,14 @@
+.header {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; align-items: center; gap: 24px;
+    padding: 12px 20px; background: #151515; border-bottom: 1px solid #2a2a2a;
+  }
+  .brand { color: #eaeaea; font-weight: 700; letter-spacing: .3px; }
+  .brand span { color: #4da3ff; }
+  .nav { display: flex; gap: 12px; flex-wrap: wrap; }
+  .link {
+    color: #c8c8c8; text-decoration: none; padding: 6px 10px;
+    border-radius: 10px; transition: background .15s ease;
+  }
+  .link:hover { background: #232323; color: #fff; }
+  .active { background: #2b2b2b; color: #fff; }
