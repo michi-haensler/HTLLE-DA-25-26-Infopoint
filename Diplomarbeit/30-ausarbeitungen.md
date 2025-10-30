@@ -1,15 +1,17 @@
 # Aufgabenstellung 
-Die Aufgabe ist es, ein digitales Informations-System für den Schulbetrieb zu konzipieren und umzusetzen. Dabei soll der analoge Informationsfluss digitalisiert werden, aktuelle Termine, Stundenplan Änderungen sowie Aufenthaltsorte von Lehrern (laut Stundenplan) übersichtlich dargestellt werden. Zusätzlich sollen Ankündigungen, ein Social-Media Feed und ein CMS System zum Verwalten der Inhalte zur Verfügung stehen. All diese Funktionen sollen auf einem übersichtlichen User Interface, welches für ein System im Kiosk betriebt sowohl mit Touch Bedienung als auch mit Phereferie Geräte wie Maus und Tastatur bestimmt ist.
+Die Aufgabe besteht darin, ein digitales Informationssystem für den Schulbetrieb zu konzipieren und umzusetzen. Ziel ist es, den bisherigen analogen Informationsfluss zu digitalisieren und aktuelle Informationen wie Termine, Stundenplanänderungen sowie die Aufenthaltsorte von Lehrkräften (laut Stundenplan) übersichtlich darzustellen. Zusätzlich sollen Ankündigungen, ein Social-Media-Feed und ein CMS zur Verwaltung der Inhalte bereitgestellt werden. Alle Funktionen sollen über eine benutzerfreundliche Oberfläche zugänglich sein, die sowohl für den Einsatz im Kioskbetrieb mit Touch-Bedienung als auch für die Nutzung mit Peripheriegeräten wie Maus und Tastatur optimiert ist.
+
 
 ## Auftraggeber
-Wer ist der Auftraggeber, wie ist es zu dieser Arbeit gekommen, was verspricht sich der Auftraggeber davon
+Input: Wer ist der Auftraggeber, wie ist es zu dieser Arbeit gekommen, was verspricht sich der Auftraggeber davon
+
+Unser Auftraggeber ist die HTL Leoben welcher sicht stetig für einen leichteren und innovativeren Schulalltag einsetzt. Die HTL Leoben erhofft sich durch dieses Projekt einen besseren Informationsfluss, weniger Zettelwirtschaft (Nachhaltigkeit) und einen zentralen Anlaufpunkt für Schüler, Lehrkräfte sowie Besucher an der Schule.
 
 ## Ausgangssituation
 
-Eine allgemeine Aufgabenstellung 
+Input: Eine allgemeine Aufgabenstellung - Was ist die derzeitige Situation ? - Wie wird derzeit gearbeitet ?
 
-* Was ist die derzeitige Situation ? 
-* Wie wird derzeit gearbeitet ?
+Bei Veranstaltungen wie dem Tag der offenen Tür aber auch im normalen Schulalltag ist die Orientierung im Schulgebäude oft schwierig. Besucherinnen und Besucher wie auch Schülerinnen und Schüle finden Räume oder Lehrpersonen nur schwer. Informationen werden derzeit über Papier-Aushänge bereitgestellt, die unübersichtlich und wenig flexibel sind. Es fehlt ein modernes, digitales Informationssystem.
 
 
 ### So gehen Zitate

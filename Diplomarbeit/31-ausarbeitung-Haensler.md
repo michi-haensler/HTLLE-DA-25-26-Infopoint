@@ -13,6 +13,11 @@
 - Auf was was achtet der Nutzer?
 - Was ist UI/UX und die Unterschiede davon?
 
+### Projektmanagement
+- Wieso macht man das?
+- Tools 
+- Arten vom Projektmanagement
+
 ## Praktische Arbeit
 
 > Hier beschreiben Sie ihren praktischen Teil. Es geht darum seine Implementierung / Versuche so darzustellen dass anhand dieser dre Leser erkennen kann was sie wie gemacht haben.
