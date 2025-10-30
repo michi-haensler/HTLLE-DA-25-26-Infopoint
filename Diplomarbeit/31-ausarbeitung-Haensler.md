@@ -3,9 +3,15 @@
 
 ## Theorie
 
-Dieses Kapitel wird oft auch als _Literaturrecherche_ bezeichnet. Da gehört alles rein was der __normale__ Leser braucht um den praktischen Ansatz zu verstehen. Das bedeutet Sie brauchen einen roten Faden !
+### Recherche 
+- Anforderungen
 
-Das sind z.B: allgemeine Definitionen, Beschreibung von fachspezifischen Vorgehensweisen, Frameworks, Theorie zu verwendeten Algorithmen, besondere Umstände, ...
+### Funktionale Mockups 
+- Wieso macht man das?
+- Tools 
+- Unterschiede 
+- Auf was was achtet der Nutzer?
+- Was ist UI/UX und die Unterschiede davon?
 
 ## Praktische Arbeit
 

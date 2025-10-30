@@ -1,4 +1,5 @@
 # Aufgabenstellung 
+Die Aufgabe ist es, ein digitales Informations-System für den Schulbetrieb zu konzipieren und umzusetzen. Dabei soll der analoge Informationsfluss digitalisiert werden, aktuelle Termine, Stundenplan Änderungen sowie Aufenthaltsorte von Lehrern (laut Stundenplan) übersichtlich dargestellt werden. Zusätzlich sollen Ankündigungen, ein Social-Media Feed und ein CMS System zum Verwalten der Inhalte zur Verfügung stehen. All diese Funktionen sollen auf einem übersichtlichen User Interface, welches für ein System im Kiosk betriebt sowohl mit Touch Bedienung als auch mit Phereferie Geräte wie Maus und Tastatur bestimmt ist.
 
 ## Auftraggeber
 Wer ist der Auftraggeber, wie ist es zu dieser Arbeit gekommen, was verspricht sich der Auftraggeber davon
