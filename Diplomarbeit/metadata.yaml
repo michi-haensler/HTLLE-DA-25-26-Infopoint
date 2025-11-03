@@ -64,9 +64,9 @@ da-appendix:
 # Diplomarbeitsvereinbarungen müssen zum Schluss sein 
 
 - abschnitt: Diplomatbeitsvereinbarung Englisch
-  pdf-file: HTL-DA-Doku-EN.pdf
+  pdf-file: HTL_DA_Doku_EN_ab2021_IT-B_Infopoint
 
 - abschnitt: Diplomatbeitsvereinbarung Deutsch
-  pdf-file: HTL-DA-Doku-DE.pdf
+  pdf-file: HTL_DA_Doku_DE_ab2021_IT-B_Infopoint
   
 ---
