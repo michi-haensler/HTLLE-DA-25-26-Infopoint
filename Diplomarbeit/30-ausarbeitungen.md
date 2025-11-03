@@ -5,7 +5,7 @@ Die Aufgabe besteht darin, ein digitales Informationssystem für den Schulbetrie
 ## Auftraggeber
 Input: Wer ist der Auftraggeber, wie ist es zu dieser Arbeit gekommen, was verspricht sich der Auftraggeber davon
 
-Unser Auftraggeber ist die HTL Leoben welcher sicht stetig für einen leichteren und innovativeren Schulalltag einsetzt. Die HTL Leoben erhofft sich durch dieses Projekt einen besseren Informationsfluss, weniger Zettelwirtschaft (Nachhaltigkeit) und einen zentralen Anlaufpunkt für Schüler, Lehrkräfte sowie Besucher an der Schule.
+Unser Auftraggeber ist die HTL Leoben welcher sicht stetig für einen leichteren und innovativeren Schulalltag einsetzt. Die HTL Leoben erhofft sich durch dieses Projekt einen besseren Informationsfluss, weniger Zettelwirtschaft (Nachhaltigkeit) und einen zentralen Anlaufpunkt für Schüler, Lehrkräfte sowie Besucher an der Schule. Durch das aufwendige Suchen von Lehrkräften im Gebäude und die teils undurchsichtigen Terminplänen und Deadlines, war der Wunsch einer Lösung umso größer. Die HTL Leoben hat darauf kurzerhand einen Vorschlag für eine Di
 
 ## Ausgangssituation
 
