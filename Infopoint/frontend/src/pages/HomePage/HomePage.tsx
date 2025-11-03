@@ -17,6 +17,7 @@ export default function HomePage() {
         {/* Reihe 2 */}
         <Card title="Insta" to="/insta" />
         <Card title="Lehrer" to="/teachers" />
+        <Card title="Einstellungen" to="/settings" />
       </section>
     </main>
   );
