@@ -10,7 +10,6 @@ import java.nio.charset.StandardCharsets;
 @RequiredArgsConstructor
 public class MapService {
 
-    // private final MapAssetRepository mapAssetRepository; // TODO: DB-Asset holen (BLOB aus H2)
     // private final CockpitClient cockpitClient;           // TODO: Asset aus Cockpit ziehen & speichern
 
     public MapMetaDto meta() {

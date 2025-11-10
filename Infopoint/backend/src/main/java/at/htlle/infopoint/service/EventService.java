@@ -12,7 +12,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EventService {
 
-    // private final EventRepository eventRepository;     // TODO
     // private final CockpitClient cockpitClient;         // TODO
 
     public Page<EventDto> list(Instant from, Instant to, String type, Pageable pageable) {

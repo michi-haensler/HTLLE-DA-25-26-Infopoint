@@ -12,7 +12,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class NewsService {
 
-    // private final NewsRepository newsRepository;       // TODO: später aktivieren
     // private final CockpitClient cockpitClient;         // TODO: Cockpit-Integration
 
     public Page<NewsDto> list(Instant from, Instant to, Pageable pageable) {
