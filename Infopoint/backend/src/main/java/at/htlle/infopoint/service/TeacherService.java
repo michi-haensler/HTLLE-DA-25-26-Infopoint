@@ -12,9 +12,8 @@ import java.util.stream.Stream;
 public class TeacherService {
 
     // private final WebUntisClient webUntisClient; // TODO
-    // Optional: kleiner Memory-Cache
 
-    /** Liefert Lehrerliste (für Dropdown). query=null → alle (ggf. limitieren). */
+    /** Liefert Lehrerliste */
     public List<TeacherDto> search(String query) {
         // TODO: WebUntis-API + Cache; hier Dummy-Liste:
         var all = Stream.of(
