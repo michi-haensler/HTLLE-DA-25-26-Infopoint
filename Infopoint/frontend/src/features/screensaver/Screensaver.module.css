@@ -1,30 +1,16 @@
-/* Vollbild-Overlay, weiß wie im Screenshot */
 .overlay {
   position: fixed;
   inset: 0;
-  background: #ffffff;
-  z-index: 10000; /* über Header & Inhalt */
+  z-index: 10000;
+  background: #ffffff; /* weißer Screen wie am Foto */
 }
 
-/* Falls du zentrierten Content willst */
-.center {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: #222;
-  font-weight: 700;
-}
-
-
-/* Der Start-Button: immer sichtbar unten mittig,
-   unabhängig von Eltern-Layout → position: fixed */
+/* Button unten mittig */
 .cta {
   position: fixed;
   left: 50%;
   bottom: 28px;
   transform: translateX(-50%);
-  z-index: 10001; /* über dem Overlay-Hintergrund */
   padding: 10px 16px;
   border-radius: 10px;
   border: 1px solid #d2d2d2;
@@ -32,9 +18,14 @@
   color: #111;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.15), 0 8px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.06);
   user-select: none;
 }
 
-.cta:hover { background: #efefef; }
-.cta:active { transform: translateX(-50%) translateY(1px); }
+.cta:hover {
+  background: #f0f0f0;
+}
+
+.cta:active {
+  transform: translateX(-50%) translateY(1px);
+}

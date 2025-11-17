@@ -1,12 +1,11 @@
-import { useState } from "react";
 import styles from "./Screensaver.module.css";
 
-export default function Screensaver() {
-  const [active, setActive] = useState(true);
+type Props = {
+  onClose: () => void;
+};
 
-  if (!active) return null;
-
-  const close = () => setActive(false);
+export default function Screensaver({ onClose }: Props) {
+  const close = () => onClose();
 
   return (
     <div
@@ -15,10 +14,6 @@ export default function Screensaver() {
       role="button"
       aria-label="Screensaver schließen"
     >
-      {/* optional: zentriertes Logo/Motiv */}
-      {/* <div className={styles.center}>HTL Leoben</div> */}
-
-      {/* Button: stoppt das Overlay-Click-Event, damit der Fokus sauber bleibt */}
       <button
         className={styles.cta}
         onClick={(e) => {

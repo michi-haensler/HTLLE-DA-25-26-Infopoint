@@ -1,13 +1,14 @@
 import "./App.css";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
-import Screensaver from '../features/screensaver/Screensaver.tsx';
+import { ScreensaverProvider } from "../features/screensaver/ScreensaverContext.tsx";
 
 export default function App() {
   return (
     <div className="App">
-      <Screensaver />          {/* Overlay darf außerhalb liegen */}
-      <RouterProvider router={router} />
+      <ScreensaverProvider>
+        <RouterProvider router={router} />
+      </ScreensaverProvider>
     </div>
   );
 }

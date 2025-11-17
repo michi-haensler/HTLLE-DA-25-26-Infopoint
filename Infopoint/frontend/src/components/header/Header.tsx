@@ -1,33 +1,28 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
+import { useScreensaver } from "../../features/screensaver/ScreensaverContext";
 
 export default function Header() {
   const location = useLocation();
+  const { show } = useScreensaver(); // Screensaver wieder anzeigen
 
   return (
     <header className={styles.header}>
       {/* Logo links */}
       <div className={styles.logo}>
-        <strong>HTL</strong> <span className={styles.highlight}>Leoben</span>
+        <strong>HTL</strong>
+        <span className={styles.highlight}>Leoben</span>
       </div>
 
-      {/* Navigation – bleibt unverändert */}
+      {/* Navigation links */}
       <nav className={styles.nav}>
-        <Link
-          to="/"
+      <Link
+          to="/news"
           className={`${styles.navLink} ${
-            location.pathname === "/" ? styles.active : ""
+            location.pathname === "/news" ? styles.active : ""
           }`}
         >
-          Home
-        </Link>
-        <Link
-          to="/events"
-          className={`${styles.navLink} ${
-            location.pathname === "/events" ? styles.active : ""
-          }`}
-        >
-          Events
+          Neuigkeiten
         </Link>
         <Link
           to="/map"
@@ -38,20 +33,12 @@ export default function Header() {
           Lageplan
         </Link>
         <Link
-          to="/news"
+          to="/events"
           className={`${styles.navLink} ${
-            location.pathname === "/news" ? styles.active : ""
+            location.pathname === "/events" ? styles.active : ""
           }`}
         >
-          News
-        </Link>
-        <Link
-          to="/insta"
-          className={`${styles.navLink} ${
-            location.pathname === "/insta" ? styles.active : ""
-          }`}
-        >
-          Insta
+          Termine
         </Link>
         <Link
           to="/teachers"
@@ -62,16 +49,33 @@ export default function Header() {
           Lehrer
         </Link>
 
-        {/* 🧭 NEU: Settings-Icon ganz rechts */}
+        {/* 🔹 NEU: Stundenpläne-Link links in der Leiste */}
         <Link
-          to="/settings"
-          className={`${styles.settingsIcon} ${
-            location.pathname === "/settings" ? styles.active : ""
+          to="/stundenplan"
+          className={`${styles.navLink} ${
+            location.pathname === "/stundenplan" ? styles.active : ""
           }`}
-          title="Einstellungen"
         >
-          <span className="material-icons">settings</span>
+          Stundenpläne
         </Link>
+        <Link
+          to="/insta"
+          className={`${styles.navLink} ${
+            location.pathname === "/insta" ? styles.active : ""
+          }`}
+        >
+          Insta
+        </Link>
+
+        {/* 🔹 RECHTS: exit_to_app Icon -> zurück zum Screensaver */}
+        <button
+          type="button"
+          className={styles.exitIcon}
+          title="Zum Startbildschirm"
+          onClick={show}
+        >
+          <span className="material-icons">exit_to_app</span>
+        </button>
       </nav>
     </header>
   );
