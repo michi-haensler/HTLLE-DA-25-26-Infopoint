@@ -58,15 +58,10 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: #d0d0d0;
+  background: #7e7e7e;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.iconCircle .material-icons {
-  font-size: 40px;
-  color: #555555;
 }
 
 .cardLabel {

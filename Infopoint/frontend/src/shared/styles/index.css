@@ -31,3 +31,7 @@ body {
   background: var(--bg-dark);
   color: var(--text-white);
 }
+
+.material-icons {
+  color: #ffffff; /* Navbar, Header, etc. */
+}
