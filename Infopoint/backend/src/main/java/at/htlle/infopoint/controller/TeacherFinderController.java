@@ -12,8 +12,12 @@ import java.time.Instant;
 
 @RestController
 @RequestMapping("/api/v1/teacher-finder")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class TeacherFinderController {
+
+    public TeacherFinderController(TimetableService timetableService) {
+        this.timetableService = timetableService;
+    }
 
     private final TimetableService timetableService;
 
