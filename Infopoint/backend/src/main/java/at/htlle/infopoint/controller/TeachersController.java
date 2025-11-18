@@ -12,9 +12,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/teachers")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class TeachersController {
     private final TeacherService teacherService;
+
+    public TeachersController(TeacherService teacherService) {
+        this.teacherService = teacherService;
+    }
 
     @GetMapping
     public List<TeacherDto> list(@RequestParam(required = false) String query) {

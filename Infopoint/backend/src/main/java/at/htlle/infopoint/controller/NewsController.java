@@ -1,32 +1,27 @@
 package at.htlle.infopoint.controller;
 
+import at.htlle.infopoint.clients.cockpit.CockpitNews;
 import at.htlle.infopoint.dto.NewsDto;
 import at.htlle.infopoint.service.NewsService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.Instant;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/news")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class NewsController {
+
+    public NewsController(NewsService newsService) {
+        this.newsService = newsService;
+    }
 
     private final NewsService newsService;
 
-    @GetMapping
-    public Page<NewsDto> list(
-            @RequestParam(required = false) Instant from,
-            @RequestParam(required = false) Instant to,
-            @PageableDefault(size = 20) Pageable pageable) {
-        return newsService.list(from, to, pageable);
-    }
-
-    @GetMapping("/{id}")
-    public NewsDto get(@PathVariable Long id) {
-        return newsService.get(id);
+    @GetMapping("/{limit}")
+    public List<CockpitNews> get(@PathVariable int limit) {
+        return newsService.get(limit);
     }
 }
