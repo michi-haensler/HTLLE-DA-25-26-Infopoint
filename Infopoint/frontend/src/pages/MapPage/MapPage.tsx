@@ -1,36 +1,27 @@
 import styles from "./MapPage.module.css";
-
-// Bildmodule importieren (siehe Ordnerstruktur oben)
-import img1 from '../../assets/Map/Dummy1Stock.jpg';      // 1. Stock
-import imgEG from "../../assets/Map/DummyErdgeschoss.png"; // Erdgeschoss
-import imgKG from "../../assets/Map/DummyKeller.png";      // Keller
+import img1 from "../../assets/Map/Dummy1Stock.jpg";
+import imgEG from "../../assets/Map/DummyErdgeschoss.png";
+import imgKG from "../../assets/Map/DummyKeller.png";
 
 export default function MapPage() {
   return (
-    <main className={styles.wrap}>
-      <h1 className={styles.title}>Lageplan</h1>
+    <main className={styles.container}>
+      <h2 className={styles.title}>Lageplan</h2>
 
-      {/* Reihenfolge: 1. Stock → Erdgeschoss → Keller */}
       <section className={styles.list}>
         <figure className={styles.card}>
-        <figcaption className={styles.caption}>1. Stock</figcaption>
-          <a href={img1} target="_blank" rel="noreferrer">
-            <img src={img1} alt="1. Stock" loading="lazy" className={styles.image} />
-          </a>
+          <img src={img1} alt="1. Stock" className={styles.image} />
+          <figcaption className={styles.caption}>1. Stock</figcaption>
         </figure>
 
         <figure className={styles.card}>
-        <figcaption className={styles.caption}>Erdgeschoss</figcaption>
-          <a href={imgEG} target="_blank" rel="noreferrer">
-            <img src={imgEG} alt="Erdgeschoss" loading="lazy" className={styles.image} />
-          </a>
+          <img src={imgEG} alt="Erdgeschoss" className={styles.image} />
+          <figcaption className={styles.caption}>Erdgeschoss</figcaption>
         </figure>
 
         <figure className={styles.card}>
-        <figcaption className={styles.caption}>Keller</figcaption>
-          <a href={imgKG} target="_blank" rel="noreferrer">
-            <img src={imgKG} alt="Keller" loading="lazy" className={styles.image} />
-          </a>
+          <img src={imgKG} alt="Keller" className={styles.image} />
+          <figcaption className={styles.caption}>Keller</figcaption>
         </figure>
       </section>
     </main>

@@ -3,7 +3,6 @@ import styles from "./InstaFeedPage.module.css";
 
 export default function InstaFeedPage() {
   useEffect(() => {
-    // Instagram-Embed-Skript nachladen
     const script = document.createElement("script");
     script.src = "https://www.instagram.com/embed.js";
     script.async = true;
@@ -19,7 +18,6 @@ export default function InstaFeedPage() {
       <h2 className={styles.title}>Instagram – HTL Leoben</h2>
 
       <div className={styles.embedWrapper}>
-        {/* Hier das von dir gegebene Embed-HTML */}
         <blockquote
           className="instagram-media"
           data-instgrm-permalink="https://www.instagram.com/htlleoben/"
@@ -31,8 +29,8 @@ export default function InstaFeedPage() {
             boxShadow:
               "0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15)",
             margin: "1px auto",
-            maxWidth: "800px",
-            minWidth: "750px",
+            maxWidth: "540px",
+            minWidth: "326px",
             padding: 0,
             width: "99%",
           }}

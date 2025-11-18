@@ -2,10 +2,9 @@
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background: #ffffff; /* weißer Screen wie am Foto */
+  background: #ffffff;
 }
 
-/* Button unten mittig */
 .cta {
   position: fixed;
   left: 50%;

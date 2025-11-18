@@ -16,7 +16,7 @@ const ScreensaverContext = createContext<ScreensaverContextType | undefined>(
 );
 
 export function ScreensaverProvider({ children }: { children: ReactNode }) {
-  const [active, setActive] = useState(true); // App startet mit Screensaver
+  const [active, setActive] = useState(true);
 
   const show = () => setActive(true);
   const hide = () => setActive(false);

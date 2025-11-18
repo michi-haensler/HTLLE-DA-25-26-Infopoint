@@ -1,114 +1,36 @@
-import { useEffect, useState } from 'react'
-import styles from './InfoPage.module.css'
-import Loader from '../../shared/ui/Loader'
-import ErrorBanner from '../../shared/ui/ErrorBanner'
-import { useOnline } from '../../shared/hooks/useOnline'
-import { fetchEvents, fetchRoomPlans, fetchSubstitutions,
-  type EventItem, type RoomPlan, type Substitution } from '../../features/information/api/information.api'
+import styles from "./InfoPage.module.css";
 
-export default function InfoPage() {
-  const online = useOnline()
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+type NewsItem = { id: string; title: string; date: string; teaser: string };
 
-  const [events, setEvents] = useState<EventItem[]>([])
-  const [subs, setSubs] = useState<Substitution[]>([])
-  const [rooms, setRooms] = useState<RoomPlan[]>([])
+const dummyNews: NewsItem[] = [
+  {
+    id: "n1",
+    title: "HTL Leoben gewinnt Robotics-Wettbewerb",
+    date: "15.11.2025",
+    teaser: "Das Team der 4A/BIT holt den ersten Platz beim Landesbewerb …",
+  },
+  {
+    id: "n2",
+    title: "Neuer 3D-Drucker im Labor",
+    date: "10.11.2025",
+    teaser: "Ab sofort steht der Schule ein weiterer 3D-Drucker für Projekte zur Verfügung.",
+  },
+];
 
-  useEffect(() => {
-    let mounted = true;
-    let safetyTimer: number | undefined;
-  
-    (async () => {
-      try {
-        setLoading(true);
-  
-        // Safety: Nach 4s beenden wir das Laden auf jeden Fall
-        safetyTimer = window.setTimeout(() => {
-          if (mounted) {
-            setLoading(false);
-            setError((prev) => prev ?? "Zeitüberschreitung beim Laden der Daten.");
-          }
-        }, 4000);
-  
-        const [e, s, r] = await Promise.all([
-          fetchEvents(),
-          fetchSubstitutions(),
-          fetchRoomPlans(),
-        ]);
-  
-        if (!mounted) return;
-        setEvents(e);
-        setSubs(s);
-        setRooms(r);
-        setError(null);
-        setLoading(false);
-      } catch {
-        if (!mounted) return;
-        setError("Daten konnten nicht geladen werden.");
-        setLoading(false);
-      } finally {
-        if (safetyTimer) clearTimeout(safetyTimer);
-      }
-    })();
-  
-    return () => {
-      mounted = false;
-      if (safetyTimer) clearTimeout(safetyTimer);
-    };
-  }, []);
-
+export default function NewsPage() {
   return (
-    <main className={styles.wrap}>
-      <h1 className={styles.title}>Informationen</h1>
+    <main className={styles.container}>
+      <h2 className={styles.title}>Aktuelles</h2>
 
-      {!online && (
-        <ErrorBanner message="Keine Internetverbindung – zeige lokale/letzte bekannte Daten." />
-      )}
-
-      {error && <ErrorBanner message={error} />}
-
-      {loading ? (
-        <Loader />
-      ) : (
-        <div className={styles.grid}>
-          <section className={styles.card}>
-            <h2 className={styles.title}>Aktuelle Veranstaltungen</h2>
-            <ul className={styles.list}>
-              {events.map(e => (
-                <li key={e.id} className={styles.item}>
-                  <div className={styles.primary}>{e.title}</div>
-                  <div className={styles.meta}>{e.date}{e.location ? ` · ${e.location}` : ''}</div>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className={styles.card}>
-            <h2 className={styles.title}>Vertretungen</h2>
-            <ul className={styles.list}>
-              {subs.map(s => (
-                <li key={s.id} className={styles.item}>
-                  <div className={styles.primary}>{s.teacher}</div>
-                  <div className={styles.meta}>{s.class} · {s.time}</div>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className={styles.card}>
-            <h2 className={styles.title}>Raumpläne</h2>
-            <ul className={styles.list}>
-              {rooms.map(r => (
-                <li key={r.id} className={styles.item}>
-                  <div className={styles.primary}>{r.room}</div>
-                  <div className={styles.meta}>{r.info}</div>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
-      )}
+      <section className={styles.grid}>
+        {dummyNews.map((n) => (
+          <article key={n.id} className={styles.card}>
+            <div className={styles.date}>{n.date}</div>
+            <h3 className={styles.headline}>{n.title}</h3>
+            <p className={styles.teaser}>{n.teaser}</p>
+          </article>
+        ))}
+      </section>
     </main>
-  )
+  );
 }

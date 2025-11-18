@@ -1,19 +1,26 @@
-.wrap { 
-    padding: 24px; 
-    color: #eaeaea; 
-}
-
-.title {
-    color: #fff;
-    text-align: center;
-    margin: 12px 0 20px;
-    margin-bottom: 32px;
-}
-
-.panel { 
-    background: #1b1b1b; 
-    border: 1px solid #2a2a2a; 
-    border-radius: 14px; 
-    padding: 16px; 
-    min-height: 200px; 
-}
+.container {
+    padding: 24px;
+    background: var(--bg-dark);
+    min-height: calc(100vh - 50px);
+  }
+  
+  .title {
+    margin-bottom: 16px;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .card {
+    background: var(--bg-panel);
+    border-radius: 18px;
+    border: 1px solid var(--border-dark);
+    padding: 16px 18px;
+  }
+  
+  .text {
+    color: var(--text-light);
+  }

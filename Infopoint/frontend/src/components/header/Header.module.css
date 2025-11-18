@@ -47,7 +47,6 @@
   color: #4da3ff;
 }
 
-/* Exit-Button ganz rechts */
 .exitIcon {
   margin-left: auto;
   display: flex;
@@ -67,3 +66,4 @@
   color: #ffffff;
   transform: scale(1.05);
 }
+

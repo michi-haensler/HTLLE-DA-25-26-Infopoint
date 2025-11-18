@@ -11,19 +11,14 @@ export default function RootLayout() {
   const isHome = location.pathname === "/";
 
   const handleScreensaverClose = () => {
-    // Screensaver ausblenden
     hide();
-    // Immer auf die Startseite wechseln
-    navigate("/");
+    navigate("/"); // immer zur HomePage
   };
 
   return (
     <div>
       {active && <Screensaver onClose={handleScreensaverClose} />}
-
-      {/* Header NICHT auf der Startseite */}
       {!isHome && <Header />}
-
       <Outlet />
     </div>
   );

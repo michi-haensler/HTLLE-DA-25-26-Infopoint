@@ -4,22 +4,20 @@ import { useScreensaver } from "../../features/screensaver/ScreensaverContext";
 
 export default function Header() {
   const location = useLocation();
-  const { show } = useScreensaver(); // Screensaver wieder anzeigen
+  const { show } = useScreensaver();
 
   return (
     <header className={styles.header}>
-      {/* Logo links */}
       <div className={styles.logo}>
         <strong>HTL</strong>
         <span className={styles.highlight}>Leoben</span>
       </div>
 
-      {/* Navigation links */}
       <nav className={styles.nav}>
-      <Link
-          to="/news"
+        <Link
+          to="/info"
           className={`${styles.navLink} ${
-            location.pathname === "/news" ? styles.active : ""
+            location.pathname === "/info" ? styles.active : ""
           }`}
         >
           Neuigkeiten
@@ -46,10 +44,8 @@ export default function Header() {
             location.pathname === "/teachers" ? styles.active : ""
           }`}
         >
-          Lehrer
+          Lehrer finden
         </Link>
-
-        {/* 🔹 NEU: Stundenpläne-Link links in der Leiste */}
         <Link
           to="/stundenplan"
           className={`${styles.navLink} ${
@@ -64,10 +60,9 @@ export default function Header() {
             location.pathname === "/insta" ? styles.active : ""
           }`}
         >
-          Insta
+          Instagram
         </Link>
 
-        {/* 🔹 RECHTS: exit_to_app Icon -> zurück zum Screensaver */}
         <button
           type="button"
           className={styles.exitIcon}

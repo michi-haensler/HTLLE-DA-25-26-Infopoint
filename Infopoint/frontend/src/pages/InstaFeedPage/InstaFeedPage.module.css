@@ -1,20 +1,18 @@
 .container {
-    padding: 24px;
-    background: #121212;
-    min-height: calc(100vh - 56px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .title {
-    color: #fff;
-    text-align: center;
-    margin-bottom: 48px;
-  }
-  
-  .embedWrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
+  padding: 24px;
+  background: var(--bg-dark);
+  min-height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.embedWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
