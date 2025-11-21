@@ -1,4 +1,4 @@
-# Teilaufgabe Schüler Hänsler
+# Teilaufgabe Schüler Michael Hänsler
 \textauthor{Michael Hänsler}
 
 ## Theorie

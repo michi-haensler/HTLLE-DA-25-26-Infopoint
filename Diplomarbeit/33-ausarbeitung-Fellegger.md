@@ -1,4 +1,5 @@
-# Theorie- und Praxisteil – Themenübersicht (Frontend)
+# Teilaufgabe Schüler Lukas Fellegger
+\textauthor{Lukas Fellegger}
 
 ## 1. Einführung in das Projekt und Zielsetzung
 ### 1.1 Ausgangssituation
