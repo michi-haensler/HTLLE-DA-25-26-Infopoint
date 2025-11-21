@@ -8,6 +8,8 @@ import InstaFeedPage from "../pages/InstaFeedPage/InstaFeedPage";
 import TeachersPage from "../pages/TeachersPage/TeachersPage";
 import EventsPage from "../pages/EventsPage/EventsPage";
 import StundenplanPage from "../pages/StundenplanPage/StundenplanPage";
+import KlassenStundenplanPage  from "../pages/KlassenStundenplanPage/KlassenStundenplanPage";
+import LaborStundenplanPage from "../pages/LaborStundenplanPage/LaborStundenplanPage";
 
 export const router = createBrowserRouter([
   {
@@ -21,7 +23,10 @@ export const router = createBrowserRouter([
       { path: "insta", element: <InstaFeedPage /> },
       { path: "teachers", element: <TeachersPage /> },
       { path: "events", element: <EventsPage /> },
+
       { path: "stundenplan", element: <StundenplanPage /> },
+      { path: "stundenplan/klassen", element: <KlassenStundenplanPage /> },
+      { path: "stundenplan/labore", element: <LaborStundenplanPage /> },
     ],
   },
 ]);

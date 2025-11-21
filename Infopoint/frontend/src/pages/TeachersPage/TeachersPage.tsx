@@ -1,50 +1,59 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import styles from "./TeachersPage.module.css";
 
-type Teacher = { id: string; name: string; subject: string; room: string };
+// Später: diese Daten vom CMS / Backend laden
+type Teacher = {
+  id: string;
+  name: string;
+  shortcut: string; // Kürzel
+  room: string;
+};
 
-const teachers: Teacher[] = [
-  { id: "t1", name: "Mag. Huber", subject: "Mathematik", room: "B-204" },
-  { id: "t2", name: "DI Mayer", subject: "Informatik", room: "E-112" },
-  { id: "t3", name: "Ing. Steiner", subject: "Elektronik", room: "E-210" },
+const TEACHERS: Teacher[] = [
+  { id: "1", name: "Kondert Uwe", shortcut: "KUW", room: "5BIT" },
+  { id: "2", name: "Hochörtler Beatrix", shortcut: "HBX", room: "5RL" },
+  { id: "3", name: "Edler Astrid", shortcut: "ED", room: "---" },
+  { id: "4", name: "Auracher Klaus", shortcut: "AUK", room: "4AIT" },
 ];
 
 export default function TeachersPage() {
   const [query, setQuery] = useState("");
 
-  const filtered = teachers.filter((t) =>
-    (t.name + t.subject + t.room).toLowerCase().includes(query.toLowerCase())
-  );
+  const filteredTeachers = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return TEACHERS;
+    return TEACHERS.filter((t) =>
+      (t.name + t.shortcut + t.room).toLowerCase().includes(q)
+    );
+  }, [query]);
 
   return (
     <main className={styles.container}>
-      <h2 className={styles.title}>Lehrer finden</h2>
+      <h1 className={styles.title}>Lehrer Suche</h1>
 
-      <div className={styles.searchRow}>
-        <span className="material-icons">search</span>
+      {/* Suchfeld */}
+      <div className={styles.searchBar}>
         <input
           type="text"
-          placeholder="Name, Fach oder Raum eingeben"
+          className={styles.searchInput}
+          placeholder="Namen oder Kürzel eingeben"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className={styles.input}
         />
+        <span className={`material-icons ${styles.searchIcon}`}>search</span>
       </div>
 
-      <section className={styles.grid}>
-        {filtered.map((t) => (
-          <article key={t.id} className={styles.card}>
-            <h3 className={styles.name}>{t.name}</h3>
-            <div className={styles.meta}>
-              <span className="material-icons">school</span>
-              <span>{t.subject}</span>
-            </div>
-            <div className={styles.meta}>
-              <span className="material-icons">meeting_room</span>
-              <span>{t.room}</span>
-            </div>
-          </article>
-        ))}
+      {/* Ergebnis-Liste */}
+      <section className={styles.panel}>
+        <ul className={styles.list}>
+          {filteredTeachers.map((t) => (
+            <li key={t.id} className={styles.row}>
+              <div className={styles.colName}>{t.name}</div>
+              <div className={styles.colShortcut}>{t.shortcut}</div>
+              <div className={styles.colRoom}>Raum: {t.room}</div>
+            </li>
+          ))}
+        </ul>
       </section>
     </main>
   );

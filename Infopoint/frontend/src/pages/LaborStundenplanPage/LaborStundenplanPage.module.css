@@ -1,0 +1,89 @@
+.container {
+    min-height: calc(100vh - 50px);
+    background: var(--bg-dark);
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .title {
+    margin: 0 0 24px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-white);
+    text-align: center;
+  }
+  
+  .panel {
+    background: #4f4f4f;
+    border-radius: 28px;
+    padding: 24px 32px;
+    width: 100%;
+    max-width: 1150px;
+  }
+  
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .row {
+    background: #777777;
+    border-radius: 22px;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .row:last-child {
+    margin-bottom: 0;
+  }
+  
+  .rowInner {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Labor | Raum */
+    column-gap: 24px;
+    align-items: center;
+  }
+  
+  .colLab,
+  .colRoom {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  
+  .colLab {
+    text-align: left;
+  }
+  
+  .colRoom {
+    text-align: right;
+  }
+  
+  /* Pfeil rechts */
+  .arrowButton {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    text-decoration: none;
+  }
+  
+  .arrowButton .material-icons {
+    font-size: 28px;
+    color: #ffffff;
+  }
+  
+  .arrowButton:hover .material-icons {
+    transform: translateX(2px);
+  }

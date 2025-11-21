@@ -1,35 +1,59 @@
 import styles from "./InfoPage.module.css";
 
-type NewsItem = { id: string; title: string; date: string; teaser: string };
+// Später: diese Daten vom CMS / Backend laden
+type NewsItem = {
+  id: string;
+  title: string;
+  detailUrl: string; // Link zum ganzen Artikel (CMS-URL oder interne Route)
+};
 
-const dummyNews: NewsItem[] = [
+const NEWS: NewsItem[] = [
   {
-    id: "n1",
-    title: "HTL Leoben gewinnt Robotics-Wettbewerb",
-    date: "15.11.2025",
-    teaser: "Das Team der 4A/BIT holt den ersten Platz beim Landesbewerb …",
+    id: "1",
+    title: "Maturaball der 5. Klassen",
+    detailUrl: "/news/1",
   },
   {
-    id: "n2",
-    title: "Neuer 3D-Drucker im Labor",
-    date: "10.11.2025",
-    teaser: "Ab sofort steht der Schule ein weiterer 3D-Drucker für Projekte zur Verfügung.",
+    id: "2",
+    title: "Tag der Nachhaltigkeit",
+    detailUrl: "/news/2",
+  },
+  {
+    id: "3",
+    title: "Kennenlerntage der 1. Klassen",
+    detailUrl: "/news/3",
+  },
+  {
+    id: "4",
+    title: "Infotag",
+    detailUrl: "/news/4",
   },
 ];
 
 export default function NewsPage() {
   return (
     <main className={styles.container}>
-      <h2 className={styles.title}>Aktuelles</h2>
+      <h1 className={styles.title}>Neuigkeiten</h1>
 
-      <section className={styles.grid}>
-        {dummyNews.map((n) => (
-          <article key={n.id} className={styles.card}>
-            <div className={styles.date}>{n.date}</div>
-            <h3 className={styles.headline}>{n.title}</h3>
-            <p className={styles.teaser}>{n.teaser}</p>
-          </article>
-        ))}
+      <section className={styles.panel}>
+        <ul className={styles.list}>
+          {NEWS.map((item) => (
+            <li key={item.id} className={styles.row}>
+              <div className={styles.rowInner}>
+                <span className={styles.text}>{item.title}</span>
+              </div>
+
+              {/* Pfeil rechts → führt zum ganzen Artikel */}
+              <a
+                href={item.detailUrl}
+                className={styles.arrowButton}
+                title="Zum Artikel"
+              >
+                <span className="material-icons">chevron_right</span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
     </main>
   );

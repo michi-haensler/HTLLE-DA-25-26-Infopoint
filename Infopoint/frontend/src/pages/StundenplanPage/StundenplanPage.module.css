@@ -1,26 +1,80 @@
 .container {
-    padding: 24px;
-    background: var(--bg-dark);
-    min-height: calc(100vh - 50px);
-  }
-  
-  .title {
-    margin-bottom: 16px;
-  }
-  
+  min-height: calc(100vh - 50px);
+  background: var(--bg-dark);
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 200px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+
+/* Zwei Karten nebeneinander (bei Platz) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 64px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Karte im Stil des Mockups */
+.card {
+  background: #191919;          /* dunkles Grau wie Start-Karten */
+  border-radius: 36px;
+  padding: 40px 32px 32px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.65);
+}
+
+/* runder Icon-Kreis */
+.iconCircle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #808080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.iconCircle .material-icons {
+  font-size: 56px;
+  color: #ffffff; /* Icon weiß */
+}
+
+/* Text unter der Karte */
+.label {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* einspaltig auf schmalen Screens (nur beim Entwickeln wichtig) */
+@media (max-width: 900px) {
   .grid {
-    display: grid;
-    gap: 16px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
-  
-  .card {
-    background: var(--bg-panel);
-    border-radius: 18px;
-    border: 1px solid var(--border-dark);
-    padding: 16px 18px;
-  }
-  
-  .text {
-    color: var(--text-light);
-  }
+}

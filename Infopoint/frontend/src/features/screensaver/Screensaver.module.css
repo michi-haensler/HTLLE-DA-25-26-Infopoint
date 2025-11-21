@@ -2,20 +2,40 @@
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background: #ffffff;
+  overflow: hidden;
+  cursor: pointer;
 }
 
+/* Bild als Vollbild-Hintergrund */
+.background {
+  position: absolute;
+  inset: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 0.6s ease-out;
+}
+
+/* dunkler Schleier für bessere Lesbarkeit */
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Button unten mittig */
 .cta {
-  position: fixed;
+  position: absolute;
   left: 50%;
   bottom: 28px;
   transform: translateX(-50%);
-  padding: 10px 16px;
+  padding: 10px 18px;
   border-radius: 10px;
   border: 1px solid #d2d2d2;
   background: #e9e9e9;
   color: #111;
   font-weight: 700;
+  font-size: 1rem;
   cursor: pointer;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.06);
   user-select: none;

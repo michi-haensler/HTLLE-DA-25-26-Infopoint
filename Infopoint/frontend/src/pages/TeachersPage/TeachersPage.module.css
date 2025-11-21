@@ -1,61 +1,125 @@
 .container {
-    padding: 24px;
-    background: var(--bg-dark);
-    min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 50px);
+  background: var(--bg-dark);
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Große Überschrift */
+.title {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 48px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* Suchfeld wie im Mockup: großer grauer Balken mit Icon rechts */
+.searchBar {
+  display: flex;
+  align-items: center;
+  background: #212121;
+  border-color: black;
+  border-radius: 24px;
+  padding: 12px 20px;
+  width: 100%;
+  max-width: 1150px;
+  margin-bottom: 26px;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-white);
+  font-size: 1.3rem;
+}
+
+.searchInput::placeholder {
+  color: #b9b9b9;
+}
+
+.searchIcon {
+  font-size: 28px;
+  color: #ffffff; /* Icon weiß */
+}
+
+/* Panel mit den Lehrerzeilen */
+.panel {
+  background: #212121; /* dunkler Rahmen */
+  border-radius: 28px;
+  border-color: black;
+  padding: 24px 32px;
+  width: 100%;
+  max-width: 1150px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Eine Zeile (Name | Kürzel | Raum) */
+.row {
+  background: #777777;
+  border-radius: 22px;
+  padding: 14px 22px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr; /* Name / Kürzel / Raum */
+  column-gap: 24px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
+.colName,
+.colShortcut,
+.colRoom {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.colName {
+  text-align: left;
+}
+
+.colShortcut {
+  text-align: center;
+}
+
+.colRoom {
+  text-align: right;
+}
+
+/* Für kleinere Breiten (nur beim Entwickeln im Browser relevant) */
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "name room"
+      "shortcut shortcut";
+    row-gap: 4px;
   }
-  
-  .title {
-    margin-bottom: 16px;
+
+  .colName {
+    grid-area: name;
   }
-  
-  .searchRow {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--bg-panel);
-    padding: 8px 12px;
-    border-radius: 10px;
-    border: 1px solid var(--border-dark);
-    margin-bottom: 16px;
+
+  .colRoom {
+    grid-area: room;
   }
-  
-  .searchRow .material-icons {
-    font-size: 20px;
+
+  .colShortcut {
+    grid-area: shortcut;
   }
-  
-  .input {
-    border: none;
-    outline: none;
-    background: transparent;
-    color: var(--text-white);
-    width: 100%;
-  }
-  
-  .grid {
-    display: grid;
-    gap: 16px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  
-  .card {
-    background: var(--bg-panel);
-    border-radius: 18px;
-    border: 1px solid var(--border-dark);
-    padding: 14px 16px;
-  }
-  
-  .name {
-    margin: 0 0 6px;
-  }
-  
-  .meta {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.9rem;
-    color: var(--text-light);
-  }
-  
-  .meta .material-icons {
-    font-size: 18px;
-  }
+}

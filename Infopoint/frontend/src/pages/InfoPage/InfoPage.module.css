@@ -1,37 +1,87 @@
 .container {
-    padding: 24px;
-    background: var(--bg-dark);
-    min-height: calc(100vh - 50px);
-  }
-  
-  .title {
-    margin-bottom: 16px;
-  }
-  
-  .grid {
-    display: grid;
-    gap: 18px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  
-  .card {
-    background: var(--bg-panel);
-    border-radius: 18px;
-    border: 1px solid var(--border-dark);
-    padding: 16px 18px;
-  }
-  
-  .date {
-    font-size: 0.8rem;
-    color: var(--text-light);
-    margin-bottom: 6px;
-  }
-  
-  .headline {
-    margin: 0 0 8px;
-  }
-  
-  .teaser {
-    margin: 0;
-    color: var(--text-light);
-  }
+  min-height: calc(100vh - 50px);
+  background: var(--bg-dark);
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Überschrift wie im Mockup */
+.title {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 48px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* Äußerer Block */
+.panel {
+  background: #212121; /* dunkler Rahmen */
+  border-radius: 28px;
+  border-color: #000000;
+  padding: 24px 32px;
+  width: 100%;
+  max-width: 1150px;
+}
+
+/* Liste */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Einzelne Neuigkeit */
+.row {
+  background: #777777; /* helleres Grau innen */
+  border-radius: 22px;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
+/* Textbereich links */
+.rowInner {
+  flex: 1;
+}
+
+.text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+/* Pfeil rechts */
+.arrowButton {
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  text-decoration: none;
+}
+
+.arrowButton .material-icons {
+  font-size: 28px;
+  color: #ffffff; /* Pfeil weiß wie im Mockup */
+}
+
+.arrowButton:hover .material-icons {
+  transform: translateX(2px);
+}

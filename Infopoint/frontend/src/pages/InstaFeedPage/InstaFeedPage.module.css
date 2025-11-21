@@ -8,7 +8,13 @@
 }
 
 .title {
-  margin-bottom: 16px;
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 48px;
+  margin-top: 32px;
+  text-align: center;
 }
 
 .embedWrapper {
