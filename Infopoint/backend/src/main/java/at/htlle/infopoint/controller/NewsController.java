@@ -20,8 +20,8 @@ public class NewsController {
 
     private final NewsService newsService;
 
-    @GetMapping("/{limit}")
-    public List<CockpitNews> get(@PathVariable int limit) {
+    @GetMapping("/limit")
+    public List<CockpitNews> get(@RequestParam int limit) {
         return newsService.get(limit);
     }
 }
