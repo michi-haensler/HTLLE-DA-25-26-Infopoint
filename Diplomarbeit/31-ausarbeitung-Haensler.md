@@ -1,9 +1,27 @@
 # Teilaufgabe Schüler Michael Hänsler
 \textauthor{Michael Hänsler}
 
+## Ausgangslage
+
+### Was ist meine Teilaufgabe?
+
+Meine Aufgabe ist es mich um die Hardware, das Design die  Konzeption und das Projektmanagement zu kümmern. Dabei habe ich geeignete Hardware gesucht und darüber recherchiert um unsere Kostenpunkte zusammen zu stellen. Im Punkt Design habe ich mir mit dem Tool Adobe XD funktionale Mockups erstellt, um die spätere programmier Arbeit deutlich zu erleichtern. Über diese Mockups ist auch das Design entstanden. Auf Projektmanagement Ebene haben wir uns für "Github Projects" entschieden um unsere Arbeit besser Koordinieren zu können. Gehen wir nun aber in die Details.
+
+
 ## Theorie
 
-### Was ist ein Infopoint?
+### Grundlagen digitaler Informationssysteme
+
+#### Definition und Aufgaben von Infopoint-Systemen
+#### Einsatzgebiete und Nutzen in Bildungseinrichtungen
+#### Anforderungen an moderne digitale Informationslösungen
+
+### Hardware-Grundlagen für Informationssysteme
+
+#### Kriterien für die Hardwareauswahl
+#### Vergleich relevanter Hardwarekomponenten
+#### Energieverbrauch, Zuverlässigkeit und Wartbarkeit
+#### Kostenfaktoren bei Hardwareprojekten
 
 \todo{Weiter Informationen über Infopoints hinzufügen (welche Arten, Anwendungsfälle etc.)}
 
@@ -17,26 +35,29 @@ Viele haben bestimmt schon einen Infopoint verwendet, doch was steckt eigentlich
 - Gehäuse
     - Das erste was der Benutzer sieht, ist das Gehäuse. Es hält die Komponenten (Computer und Display) zusammen und sorgt dabei für einen schlichten ansprechenden Look. Das Gehäuse sorgt außerdem dafür, dass der Infopoint zur restlichen Inneneinrichtung passt. Vorrausgesetzt, man lässt sich ein passendes Gehäuse anfertigen. Zusätzlich ist das Gehäuse ausschlaggebend über den Einsatzzweck. Beispielsweise muss das Gehäuse die Komponenten vor der Witterung schützen wenn der Infopoint draußen steht oder hängt.
 
-### Was ist meine Teilaufgabe?
+### Grundlagen des UI/UX-Designs
 
-Meine Aufgabe ist es mich um die Hardware, das Design die  Konzeption und das Projektmanagement zu kümmern. Dabei habe ich geeignete Hardware gesucht und darüber recherchiert um unsere Kostenpunkte zusammen zu stellen. Im Punkt Design habe ich mir mit dem Tool Adobe XD funktionale Mockups erstellt, um die spätere programmier Arbeit deutlich zu erleichtern. Über diese Mockups ist auch das Design entstanden. Auf Projektmanagement Ebene haben wir uns für "Github Projects" entschieden um unsere Arbeit besser Koordinieren zu können. Gehen wir nun aber in die Details.
+#### Bedeutung von nutzerzentriertem Design
+#### Grundprinzipien (Usability, Accessibility, Informationsarchitektur)
+#### Wireframes, Mockups und Prototypen
+#### Einführung in Adobe XD und seine Einsatzmöglichkeiten
 
-### Recherche 
-- Anforderungen
+### Projektmanagement-Grundlagen
 
-### Funktionale Mockups 
-- Wieso macht man das?
-- Tools 
-- Unterschiede 
-- Auf was was achtet der Nutzer?
-- Was ist UI/UX und die Unterschiede davon?
+#### Projektlebenszyklus in Softwareprojekten
+#### Agile Methoden (Kanban, Scrum) – Überblick
+#### Aufgaben- und Zeitplanung
+#### Verwendung digitaler Tools für Projektorganisation
+#### Risiken und Qualitätsmanagement
 
-### Projektmanagement
-- Wieso macht man das?
-- Tools 
-- Arten vom Projektmanagement
+### Grundlagen zu Deployment & Containerisierung
 
-\todo{Dummy Text}
+#### Herausforderungen beim Deployment auf verschiedener Hardware
+#### Einführung in Virtualisierung und Containerisierung
+#### Docker – Funktionsweise und Vorteile
+#### Images, Container, Volumes & Multi-Container-Setups
+#### Bedeutung für plattformunabhängige Systeme
+
 
 ## Praktische Arbeit
 
@@ -44,44 +65,51 @@ Meine Aufgabe ist es mich um die Hardware, das Design die  Konzeption und das Pr
 
 Die Frage nach der Detailgenauigkeit lässt sich wie folgt beantworten: So, dass man Ihre Aufgabenstellung vollständig  nachvollziehen kann wenn man nur diese Diplomarbeit in Händen hat!
 
-### Messergebnisse
+### Konzeption des Infopoint-Systems
 
-![Ein PNG Bild\label{fig:png_bild}](img/graph.png){width=70%} 
+#### Anforderungen an das System
+#### Zielgruppe und Nutzungsszenarien
+#### Technische Rahmenbedingungen
+#### Gesamtarchitektur des Projekts
 
-Bilder sind so scharf wie möglich darzustellen. Unnötige Dinge (welche für den Leser keine Information liefern) sind wegzuschneiden. Üblicherweise versucht das Framework Bilder möglichst gut und vollflächig in die Seite einzupassen - was aber speziell bei kleinen Bildern keinen Sinn macht. Daher kann man die Breite des Bildes `{width=xx%}` beeinflussen. Generell macht es keinen Sinn reisen Bilder mit dieser Funktion niederzuskalieren, sondern eher die Bilder schon vorher mittels eines Bildbearbeitungsprogrammes niederzurechnen. Damit wird das endgültige PDF nicht so groß.
+### Hardwareauswahl und Kostenanalyse
 
-### Etwas Fliesstext
+#### Evaluierte Hardwarevarianten
+#### Entscheidungsprozess und Bewertungskriterien
+#### Final ausgewählte Hardware
+#### Kostenübersicht und Budgetplanung
 
-We'll put some happy little leaves here and there. Poor old tree. Have fun with it. Isn't that fantastic? You can just push a little tree out of your brush like that.
+### Design und Erstellung der Mockups
 
-Making all those little fluffies that live in the clouds. If there's two big trees invariably sooner or later there's gonna be a little tree. There is no right or wrong - as long as it makes you happy and doesn't hurt anyone. Use absolutely no pressure. Just like an angel's wing. This is the time to get out all your flustrations, much better than kicking the dog around the house or taking it out on your spouse. I guess I'm a little weird. I like to talk to trees and animals. That's okay though; I have more fun than most people.
+#### Vorgehen beim Designprozess
+#### Erstellung der Wireframes in Adobe XD
+#### Entwicklung des finalen UI-Designs
+#### Vorteile der Mockups für die Entwicklung
+#### Beispiele und Screenshots
 
-Do an almighty painting with us. Learn when to stop. Absolutely no pressure. You are just a whisper floating across a mountain. As trees get older they lose their chlorophyll. Clouds are free. They just float around the sky all day and have fun.
+### Projektmanagement in der Umsetzung
 
-Now a hierarchical tree from this repo:
+#### Strukturierung der Aufgaben in GitHub Projects
+#### Arbeitsabläufe und Verteilung im Team
+#### Dokumentation des Fortschritts
+#### Reflexion über die Effektivität der Methode
 
-\dirtree{%
-.1 ./.
-.2 example.
-.3 ....
-.2 style.
-.3 ....
-.2 tools.
-.3 docker.
-.3 github.
-.2 Jenkinsfile.
-.2 Makefile.
-.2 REAMDE.md.
-}
+### Deployment mittels Docker
 
-A fan brush can be your best friend. Sometimes you learn more from your mistakes than you do from your masterpieces. You can bend rivers. But when I get home, the only thing I have power over is the garbage. Don't kill all your dark areas - you need them to show the light. There's nothing wrong with having a tree as a friend.
+#### Aufbau der Docker-Umgebung
+#### Containerisierung des Frontends, Backends und CMS
+#### Multi-Container-Komposition (optional: Docker Compose)
+#### Herausforderungen beim Deployment auf unterschiedlicher Hardware
+#### Optimierungen, Lessons Learned
 
-God gave you this gift of imagination. Use it. Use your imagination, let it go. Put your feelings into it, your heart, it's your world. There's not a thing in the world wrong with washing your brush. Happy painting, God bless. All those little son of a guns.
+### Ergebnis und Funktionsweise des Systems
+#### Vorstellung des fertigen Infopoints
+#### Bedienablauf und Nutzererfahrung
+#### Erfüllung der Anforderungen
 
-I sincerely wish for you every possible joy life could bring. Everybody needs a friend. That's crazy.
+### Fazit und Ausblick
 
-If you don't like it - change it. It's your world. Isn't it great to do something you can't fail at? Play with the angles. See how easy it is to create a little tree right in your world. This piece of canvas is your world. This painting comes right out of your heart.
-
-
-
-
+#### Zusammenfassung der Ergebnisse
+#### Rückblick auf die Projektarbeit
+#### Potenzial für zukünftige Erweiterungen
+#### Persönliche Reflexion
