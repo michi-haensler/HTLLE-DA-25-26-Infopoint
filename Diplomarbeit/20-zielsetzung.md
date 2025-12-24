@@ -18,15 +18,13 @@ Grundsätzlich wollen wir allen Personen an unserer Schule einen Zentralen Punkt
 * mehr Nachhaltigkeit, weniger Zettelwirtschaft
 
 ## Nicht-Ziele
-* ein eigene Hardware bzw. ein Gehäuse zu bauen
+* Zusammensetzung eines eigenen Hardware Systems 
 
-* Lorem Ipsum
+* Anzeige der vollständigen Stundentafel der Lehrpersonen
 
-* Lorem Ipsum
+* Anpassung unseres Systems auf alle Sprachen
 
-* Lorem Ipsum
-
-* Lorem Ipsum
+* Erstellung eines eigenen CMS-Systems
 
 ## Ausblick
 Durch unsere Arbeit geht unsere Schule den nächsten kleinen Schritt in Richtung Nachhaltigkeit. Viele Besucher und neue Schülerinen und Schüler werden sich viel schneller zurrecht finden. Lehrerinnen und Lehrer können jetzt noch viel schneller und effizienter gefunden werden als je zuvor. Alle aktuellen Informationen lassen sich blitzschnell und zentral abrufen.
