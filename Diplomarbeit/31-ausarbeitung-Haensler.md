@@ -26,11 +26,30 @@ Was sind nun die konkreten Aufgaben eines Infopoint-Systems? Grundsätzlich lass
 - **Barrierefreiheit:** Moderne Infopoint-Systeme sind oft so gestaltet, dass sie den Bedürfnissen von Menschen mit Behinderungen gerecht werden. Dies kann durch die Integration von Funktionen wie Sprachausgabe, Bildschirmvergrößerung oder taktilen Eingabemöglichkeiten erreicht werden.
 
 #### Einsatzgebiete und Nutzen in Bildungseinrichtungen
+
+Wie sind oben genannte Aufgaben in Bildungseinrichtungen relevant? Wenn man näher darüber nachdenkt, ist der erste Punkt "Orientierung und Navigation" offensichtlich. Alleine an Tagen der offenen Türe wo viele Besucher durch das Schulgebäude laufen, ist die richtige Kommunikation unverzichtbar. Kaum jemand möchte sich mühsam durch das Gebäude kämpfen nur um am Ende festzustellen, dass man doch nicht alles gesehen hat. Gerade dann sind benutzerfreundliche Anlaufstellen wie Infopoints Gold wert. Dort können Besucher schnell und einfach die gewünschten Informationen finden, ohne lange suchen oder warten zu müssen.
+
+Auch der zweite Punkt "Anzeige aktueller Informationen" ist in Bildungseinrichtungen von großer Bedeutung. Schulen und Universitäten haben oft eine Vielzahl von Veranstaltungen, Kursen und Ankündigungen, die den Schülern und Studenten mitgeteilt werden müssen. Infopoint-Systeme können als zentrale Informationsquelle dienen, um sicherzustellen, dass alle Beteiligten stets über wichtige Neuigkeiten informiert sind. Dies fördert die Kommunikation und das Gemeinschaftsgefühl innerhalb der Bildungseinrichtung. Zusätzlich fördert es die Nachhaltigkeit, da nicht mehr die Pinnwand für eine vilefalt an Aushängen genutzt werden muss. 
+
+
 #### Anforderungen an moderne digitale Informationslösungen
+
+Moderne digitale Informationslösungen müssen eine Reihe von Anforderungen erfüllen, um effektiv und benutzerfreundlich zu sein. Hier sind einige der wichtigsten Anforderungen:
+
+- **Benutzerfreundlichkeit:** Die Systeme sollten intuitiv und einfach zu bedienen sein, damit Nutzer aller Altersgruppen und technischen Fähigkeiten problemlos darauf zugreifen können. Eine klare Navigation, verständliche Symbole und eine logische Struktur sind entscheidend.
+
+- **Zugänglichkeit:** Digitale Informationslösungen sollten barrierefrei gestaltet sein, um Menschen mit unterschiedlichen Fähigkeiten gerecht zu werden. Dies umfasst Funktionen wie Bildschirmleser-Kompatibilität, Tastaturnavigation und Anpassungsmöglichkeiten für Sehbehinderte.
+
+- **Aktualität:** Die bereitgestellten Informationen müssen stets aktuell und relevant sein. Dies erfordert eine einfache Möglichkeit zur Aktualisierung der Inhalte, sei es durch automatisierte Prozesse oder manuelle Eingriffe.
+
+- **Skalierbarkeit:** Die Lösungen sollten in der Lage sein, mit dem Wachstum der Nutzerbasis und den sich ändernden Anforderungen der Bildungseinrichtung mitzuwachsen. Dies kann die Integration neuer Funktionen oder die Erweiterung der Infrastruktur umfassen.
+
+- **Integration:** Moderne Informationssysteme sollten nahtlos in bestehende IT-Infrastrukturen und Softwarelösungen integriert werden können, um einen reibungslosen Informationsfluss zu gewährleisten.
 
 ### Hardware-Grundlagen für Informationssysteme
 
 #### Wichtige Hardwarekomponenten eines Infopoints
+
 Viele haben bestimmt schon einen Infopoint verwendet, doch was steckt eigentlich dahinter? Naja villeicht ich es doch einfacher als man denkt. Grundsätzlich besteht ein Infopoint aus: 
 - Computer 
     - Dieser ist das zentrale Herzstücks eines Infopoints. Dieser ist hauptverantwortlich für die Visualisierung der Inhalte. Auf ihm läuft das Betriebssystem. Je performanter der Computer ist, desto komplexere Inhalte können dargestllet werden. Ein komplexerer Inhalt wäre z.B. ein 3 dimensinaler Raumplan eines Gebäudes.
@@ -42,6 +61,25 @@ Viele haben bestimmt schon einen Infopoint verwendet, doch was steckt eigentlich
     - Das erste was der Benutzer sieht, ist das Gehäuse. Es hält die Komponenten (Computer und Display) zusammen und sorgt dabei für einen schlichten ansprechenden Look. Das Gehäuse sorgt außerdem dafür, dass der Infopoint zur restlichen Inneneinrichtung passt. Vorrausgesetzt, man lässt sich ein passendes Gehäuse anfertigen. Zusätzlich ist das Gehäuse ausschlaggebend über den Einsatzzweck. Beispielsweise muss das Gehäuse die Komponenten vor der Witterung schützen wenn der Infopoint draußen steht oder hängt.
 
 #### Kriterien für die Hardwareauswahl
+
+Bei der Auswahl der Hardware für ein Infopoint-System sind mehrere Kriterien zu berücksichtigen, um sicherzustellen, dass das System den Anforderungen der Bildungseinrichtung gerecht wird, weswegen ich hier einige wichtige Kriterien aufliste:
+
+- **Leistung:** Die Hardware muss ausreichend leistungsfähig sein, um die geplanten Anwendungen und Inhalte reibungslos auszuführen. Dies umfasst die Prozessorleistung, den Arbeitsspeicher und die Grafikkapazitäten.
+
+- **Zuverlässigkeit:** Da Infopoint-Systeme oft rund um die Uhr in Betrieb sind, ist es wichtig, dass die Hardware robust und zuverlässig ist, um Ausfallzeiten zu minimieren.
+
+- **Energieeffizienz:** Energieeffiziente Hardware trägt dazu bei, die Betriebskosten zu senken und die Umweltbelastung zu reduzieren. Dies ist besonders wichtig für Systeme, die dauerhaft in Betrieb sind.
+
+- **Konnektivität:** Die Hardware sollte über ausreichende Anschlussmöglichkeiten verfügen, um eine einfache Integration in das bestehende Netzwerk und die IT-Infrastruktur der Bildungseinrichtung zu gewährleisten.
+
+- **Kosten:** Das Budget der Bildungseinrichtung spielt eine entscheidende Rolle bei der Hardwareauswahl. Es ist wichtig, ein Gleichgewicht zwischen Leistung, Qualität und Kosten zu finden.
+
+- **Wartungsfreundlichkeit:** Die Hardware sollte so ausgewählt werden, dass sie leicht zu warten und zu reparieren ist, um langfristige Betriebskosten zu minimieren.
+
+- **Kompatibilität:** Die Hardware muss mit der geplanten Software und den Betriebssystemen kompatibel sein, um eine reibungslose Integration zu gewährleisten.
+
+- **Zukunftssicherheit:** Es ist ratsam, Hardware zu wählen, die zukünftige Erweiterungen und Upgrades ermöglicht, um den sich ändernden Anforderungen gerecht zu werden.
+
 #### Vergleich relevanter Hardwarekomponenten
 #### Energieverbrauch, Zuverlässigkeit und Wartbarkeit
 #### Kostenfaktoren bei Hardwareprojekten
