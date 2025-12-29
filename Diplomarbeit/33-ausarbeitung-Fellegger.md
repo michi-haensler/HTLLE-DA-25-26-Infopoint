@@ -1,87 +1,119 @@
-# Teilaufgabe Schüler Fellegger Lukas
-\textauthor{Lukas Fellegger}
+# 1. Einführung in den Frontend-Teil
 
-## Theorie
+## 1.1 Frontend-spezifische Ausgangssituation und Problemstellung
 
-### Was ist ein Infopoint?
+Im Rahmen des Gesamtprojekts „Digitaler Infopoint“ kommt dem Frontend eine
+zentrale Rolle zu, da es die Schnittstelle zwischen den bereitgestellten
+Informationen und den Benutzerinnen und Benutzern darstellt. Unabhängig von
+der Qualität der zugrunde liegenden Daten oder der verwendeten Hardware
+entscheidet die Benutzeroberfläche darüber, ob Informationen schnell,
+verständlich und effizient wahrgenommen werden können.
 
-\todo{Weiter Informationen über Infopoints hinzufügen (welche Arten, Anwendungsfälle etc.)}
+Viele bestehende digitale Anzeigesysteme im schulischen Umfeld sind aus
+Frontend-Sicht unzureichend gestaltet. Häufig sind Oberflächen statisch,
+unübersichtlich oder schlecht wartbar. Inhalte werden fest im Quellcode
+hinterlegt oder können nur mit technischem Aufwand geändert werden. Dies führt
+dazu, dass Informationen entweder nicht aktuell sind oder Anpassungen nur mit
+Zeitverzögerung erfolgen können (vgl. @mdn_learn).
 
-Viele haben bestimmt schon einen Infopoint verwendet, doch was steckt eigentlich dahinter? Naja villeicht ich es doch einfacher als man denkt. Grundsätzlich besteht ein Infopoint aus: 
-- Computer 
-    - Dieser ist das zentrale Herzstücks eines Infopoints. Dieser ist hauptverantwortlich für die Visualisierung der Inhalte. Auf ihm läuft das Betriebssystem. Je performater der Computer ist, desto komplexere Inhalte können dargestllet werden. Ein komplexerer Inhalt wäre z.B. ein 3 dimensinaler Raumplan eines Gebäudes.
+Ein weiteres Problem stellt die mangelnde Benutzerfreundlichkeit dar. Gerade
+bei Infopoints, die auf großen Displays im öffentlichen Raum eingesetzt
+werden, sind klare Strukturen, gute Lesbarkeit und eine intuitive Navigation
+entscheidend. Ungeeignete Schriftgrößen, geringe Kontraste oder überladene
+Layouts erschweren die schnelle Informationsaufnahme und mindern den Nutzen
+des Systems erheblich (vgl. @nng_usability).
 
-- Display
-    - Das Display ist das wichtigste Bestandteil unseres Infopoints, es ist nämlich dafür verantwortlich, dass der Endbenutzer zu seinen Informationen kommt. Hier gibt es zwei möglichkeiten. Die erste wäre einen einfachen Bildschirm zu verwenden, welcher statische Inhalte zeigt. Die zweite Möglichkeit wäre einen Touchscreen zu verwenden. Der Vorteil? Der Infopoint wird interaktiv. Das führt zu einer Vielzahl weiteren Möglichkeiten welche man einem Benutzer bieten kann.  
+Aus Frontend-Sicht besteht zudem die Herausforderung, unterschiedliche
+Inhaltstypen wie Texte, Bilder, Lagepläne oder Stundenpläne einheitlich und
+konsistent darzustellen. Ohne ein durchdachtes Komponenten- und
+Designkonzept führt dies schnell zu inkonsistenten Oberflächen und schwer
+wartbarem Code. Eine moderne Frontend-Architektur ist daher notwendig, um eine
+skalierbare, erweiterbare und langfristig wartbare Lösung zu ermöglichen.
 
-- Gehäuse
-    - Das erste was der Benutzer sieht, ist das Gehäuse. Es hält die Komponenten (Computer und Display) zusammen und sorgt dabei für einen schlichten ansprechenden Look. Das Gehäuse sorgt außerdem dafür, dass der Infopoint zur restlichen Inneneinrichtung passt. Vorrausgesetzt, man lässt sich ein passendes Gehäuse anfertigen. Zusätzlich ist das Gehäuse ausschlaggebend über den Einsatzzweck. Beispielsweise muss das Gehäuse die Komponenten vor der Witterung schützen wenn der Infopoint draußen steht oder hängt.
+Diese Ausgangssituation verdeutlicht die Notwendigkeit eines modernen,
+komponentenbasierten Frontends, das dynamische Inhalte aus einem
+Content-Management-System verarbeitet, eine klare Benutzerführung bietet und
+gleichzeitig den Wartungsaufwand reduziert.
 
-### Was ist meine Teilaufgabe?
+## 1.2 Zielsetzung des Frontend-Systems
 
-Meine Aufgabe ist es mich um die Hardware, das Design die  Konzeption und das Projektmanagement zu kümmern. Dabei habe ich geeignete Hardware gesucht und darüber recherchiert um unsere Kostenpunkte zusammen zu stellen. Im Punkt Design habe ich mir mit dem Tool Adobe XD funktionale Mockups erstellt, um die spätere programmier Arbeit deutlich zu erleichtern. Über diese Mockups ist auch das Design entstanden. Auf Projektmanagement Ebene haben wir uns für "Github Projects" entschieden um unsere Arbeit besser Koordinieren zu können. Gehen wir nun aber in die Details.
+Die Zielsetzung des Frontend-Systems besteht darin, eine benutzerfreundliche,
+übersichtliche und technisch wartbare Benutzeroberfläche für den digitalen
+Infopoint bereitzustellen. Das Frontend fungiert dabei als zentrale
+Schnittstelle zwischen den im Hintergrund verwalteten Inhalten und den
+Endnutzerinnen und Endnutzern und hat somit maßgeblichen Einfluss auf die
+Nutzbarkeit des Gesamtsystems.
 
-### Recherche 
-- Anforderungen
+Ein wesentliches Ziel ist die klare und intuitive Darstellung von
+Informationen. Inhalte wie Neuigkeiten, Termine, Lagepläne oder Stundenpläne
+sollen so aufbereitet werden, dass sie auf großen Displays schnell erfasst
+werden können. Dabei liegt der Fokus auf einer klaren Strukturierung, gut
+lesbarer Typografie und einer konsistenten visuellen Gestaltung, um die
+Informationsaufnahme zu erleichtern (vgl. @nng_usability).
 
-### Funktionale Mockups 
-- Wieso macht man das?
-- Tools 
-- Unterschiede 
-- Auf was was achtet der Nutzer?
-- Was ist UI/UX und die Unterschiede davon?
+Darüber hinaus soll das Frontend dynamische Inhalte verarbeiten können, die
+über ein Content-Management-System bereitgestellt werden. Die Inhalte dürfen
+nicht statisch im Quellcode hinterlegt sein, sondern müssen zur Laufzeit
+geladen und dargestellt werden. Dieses Ziel stellt sicher, dass Aktualisierungen
+ohne Änderungen am Frontend-Code möglich sind und der Wartungsaufwand reduziert
+wird (vgl. @contentful_headless).
 
-### Projektmanagement
-- Wieso macht man das?
-- Tools 
-- Arten vom Projektmanagement
+Ein weiteres Ziel des Frontend-Systems ist die technische Wartbarkeit und
+Erweiterbarkeit. Durch eine komponentenbasierte Architektur sollen
+wiederverwendbare UI-Bausteine geschaffen werden, die eine konsistente
+Gestaltung ermöglichen und zukünftige Erweiterungen erleichtern. Neue Seiten
+oder Funktionen sollen mit möglichst geringem Aufwand integrierbar sein (vgl.
+@react_docs).
 
-\todo{Dummy Text}
+Zusätzlich spielt die Performance des Frontends eine zentrale Rolle. Kurze
+Ladezeiten, flüssige Übergänge und ein responsives Verhalten sollen eine
+angenehme Benutzererfahrung gewährleisten. Insbesondere bei einem öffentlich
+zugänglichen Infopoint ist eine stabile und zuverlässige Darstellung der
+Inhalte essenziell (vgl. @webdev_performance).
 
-## Praktische Arbeit
+Zusammenfassend verfolgt das Frontend-System das Ziel, eine moderne,
+benutzerzentrierte und langfristig wartbare Oberfläche bereitzustellen, die
+den Informationszugang im schulischen Umfeld effizient unterstützt und den
+Gesamtnutzen des digitalen Infopoints wesentlich erhöht.
 
-> Hier beschreiben Sie ihren praktischen Teil. Es geht darum seine Implementierung / Versuche so darzustellen dass anhand dieser dre Leser erkennen kann was sie wie gemacht haben.
+## 1.3 Anforderungen an die Web-Oberfläche
 
-Die Frage nach der Detailgenauigkeit lässt sich wie folgt beantworten: So, dass man Ihre Aufgabenstellung vollständig  nachvollziehen kann wenn man nur diese Diplomarbeit in Händen hat!
+Die Web-Oberfläche des digitalen Infopoints muss sowohl funktionale als auch
+nicht-funktionale Anforderungen erfüllen, um den Einsatz im schulischen Umfeld
+zu ermöglichen. Eine zentrale Anforderung ist die klare und übersichtliche
+Darstellung von Informationen. Da der Infopoint in öffentlich zugänglichen
+Bereichen eingesetzt wird, müssen Inhalte schnell erfassbar sein, ohne dass
+eine aktive Interaktion oder längere Beschäftigung mit der Oberfläche
+erforderlich ist.
 
-### Messergebnisse
+Ein wesentlicher Aspekt stellt die Lesbarkeit dar. Schriftgrößen, Kontraste und
+Abstände müssen so gewählt werden, dass Informationen auch aus größerer
+Entfernung gut erkennbar sind. Eine konsistente Typografie sowie ein
+reduziertes, ruhiges Layout tragen wesentlich dazu bei, die visuelle
+Wahrnehmung zu unterstützen und eine Überforderung der Benutzerinnen und
+Benutzer zu vermeiden (vgl. @nng_usability).
 
-![Ein PNG Bild\label{fig:png_bild}](img/graph.png){width=70%} 
+Darüber hinaus muss die Web-Oberfläche dynamisch auf unterschiedliche
+Inhaltstypen reagieren können. Texte, Bilder, Lagepläne oder Stundenpläne
+werden aus einem Content-Management-System geladen und müssen einheitlich
+dargestellt werden. Die Oberfläche darf dabei nicht von festen Inhalten im
+Quellcode abhängig sein, sondern muss flexibel auf Änderungen reagieren können
+(vgl. @contentful_headless).
 
-Bilder sind so scharf wie möglich darzustellen. Unnötige Dinge (welche für den Leser keine Information liefern) sind wegzuschneiden. Üblicherweise versucht das Framework Bilder möglichst gut und vollflächig in die Seite einzupassen - was aber speziell bei kleinen Bildern keinen Sinn macht. Daher kann man die Breite des Bildes `{width=xx%}` beeinflussen. Generell macht es keinen Sinn reisen Bilder mit dieser Funktion niederzuskalieren, sondern eher die Bilder schon vorher mittels eines Bildbearbeitungsprogrammes niederzurechnen. Damit wird das endgültige PDF nicht so groß.
+Auch die Performance ist eine zentrale Anforderung an das Frontend. Die
+Web-Oberfläche soll kurze Ladezeiten aufweisen und flüssig reagieren, um eine
+durchgehend angenehme Benutzererfahrung zu gewährleisten. Insbesondere bei
+bildlastigen Inhalten ist auf eine effiziente Darstellung zu achten, da lange
+Ladezeiten die Akzeptanz des Systems negativ beeinflussen können (vgl.
+@webdev_performance).
 
-### Etwas Fliesstext
+Zusätzlich spielt die Wartbarkeit des Frontends eine entscheidende Rolle. Die
+Web-Oberfläche soll auf einer klaren Komponentenstruktur basieren, sodass
+wiederverwendbare UI-Elemente entstehen. Diese Struktur erleichtert nicht nur
+die Weiterentwicklung, sondern stellt auch sicher, dass Design- und
+Funktionsanpassungen konsistent umgesetzt werden können (vgl. @react_docs).
 
-We'll put some happy little leaves here and there. Poor old tree. Have fun with it. Isn't that fantastic? You can just push a little tree out of your brush like that.
-
-Making all those little fluffies that live in the clouds. If there's two big trees invariably sooner or later there's gonna be a little tree. There is no right or wrong - as long as it makes you happy and doesn't hurt anyone. Use absolutely no pressure. Just like an angel's wing. This is the time to get out all your flustrations, much better than kicking the dog around the house or taking it out on your spouse. I guess I'm a little weird. I like to talk to trees and animals. That's okay though; I have more fun than most people.
-
-Do an almighty painting with us. Learn when to stop. Absolutely no pressure. You are just a whisper floating across a mountain. As trees get older they lose their chlorophyll. Clouds are free. They just float around the sky all day and have fun.
-
-Now a hierarchical tree from this repo:
-
-\dirtree{%
-.1 ./.
-.2 example.
-.3 ....
-.2 style.
-.3 ....
-.2 tools.
-.3 docker.
-.3 github.
-.2 Jenkinsfile.
-.2 Makefile.
-.2 REAMDE.md.
-}
-
-A fan brush can be your best friend. Sometimes you learn more from your mistakes than you do from your masterpieces. You can bend rivers. But when I get home, the only thing I have power over is the garbage. Don't kill all your dark areas - you need them to show the light. There's nothing wrong with having a tree as a friend.
-
-God gave you this gift of imagination. Use it. Use your imagination, let it go. Put your feelings into it, your heart, it's your world. There's not a thing in the world wrong with washing your brush. Happy painting, God bless. All those little son of a guns.
-
-I sincerely wish for you every possible joy life could bring. Everybody needs a friend. That's crazy.
-
-If you don't like it - change it. It's your world. Isn't it great to do something you can't fail at? Play with the angles. See how easy it is to create a little tree right in your world. This piece of canvas is your world. This painting comes right out of your heart.
-
-
-
-
+Zusammenfassend ergeben sich für die Web-Oberfläche Anforderungen an
+Übersichtlichkeit, Lesbarkeit, Dynamik, Performance und Wartbarkeit, die
+gemeinsam die Grundlage für ein benutzerfreundliches und zukunftssicheres
+Frontend des digitalen Infopoints bilden.
