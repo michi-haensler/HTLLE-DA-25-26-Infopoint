@@ -80,16 +80,80 @@ Bei der Auswahl der Hardware für ein Infopoint-System sind mehrere Kriterien zu
 
 - **Zukunftssicherheit:** Es ist ratsam, Hardware zu wählen, die zukünftige Erweiterungen und Upgrades ermöglicht, um den sich ändernden Anforderungen gerecht zu werden.
 
-#### Vergleich relevanter Hardwarekomponenten
+#### Vergleich relevanter Hardwarekomponenten (ToDo)
+
+| Komponente        | Option A               | Option B               | Option C               |
+|-------------------|------------------------|------------------------|------------------------|
+| Computer          | Mini-PC (Intel NUC)    | All-in-One PC          | Raspberry Pi 4         |
+| Display           | 24" Touchscreen        | 27" Monitor            | 32" Touchscreen        |
+| Gehäuse           | Standardgehäuse        | Wetterfestes Gehäuse   | Designgehäuse          |
+| Leistung          | Hoch                   | Mittel                 | Niedrig                |
+| Kosten            | Hoch                   | Mittel                 | Niedrig                |
+| Energieverbrauch  | Mittel                 | Hoch                   | Sehr niedrig           |
+
 #### Energieverbrauch, Zuverlässigkeit und Wartbarkeit
+
+Bei der Auswahl der Hardware für ein Infopoint-System sind Energieverbrauch, Zuverlässigkeit und Wartbarkeit entscheidende Faktoren, welche sich langfristig auf Effizienz und die Betriebskosten des Systems auswirken. Sollten die Effizienz und die Betriebskosten nicht beachtet werden, kann dies zu unerwartet hohen Kosten und Ausfallzeiten führen, was sich negativ auf die Nutzung des Geräts auswirkt. Wenn etwas nämlich nicht gut funktioniert, wird es vom Endverbraucher kaum benutzt und ist für die Institution eine reine Kostenstelle. Im Folgenden werden diese drei Aspekte näher erläutert:
+
+- **Energieverbrauch:** Ein niedriger Energieverbrauch ist wichtig, um die Betriebskosten zu minimieren und die Umweltbelastung zu reduzieren. Energieeffiziente Komponenten wie stromsparende Computer und Displays sollten bevorzugt werden. Dies ist besonders relevant für Infopoint-Systeme, die rund um die Uhr in Betrieb sind. Die Verwendung von Energiesparmodi und automatischen Abschaltfunktionen kann ebenfalls dazu beitragen, den Energieverbrauch zu senken.
+
+- **Zuverlässigkeit:** Die Hardware muss robust und langlebig sein, um Ausfallzeiten zu minimieren. Komponenten mit hoher Zuverlässigkeit, wie z.B. industrielle Grade SSDs anstelle von herkömmlichen Festplatten, tragen dazu bei, die Lebensdauer des Systems zu verlängern und Wartungsaufwand zu reduzieren.
+
+- **Wartbarkeit:** Die Hardware sollte so ausgewählt werden, dass sie leicht zu warten und zu reparieren ist. Modular aufgebaute Systeme ermöglichen einen einfachen Austausch defekter Komponenten. Zudem sollte die Verfügbarkeit von Ersatzteilen und Support berücksichtigt werden. Außerdem ist es für künftige Erweiterungen von Vorteil, wenn die Hardware leicht aufgerüstet bzw. umgebaut werden kann.
+
 #### Kostenfaktoren bei Hardwareprojekten
+
+Bei Hardwareprojekten spielen verschiedene Kostenfaktoren eine entscheidende Rolle, die sorgfältig berücksichtigt werden müssen, um das Budget einzuhalten und die Wirtschaftlichkeit des Projekts zu gewährleisten. Im Folgenden werden die wichtigsten Kostenfaktoren erläutert:
+
+- **Anschaffungskosten:** Dies umfasst die Kosten für den Kauf der Hardwarekomponenten wie Computer, Displays, Gehäuse und Zubehör. Es ist wichtig, qualitativ hochwertige Komponenten zu wählen, die den Anforderungen des Projekts entsprechen, ohne das Budget zu überschreiten.
+
+- **Installationskosten:** Diese Kosten entstehen durch die Installation und Einrichtung der Hardware. Dazu gehören Arbeitskosten für Techniker, die die Komponenten zusammenbauen, konfigurieren und testen.
+
+- **Betriebskosten:** Laufende Kosten wie Stromverbrauch, Wartung und Reparaturen fallen während der Lebensdauer des Systems an. Energieeffiziente Hardware kann dazu beitragen, diese Kosten zu minimieren. Zusätzlich ist eine regelmäßige Wartung erforderlich, um die Zuverlässigkeit und Leistung der Hardware zu gewährleisten. Dies umfasst Kosten für Inspektionen, Software-Updates und den Austausch von Verschleißteilen.
+
+- **Schulungskosten:** Falls das Personal geschult werden muss, um die Hardware zu bedienen oder zu warten, sollten auch diese Kosten berücksichtigt werden. Bestenfalls ist das System aber so benutzerfreundlich und gut dokumentiert, dass kaum Schulungsaufwand nötig ist.
 
 ### Grundlagen des UI/UX-Designs
 
 #### Bedeutung von nutzerzentriertem Design
+
+Nutzerzentriertes Design (User-Centered Design, UCD) ist ein Ansatz im Designprozess, welcher den Fokus auf die Bedürfnisse, Erwartungen und Einschränkungen des Endbenutzers legt. Dieser Ansatz ist besonders wichtig bei der Entwicklung von Informationssystemen wie Infopoints, da diese direkt von einer Vielzahl von Nutzern verwendet und verstanden werden müssen. Die Bedeutung von nutzerzentriertem Design lässt sich wie folgt zusammenfassen:
+
+- **Verbesserte Benutzererfahrung:** Durch die Berücksichtigung der Nutzerbedürfnisse wird sichergestellt, dass das System intuitiv und einfach zu bedienen ist. Dies führt zu einer positiven Benutzererfahrung, welche die Akzeptanz und Nutzung des Systems positiv beeinflusst. Das heißt, dass der Benutzer mit einem Blick versteht wie er zu seinen Informationen kommt, ohne lange suchen zu müssen.
+
+- **Erhöhte Effizienz:** Ein nutzerzentriertes Design ermöglicht es den Benutzern, ihre Aufgaben schneller und effizienter zu erledigen. Dies ist besonders wichtig in Bildungseinrichtungen, wo Zeit oft knapp ist. Das heißt, wichtige Funktionen und Informationen sind sollten mit nur wenigen Klick erreichbar sein. Keiner möchte sich ewig durch unendliche Menüs klicken nur um eine Stundentafel zu finden.
+
+- **Reduzierte Fehlerquote:** Wenn das Design auf die Fähigkeiten und Erwartungen der Nutzer abgestimmt ist, werden Fehler bei der Bedienung minimiert. Dies führt zu einer reibungsloseren Nutzung des Systems. 
+
+- **Höhere Zufriedenheit:** Nutzer, die ein System als benutzerfreundlich und nützlich empfinden, sind eher zufrieden und bereit, es regelmäßig zu verwenden. Dies trägt zur langfristigen Nutzung und zum Erfolg des Infopoint-Systems bei.
+
 #### Grundprinzipien (Usability, Accessibility, Informationsarchitektur)
+
+- **Usability (Benutzerfreundlichkeit):** Usability bezieht sich darauf, wie einfach und effizient ein Benutzer ein System nutzen kann, um seine Ziele zu erreichen. Ein benutzerfreundliches Design sollte klar strukturierte Navigation, verständliche Symbole und eine logische Anordnung der Inhalte bieten. Es sollte auch durchgängig gleich gestaltet und aufgebaut sein, damit Benutzer schnell lernen können, wie sie das System bedienen.
+
+- **Accessibility (Barrierefreiheit):** Barrierefreiheit stellt sicher, dass das System für alle Benutzer zugänglich ist, einschließlich Menschen mit Behinderungen. Dies umfasst die Integration von Funktionen wie Bildschirmleser-Kompatibilität, Tastaturnavigation und Anpassungsmöglichkeiten für Sehbehinderte. Ein barrierefreies Design gewährleistet, dass niemand aufgrund von physischen oder kognitiven Einschränkungen ausgeschlossen wird.
+
+- **Informationsarchitektur:** Die Informationsarchitektur bezieht sich auf die Organisation und Strukturierung der Inhalte innerhalb des Systems. Eine gut durchdachte Informationsarchitektur erleichtert es den Benutzern, die benötigten Informationen schnell zu finden. Dies umfasst die Kategorisierung von Inhalten, die Erstellung von Navigationsstrukturen und die Verwendung von Suchfunktionen.
+
 #### Wireframes, Mockups und Prototypen
+
+- **Wireframes:** Wireframes sind einfache, schematische Darstellungen der Benutzeroberfläche eines Systems. Sie konzentrieren sich auf die grundlegende Struktur und Anordnung der Elemente, ohne sich auf Designaspekte wie Farben oder Grafiken zu konzentrieren. Wireframes dienen dazu, die Funktionalität und Navigation des Systems zu planen und zu testen.
+
+- **Mockups:** Mockups sind detailliertere visuelle Darstellungen der Benutzeroberfläche, die das endgültige Design und Layout des Systems zeigen. Sie enthalten Farben, Grafiken und typografische Elemente, um einen realistischen Eindruck davon zu vermitteln, wie das fertige System aussehen wird. Mockups helfen dabei, Designentscheidungen zu treffen und Feedback von Stakeholdern einzuholen.
+
+- **Prototypen:** Prototypen sind interaktive Modelle des Systems, die es den Benutzern ermöglichen, durch die Benutzeroberfläche zu navigieren und Funktionen zu testen. Prototypen können von einfachen klickbaren Wireframes bis hin zu voll funktionsfähigen Modellen reichen. Sie sind ein wertvolles Tool, um die Benutzererfahrung zu testeb und Verbesserungen vorzunehmen, bevor das System final entwickelt wird.
+
 #### Einführung in Adobe XD und seine Einsatzmöglichkeiten
+
+Adobe XD ist ein leistungsstarkes Design- und Prototyping-Tool, das speziell für die Erstellung von Benutzeroberflächen jeglicher Art entwickelt wurde. Das umfasst die Gestaltung von Webseiten, mobilen Apps und anderen digitalen Produkten. Die Möglichkeiten sind grenzenlos. Es bietet eine Vielzahl von Funktionen, die es Designern ermöglichen, Wireframes, Mockups und interaktive Prototypen effizient zu erstellen. Im Anschluss erläutere ich die wichtigsten Einsatzmöglichkeiten von Adobe XD:
+
+- **Design von Benutzeroberflächen:** Adobe XD bietet eine intuitive Benutzeroberfläche und eine Vielzahl von Designwerkzeugen, mit denen Designer ansprechende und funktionale Benutzeroberflächen erstellen können. Es unterstützt Vektor- und Rastergrafiken, was eine hohe Flexibilität bei der Gestaltung ermöglicht. Zusätzlich gibt es vorgefertigte UI-Kits und Designvorlagen, die den Designprozess beschleunigen können. Außerdem gibt es eine Anbindung an die Adobe Creative Cloud, wodurch Designer problemlos auf andere Adobe-Tools wie Photoshop und Illustrator zugreifen können, um Grafiken zu erstellen und zu bearbeiten.
+
+- **Erstellung von Wireframes und Mockups:** Mit Adobe XD können Designer schnell Wireframes und detaillierte Mockups erstellen. Die Drag-and-Drop-Funktionalität erleichtert das Platzieren und Anordnen von Elementen auf der Leinwand. 
+
+- **Prototyping:** Adobe XD ermöglicht die Erstellung interaktiver Prototypen, die es Designern und Stakeholdern ermöglichen, die Benutzererfahrung zu testen. Designer können Übergänge, Animationen und Interaktionen hinzufügen, um ein realistisches Nutzungserlebnis zu simulieren.
+
+- **Kollaboration:** Adobe XD unterstützt die Zusammenarbeit im Team, indem es Designern ermöglicht, ihre Arbeiten in Echtzeit zu teilen und Feedback von anderen Teammitgliedern oder Stakeholdern einzuholen. Dies fördert eine effiziente Kommunikation und erleichtert den Designprozess um ein Vielfaches.
 
 ### Projektmanagement-Grundlagen
 

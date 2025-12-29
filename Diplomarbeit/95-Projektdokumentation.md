@@ -1,55 +1,6 @@
 \newpage
 ## Dokumentation
 
-Im Abschnitt Projektdokumentation können Sie mit Hilfe eines Projektmanagementwerkzeuges Ihrer Wahl die Projektumsetzung dokumentieren. (Also ein fortlaufender Projektfortschrittsbericht)
-
-Normalerweise werden Sie die UserStories in mehrere SubTasks zerreissen und dann in einem agilen verfahen (Scrum, Kanban, was auch immer ihnen am geeignetsten erscheint) abarbeiten. Dazu können Sie natürlich eine Softwahre Ihrer Wahl verwenden.
-
-Am Ende sollten sie aber für jeden Projektabschnitt (Das ist die Zeit zwischen den Meilensteinen) eine Dokumentation entstehen aus der ersichtlich ist
-
-* Berichtszeitraum
-* Durchgeführte Arbeiten im Berichtszeitraum sowie die Aufwände der einzelnen Personen
-* Projektstatus (Im Plan, Schwierigkeiten, Risiko)
-* Gesamtstatus sowie die möglicherweise notwendigen Maßnahmen für
-    - Leistungsziele
-    - Terminziele
-    - Kostenziele
-    - Teamarbeit
-* Nächste Schritte und notwendige Entscheidungen
-
-Im folgenden Abschnitt ist ein solcher Fortschritt illustriert. 
-
-### Projektfortschritt bis 05. August 2020
-
-#### Gesamtstatus
-
-* Das Projekt befindet sich derzeit im Plan. 
-* Es wurden alle Teile bestellt und die Hardware dimensioniert
-* Bei den Lieferungen hat es leichte Verspätungen gegeben
-
-
-| Dimension           | Status            |  Maßnahmen             |
-|:--------------------|:------------------|:-----------------------|
-| Leistungsziele      | In Ordnung        | keine                  |
-| Terminziele         | Verzug durch Lieferprobleme | Bei restlichen Teilen Expresslieferung|
-| Kostenziele | Teile im Budget, Batterie sehr teuer | Günstigere Teile bei der restlichen Hardware verwenden |
-| Teamarbeit | optimal | keine |
-
-:Projektstatus am 2020-08-05
-
-#### Notwendige Entscheidungen
-
-* Die Zusammenbauphase muss etwas verschoben werden und startet nun um 14 Tage später. Das hat keinen Einfluss auf den Endtermin.
-
-#### Nächste Schritte
-
-* Abklären ob die Expressbestellungen im Budget sind
-* Start dder Implementierungsphase
-
-: Projektstatus Stand 05. August 2020
-
----------------- Tutorial END -----------------
-
 ### Projektfortschritt bis 05. September 2025
 
 #### Gesamtstatus: im Plan
@@ -83,7 +34,6 @@ Im folgenden Abschnitt ist ein solcher Fortschritt illustriert.
 
 : Projektstatus Stand 05. September 2025
 
------------------------------------------------------------
 
 ### Projektfortschritt 05. September bis 19. September 2025
 
@@ -103,9 +53,9 @@ Im folgenden Abschnitt ist ein solcher Fortschritt illustriert.
 #### durchgeführte Arbeiten im Berichtszeitraum
 | durchgeführte Arbeit              | zeitlicher Aufwand.  | Teammitglied           |    
 |:----------------------------------|:---------------------|:-----------------------|
-| Recherche Infopoint Lösungen      | 19h                  | Hänsler Michael        |
-| Erstellung Dokumentation          | 3h                   | Hänsler Michael        |
-| Projektmanagement                 | 8h                   | Hänsler Michael        |
+| Recherche Infopoint Lösungen      | 19h                  | Michael Hänsler        |
+| Erstellung Dokumentation          | 3h                   | Michael Hänsler        |
+| Projektmanagement                 | 8h                   | Michael Hänsler        |
 
 #### Notwendige Entscheidungen
 
@@ -118,7 +68,6 @@ Im folgenden Abschnitt ist ein solcher Fortschritt illustriert.
 
 : Projektstatus Stand 19. September 2025
 
------------------------------------------------------------
 
 ### Projektfortschritt 19. September bis 25. September 2025
 
@@ -140,9 +89,9 @@ Im folgenden Abschnitt ist ein solcher Fortschritt illustriert.
 
 | durchgeführte Arbeit              | zeitlicher Aufwand.  | Teammitglied           |    
 |:----------------------------------|:---------------------|:-----------------------|
-| Erstellung funktionaler Mockups   | 32h                  | Hänsler Michael        |
+| Erstellung funktionaler Mockups   | 32h                  | Michael Hänsler        |
 | Unterstützung im Design Prozess   | 8h                   | Lukas Fellegger        |
-| Projektmanagement                 | 3h                   | Hänsler Michael        |
+| Projektmanagement                 | 3h                   | Michael Hänsler        |
 | Technologie Auswahl und Recherche | 5h                   | Simon Moser            |
 | Technologie Auswahl und Recherche | 5h                   | Lukas Fellegger        |
 
@@ -155,7 +104,6 @@ Im folgenden Abschnitt ist ein solcher Fortschritt illustriert.
 
 : Projektstatus Stand 25. September 2025
 
------------------------------------------------------------
 
 ### Projektfortschritt 25. September bis 13. Oktober 2025 
 
@@ -177,8 +125,8 @@ Im folgenden Abschnitt ist ein solcher Fortschritt illustriert.
 |:------------------------------------|:---------------------|:-----------------------|
 | Implementierung Frontend Rohversion | 50h                  | Lukas Fellegger        |
 | Implementierung Backend Rohversion  | 50h                  | Simon Moser            |
-| Unterstützung Implementierung       | 5h                   | Hänsler Michael        |
-| Projektmanagement                   | 1h                   | Hänsler Michael        |
+| Unterstützung Implementierung       | 5h                   | Michael Hänsler        |
+| Projektmanagement                   | 1h                   | Michael Hänsler        |
 
 #### Notwendige Entscheidungen
 
@@ -189,7 +137,6 @@ Im folgenden Abschnitt ist ein solcher Fortschritt illustriert.
 
 : Projektstatus Stand 13. Oktober 2025
 
------------------------------------------------------------
 
 ### Projektfortschritt 13. Oktober bis 20. Oktober 2025
 
@@ -210,7 +157,7 @@ Im folgenden Abschnitt ist ein solcher Fortschritt illustriert.
 |:------------------------------------|:---------------------|:-----------------------|
 | Anbindung CMS System                | 20h                  | Simon Moser            |
 | Unterstützung CMS Anbindung         | 5h                   | Lukas Fellegger        |
-| Projektmanagement                   | 1h                   | Hänsler Michael        |
+| Projektmanagement                   | 1h                   | Michael Hänsler        |
 
 #### Notwendige Entscheidungen
 * Zusätzliche Zeit für die CMS Anbindung nehmen.
@@ -221,7 +168,6 @@ Im folgenden Abschnitt ist ein solcher Fortschritt illustriert.
 
 : Projektstatus Stand 20. Oktober 2025
 
------------------------------------------------------------
 
 ### Projektfortschritt 20. Oktober bis 27. Oktober 2025
 
@@ -241,9 +187,9 @@ Im folgenden Abschnitt ist ein solcher Fortschritt illustriert.
 | durchgeführte Arbeit                       | zeitlicher Aufwand.  | Teammitglied                  |    
 |:-------------------------------------------|:---------------------|:------------------------------|
 | Fertigstellung CMS Anbindung               | 10h                  | Simon Moser                   |
-| Beginn Vereinigung Frontend und Backend    | 10h                  | Lukas Fellegger & Simon Moser |
-| Unterstützung Vereinigung                  | 5h                   | Hänsler Michael               |
-| Projektmanagement                          | 1h                   | Hänsler Michael               |
+| Beginn Vereinigung Frontend und Backend    | 15h                  | Lukas Fellegger & Simon Moser |
+| Unterstützung Vereinigung                  | 5h                   | Michael Hänsler               |
+| Projektmanagement                          | 1h                   | Michael Hänsler               |
 
 #### Notwendige Entscheidungen
 * Zeitplan anpassen und zusätzliche Pufferzeit einplanen.
@@ -254,5 +200,72 @@ Im folgenden Abschnitt ist ein solcher Fortschritt illustriert.
 
 : Projektstatus Stand 27. Oktober 2025
 
------------------------------------------------------------
+
+### Projektfortschritt 27. Oktober bis 10. November 2025
+
+#### Gesamtstatus: verzögert
+* Das Projekt ist derzeit aufgrund der Anbindung von WebUntis verzögert.
+
+| Dimension           | Status            |  Maßnahmen
+|:--------------------|:------------------|:---------------------------------------------|
+| Leistungsziele      | verzögert         | zusätzliche Zeit für WebUntis Anbindung einplanen |
+| Terminziele         | verzögert         | Zeitplan anpassen                            |
+| Kostenziele         | In Ordnung        | keine                                        |
+| Teamarbeit          | optimal           | keine                                        |  
+
+:Projektstatus am 2025-11-10
+
+#### durchgeführte Arbeiten im Berichtszeitraum
+| durchgeführte Arbeit                       | zeitlicher Aufwand.  | Teammitglied                  |    
+|:-------------------------------------------|:---------------------|:------------------------------|
+| Anbindung WebUntis                         | 15h                  | Simon Moser                   |
+| Unterstützung WebUntis Anbindung           | 2h                   | Lukas Fellegger               |
+| Unterstützung WebUntis Anbindung           | 3h                   | Michael Hänsler               |
+| Projektmanagement                          | 1h                   | Michael Hänsler               |
+| Erstellung Präsentation                    | 2h                   | Michael Hänsler & Lukas Fellegger |
+
+#### Notwendige Entscheidungen
+* Zeitplan anpassen und zusätzliche Pufferzeit einplanen.
+
+#### Nächste Schritte
+* Fertigstellung der Anbindung von WebUntis
+* Deployment auf Gerät
+* Testphase starten
+
+: Projektstatus Stand 10. November 2025
+
+### Projektfortschritt 10. November bis 17. November 2025
+
+#### Gesamtstatus: verzögert
+* Das Projekt ist derzeit aufgrund der WebUntis Anbindung verzögert.
+
+| Dimension           | Status            |  Maßnahmen
+|:--------------------|:------------------|:---------------------------------------------|
+| Leistungsziele      | verzögert         | zusätzliche Zeit für WebUntis Anbindung einplanen |
+| Terminziele         | verzögert         | Zeitplan anpassen                            |
+| Kostenziele         | In Ordnung        | keine                                        |
+| Teamarbeit          | optimal           | keine                                        |
+
+:Projektstatus am 2025-11-17
+
+#### durchgeführte Arbeiten im Berichtszeitraum
+| durchgeführte Arbeit                       | zeitlicher Aufwand.  | Teammitglied                  |    
+|:-------------------------------------------|:---------------------|:------------------------------|
+| Anbindung WebUntis                         | 10h                  | Simon Moser                   |
+| Deployment Überlegung auf Gerät            | 5h                   | Michael Hänsler               |
+| Erweiterung des Frontends                  | 8h                   | Lukas Fellegger               |
+| Projektmanagement                          | 1h                   | Michael Hänsler               |
+
+#### Notwendige Entscheidungen
+* Zeitplan anpassen und zusätzliche Pufferzeit einplanen.
+
+#### Nächste Schritte 
+* Fertigstellung der Anbindung von WebUntis
+* Deployment auf Gerät
+* Testphase starten
+
+: Projektstatus Stand 17. November 2025
+
+
+
 
