@@ -1,6 +1,9 @@
-# 1. Einführung in den Frontend-Teil
+# Teilaufgabe Schüler Lukas Fellegger
+\textauthor{Lukas Fellegger}
 
-## 1.1 Frontend-spezifische Ausgangssituation und Problemstellung
+## Einführung in den Frontend-Teil
+
+### Frontend-spezifische Ausgangssituation und Problemstellung
 
 Im Rahmen des Gesamtprojekts „Digitaler Infopoint“ kommt dem Frontend eine
 zentrale Rolle zu, da es die Schnittstelle zwischen den bereitgestellten
@@ -35,7 +38,7 @@ komponentenbasierten Frontends, das dynamische Inhalte aus einem
 Content-Management-System verarbeitet, eine klare Benutzerführung bietet und
 gleichzeitig den Wartungsaufwand reduziert.
 
-## 1.2 Zielsetzung des Frontend-Systems
+### Zielsetzung des Frontend-Systems
 
 Die Zielsetzung des Frontend-Systems besteht darin, eine benutzerfreundliche,
 übersichtliche und technisch wartbare Benutzeroberfläche für den digitalen
@@ -71,7 +74,7 @@ angenehme Benutzererfahrung gewährleisten. Insbesondere bei einem öffentlich
 zugänglichen Infopoint ist eine stabile und zuverlässige Darstellung der
 Inhalte essenziell (vgl. @webdev_performance).
 
-## 1.3 Anforderungen an die Web-Oberfläche
+### Anforderungen an die Web-Oberfläche
 
 Die Web-Oberfläche des digitalen Infopoints muss sowohl funktionale als auch
 nicht-funktionale Anforderungen erfüllen, um den Einsatz im schulischen Umfeld
@@ -108,9 +111,9 @@ wiederverwendbare UI-Elemente entstehen. Diese Struktur erleichtert nicht nur
 die Weiterentwicklung, sondern stellt auch sicher, dass Design- und
 Funktionsanpassungen konsistent umgesetzt werden können (vgl. @react_docs).
 
-# 2. Grundlagen moderner Webentwicklung
+## Grundlagen moderner Webentwicklung
 
-## 2.1 Client-Server-Modell aus Frontend-Sicht
+### Client-Server-Modell aus Frontend-Sicht
 
 Das Client-Server-Modell bildet die grundlegende Architektur moderner
 Webanwendungen und ist auch für das Frontend des digitalen Infopoints von
@@ -141,7 +144,7 @@ vollständiger Seitenneuladevorgang notwendig ist. Dadurch können Informationen
 jederzeit aktuell gehalten werden, ohne den laufenden Betrieb des Infopoints
 zu unterbrechen.
 
-## 2.2 REST-Architektur und API-Kommunikation aus Frontend-Sicht
+### REST-Architektur und API-Kommunikation aus Frontend-Sicht
 
 Für die Kommunikation zwischen Frontend und Backend des digitalen Infopoints
 kommt eine REST-basierte Architektur zum Einsatz. REST (Representational State
@@ -172,7 +175,7 @@ notwendig sind. Das Frontend übernimmt lediglich die Aufgabe, die empfangenen
 Daten korrekt darzustellen und auf Fehler- oder Ladezustände angemessen zu
 reagieren.
 
-## 2.3 Single Page Applications (SPA)
+### Single Page Applications (SPA)
 
 Single Page Applications (SPA) stellen ein zentrales Konzept moderner
 Frontend-Entwicklung dar und bilden die technische Grundlage für das Frontend
@@ -204,7 +207,7 @@ Termine oder Lagepläne können dynamisch aktualisiert werden, ohne dass der
 laufende Betrieb unterbrochen wird. Gleichzeitig ermöglicht die SPA-Struktur
 eine einfache Erweiterung um zusätzliche Seiten oder Funktionen.
 
-## 2.4 Vorteile moderner Frontends im Schulbetrieb
+### Vorteile moderner Frontends im Schulbetrieb
 
 Der Einsatz moderner Frontend-Technologien bietet im schulischen Umfeld
 zahlreiche Vorteile, insbesondere im Zusammenhang mit digitalen
@@ -241,9 +244,9 @@ Aushängen und Informationsblättern reduziert werden. Dies senkt nicht nur den
 Materialverbrauch, sondern vereinfacht auch die Aktualisierung von Inhalten,
 da Änderungen zentral vorgenommen werden können.
 
-# 3. React als technologische Grundlage des Frontends
+## React als technologische Grundlage des Frontends
 
-## 3.1 Auswahl des Frontend-Frameworks
+### Auswahl des Frontend-Frameworks
 
 Für die Umsetzung des Frontends des digitalen Infopoints wurde ein modernes
 JavaScript-Framework benötigt, das eine komponentenbasierte Entwicklung,
@@ -273,7 +276,7 @@ sondern nur zu gezielten Aktualisierungen der betroffenen Komponenten. Dies
 trägt wesentlich zur Performance bei und ist insbesondere für einen
 dauerhaft laufenden Infopoint von Bedeutung (vgl. @react_vdom).
 
-## 3.2 Komponentenbasierte Architektur in React
+### Komponentenbasierte Architektur in React
 
 Ein zentrales Konzept von React ist die komponentenbasierte Architektur. Dabei
 wird die Benutzeroberfläche nicht als monolithische Einheit entwickelt,
@@ -309,7 +312,7 @@ Strukturen grundlegend verändern zu müssen. Dies trägt wesentlich zur
 Skalierbarkeit und Zukunftssicherheit des Frontend-Systems bei (vgl.
 @component_architecture).
 
-## 3.3 State-Management im React-Frontend
+### State-Management im React-Frontend
 
 Ein zentrales Element moderner Frontend-Anwendungen ist das State-Management.
 Der sogenannte „State“ beschreibt dabei den aktuellen Zustand einer
@@ -348,7 +351,7 @@ angemessenes Feedback zu geben. Eine klare Trennung zwischen Ladezustand,
 Fehlerzustand und erfolgreicher Datenanzeige trägt wesentlich zur Stabilität
 und Benutzerfreundlichkeit des Frontends bei.
 
-## 3.4 Routing und Navigation im React-Frontend
+### Routing und Navigation im React-Frontend
 
 Für die Strukturierung und Navigation innerhalb des Frontends des digitalen
 Infopoints ist ein clientseitiges Routing erforderlich. Da die Anwendung als
@@ -381,7 +384,7 @@ Navigationskonzept ausreichend. Die Anzahl der verfügbaren Seiten ist
 Dies minimiert die Komplexität des Frontends und trägt dazu bei, dass
 Informationen schnell gefunden werden können.
 
-## 3.5 Datenbindung und Rendering in React
+### Datenbindung und Rendering in React
 
 Ein zentrales Merkmal von React ist die enge Verknüpfung von Daten und
 Benutzeroberfläche. Änderungen an den zugrunde liegenden Daten führen
@@ -416,7 +419,7 @@ erforderlich sind. Dieses Verfahren trägt wesentlich zur Performance bei und
 ist insbesondere für Anwendungen relevant, die dauerhaft in Betrieb sind
 (vgl. @react_vdom).
 
-## 3.6 Styling und UI-Gestaltung im React-Frontend
+### Styling und UI-Gestaltung im React-Frontend
 
 Die visuelle Gestaltung der Benutzeroberfläche spielt eine zentrale Rolle für
 die Akzeptanz und Nutzbarkeit des digitalen Infopoints. Aus Frontend-Sicht
@@ -452,9 +455,9 @@ Darstellungsregeln direkt an den jeweiligen Komponenten verankert sein. Dieser
 Ansatz erleichtert die Pflege des Designs und unterstützt eine konsistente
 Weiterentwicklung der Benutzeroberfläche.
 
-# 4. Praktische Umsetzung des Frontends
+## Praktische Umsetzung des Frontends
 
-## 4.1 Projektsetup und Entwicklungsumgebung
+### Projektsetup und Entwicklungsumgebung
 
 Zu Beginn der praktischen Umsetzung des Frontends wurde eine geeignete
 Projektstruktur geschaffen, die eine übersichtliche Entwicklung und eine
@@ -487,7 +490,7 @@ eine durchdachte Projektstruktur sind entscheidend, um die Anforderungen des
 digitalen Infopoints effizient umsetzen und das Frontend langfristig pflegen
 zu können.
 
-## 4.2 Projekt- und Ordnerstruktur des Frontends
+### Projekt- und Ordnerstruktur des Frontends
 
 Eine klare und nachvollziehbare Projekt- und Ordnerstruktur ist eine zentrale
 Voraussetzung für die Wartbarkeit und Erweiterbarkeit des Frontends. Bereits zu
@@ -522,7 +525,7 @@ Frontend in strukturierter Form zur Verfügung. Durch diese Abstraktion bleibt
 die Darstellungsebene vom technischen Zugriff auf externe Datenquellen
 getrennt.
 
-## 4.3 Umsetzung der Navigation und des Routings
+### Umsetzung der Navigation und des Routings
 
 Die Navigation stellt ein zentrales Element des Frontends dar, da sie den
 Benutzerinnen und Benutzern den Zugriff auf die verschiedenen Funktionen des
@@ -555,7 +558,7 @@ Grundlage für die Benutzerfreundlichkeit des Frontends. Durch eine klare
 Struktur, kurze Reaktionszeiten und eine konsistente Darstellung wird der
 digitale Infopoint den Anforderungen des schulischen Einsatzes gerecht.
 
-## 4.4 Umsetzung der Startseite und zentraler UI-Komponenten
+### Umsetzung der Startseite und zentraler UI-Komponenten
 
 Die Startseite des digitalen Infopoints bildet den ersten Berührungspunkt für
 die Benutzerinnen und Benutzer und übernimmt somit eine zentrale Rolle im
@@ -591,7 +594,7 @@ benutzerfreundliche Oberfläche geschaffen, die den schnellen Zugriff auf
 Informationen unterstützt und den Anforderungen des schulischen Einsatzes
 gerecht wird.
 
-## 4.5 Anbindung an das Content-Management-System (CMS)
+### Anbindung an das Content-Management-System (CMS)
 
 Ein zentraler Bestandteil der praktischen Umsetzung des Frontends ist die
 Anbindung an ein Content-Management-System. Das CMS dient als zentrale
@@ -626,7 +629,7 @@ wird der Pflegeaufwand reduziert, da Änderungen an Inhalten ohne Anpassungen
 am Frontend-Code möglich sind. Die CMS-Anbindung bildet somit eine wesentliche
 Grundlage für den flexiblen und langfristigen Betrieb des Frontends.
 
-## 4.6 Umsetzung der Inhaltsseiten (Neuigkeiten, Termine, Lagepläne)
+### Umsetzung der Inhaltsseiten (Neuigkeiten, Termine, Lagepläne)
 
 Die Inhaltsseiten des digitalen Infopoints bilden den Kern der dargestellten
 Informationen. Dazu zählen insbesondere die Seiten für Neuigkeiten, Termine
@@ -668,7 +671,7 @@ Durch klare Strukturen, wiederverwendbare Komponenten und die dynamische
 Anbindung an das CMS wird eine übersichtliche und benutzerfreundliche
 Darstellung der Inhalte im digitalen Infopoint erreicht.
 
-## 4.7 Umsetzung spezieller Funktionen (Lehrersuche und Screensaver)
+### Umsetzung spezieller Funktionen (Lehrersuche und Screensaver)
 
 Neben den klassischen Inhaltsseiten wurden im Frontend des digitalen
 Infopoints auch spezielle Funktionen umgesetzt, die den praktischen Nutzen
@@ -708,7 +711,7 @@ Komponenten und zeitgesteuerten Abläufen konnten Funktionen realisiert
 werden, die den digitalen Infopoint über eine reine Informationsanzeige
 hinaus erweitern und den Schulalltag effektiv unterstützen.
 
-## 4.8 Fehlerbehandlung, Ladezustände und Benutzerfeedback
+### Fehlerbehandlung, Ladezustände und Benutzerfeedback
 
 Bei der praktischen Umsetzung des Frontends wurde besonderer Wert auf einen
 robusten Umgang mit Lade- und Fehlersituationen gelegt. Da der digitale
@@ -741,7 +744,7 @@ Problemen in der Datenanbindung bleibt das Frontend kontrollierbar und
 verständlich, was für den dauerhaften Einsatz im schulischen Umfeld von
 großer Bedeutung ist.
 
-## 4.9 Performanceoptimierung im Frontend
+### Performanceoptimierung im Frontend
 
 Die Performance des Frontends ist ein entscheidender Faktor für den
 reibungslosen Betrieb des digitalen Infopoints. Da die Anwendung dauerhaft
@@ -781,7 +784,7 @@ dass das Frontend des digitalen Infopoints auch bei längerem Betrieb stabil,
 reaktionsschnell und zuverlässig bleibt und den Anforderungen des schulischen
 Einsatzes gerecht wird.
 
-## 4.10 Deployment und Betrieb des Frontends
+### Deployment und Betrieb des Frontends
 
 Nach Abschluss der Entwicklungsarbeiten wurde das Frontend für den produktiven
 Einsatz vorbereitet und deployt. Ziel des Deployments ist es, die Anwendung
@@ -815,7 +818,7 @@ sichergestellt. Das Deployment und der Betrieb des Frontends bilden somit den
 abschließenden Schritt der praktischen Umsetzung und stellen sicher, dass der
 digitale Infopoint dauerhaft einsatzbereit ist.
 
-## 4.11 Herausforderungen und Lösungsansätze im Frontend
+### Herausforderungen und Lösungsansätze im Frontend
 
 Während der Entwicklung des Frontends für den digitalen Infopoint traten
 verschiedene technische und konzeptionelle Herausforderungen auf, die im
@@ -852,7 +855,7 @@ kurze Nutzungsdauer erfordern eine andere Gestaltung als klassische
 Desktop-Anwendungen. Diese Herausforderung wurde durch eine reduzierte
 Gestaltung, große Bedienelemente und eine klare visuelle Hierarchie gelöst.
 
-## 4.12 Fazit und Ausblick des Frontend-Teils
+### Fazit und Ausblick des Frontend-Teils
 
 Im Rahmen dieser Diplomarbeit wurde das Frontend eines digitalen Infopoints
 konzipiert und umgesetzt, der den Informationsfluss im Schulalltag nachhaltig
