@@ -1,6 +1,5 @@
 package at.htlle.infopoint.controller;
 
-import at.htlle.infopoint.dto.TeacherDto;
 import at.htlle.infopoint.service.TeacherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +19,8 @@ public class TeachersController {
         this.teacherService = teacherService;
     }
 
-    @GetMapping
-    public List<TeacherDto> list(@RequestParam(required = false) String query) {
-        return teacherService.search(query);
-    }
+//    @GetMapping
+//    public List<TeacherDto> list(@RequestParam(required = false) String query) {
+//        return teacherService.search(query);
+//    }
 }

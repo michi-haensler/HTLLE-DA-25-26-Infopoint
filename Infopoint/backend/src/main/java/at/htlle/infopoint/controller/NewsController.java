@@ -11,7 +11,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/news")
-//@RequiredArgsConstructor
 public class NewsController {
 
     public NewsController(NewsService newsService) {
@@ -20,7 +19,7 @@ public class NewsController {
 
     private final NewsService newsService;
 
-    @GetMapping("/limit")
+    @GetMapping()
     public List<CockpitNews> get(@RequestParam int limit) {
         return newsService.get(limit);
     }

@@ -1,16 +1,16 @@
 package at.htlle.infopoint.service;
 
+import at.htlle.infopoint.clients.webuntis.WebUntisClient;
 import at.htlle.infopoint.dto.PresenceDto;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 
 @Service
-@RequiredArgsConstructor
 public class TimetableService {
 
-    // private final WebUntisClient webUntisClient; // TODO
+    //TODO
+    //private final WebUntisClient webUntisClient;
 
     /**
      * Ermittelt für einen Lehrer den voraussichtlichen Aufenthaltsort zum Zeitpunkt 'at'

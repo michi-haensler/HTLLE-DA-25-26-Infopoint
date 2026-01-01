@@ -1,7 +1,6 @@
 package at.htlle.infopoint.clients.cockpit;
 
 import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -21,7 +20,7 @@ public class CockpitClient {
         return webClient
                 .get()
                 .uri("http://localhost:8080/api/content/items/news?limit=" + limit)
-                .header("api-key", "API-4411907c14a99505c286559eef0f81979256f987")
+                .header("api-key", "API-c603802aed1873dbb9ad600f771780aff83a085e")
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<List<CockpitNews>>() {})
                 .block();
@@ -37,10 +36,21 @@ public class CockpitClient {
                 .entries();
     }
 
-    public byte[] getMapImage() {
+    public String getMapImage() {
         return webClient
                 .get()
-                .uri("http://localhost:8081/storage/uploads/map.png")
+                .uri("http://localhost:8080/api/assets/image/6910ca4fce0a2ca54f063e5b?m=resize&w=1920&h=1080")
+                .header("api-key", "API-c603802aed1873dbb9ad600f771780aff83a085e")
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
+    }
+
+    public byte[] getMapImageMeta() {
+        return webClient
+                .get()
+                .uri("http://localhost:8080/api/assets/6910ca4fce0a2ca54f063e5b")
+                .header("api-key", "API-c603802aed1873dbb9ad600f771780aff83a085e")
                 .retrieve()
                 .bodyToMono(byte[].class)
                 .block();
