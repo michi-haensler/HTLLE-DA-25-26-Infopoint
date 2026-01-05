@@ -266,6 +266,108 @@
 
 : Projektstatus Stand 17. November 2025
 
+### Projektfortschritt 17. November bis 24. November 2025
+
+#### Gesamtstatus: verzögert
+* Das Projekt ist derzeit aufgrund der WebUntis Anbindung verzögert.
+
+| Dimension           | Status            |  Maßnahmen
+|:--------------------|:------------------|:---------------------------------------------|
+| Leistungsziele      | verzögert         | zusätzliche Zeit für WebUntis Anbindung einplanen |
+| Terminziele         | verzögert         | Zeitplan anpassen                            |
+| Kostenziele         | In Ordnung        | keine                                        |
+| Teamarbeit          | optimal           | keine                                        |
+
+:Projektstatus am 2025-11-24
+
+#### durchgeführte Arbeiten im Berichtszeitraum
+| durchgeführte Arbeit                       | zeitlicher Aufwand.  | Teammitglied                  |    
+|:-------------------------------------------|:---------------------|:------------------------------|
+| Anbindung WebUntis                         | 2h                   | Simon Moser                   |       
+| Projektmanagement                          | 1h                   | Michael Hänsler               |
+
+#### Notwendige Entscheidungen
+* Zeitplan anpassen und zusätzliche Pufferzeit einplanen.   
+
+#### Nächste Schritte
+* Fertigstellung der Anbindung von WebUntis
+* Deployment auf Gerät
+* Testphase starten
+
+: Projektstatus Stand 24. November 2025
+
+### Projektfortschritt 24. November bis 23. Dezember 2025
+
+#### Gesamtstatus: verzögert
+* Das Projekt hat sich an einigen Stellen verzögert, befindet sich aber auf dem Weg zur Fertigstellung.
+
+| Dimension           | Status            |  Maßnahmen
+|:--------------------|:------------------|:---------------------------------------------|
+| Leistungsziele      | verzögert         | zusätzliche Zeit einplanen                   |
+| Terminziele         | verzögert         | Zeitplan anpassen                            |
+| Kostenziele         | In Ordnung        | keine                                        |
+| Teamarbeit          | optimal           | keine                                        |
+
+:Projektstatus am 2025-12-23
+
+#### durchgeführte Arbeiten im Berichtszeitraum
+| durchgeführte Arbeit                       | zeitlicher Aufwand.  | Teammitglied                  |    
+|:-------------------------------------------|:---------------------|:------------------------------|
+| Fertigstellung Anbindung WebUntis          | 5h                   | Simon Moser                   |
+| Testen des Backbends.                      | 2h                   | Simon Moser                   |
+| Integration von Backenend erweiterungen    | 15h                  | Lukas Fellegger               |
+| Fertigstellung des Theorieteils            | 25h                  | Lukas Fellegger               |
+| Aufsetzen von Docker für das Projekt       | 8h                   | Michael Hänsler               |
+| Fertigstellung des Theorieteils            | 22h                  | Michael Hänsler               |
+| Projektmanagement                          | 4h                   | Michael Hänsler               |
+
+
+#### Notwendige Entscheidungen
+
+* Zeitplan anpassen und zusätzliche Pufferzeit einplanen.
+* Projektabschluss auf Ende Januar 2026 verschieben.
+
+#### Nächste Schritte
+* Docker Deployment fertigstellen
+* Testphase beginnen
+* Rücksprache mit Auftraggeber halten bezüglich Umfang 
+
+: Projektstatus Stand 23. Dezember 2025
+
+### Projektfortschritt 23. Dezember 2025 bis 9. Januar 2026
+
+#### Gesamtstatus: verzögert
+* Das Projekt hat sich an einigen Stellen verzögert, befindet sich aber auf dem Weg zur Fertigstellung.
+
+| Dimension           | Status            |  Maßnahmen
+|:--------------------|:------------------|:---------------------------------------------|
+| Leistungsziele      | verzögert         | zusätzliche Zeit einplanen                   |
+| Terminziele         | verzögert         | Zeitplan anpassen                            |
+| Kostenziele         | In Ordnung        | keine                                        |  
+| Teamarbeit          | optimal           | keine                                        |
+
+:Projektstatus am 2026-01-09
+
+#### durchgeführte Arbeiten im Berichtszeitraum
+| durchgeführte Arbeit                       | zeitlicher Aufwand.  | Teammitglied                  |    
+|:-------------------------------------------|:---------------------|:------------------------------|
+| Docker Deployment fertiggestellt           | 6h                   | Michael Hänsler               |
+| Frontend Integration fertiggestellt        | 5h                   | Lukas Fellegger               |
+| Theorieteil fertiggestellt                 | 20h                  | Simon Moser                   |
+| Projektmanagement                          | 2h                   | Michael Hänsler               |
+
+#### Notwendige Entscheidungen
+
+* Zeitplan anpassen 
+
+#### Nächste Schritte
+* Testphase beginnen
+* Rücksprache mit Auftraggeber halten bezüglich Umfang
+
+: Projektstatus Stand 09. Januar 2026
+
+
+
 
 
 
