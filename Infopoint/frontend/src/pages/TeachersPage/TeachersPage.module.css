@@ -1,125 +1,150 @@
-.container {
-  min-height: calc(100vh - 50px);
-  background: var(--bg-dark);
-  padding: 40px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.page {
+    min-height: 100vh;
+    background: #181818;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 24px;
+    color: #fff;
 }
 
-/* Große Überschrift */
 .title {
-  margin: 0;
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--text-white);
-  margin-bottom: 48px;
-  margin-top: 32px;
-  text-align: center;
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 48px;
+    margin-top: 32px;
 }
 
-/* Suchfeld wie im Mockup: großer grauer Balken mit Icon rechts */
-.searchBar {
-  display: flex;
-  align-items: center;
-  background: #212121;
-  border-color: black;
-  border-radius: 24px;
-  padding: 12px 20px;
-  width: 100%;
-  max-width: 1150px;
-  margin-bottom: 26px;
+.searchRow {
+    width: min(1200px, 92vw);
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.search {
+    flex: 1;
+    height: 68px;
+    background: #5b5b5b;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
 .searchInput {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: var(--text-white);
-  font-size: 1.3rem;
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    appearance: none;
+    -webkit-appearance: none;
+    box-shadow: none;
 }
 
 .searchInput::placeholder {
-  color: #b9b9b9;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
 }
 
 .searchIcon {
-  font-size: 28px;
-  color: #ffffff; /* Icon weiß */
+    font-size: 34px;
+    opacity: 0.9;
+    margin-left: 10px;
 }
 
-/* Panel mit den Lehrerzeilen */
-.panel {
-  background: #212121; /* dunkler Rahmen */
-  border-radius: 28px;
-  border-color: black;
-  padding: 24px 32px;
-  width: 100%;
-  max-width: 1150px;
+.date {
+    height: 68px;
+    min-width: 180px;
+    background: #5b5b5b;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 16px;
+    padding: 0 14px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.card {
+    width: min(1200px, 92vw);
+    background: #212121;
+    color: #ffffff;
+    border-radius: 18px;
+    padding: 26px 26px 30px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.error {
+    color: #ffb4b4;
 }
 
 .list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
-/* Eine Zeile (Name | Kürzel | Raum) */
-.row {
-  background: #777777;
-  border-radius: 22px;
-  padding: 14px 22px;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1.2fr; /* Name / Kürzel / Raum */
-  column-gap: 24px;
-  align-items: center;
-  margin-bottom: 16px;
+/* Button wrapper for popular items (keeps the grey card look but clickable) */
+.itemButton {
+    border: none;
+    background: transparent;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
 }
 
-.row:last-child {
-  margin-bottom: 0;
+.itemButton:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.35);
+    outline-offset: 6px;
+    border-radius: 18px;
 }
 
-.colName,
-.colShortcut,
-.colRoom {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #ffffff;
+.item {
+    background:#7e7e7e;
+    border-radius: 16px;
+    color:#ffffff;
+    padding: 22px 26px;
+    display: grid;
+    grid-template-columns: 1.4fr 0.5fr 0.8fr;
+    align-items: center;
+    column-gap: 18px;
 }
 
-.colName {
-  text-align: left;
+.name {
+    font-size: 30px;
+    font-weight: 800;
 }
 
-.colShortcut {
-  text-align: center;
+.code {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
 }
 
-.colRoom {
-  text-align: right;
+.room {
+    font-size: 26px;
+    font-weight: 800;
+    text-align: right;
 }
 
-/* Für kleinere Breiten (nur beim Entwickeln im Browser relevant) */
-@media (max-width: 900px) {
-  .row {
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas:
-      "name room"
-      "shortcut shortcut";
-    row-gap: 4px;
-  }
-
-  .colName {
-    grid-area: name;
-  }
-
-  .colRoom {
-    grid-area: room;
-  }
-
-  .colShortcut {
-    grid-area: shortcut;
-  }
-}

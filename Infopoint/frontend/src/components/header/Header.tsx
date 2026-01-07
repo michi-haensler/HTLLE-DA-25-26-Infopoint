@@ -1,77 +1,50 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
-import { useScreensaver } from "../../features/screensaver/ScreensaverContext";
 
 export default function Header() {
-  const location = useLocation();
-  const { show } = useScreensaver();
+    const location = useLocation();
 
-  return (
-    <header className={styles.header}>
-      <div className={styles.logo}>
-        <strong>HTL</strong>
-        <span className={styles.highlight}>Leoben</span>
-      </div>
+    const isActive = (path: string) =>
+        location.pathname === path || location.pathname.startsWith(path + "/");
 
-      <nav className={styles.nav}>
-        <Link
-          to="/info"
-          className={`${styles.navLink} ${
-            location.pathname === "/info" ? styles.active : ""
-          }`}
-        >
-          Neuigkeiten
-        </Link>
-        <Link
-          to="/map"
-          className={`${styles.navLink} ${
-            location.pathname === "/map" ? styles.active : ""
-          }`}
-        >
-          Lageplan
-        </Link>
-        <Link
-          to="/events"
-          className={`${styles.navLink} ${
-            location.pathname === "/events" ? styles.active : ""
-          }`}
-        >
-          Termine
-        </Link>
-        <Link
-          to="/teachers"
-          className={`${styles.navLink} ${
-            location.pathname === "/teachers" ? styles.active : ""
-          }`}
-        >
-          Lehrer finden
-        </Link>
-        <Link
-          to="/stundenplan"
-          className={`${styles.navLink} ${
-            location.pathname === "/stundenplan" ? styles.active : ""
-          }`}
-        >
-          Stundenpläne
-        </Link>
-        <Link
-          to="/insta"
-          className={`${styles.navLink} ${
-            location.pathname === "/insta" ? styles.active : ""
-          }`}
-        >
-          Instagram
-        </Link>
+    return (
+        <header className={styles.header}>
+            {/* LINKS: Logo + Navigation */}
+            <div className={styles.left}>
+                <div className={styles.brand}>
+                    <span className={styles.htl}>HTL</span>
+                    <span className={styles.leoben}>Leoben</span>
+                </div>
 
-        <button
-          type="button"
-          className={styles.exitIcon}
-          title="Zum Startbildschirm"
-          onClick={show}
-        >
-          <span className="material-icons">exit_to_app</span>
-        </button>
-      </nav>
-    </header>
-  );
+                <nav className={styles.nav}>
+                    <Link to="/info" className={`${styles.navLink} ${isActive("/info") ? styles.active : ""}`}>
+                        Neuigkeiten
+                    </Link>
+                    <Link to="/map" className={`${styles.navLink} ${isActive("/map") ? styles.active : ""}`}>
+                        Lageplan
+                    </Link>
+                    <Link to="/events" className={`${styles.navLink} ${isActive("/events") ? styles.active : ""}`}>
+                        Termine
+                    </Link>
+                    <Link to="/teachers" className={`${styles.navLink} ${isActive("/teachers") ? styles.active : ""}`}>
+                        Lehrer finden
+                    </Link>
+                    <Link
+                        to="/stundenplan"
+                        className={`${styles.navLink} ${isActive("/stundenplan") ? styles.active : ""}`}
+                    >
+                        Stundenpläne
+                    </Link>
+                    <Link to="/insta" className={`${styles.navLink} ${isActive("/insta") ? styles.active : ""}`}>
+                        Instagram
+                    </Link>
+                </nav>
+            </div>
+
+            {/* RECHTS: Home Icon */}
+            <Link to="/" className={styles.home} title="Home">
+                <span className="material-icons">home</span>
+            </Link>
+        </header>
+    );
 }

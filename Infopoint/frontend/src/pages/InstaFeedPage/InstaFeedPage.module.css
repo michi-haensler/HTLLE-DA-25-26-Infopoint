@@ -1,24 +1,33 @@
 .container {
-  padding: 24px;
-  background: var(--bg-dark);
-  min-height: calc(100vh - 50px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    padding: 24px;
+    background: #181818;
+    min-height: calc(100vh - 84px); /* Header ist ~84px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title {
-  margin: 0;
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--text-white);
-  margin-bottom: 48px;
-  margin-top: 32px;
-  text-align: center;
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 48px;
+    margin-top: 32px;
 }
 
+
 .embedWrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Instagram blockquote soll sich schön einfügen */
+.embedWrapper :global(.instagram-media) {
+    margin: 0 !important;
+    width: 980px !important;         /* optisch wie Screenshot */
+    max-width: 100% !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
 }

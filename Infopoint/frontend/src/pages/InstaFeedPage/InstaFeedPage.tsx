@@ -1,41 +1,50 @@
 import { useEffect } from "react";
 import styles from "./InstaFeedPage.module.css";
 
+declare global {
+    interface Window {
+        instgrm?: { Embeds?: { process?: () => void } };
+    }
+}
+
+const SCRIPT_SRC = "https://www.instagram.com/embed.js";
+
 export default function InstaFeedPage() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://www.instagram.com/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
+    useEffect(() => {
+        const existing = document.querySelector(`script[src="${SCRIPT_SRC}"]`) as HTMLScriptElement | null;
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+        const process = () => window.instgrm?.Embeds?.process?.();
 
-  return (
-    <main className={styles.container}>
-      <h2 className={styles.title}>Instagram – HTL Leoben</h2>
+        if (existing) {
+            process();
+            return;
+        }
 
-      <div className={styles.embedWrapper}>
-        <blockquote
-          className="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/htlleoben/"
-          data-instgrm-version="12"
-          style={{
-            background: "#FFF",
-            border: 0,
-            borderRadius: "3px",
-            boxShadow:
-              "0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15)",
-            margin: "1px auto",
-            maxWidth: "540px",
-            minWidth: "326px",
-            padding: 0,
-            width: "99%",
-          }}
-        ></blockquote>
-      </div>
-    </main>
-  );
+        const script = document.createElement("script");
+        script.src = SCRIPT_SRC;
+        script.async = true;
+        script.onload = process;
+        document.body.appendChild(script);
+
+        // ⚠️ NICHT entfernen! Sonst bricht es beim Pagewechsel oft wieder.
+    }, []);
+
+    // Bei jedem Render/Route-Wechsel nochmal anstoßen
+    useEffect(() => {
+        window.instgrm?.Embeds?.process?.();
+    });
+
+    return (
+        <main className={styles.container}>
+            <h1 className={styles.title}>Instagram</h1>
+
+            <div className={styles.embedWrapper}>
+                <blockquote
+                    className="instagram-media"
+                    data-instgrm-permalink="https://www.instagram.com/htlleoben/"
+                    data-instgrm-version="14"
+                />
+            </div>
+        </main>
+    );
 }

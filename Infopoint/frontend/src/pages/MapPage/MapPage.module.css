@@ -1,105 +1,108 @@
-.container {
-  padding: 24px 40px;
-  background: var(--bg-dark);
-  min-height: calc(100vh - 50px);
-  color: var(--text-white);
-  display: flex;
-  flex-direction: column;
+.page {
+    min-height: 100vh;
+    background: #181818;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 44px 28px;
 }
 
 .title {
-  margin: 0;
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--text-white);
-  margin-bottom: 48px;
-  margin-top: 32px;
-  text-align: center;
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 48px;
+    margin-top: 32px;
 }
 
-/* Hauptlayout: Bild links, Buttons rechts */
+
+.card {
+    width: min(1400px, 95vw);
+    background: #212121;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.32);
+}
+
 .content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
+    display: grid;
+    grid-template-columns: 1fr 240px; /* Bild + rechte Button-Spalte */
+    gap: 22px;
+    align-items: stretch;
 }
 
-/* Bildcontainer */
-.imageWrap {
-  flex: 0 1 70%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #181818;
-  border-radius: 12px;
-  padding: 12px;
+.mapArea {
+    background: #2a2a2a;
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.image {
-  max-width: 100%;
-  max-height: 70vh;
-  border-radius: 8px;
-  object-fit: contain;
-}
-
-/* Rechte Spalte mit Buttons */
-.sidebar {
-  flex: 0 0 180px;
-  background: #212121;
-  border-radius: 24px;
-  border: 1px solid #000000;
-  padding: 20px 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-/* Einzelner „Stockwerk“-Button */
-.floorButton {
-  width: 100%;
-  background: #7e7e7e;
-  border-radius: 18px;
-  border: none;
-  padding: 16px 8px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background 0.15s ease, transform 0.1s ease;
-}
-
-.floorButton:hover {
-  background: #777777;
-  transform: translateY(-1px);
-}
-
-.floorButtonActive {
-  background: #bfbfbf;
-}
-
-.floorLabel {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-/* Für kleinere Screens – nicht super wichtig am Infopoint,
-   aber praktisch beim Entwickeln im Browser */
-@media (max-width: 900px) {
-  .content {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    flex-direction: row;
+.mapImage {
     width: 100%;
-    max-width: 480px;
-  }
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    background: #1f1f1f;
+}
 
-  .floorButton {
-    flex: 1;
-  }
+/* Rechte Seitenleiste */
+.floorPanel {
+    background: #212121;
+    border-radius: 18px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    justify-content: center;
+}
+
+.floorBtn {
+    height: 120px;
+    border-radius: 18px;
+    border: none;
+    background: #6a6a6a;
+    color: #fff;
+    font-size: 52px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.floorBtnActive {
+    background: #bcbcbc;
+    color: #fff;
+}
+
+.floorBtn:active {
+    transform: translateY(1px);
+}
+
+.errorBox {
+    margin-top: 12px;
+    color: #ffb4b4;
+    font-weight: 800;
+    text-align: center;
+}
+
+/* Responsive: Buttons unter das Bild */
+@media (max-width: 900px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .floorPanel {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .floorBtn {
+        flex: 1;
+        height: 90px;
+        font-size: 38px;
+    }
 }

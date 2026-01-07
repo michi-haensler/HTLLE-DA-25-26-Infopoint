@@ -1,69 +1,85 @@
 .header {
-  display: flex;
-  align-items: center;
-  background-color: #181818;
-  color: #eaeaea;
-  padding: 0 20px;
-  height: 50px;
-  border-bottom: 1px solid #2a2a2a;
+    height: 84px;
+    width: 100%;
+    background: #2f2f2f;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 28px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-right: 20px;
+/* Linker Block: Logo + Nav */
+.left {
+    display: flex;
+    align-items: center;
+    gap: 26px; /* Abstand zwischen Logo und Links */
+    min-width: 0;
 }
 
-.highlight {
-  color: #4da3ff;
+.htl {
+    font-size: 54px;
+    font-weight: 900;
+    line-height: 1;
 }
 
+.leoben {
+    font-size: 54px;
+    font-weight: 900;
+    color: rgba(70, 140, 255, 0.95);
+    line-height: 1;
+}
+
+/* Navigation rechts neben Logo */
 .nav {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow: hidden; /* falls Bildschirm zu schmal */
 }
 
 .navLink {
-  color: #c8c8c8;
-  text-decoration: none;
-  font-size: 0.95rem;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: background 0.2s ease, color 0.2s ease;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    opacity: 0.8;
+    font-size: 22px;
+    padding: 10px 14px;
+    border-radius: 12px;
 }
 
 .navLink:hover {
-  background: #2a2a2a;
-  color: #ffffff;
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .active {
-  background: #333333;
-  color: #4da3ff;
+    opacity: 1;
+    background: rgba(70, 140, 255, 0.18);
 }
 
-.exitIcon {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #eaeaea;
-  background: none;
-  border: none;
-  padding: 6px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 24px;
-  transition: color 0.2s ease, transform 0.2s ease;
+/* Home rechts */
+.home {
+    color: #fff;
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
 }
 
-.exitIcon:hover {
-  color: #ffffff;
-  transform: scale(1.05);
+.home :global(.material-icons) {
+    font-size: 54px;
 }
 
+.home:active {
+    transform: translateY(1px);
+}

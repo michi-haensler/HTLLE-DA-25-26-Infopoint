@@ -1,60 +1,101 @@
+import { useEffect, useMemo, useState } from "react";
 import styles from "./InfoPage.module.css";
 
-// Später: diese Daten vom CMS / Backend laden
-type NewsItem = {
-  id: string;
-  title: string;
-  detailUrl: string; // Link zum ganzen Artikel (CMS-URL oder interne Route)
+type CockpitNews = {
+    _id: string;
+    title?: string;
+    // falls ihr andere Felder habt, egal – wir zeigen hier nur Titel
+    // description?: string;
+    // content?: string;
 };
 
-const NEWS: NewsItem[] = [
-  {
-    id: "1",
-    title: "Maturaball der 5. Klassen",
-    detailUrl: "/news/1",
-  },
-  {
-    id: "2",
-    title: "Tag der Nachhaltigkeit",
-    detailUrl: "/news/2",
-  },
-  {
-    id: "3",
-    title: "Kennenlerntage der 1. Klassen",
-    detailUrl: "/news/3",
-  },
-  {
-    id: "4",
-    title: "Infotag",
-    detailUrl: "/news/4",
-  },
-];
+function pickTitle(n: CockpitNews): string {
+    return (n.title ?? "Neuigkeit").trim();
+}
 
 export default function NewsPage() {
-  return (
-    <main className={styles.container}>
-      <h1 className={styles.title}>Neuigkeiten</h1>
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-      <section className={styles.panel}>
-        <ul className={styles.list}>
-          {NEWS.map((item) => (
-            <li key={item.id} className={styles.row}>
-              <div className={styles.rowInner}>
-                <span className={styles.text}>{item.title}</span>
-              </div>
+    const [items, setItems] = useState<CockpitNews[]>([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
 
-              {/* Pfeil rechts → führt zum ganzen Artikel */}
-              <a
-                href={item.detailUrl}
-                className={styles.arrowButton}
-                title="Zum Artikel"
-              >
-                <span className="material-icons">chevron_right</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </main>
-  );
+    useEffect(() => {
+        if (!BASE_URL) {
+            setError("VITE_API_BASE_URL ist nicht gesetzt");
+            return;
+        }
+
+        const controller = new AbortController();
+
+        (async () => {
+            try {
+                setLoading(true);
+                setError("");
+
+                const url = new URL(`${BASE_URL}/api/v1/news`);
+                url.searchParams.set("limit", "10");
+
+                const res = await fetch(url.toString(), {
+                    headers: { Accept: "application/json" },
+                    signal: controller.signal,
+                });
+
+                if (!res.ok) {
+                    const text = await res.text();
+                    throw new Error(
+                        res.status >= 500 ? "Neuigkeiten derzeit nicht verfügbar" : `HTTP ${res.status}: ${text}`
+                    );
+                }
+
+                const data = (await res.json()) as CockpitNews[];
+                setItems(data);
+            } catch (e) {
+                if (e instanceof DOMException && e.name === "AbortError") return;
+                setError(e instanceof Error ? e.message : "Load failed");
+            } finally {
+                setLoading(false);
+            }
+        })();
+
+        return () => controller.abort();
+    }, [BASE_URL]);
+
+    const list = useMemo(() => items, [items]);
+
+    const onOpen = (n: CockpitNews) => {
+        // später: Navigation auf Detailseite oder Modal öffnen
+        console.log("open news:", n._id);
+    };
+
+    return (
+        <div className={styles.page}>
+            <h1 className={styles.title}>Neuigkeiten</h1>
+
+            <div className={styles.card}>
+                {loading && <div className={styles.info}>Wird geladen…</div>}
+                {error && <div className={`${styles.info} ${styles.error}`}>Fehler: {error}</div>}
+
+                {!loading && !error && list.length === 0 && (
+                    <div className={styles.info}>Keine Neuigkeiten vorhanden</div>
+                )}
+
+                <div className={styles.list}>
+                    {list.map((n) => (
+                        <button
+                            key={n._id}
+                            type="button"
+                            className={styles.itemButton}
+                            onClick={() => onOpen(n)}
+                        >
+                            <span className={styles.itemText}>{pickTitle(n)}</span>
+                            <span className={styles.chevron} aria-hidden="true">
+                ›
+              </span>
+                        </button>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
 }

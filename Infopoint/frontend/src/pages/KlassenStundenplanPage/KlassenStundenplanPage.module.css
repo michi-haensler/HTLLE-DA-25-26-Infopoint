@@ -1,6 +1,6 @@
 .container {
     min-height: calc(100vh - 50px);
-    background: var(--bg-dark);
+    background: #181818;
     padding: 40px 24px;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
     margin: 0 0 24px;
     font-size: 3rem;
     font-weight: 700;
-    color: var(--text-white);
+      color: #ffffff;
     text-align: center;
   }
   

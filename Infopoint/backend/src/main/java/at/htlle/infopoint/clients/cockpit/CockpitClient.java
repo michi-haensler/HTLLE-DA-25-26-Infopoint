@@ -3,6 +3,7 @@ package at.htlle.infopoint.clients.cockpit;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -14,6 +15,11 @@ public class CockpitClient {
     // <-- selbst geschriebener Konstruktor
     public CockpitClient(WebClient webClient) {
         this.webClient = webClient;
+    }
+
+    @Autowired
+    public CockpitClient(WebClient.Builder builder) {
+        this.webClient = builder.build();
     }
 
     public List<CockpitNews> getNews(int limit) {
