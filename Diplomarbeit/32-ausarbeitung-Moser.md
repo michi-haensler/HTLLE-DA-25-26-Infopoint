@@ -1,11 +1,23 @@
-# Teilaufgabe Schüler Bravo
+# Teilaufgabe Schüler Moser Simon
 \textauthor{Moser Simon}
+
+## Aufgabenstellung und Verantwortungsbereich
+Im Rahmen dieser Diplomarbeit war ich für den Entwurf, Umsetzung, Implementierung und Dokumentation des Backends sowie des Content-Management-Systems (CMS) zuständig. Der Schwerpunkt meiner Arbeit lag auf der serverseitigen Verarbeitung von Daten, der Bereitstellung von Schnittstellen für das Frontend sowie der Verwaltung und Speicherung von Inhalten im CMS.
+Das Backend ist das Herzstück des Infopoints. Seine Aufgaben sind es Daten zu verarbeiten und korrekt an das Frontend zu liefern. Zusätzlich wurde ein CMS namens Cockpit angebunden um das Verwalten von Inhalten und Daten so benutzerfreundlich wie möglich zu gestalten ohne dabei immer in der Quellcode eingreifen zu müssen.
 
 ## Theorie
 
-Dieses Kapitel wird oft auch als _Literaturrecherche_ bezeichnet. Da gehört alles rein was der __normale__ Leser braucht um den praktischen Ansatz zu verstehen. Das bedeutet Sie brauchen einen roten Faden !
+### Grundlagen von Backend-Systemen
+Was ist ein Backend System?
+Das Backend ist der serverseitige Teil von jeder Softwareanwendung. Es gibt viele verschiede Arten von Backends in Bezug auf das Aussehen aber im Kern erfüllen sie alle den selben Zweck. Dieser ist und bleibt die Datenverarbeitung und Beschaffung dieser. Es ist für die Benutzer nie direkt sichtbar sondern verbirgt sich hinter dem Frontend.
+Im Gegensatz zum Frontend, welches für die Benutzeroberfläche zuständig ist, konzentriert sich das Backend auf die Geschäftlogik der ganzen Application. Besonders bei Webanwendungen spielt das Backend eine zentrale Rolle, da es als Vermittler zwischen der Benutzeroberfläche und Datenhaltung fungiert.
 
-Das sind z.B: allgemeine Definitionen, Beschreibung von fachspezifischen Vorgehensweisen, Frameworks, Theorie zu verwendeten Algorithmen, besondere Umstände, ...
+#### Die Aufgaben eines Backends lassen sich in folgende Bereiche gliedern:
+- Datenverarbeitung: Eingehende Anfragen vom Frontend werden verarbeitet, validiert und entsprechend beantwortet.
+- Datenverwaltung: Das Backend speichert und verwaltet Daten.
+- Schnittstellenbereitstellung: Über Programmierschnittstellen (APIs) stellt das Backend Daten für das Frontend oder andere Systeme zur Verfügung.
+- Sicherheit: Authentifizierung, Autorisierung und Schutz sensibler Daten sind zentrale Aufgaben des Backends.
+- Geschäftslogik: Regeln und Abläufe der Anwendung werden im Backend umgesetzt, unabhängig von der Darstellung im Frontend.
 
 ## Praktische Arbeit
 

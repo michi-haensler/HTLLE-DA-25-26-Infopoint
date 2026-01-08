@@ -23,8 +23,8 @@ da-author:
   klasse: 5BHWIN
   thema: Backend und Datenverwaltung
   ki-tools:
-  - name: Github Copilot
-    zweck: Boilerplate codegenerierung, Codedokumentation
+  - name: ChatGPT5.2
+    zweck: Informationsbeschaffung und Ki Assistiertes Programmieren
 
 - vorname: Lukas 
   nachname: Fellegger
