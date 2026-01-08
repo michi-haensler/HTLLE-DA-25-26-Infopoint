@@ -2,15 +2,26 @@
 \textauthor{Moser Simon}
 
 ## Aufgabenstellung und Verantwortungsbereich
-Im Rahmen dieser Diplomarbeit war ich für den Entwurf, Umsetzung, Implementierung und Dokumentation des Backends sowie des Content-Management-Systems (CMS) zuständig. Der Schwerpunkt meiner Arbeit lag auf der serverseitigen Verarbeitung von Daten, der Bereitstellung von Schnittstellen für das Frontend sowie der Verwaltung und Speicherung von Inhalten im CMS.
-Das Backend ist das Herzstück des Infopoints. Seine Aufgaben sind es Daten zu verarbeiten und korrekt an das Frontend zu liefern. Zusätzlich wurde ein CMS namens Cockpit angebunden um das Verwalten von Inhalten und Daten so benutzerfreundlich wie möglich zu gestalten ohne dabei immer in der Quellcode eingreifen zu müssen.
+Im Rahmen dieser Diplomarbeit war ich für den Entwurf, Umsetzung, Implementierung und Dokumentation
+des Backends sowie des Content-Management-Systems (CMS) zuständig. Der Schwerpunkt meiner Arbeit
+lag auf der serverseitigen Verarbeitung von Daten, der Bereitstellung von Schnittstellen für das
+Frontend sowie der Verwaltung und Speicherung von Inhalten im CMS.
+Das Backend ist das Herzstück des Infopoints. Seine Aufgaben sind es Daten zu verarbeiten und korrekt
+an das Frontend zu liefern. Zusätzlich wurde ein CMS namens Cockpit angebunden um das Verwalten von 
+Inhalten und Daten so benutzerfreundlich wie möglich zu gestalten ohne dabei immer in der Quellcode eingreifen zu müssen.
 
 ## Theorie
 
 ### Grundlagen von Backend-Systemen
 Was ist ein Backend System?
-Das Backend ist der serverseitige Teil von jeder Softwareanwendung. Es gibt viele verschiede Arten von Backends in Bezug auf das Aussehen aber im Kern erfüllen sie alle den selben Zweck. Dieser ist und bleibt die Datenverarbeitung und Beschaffung dieser. Es ist für die Benutzer nie direkt sichtbar sondern verbirgt sich hinter dem Frontend.
-Im Gegensatz zum Frontend, welches für die Benutzeroberfläche zuständig ist, konzentriert sich das Backend auf die Geschäftlogik der ganzen Application. Besonders bei Webanwendungen spielt das Backend eine zentrale Rolle, da es als Vermittler zwischen der Benutzeroberfläche und Datenhaltung fungiert.
+Das Backend ist der serverseitige Teil von jeder Softwareanwendung. 
+Es gibt viele verschiede Arten von Backends in Bezug auf das Aussehen aber im Kern
+erfüllen sie alle den selben Zweck. Dieser ist und bleibt die Datenverarbeitung und
+Beschaffung dieser. Es ist für die Benutzer nie direkt sichtbar sondern verbirgt
+sich hinter dem Frontend.
+Im Gegensatz zum Frontend, welches für die Benutzeroberfläche zuständig ist, 
+konzentriert sich das Backend auf die Geschäftlogik der ganzen Application. 
+Besonders bei Webanwendungen spielt das Backend eine zentrale Rolle, da es als Vermittler zwischen der Benutzeroberfläche und Datenhaltung fungiert.
 
 #### Die Aufgaben eines Backends lassen sich in folgende Bereiche gliedern:
 - Datenverarbeitung: Eingehende Anfragen vom Frontend werden verarbeitet, validiert und entsprechend beantwortet.
@@ -19,200 +30,108 @@ Im Gegensatz zum Frontend, welches für die Benutzeroberfläche zuständig ist, 
 - Sicherheit: Authentifizierung, Autorisierung und Schutz sensibler Daten sind zentrale Aufgaben des Backends.
 - Geschäftslogik: Regeln und Abläufe der Anwendung werden im Backend umgesetzt, unabhängig von der Darstellung im Frontend.
 
+### Client-Server-Architektur
+Moderne Webanwendungen basieren in der Regel auf einer sogenannten Client-Server-Architektur. 
+Dabei fungiert der Client (z. B. ein Infopoint-Terminal) als Anfragesteller, während der Server 
+die Anfrage verarbeitet und eine entsprechende Antwort zurückliefert.
+Der Client sendet dafür eine Anfrage mithilfe des HTTP-Protokolls an das Backend. Dieses verarbeitet die Anfrage,
+greift gegebenenfalls auf das CMS zu und sendet die Ergebnisse in formatierter Form, meist als JSON-Daten, zurück.
+Diese klare Trennung führt zu einer besseren Wartbarkeit und erleichtert die parallele Entwicklung von Frontend und Backend.
+
+### Programmierschnittstellen (APIs) // TODO: Erweitern
+Um die Kommunikation zwischen Frontend und Backend zu ermöglichen,
+werden sogenannte APIs (Application Programming Interfaces) verwendet. 
+Eine weit verbreitete Architekturform ist dabei REST (Representational State Transfer).
+
+#### REST-APIs basieren auf standardisierten HTTP-Methoden:
+- **GET** – Abrufen von Daten
+- **POST** – Erstellen neuer Datensätze
+- **PUT/PATCH** – Aktualisieren bestehender Daten
+- **DELETE** – Löschen von Daten
+
+Durch diese Struktur wird eine klare und einheitliche Kommunikation zwischen den einzelnen Systemkomponenten gewährleistet. 
+Dies ist besonders bei größeren Projekten oder bei der späteren Erweiterung des Systems von Vorteil.
+
+### Backend Technologien:
+#### Überblick:
+Für die Umsetzung des Backends wurde das Java-Framework **Spring Boot** eingesetzt. 
+Spring Boot eignet sich besonders für die Entwicklung moderner Web- und REST-basierter Anwendungen,
+da es eine klare Projektstruktur, integrierte Serverfunktionalität sowie eine einfache Erweiterbarkeit durch zusätzliche Module bietet.
+Die Verwaltung der Abhängigkeiten erfolgte mithilfe von Apache Maven. Maven ermöglicht es,
+externe Bibliotheken zentral über die **pom.xml** zu definieren und automatisch in das Projekt einzubinden.
+Dadurch wird sichergestellt, dass alle verwendeten Technologien in einer einheitlichen und reproduzierbaren Version vorliegen. 
+
+#### Spring Boot als Backend-Framework:
+Spring Boot bildet die Grundlage des Backends und übernimmt zentrale Aufgaben wie:
+- Bereitstellung eines HTTP-Servers
+- Verarbeitung von REST-Anfragen
+- Routing von Endpunkten
+- Integration zusätzlicher Module (z. B. Validierung, Tests)
+
+Durch den Einsatz von Spring Boot konnte auf umfangreiche manuelle Konfiguration verzichtet werden, da viele Standardeinstellungen bereits vorkonfiguriert sind. Dies beschleunigte die Entwicklung und erhöhte die Wartbarkeit des Codes.
+
+#### Eingesetzte Maven-Dependencies:
+Für die Umsetzung der Backend-Funktionalität wurden mehrere Spring-Boot-Starter sowie zusätzliche Bibliotheken eingebunden.
+Diese übernehmen jeweils klar definierte Aufgaben innerhalb des Systems.
+
+#### Spring Boot Starter Web:
+Der Spring Boot Starter Web stellt alle notwendigen Komponenten zur Verfügung, um eine klassische REST-basierte Webanwendung zu entwickeln.
+Dazu zählen unter anderem:
+- Unterstützung für HTTP-Requests (GET, POST, PUT, DELETE)
+- Controller-Struktur zur Verarbeitung von Anfragen
+- JSON-Serialisierung und -Deserialisierung
+
+Diese Dependency bildet die Basis für die Kommunikation zwischen Frontend und Backend.
+
+#### Spring Boot Starter Validation:
+Der Spring Boot Starter Validation wird zur Validierung von Eingabedaten verwendet.
+Damit können eingehende Anfragen überprüft werden, bevor sie weiterverarbeitet werden.
+Beispiele für Validierungen sind:
+- Pflichtfelder
+- Längenbeschränkungen von Textfeldern
+- Formatüberprüfungen (z. B. Strings, Zahlenwerte)
+
+Diese Validierungen erhöhen die Datenqualität und tragen zur Sicherheit und Stabilität des Backends bei.
+
+#### Spring Boot Starter Test:
+Für Testzwecke wurde der Spring Boot Starter Test eingebunden.
+Diese Dependency stellt Werkzeuge für das Testen von Komponenten, Services und Schnittstellen zur Verfügung.
+Durch Tests kann sichergestellt werden, dass einzelne Funktionen korrekt arbeiten und Änderungen am Code keine unerwünschten Nebeneffekte verursachen.
+
+#### Lombok:
+Zur Reduktion von Boilerplate-Code (Code der oft vor kommt) wurde die Bibliothek Lombok eingesetzt.
+Lombok ermöglicht es, häufig benötigte Methoden wie Getter, Setter oder Konstruktoren automatisch zu generieren.
+Dadurch bleibt der Quellcode übersichtlich und besser lesbar, während gleichzeitig der Entwicklungsaufwand reduziert wird. 
+Lombok wird ausschließlich zur Compile-Zeit (Wenn das Programm ausgeführt wird) verwendet und ist nicht Bestandteil der laufenden Anwendung.
+
+### Content-Management-System (CMS) // TODO: Erweitern
+#### Definition und Zweck eines CMS: 
+Ein Content-Management-System (CMS) ist eine Softwarelösung, die es ermöglicht, Inhalte einer Anwendung einfach und benutzerfreundlich zu verwalten.
+Inhalte können dabei Texte, Bilder, Veranstaltungen oder andere informationsrelevante Daten sein.
+Der große Vorteil eines CMS besteht darin, dass Änderungen an Inhalten ohne direkte Anpassung des Quellcodes vorgenommen werden können.
+
+#### Aufgaben eines CMS im Backend:
+Das CMS ist eng mit dem Backend verknüpft und übernimmt unter anderem folgende Aufgaben:
+- Erstellen, Bearbeiten und Löschen von Inhalten
+- Strukturierte Speicherung der Inhalte
+- Verwaltung von Benutzern und Rollen
+- Bereitstellung der Inhalte über das Backend an das Frontend
+
+Durch diese Funktionalitäten wird eine klare Trennung zwischen Inhalt und Darstellung erreicht. Das Frontend stellt lediglich die Inhalte dar, während das CMS für deren Verwaltung verantwortlich ist.
+
+
 ## Praktische Arbeit
+### Überblick über die praktische Umsetzung: // TODO: Mehr elaborieren
+Der praktische Teil dieser Diplomarbeit umfasst die Konzeption, Implementierung und Dokumentation des Backends sowie die Konfigurierung des Content-Management-Systems (CMS) für das entwickelte Infopoint-System. Ziel war es, eine stabile, wartbare, erweiterbare und performante serverseitige Lösung zu realisieren, welche die Verwaltung und Bereitstellung von Inhalten möglichst einfach ermöglicht.
 
-Hier beschreiben Sie ihren praktischen Teil. Es geht darum seine Implementierung / Versuche so darzustellen dass anhand dieser dre Leser erkennen kann was sie wie gemacht haben.
+Zu Beginn der Umsetzung wurden die funktionalen Anforderungen analysiert und gemeinsam mit dem Frontend-Team abgestimmt. Dabei wurde definiert, welche Daten benötigt werden, wie diese strukturiert gespeichert werden sollen und über welche Schnittstellen das Frontend darauf zugreifen kann.
 
-Die Frage nach der Detailgenauigkeit lässt sich wie folgt beantworten: So, dass man Ihre Aufgabenstellung vollständig  nachvollziehen kann wenn man nur diese Diplomarbeit in Händen hat!
+### Planung und Systemarchitektur:
+Auf Basis der Anforderungen wurde eine grundlegende Backend-Architektur entworfen. Diese basiert auf einer klaren Trennung zwischen:
+- API-Schicht (Schnittstellen für das Frontend)
+- Geschäftslogik (Services)
+- DTOs (Data Transfare Objects, Objekte zur besseren und sicheren Datenübertragung)
+- Datenzugriffsschicht (CMS)
 
-### Erzeugen von Java Quellcode
-
-Unter einem Array in Java versteht man ein Feld oder Container, das in der Lage ist, mehrere Objekte vom gleichen Typ aufzunehmen und zu verwalten. Dabei wird in Java das Array als eine spezielle Klasse repräsentiert, was unter anderem mit sich bringt, dass man auf spezielle Methoden und Operationen bei Arrays zurückgreifen kann. Der Umgang mit Arrays mag gerade am Anfang etwas schwerer sein und birgt viele Fehlerquellen, nach und nach wird man das System das hinter den Arrays steht aber gut nachvollziehen können. 
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Initialisieren eines Arrays" .java}
-Typ[] Name = new Typ[Anzahl];
-Typ Name[] = new Typ[Anzahl];
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Etwas erfahrenere Programmierer werden jetzt schon erkennen, worauf es beim Zugriff auf Elemente im Array meist hinausläuft: Auf Schleifen!
-Schleifen sind ein komfortables Mittel um alle Elemente eines Arrays durchzugehen und auf Wunsch auszugeben oder andere Operationen darauf anzuwenden. Allerdings muss man nicht nur hier aufpassen, dass man die länge des Arrays in der Schleife nicht überschreitet und so auf Felder zugreift die gar nicht existieren. Damit so etwas erst gar nicht passiert, kann man in der Abbruchbedingung der for-Schleife direkt die Länge des Arrays ausgeben mit: array.length.
-
-Möchte man nun also alle 5 Elemente unseres Beispiels-Arrays mit einer Schleife ausgeben lassen, dann würde das so gehen:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Examples of array manipulations" .java}
-// (c) by Mike Scott
-
-public class ArrayExamples
-{	public static void main(String[] args)
-	{	int[] list = {1, 2, 3, 4, 1, 2, 3};
-		findAndPrintPairs(list, 5);
-		bubblesort(list);
-		showList(list);
-
-		list = new int[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
-		bubblesort(list);
-		showList(list);
-
-		list = new int[]{11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2};
-		bubblesort(list);
-		showList(list);
-
-		list = new int[]{1};
-		bubblesort(list);
-		showList(list);
-	}
-
-
-	// pre: list != null, list.length > 0
-	// post: return index of minimum element of array
-	public static int findMin(int[] list)
-	{	assert list != null && list.length > 0 : "failed precondition";
-
-		int indexOfMin = 0;
-		for(int i = 1; i < list.length; i++)
-		{	if(list[i] < list[indexOfMin])
-			{	indexOfMin = i;
-			}
-		}
-
-		return indexOfMin;
-	}
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Obwohl hier nur java gezeigt ist, unterstützt das Template auch scala, java, javascript, css, html5 und xml
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Ein einfaches XML" .xml}
-<?xml version="1.0" standalone="yes"?>
-<!DOCTYPE module [
-    <!ELEMENT module (module|property|metadata|message)*>
-    <!ATTLIST module name NMTOKEN #REQUIRED>
-    <!ELEMENT property EMPTY>
-    <!ATTLIST property
-        name NMTOKEN #REQUIRED
-        value CDATA #REQUIRED
-        default CDATA #IMPLIED
-    >
-    <!ELEMENT metadata EMPTY>
-    <!ATTLIST metadata
-        name NMTOKEN #REQUIRED
-        value CDATA #REQUIRED
-    >
-    <!ELEMENT message EMPTY>
-    <!ATTLIST message
-        key NMTOKEN #REQUIRED
-        value CDATA #REQUIRED
-    >
-]>
-
-<!--
-    Checkstyle configuration that checks if the braces are set correctly
- -->
-
-<module name = "Checker">
-    <property name="charset" value="UTF-8"/>
-    <property name="severity" value="warning"/>
-
-    <property name="fileExtensions" value="java"/>
-    <!-- Checks for whitespace                               -->
-    <!-- See http://checkstyle.sf.net/config_whitespace.html -->
-
-    <module name="TreeWalker">
-        
-        <module name="NeedBraces"/>
-        <module name="LeftCurly">
-        	<property name="option" value="nl"/>
-        </module>
-
-        <module name="RightCurly">
-            <property name="id" value="RightCurlyAlone"/>
-            <property name="option" value="alone"/>
-            <property name="tokens"
-             value="CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, LITERAL_WHILE, STATIC_INIT,
-                    INSTANCE_INIT,LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE,
-                    LITERAL_DO"/>
-        </module>
-    </module>
-</module>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Hier etwas in kotlin
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Ein einfaches Kotlin Beispiel" .kotlin}
-// this is a simple code listing:
-println("hello kotlin from latex")
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-Und noch ein Beispiel in vba
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Ein einfaches Visual Basic for Applications Beispiel" .vba}
-Private Sub ExitSub()
- 
-    Dim i As Integer
- 
-    For i = 1 To 10      
-        If i = 5 Then
-            Exit Sub
-            MsgBox "The value of i is" & i
-        End If
-    Next i 
- 
-End Sub
- 
- 
-Private Sub CallExitSub()
-    Call ExitSub
-    MsgBox "Exit Sub"  
-End Sub
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-und noch was in Dart (im Markdown direkt als Latex Quellcode eingefügt - damit funktionieren jegliche Sprachen welche als langdef vorliegen) 
-
-\begin{lstlisting}[language=Dart, caption={Ein Beispiel für Dart}]
-library hallo;
-
-void main() {
-  String x;
-  print('Hello, World!');
-  x = 'hallo';
-}
-\end{lstlisting}
-
-
-### Auswertung der Ergebnisse
-
-Anhand von XY kann man folgende Tabelle ableiten:
-
-| Right | Left | Default | Center |
-|------:|:-----|---------|:------:|
-|   12  |  12  |    12   |    12  |
-|  123  |  123 |   123   |   123  |
-|    1  |    1 |     1   |     1  |
-
-: Eine Tolle tabelle
-
-#### Eine Überschrift 4ter Ordnung
-
-Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext.
-
-
-#### Noch ein Überschrift 4ter Ordnung
-
-Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext.
-
-Und mit einer Aufzählung:
-
-* Alpha
-* Bravo
-* Charlie
-    * Charlie 1
-    * Charlie 2
-    * Charlie 3
-    * Charlie 4
-* Delta
-* Epsilon
-
- Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext. Mit etwas Fließtext.
+Diese Struktur erleichtert die Wartung des Systems und ermöglicht spätere Erweiterungen.
 
