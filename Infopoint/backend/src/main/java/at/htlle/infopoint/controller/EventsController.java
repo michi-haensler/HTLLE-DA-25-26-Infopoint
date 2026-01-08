@@ -20,8 +20,8 @@ public class EventsController {
 
     private final EventService eventService;
 
-    @GetMapping("/{limit}")
-    public List<CockpitEvent> get(@PathVariable int limit) {
+    @GetMapping("")
+    public List<CockpitEvent> get(@RequestParam int limit) {
         return eventService.get(limit);
     }
 }
