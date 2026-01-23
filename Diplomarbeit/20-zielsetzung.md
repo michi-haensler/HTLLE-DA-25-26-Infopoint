@@ -1,30 +1,19 @@
-## Zielsetzung
+# Zielsetzung
 
-Das Ziel unserer Arbeit ist ein vollständig funktionierender Infopoint, welcher im Schulgebäude aufgestellt wird und Schülerinnen und Schülern aber auch Lehrkräften wichtige Informationen zur Verfügung stellt
+Das primäre Ziel der vorliegenden Arbeit besteht in der Entwicklung und Implementierung eines vollständig funktionsfähigen Infopoints, der im Schulgebäude installiert wird und sowohl Schülerinnen und Schülern als auch Lehrkräften relevante Informationen bereitstellt.
 
-Unsere Motivation kommt dabei aus dem Schulalltag. Immer wieder kommt es nämlich vor, dass man eine Lehrerin oder einen Lehrer sucht. Der klassische Weg wäre in einen Klassenraum zu gehen um die dortige Lehrkraft zu bitten ob diese nachschauen könne wo sich die gewünschte Person gerade aufhält. Dies wäre mit einem Infopoint viel einfacher lösbar. Aber auch der normale Informationsfluss, wie die Raumpläne am Tag der offenen Tür oder die Anmeldung am Sporttag lassen sich über einen Infopoint viel einfacher und umweltfreundlicher kommunizieren.
+Die Motivation für dieses Projekt ergibt sich aus den Anforderungen des Schulalltags. Wiederholt tritt beispielsweise die Situation ein, dass Lehrpersonen gesucht werden müssen. Der konventionelle Lösungsansatz erfordert das Aufsuchen eines Klassenraums, um die dort unterrichtende Lehrkraft um eine Standortabfrage zu bitten. Ein Infopoint ermöglicht eine deutlich effizientere Lösung dieses Problems. Darüber hinaus lassen sich auch reguläre Informationsflüsse, etwa Raumpläne für den Tag der offenen Tür oder Anmeldemodalitäten für Sportveranstaltungen, über einen Infopoint ressourcenschonender kommunizieren.
 
-Grundsätzlich wollen wir allen Personen an unserer Schule einen Zentralen Punkt zur Informationsbeschaffung bieten. Dafür wird es nötig sein eine geeignete Hardware anzuschaffen und diese dann mit unserer eigenen Softwarelösung auszustatten. 
+Das übergeordnete Ziel besteht darin, allen Personen im schulischen Umfeld einen zentralen Zugangspunkt zur Informationsbeschaffung bereitzustellen. Die Realisierung erfordert sowohl die Beschaffung geeigneter Hardware als auch die Entwicklung einer maßgeschneiderten Softwarelösung.
 
 ## Ziele
-* eine vollständig funktionsfähige Software für den Infopoint Betrieb bauen
 
-* Inhalte aktiv verwalten zu können
-
-* Über den Infopoint lassen sich gewünschte Lehrpersonen leichter finden
-
-* für Eltern, Schüler und Lehrkräfte soll es einfacher sein sich im Schulgebäude zu orientieren
-
-* mehr Nachhaltigkeit, weniger Zettelwirtschaft
+Im Rahmen dieser Arbeit wird eine vollständig funktionsfähige Software für den Infopoint-Betrieb entwickelt. Diese Software ermöglicht eine aktive Inhaltsverwaltung, sodass Informationen flexibel aktualisiert und angepasst werden können. Ein wesentliches Ziel besteht in der Vereinfachung der Lokalisierung von Lehrpersonen, die über den Infopoint abgefragt werden kann. Darüber hinaus soll die Orientierung im Schulgebäude für Erziehungsberechtigte, Schülerinnen und Schüler sowie Lehrkräfte verbessert werden. Nicht zuletzt trägt das Projekt zur Förderung der Nachhaltigkeit bei, indem papierbasierte Informationssysteme reduziert werden.
 
 ## Nicht-Ziele
-* Zusammensetzung eines eigenen Hardware Systems 
 
-* Anzeige der vollständigen Stundentafel der Lehrpersonen
-
-* Anpassung unseres Systems auf alle Sprachen
-
-* Erstellung eines eigenen CMS-Systems
+Die Entwicklung eines eigenen Hardwaresystems liegt außerhalb des Projektumfangs. Ebenso ist die Darstellung der vollständigen Stundentafel der Lehrpersonen nicht vorgesehen. Eine Lokalisierung des Systems in sämtliche Sprachen wird im Rahmen dieser Arbeit nicht angestrebt. Die Entwicklung eines eigenständigen Content-Management-Systems ist ebenfalls nicht Bestandteil des Projekts.
 
 ## Ausblick
-Durch unsere Arbeit geht unsere Schule den nächsten kleinen Schritt in Richtung Nachhaltigkeit. Viele Besucher und neue Schülerinen und Schüler werden sich viel schneller zurrecht finden. Lehrerinnen und Lehrer können jetzt noch viel schneller und effizienter gefunden werden als je zuvor. Alle aktuellen Informationen lassen sich blitzschnell und zentral abrufen.
+
+Die Implementierung des Infopoints trägt zur Förderung der Nachhaltigkeit im schulischen Umfeld bei. Besucherinnen und Besucher sowie neue Schülerinnen und Schüler profitieren von einer verbesserten Orientierung im Schulgebäude. Die Lokalisierung von Lehrpersonen wird erheblich vereinfacht, und aktuelle Informationen können zentral und zeitnah abgerufen werden.

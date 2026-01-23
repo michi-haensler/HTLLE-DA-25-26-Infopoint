@@ -1,19 +1,16 @@
 # Aufgabenstellung 
+
 Die Aufgabe besteht darin, ein digitales Informationssystem für den Schulbetrieb zu konzipieren und umzusetzen. Ziel ist es, den bisherigen analogen Informationsfluss zu digitalisieren und aktuelle Informationen wie Termine, Stundenplanänderungen sowie die Aufenthaltsorte von Lehrkräften (laut Stundenplan) übersichtlich darzustellen. Zusätzlich sollen Ankündigungen, ein Social-Media-Feed und ein CMS zur Verwaltung der Inhalte bereitgestellt werden. Alle Funktionen sollen über eine benutzerfreundliche Oberfläche zugänglich sein, die sowohl für den Einsatz im Kioskbetrieb mit Touch-Bedienung als auch für die Nutzung mit Peripheriegeräten wie Maus und Tastatur optimiert ist.
 
-
 ## Auftraggeber
-Input: Wer ist der Auftraggeber, wie ist es zu dieser Arbeit gekommen, was verspricht sich der Auftraggeber davon
 
-Unser Auftraggeber ist die HTL Leoben welcher sicht stetig für einen leichteren und innovativeren Schulalltag einsetzt. Die HTL Leoben erhofft sich durch dieses Projekt einen besseren Informationsfluss, weniger Zettelwirtschaft (Nachhaltigkeit) und einen zentralen Anlaufpunkt für Schüler, Lehrkräfte sowie Besucher an der Schule. Durch das aufwendige Suchen von Lehrkräften im Gebäude und die teils undurchsichtigen Terminplänen und Deadlines, war der Wunsch einer Lösung umso größer. Die HTL Leoben hat darauf kurzerhand einen Vorschlag für eine Di
+Der Auftraggeber des vorliegenden Projekts ist die HTL Leoben, eine Bildungseinrichtung, die sich kontinuierlich für die Optimierung und Modernisierung des Schulalltags einsetzt. Die HTL Leoben verfolgt mit diesem Projekt mehrere Zielsetzungen: die Verbesserung des Informationsflusses, die Reduktion papierbasierter Kommunikation im Sinne der Nachhaltigkeit sowie die Etablierung eines zentralen Anlaufpunkts für Schülerinnen und Schüler, Lehrkräfte und Besucherinnen und Besucher. Der Bedarf an einer entsprechenden Lösung ergab sich aus dem zeitaufwendigen Lokalisieren von Lehrkräften im Schulgebäude sowie aus der mangelnden Übersichtlichkeit bestehender Terminpläne und Fristen. 
 
 ## Ausgangssituation
 
-Input: Eine allgemeine Aufgabenstellung - Was ist die derzeitige Situation ? - Wie wird derzeit gearbeitet ?
+Bei Veranstaltungen wie dem Tag der offenen Tür sowie im regulären Schulbetrieb gestaltet sich die Orientierung im Schulgebäude häufig schwierig. Besucherinnen und Besucher sowie Schülerinnen und Schüler können Räume oder Lehrpersonen nur mit erheblichem Aufwand lokalisieren. Die Informationsbereitstellung erfolgt derzeit primär über Papieraushänge, die sich als unübersichtlich und wenig flexibel erweisen. Ein modernes, digitales Informationssystem zur Behebung dieser Defizite fehlt bislang.
 
-Bei Veranstaltungen wie dem Tag der offenen Tür aber auch im normalen Schulalltag ist die Orientierung im Schulgebäude oft schwierig. Besucherinnen und Besucher wie auch Schülerinnen und Schüle finden Räume oder Lehrpersonen nur schwer. Informationen werden derzeit über Papier-Aushänge bereitgestellt, die unübersichtlich und wenig flexibel sind. Es fehlt ein modernes, digitales Informationssystem.
-
-
+<!-- 
 ### So gehen Zitate
 
 Hier ein einzel Zitat eines Buches das auf der Seite 17 zu finden ist:  
@@ -49,7 +46,18 @@ Wichtig ist es, das beim Author die verwendete KI eingetragen wird (mit Versions
 
 Oben sieht man wie ein korrekter Bibtech Eintrag für eine ChatGPT Konversation aussieht. Zusätzlich wurden hier bei URL noch die url des Chats eingetragen - was zwar praktisch ist, uns allerdings nicht von der Pflicht entbindet den Chatverlauf in der DA als PDF einzufügen.
 Anzumerkein ist ebenfalls noch das wir hier ein `unpublished` Tag verwenden weil wir hier eben Quellen verwenden die in dieser Form nicht gepublished wurden.
+-->
 
-### Systembeschreibung Y 
+## Systembeschreibung
 
-### Systembeschreibung Z 
+<!-- HINWEIS: In diesem Abschnitt sollte eine technische Beschreibung des zu entwickelnden Infopoint-Systems erfolgen. Eine Systembeschreibung umfasst typischerweise folgende Aspekte:
+
+- **Systemarchitektur**: Beschreibung der Gesamtstruktur des Systems (Frontend, Backend, Datenbank)
+- **Technologiestack**: Auflistung und Begründung der verwendeten Technologien und Frameworks
+- **Systemkomponenten**: Detaillierte Beschreibung der einzelnen Module und deren Interaktion
+- **Datenflüsse**: Darstellung, wie Informationen im System verarbeitet und weitergeleitet werden
+- **Schnittstellen**: Beschreibung der APIs und Verbindungen zu externen Systemen (z.B. Stundenplansoftware, Social-Media-Plattformen)
+- **Benutzeroberfläche**: Konzept und Gestaltungsprinzipien der Benutzerschnittstelle
+- **Sicherheitskonzept**: Maßnahmen zur Gewährleistung der Datensicherheit und des Datenschutzes
+
+Dieser Abschnitt sollte von den jeweiligen Teammitgliedern entsprechend ihrer Zuständigkeitsbereiche ausgearbeitet werden. --> 

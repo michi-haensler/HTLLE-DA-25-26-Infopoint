@@ -5,41 +5,25 @@
 
 ### Projektauftrag
 
-Unser Auftrag ist die Entwicklung eines digitalen Infopoints für die HTL Leoben. Dieser Infopoint soll zentrale schulrelevante Informationen wie z. B. Stundenplanänderungen, Vertretungen und schulinterne News anzeigen. Die Informationen werden über ein Touch-Display bereitgestellt, das an einem zentralen Ort im Schulgebäude montiert werden soll. Die Hardware wird nicht selbst gebaut. Stattdessen wird nach einer All-in-One-Lösung gesucht, die idealerweise keine eigene Software mitbringt, sodass unsere eigene Anwendung direkt darauf deployed werden kann. Als Verwaltungssystem für Inhalte ist die Integration eines Open-Source-CMS geplant.
-Ein besonderer Fokus liegt auf der benutzerfreundlichen Gestaltung der Oberfläche sowie auf Mehrsprachigkeit, um eine möglichst zukunftsfähige Lösung zu schaffen.
+Der Projektauftrag umfasst die Entwicklung eines digitalen Infopoints für die HTL Leoben. Dieser Infopoint soll zentrale schulrelevante Informationen wie Stundenplanänderungen, Vertretungen und schulinterne Neuigkeiten anzeigen. Die Informationen werden über ein Touch-Display bereitgestellt, das an einem zentralen Ort im Schulgebäude montiert wird. Die Hardware wird nicht eigenständig entwickelt. Stattdessen wird eine All-in-One-Lösung evaluiert, die idealerweise keine proprietäre Software mitbringt, sodass die projektspezifische Anwendung direkt darauf bereitgestellt werden kann. Als Verwaltungssystem für Inhalte ist die Integration eines Open-Source-CMS vorgesehen.
+Ein besonderer Fokus liegt auf der benutzerfreundlichen Gestaltung der Oberfläche sowie auf Mehrsprachigkeit, um eine zukunftsfähige Lösung zu gewährleisten.
 
 
 #### Projektziele
 
-* Auswahl eines geeigneten Hardware Systems für den Schulbetrieb im Innenbereich.
-
-* Entwicklung eines funktionalen Infopoint-Systems für Touch-Displays
-
-* Anzeige von aktuellen schulischen Informationen wie Veranstaltungen, Raumpläne, Stundenplan, Aufenthalt von Lehrpersonen, Social Media Feed
-
-* Einfache Administrierbarkeit durch ein Content Management System (CMS) 
-
-* UI/UX-Design mit Fokus auf Barrierefreiheit und Mehrsprachigkeit (Deutsch & Englisch)
-
-* Zukunftssichere Lösung, die einfach erweiterbar ist
+Das Projekt verfolgt mehrere Kernziele. Zunächst erfolgt die Auswahl eines geeigneten Hardwaresystems für den Schulbetrieb im Innenbereich. Darauf aufbauend wird ein funktionales Infopoint-System für Touch-Displays entwickelt, das aktuelle schulische Informationen wie Veranstaltungen, Raumpläne, Stundenpläne, den Aufenthalt von Lehrpersonen sowie einen Social-Media-Feed darstellt. Die Administrierbarkeit wird durch die Integration eines Content-Management-Systems (CMS) gewährleistet. Das UI/UX-Design fokussiert auf Barrierefreiheit und Mehrsprachigkeit (Deutsch und Englisch). Die Lösung wird zukunftssicher und erweiterbar konzipiert.
 
 #### Nicht-Ziele bzw. nicht Inhalte
 
-* Zusammensetzung eines eigenen Hardware Systems 
-
-* Anzeige der vollständigen Stundentafel der Lehrpersonen
-
-* Anpassung unseres Systems auf alle Sprachen
-
-* Erstellung eines eigenen CMS-Systems
+Explizit vom Projektumfang ausgeschlossen sind die Entwicklung eines eigenen Hardwaresystems, die Anzeige der vollständigen Stundentafel der Lehrpersonen, die Lokalisierung des Systems in sämtliche Sprachen sowie die Entwicklung eines eigenständigen CMS-Systems.
 
 #### Projektnutzen
 
-Die derzeitige Informationsverteilung erfolgt oft über Aushänge oder verschiedene digitale Plattformen. Das führt zu Ineffizienz und Unübersichtlichkeit. Durch die zentrale Anzeige über den Infopoint soll dieser Zustand verbessert werden und bestenfalls auch Zeit einsparen. 
+Die derzeitige Informationsverteilung erfolgt über Aushänge oder verschiedene digitale Plattformen, was zu Ineffizienz und mangelnder Übersichtlichkeit führt. Durch die zentrale Anzeige über den Infopoint wird dieser Zustand verbessert und eine Zeitersparnis für alle Beteiligten angestrebt. 
 
 #### Projektauftraggeber
 
-Der Auftraggeber dieses Projektes ist die HTL Leoben. Die Geschäftsführung, Direktion und Lehrpersonen sind stets bemüht, den Schülerinnen und Schülern an der Schule einen Mehrwert zu bieten und den Schulalltag zu erleichtern.
+Der Auftraggeber dieses Projekts ist die HTL Leoben. Die Schulleitung und das Lehrpersonal sind bestrebt, den Schülerinnen und Schülern einen Mehrwert zu bieten und den Schulalltag zu erleichtern.
 
 #### Projekttermine
 
@@ -73,13 +57,11 @@ Der Auftraggeber dieses Projektes ist die HTL Leoben. Die Geschäftsführung, Di
 
  : Geplante Projektkosten
  
-Das gesamte Projekt kostet in Summe 24.373,00 Euro. 
+Das Gesamtprojekt beläuft sich auf Kosten von 24.373,00 Euro. 
 
 ##### Projektkosten (tatsächlich)
 
---- ToDo ---
-
-Am Ende der Diplomarbeit fügen Sie hier noch eine Liste der tatsächlich angefallenen Kosten ein.
+<!-- ToDo: Am Ende der Diplomarbeit ist hier eine Aufstellung der tatsächlich angefallenen Kosten einzufügen. -->
 
 #### Projektrisiken
 
@@ -125,13 +107,9 @@ Am Ende der Diplomarbeit fügen Sie hier noch eine Liste der tatsächlich angefa
 
 ### Vorgehen bei Änderungen
 
-Alle Änderungen am Projektumfang, den Meilensteinen oder Anwendungsfällen müssen mit dem Betreuer (und ggf. dem Auftraggeber) abgesprochen werden.
+Sämtliche Änderungen am Projektumfang, den Meilensteinen oder Anwendungsfällen erfordern eine Abstimmung mit dem Betreuer und gegebenenfalls dem Auftraggeber.
 
-Informationsfluss:
-
-Änderungen werden im Team-Chat und in Besprechungen dokumentiert.
-Betreuer und Projektleiter müssen über alle Änderungen informiert werden.
-Änderungen werden schriftlich im Änderungsprotokoll (Github Repository) vermerkt.
+Der Informationsfluss ist wie folgt geregelt: Änderungen werden im Team-Chat und in Besprechungen dokumentiert. Der Betreuer und der Projektleiter werden über alle Änderungen informiert. Alle Änderungen werden schriftlich im Änderungsprotokoll des GitHub-Repositorys vermerkt.
 
 ## Meilensteine
 
@@ -202,72 +180,72 @@ Betreuer und Projektleiter müssen über alle Änderungen informiert werden.
 
 ## Anwendungsfälle
 
-Hier beschreiben Sie die Anwendungsfälle (=UseCases) Ihrer Anwendung / Diplomarbeit. Dabei sollte die Beschreibung auf hohem Niveau (also ohne implementierungsspezifische Details) erfolgen und typischerweise so benannt sein, wie die Ziele aus Sicht der Akteure heißen: Mitglied anmelden, Geld abheben, Auto zurückgeben.
+Dieser Abschnitt beschreibt die Anwendungsfälle (Use Cases) der Anwendung. Die Beschreibung erfolgt auf hohem Abstraktionsniveau ohne implementierungsspezifische Details. Die Benennung orientiert sich an den Zielen aus Sicht der Akteure, beispielsweise „Mitglied anmelden", „Geld abheben" oder „Auto zurückgeben".
 
-Jeder Anwendungsfall wird im selben Muster beschrieben. In den folgenden Absätzen ist zuerst eine allgemeine Beschreibung eines solchen Anwendungsfalls zu finden und dann ein Beispiel dazu.
+Jeder Anwendungsfall wird nach einem einheitlichen Muster beschrieben. In den folgenden Absätzen findet sich zunächst eine allgemeine Beschreibung der Anwendungsfallstruktur, gefolgt von einem konkreten Beispiel.
 
-Damit man auch versteht wer mit welchem Anwendungsfall agiert bietet es sich an hier eine Übersichtsgrafik zu erstellen:
+Zur Veranschaulichung der Interaktion zwischen Akteuren und Anwendungsfällen dient folgende Übersichtsgrafik:
 
 ![Übersicht Anwendungsfälle](img/anwendungsfalldiagramm.png){width=60%}
 
 \newpage
 ### Anwendungsfallname
-Anwendungsfälle haben einen eindeutigen Namen aus dem man auf den Inhalt des Anwendungsfalls schließen kann. Wenn Sie agil arbeiten dann stellt ein Anwendungsfall eine UserStory dar welche im Backlog liegt und im Laufe des Projekts (in einem Sprint) abgearbeitet wird.
+Anwendungsfälle erhalten einen eindeutigen Namen, aus dem sich der Inhalt des Anwendungsfalls ableiten lässt. Bei agiler Arbeitsweise entspricht ein Anwendungsfall einer User Story im Backlog, die im Laufe des Projekts (in einem Sprint) abgearbeitet wird.
 
 #### Kurzbeschreibung
-Hier erfolgt eine kurze Beschreibung, was im Anwendungsfall passiert. Kurz bedeutet, dass es zwei oder drei Zeilen sind, selten mehr.
+Dieser Abschnitt enthält eine kurze Beschreibung des Anwendungsfallinhalts im Umfang von zwei bis drei Zeilen.
       
 #### Trigger
-Der fachliche Grund bzw. die Gründe dafür, dass dieser Anwendungsfall ausgeführt wird. 
+Der fachliche Auslöser für die Ausführung dieses Anwendungsfalls.
 
 #### Vorbedingung
-Alle Bedingungen, die erfüllt sein müssen, damit dieser Anwendungsfall ausgeführt werden kann. Gibt es keine Vorbedingungen, so steht hier "keine".
+Alle Bedingungen, die erfüllt sein müssen, damit dieser Anwendungsfall ausgeführt werden kann. Falls keine Vorbedingungen existieren, wird „keine" angegeben.
       
 #### Nachbedingung
-Der Zustand, der nach einem erfolgreichen Durchlauf des Anwendungsfalls erwartet wird.
+Der erwartete Zustand nach einem erfolgreichen Durchlauf des Anwendungsfalls.
 
 #### Akteure
-Akteure sind beteiligte Personen oder Systeme außerhalb (!) des beschriebenen Systems. Z. B. Anwender, angemeldeter Anwender, Kunde, System, Abrechnungsprozess.
+Akteure sind beteiligte Personen oder Systeme außerhalb des beschriebenen Systems, beispielsweise Anwender, angemeldete Anwender, Kunden, Systeme oder Abrechnungsprozesse.
 
 #### Standardablauf
-Hier wird das typische Szenario dargestellt, das leicht zu verstehen oder der am häufigsten vorkommende Fall ist. An seinem Ende steht die Zielerreichung des Primärakteurs. Die Ablaufschritte werden nummeriert und meist in strukturierter Sprache beschrieben. Ablaufpläne können jedoch ebenfalls benutzt werden, wenn es angebracht erscheint. Mittels der UML können diese Ablaufschritte in Aktivitätsdiagrammen oder Anwendungsfall-orientierten Sequenzdiagrammen dargestellt werden.
+Dieser Abschnitt stellt das typische Szenario dar, das leicht verständlich oder am häufigsten vorkommend ist. Am Ende steht die Zielerreichung des Primärakteurs. Die Ablaufschritte werden nummeriert und in strukturierter Sprache beschrieben. Ablaufpläne können ebenfalls verwendet werden. Mittels UML lassen sich diese Ablaufschritte in Aktivitätsdiagrammen oder anwendungsfallorientierten Sequenzdiagrammen darstellen.
 
 #### Fehlersituationen
-Dies sind Szenarien, die sich außerhalb des Standardablaufs auch bei der (versuchten) Zielerreichung des Anwendungsfalls ereignen können. Sie werden meistens als konditionale Verzweigungen der normalen Ablaufschritte dargestellt. An ihrem Ende steht ein Misserfolg, die Zielerreichung des Primärakteurs oder eine Rückkehr zum Standardablauf.
+Szenarien, die sich außerhalb des Standardablaufs bei der versuchten Zielerreichung ereignen können. Sie werden als konditionale Verzweigungen der normalen Ablaufschritte dargestellt. Am Ende steht ein Misserfolg, die Zielerreichung des Primärakteurs oder eine Rückkehr zum Standardablauf.
 
 #### Systemzustand im Fehlerfall
-Der Zustand, der nach einem erfolglosen Durchlauf des Anwendungsfalls erwartet wird.
+Der erwartete Zustand nach einem erfolglosen Durchlauf des Anwendungsfalls.
 
 
 \newpage
 ### Informationen beschaffen
 #### Kurzbeschreibung
-Als Endverbraucher (User) beschafft man sich über den Infopoint Informationen zu aktuellen Veranstaltungen, Events, Vertretungen oder Raumplänen. 
+Der Endverbraucher (User) ruft über den Infopoint Informationen zu aktuellen Veranstaltungen, Events, Vertretungen oder Raumplänen ab.
 
 #### Trigger
-Der User tippt auf den Startbildschirm, um auf die Oberfläche zu gelangen.
+Der User tippt auf den Startbildschirm, um zur Benutzeroberfläche zu gelangen.
 
 #### Vorbedingung
-Der Infopoint ist eingeschaltet, betriebsbereit und der Endverbraucher steht davor.
+Der Infopoint ist eingeschaltet und betriebsbereit. Der Endverbraucher befindet sich vor dem Gerät.
       
 #### Nachbedingung
-Der User hat alle benötigten Informationen gefunden.
+Der User hat alle benötigten Informationen erhalten.
 
 #### Akteure
-* Endverbraucher (User)
+Endverbraucher (User)
 
 #### Fehlersituationen
-Der Infopoint hat keinen Zugriff zu aktuellen Daten aufgrund von fehlender Internetverbindung oder anderen Fehlern.
+Der Infopoint kann aufgrund fehlender Internetverbindung oder anderer technischer Störungen nicht auf aktuelle Daten zugreifen.
 
 #### Systemzustand im Fehlerfall
-Der User bekommt eine Fehlermeldung angezeigt.
+Dem User wird eine Fehlermeldung angezeigt.
 
-#### Standardablauf:
+#### Standardablauf
 
-1. User geht auf den Infopoint zu und klickt auf den Bildschirm, um den Bildschirmschoner zu deaktivieren.
-2. Auf dem Homescreen steht nun eine Auswahl an Funktionen zur Verfügung, aus welcher ausgewählt werden kann.
-3. Durch Klicken auf die Funktion werden alle gewünschten Informationen angezeigt.
+1. Der User nähert sich dem Infopoint und tippt auf den Bildschirm, um den Bildschirmschoner zu deaktivieren.
+2. Auf dem Homescreen wird eine Auswahl an Funktionen angezeigt.
+3. Durch Auswahl der gewünschten Funktion werden die entsprechenden Informationen dargestellt.
 
-#### Alternativabläufe:
+#### Alternativabläufe
 
-*  Durch Klicken auf die Funktion wird eine Fehlermeldung ausgegeben.
+Falls die gewünschte Funktion nicht verfügbar ist, wird eine Fehlermeldung ausgegeben.

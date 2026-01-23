@@ -3,9 +3,9 @@
 
 ## Ausgangslage
 
-### Was ist meine Teilaufgabe?
+### Teilaufgabenbereich
 
-Meine Aufgabe ist es mich um die Hardware, das Design die  Konzeption und das Projektmanagement zu kümmern. Dabei habe ich geeignete Hardware gesucht und darüber recherchiert um unsere Kostenpunkte zusammen zu stellen. Im Punkt Design habe ich mir mit dem Tool Adobe XD funktionale Mockups erstellt, um die spätere programmier Arbeit deutlich zu erleichtern. Über diese Mockups ist auch das Design entstanden. Auf Projektmanagement Ebene haben wir uns für "Github Projects" entschieden um unsere Arbeit besser Koordinieren zu können. Gehen wir nun aber in die Details.
+Der vorliegende Teilbereich umfasst die Hardwareauswahl, das Design, die Konzeption sowie das Projektmanagement. Im Rahmen der Hardwareauswahl erfolgte eine systematische Recherche geeigneter Komponenten zur Erstellung einer Kostenübersicht. Für die Designphase wurden mithilfe des Tools Adobe XD funktionale Mockups erstellt, um die anschließende Implementierungsarbeit zu erleichtern. Aus diesen Mockups entwickelte sich das finale Design. Auf Projektmanagementebene fiel die Entscheidung zugunsten von GitHub Projects, um eine effiziente Koordination der Arbeitsabläufe zu gewährleisten. Die folgenden Abschnitte erläutern diese Bereiche detailliert.
 
 ## Theorie
 
@@ -13,72 +13,56 @@ Meine Aufgabe ist es mich um die Hardware, das Design die  Konzeption und das Pr
 
 #### Definition und Aufgaben von Infopoint-Systemen
 
-Was ist ein Infopoint-System? Ein Infopoint-System ist eine digitale Lösung, um Informationen effizient und möglichst benutzerfreundlich bereitzustellen. Diese Systeme sind oft in öffentlichen Einrichtungen wie Schulen, Universitäten, Bibliotheken oder Museen zu finden und dienen dazu, Besuchern und Nutzern den Zugang zu wichtigen Informationen zu erleichtern. Infopoint-Systeme können verschiedene Formen annehmen, darunter interaktive Kioske, digitale Anzeigetafeln oder mobile Anwendungen. Sie sind meist maßgeschneidert um die Anwendungsfälle der jeweiligen Einrichtungen bestmöglich abzudecken. Einer der bekanntesten Anwendungsfälle eines Infopoint Systems ist sicherlich das Bestellsystem von McDonalds. Hier können Kunden ihre Bestellung einfach und schnell selbst aufgeben, ohne mit einem Mitarbeiter sprechen zu müssen, was wiederum die Effizienz erhöht und Wartezeiten reduziert. 
+Ein Infopoint-System bezeichnet eine digitale Lösung zur effizienten und benutzerfreundlichen Bereitstellung von Informationen. Derartige Systeme finden sich häufig in öffentlichen Einrichtungen wie Schulen, Universitäten, Bibliotheken oder Museen und dienen dazu, Besucherinnen und Besuchern sowie Nutzerinnen und Nutzern den Zugang zu relevanten Informationen zu erleichtern. Infopoint-Systeme können unterschiedliche Ausprägungen annehmen, darunter interaktive Kioske, digitale Anzeigetafeln oder mobile Anwendungen. Sie werden in der Regel maßgeschneidert konzipiert, um die spezifischen Anwendungsfälle der jeweiligen Einrichtungen optimal abzudecken. Ein prominentes Beispiel für ein Infopoint-System stellt das Self-Service-Bestellsystem von Fast-Food-Ketten dar. Hier können Kundinnen und Kunden ihre Bestellungen eigenständig aufgeben, ohne persönliche Interaktion mit dem Personal, was die Effizienz steigert und Wartezeiten reduziert.
 
-Was sind nun die konkreten Aufgaben eines Infopoint-Systems? Grundsätzlich lassen sich die Aufgaben wie folgt einteilen:
+Die konkreten Aufgaben eines Infopoint-Systems lassen sich in mehrere Kategorien einteilen. Im Bereich **Orientierung und Navigation** fungieren derartige Informationssysteme als Orientierungshilfe, indem sie interaktive Karten, Wegbeschreibungen und Standortinformationen einzelner Räume bereitstellen. Dies erweist sich insbesondere in großen Gebäudekomplexen oder auf weitläufigen Campusgeländen als vorteilhaft. Entsprechende Anwendungen finden sich beispielsweise in Einkaufszentren oder Flughäfen.
 
-- **Orientierung und Navigation:** Diese Informationssysteme können als schnelle Orientierungshilfe dienen, indem sie interaktive Karten, Wegbeschreibungen und Standortinformationen von einzelnen Räumen bereitstellen. Dies ist besonders in großen Gebäudekomplexen oder auf weitläufigen Campusgeländen hilfreich. Gerade diesen Punkt findet man in großen Einkaufszentren oder Flughäfen wieder. 
+Eine weitere zentrale Funktion ist die **Anzeige aktueller Informationen**. Infopoint-Systeme ermöglichen die Darstellung von Veranstaltungshinweisen, Ankündigungen, Wetterberichten oder Verkehrsinformationen. Dies gewährleistet, dass Nutzerinnen und Nutzer stets über relevante Neuigkeiten informiert sind. Auf Campusgeländen von Hochschulen und Schulen findet sich dieser Anwendungsfall häufig, wobei Informationen über Informationstage, aktuelle Veranstaltungen oder Projekte angezeigt werden.
 
-- **Anzeige aktueller Informationen:** Infopoint-Systeme können genutzt werden, um aktuelle Informationen wie Veranstaltungshinweise, Ankündigungen, Wetterberichte oder Verkehrsinformationen anzuzeigen. Dies ermöglicht es den Nutzern, stets auf dem Laufenden zu bleiben. Auf Campusgeländen von Hochschulen bzw. Schulen im allgemeinen sieht man diesen Anwendungsfall häufig. Dort werden Informationen über Infotage, aktuelle Veranstalltungen oder Projekte angezeigt.
+Im Bereich **Service und Self-Service** bieten zahlreiche Infopoint-Systeme Funktionen wie den Ticketerwerb, Reservierungen oder das Ausfüllen von Formularen an. Dies erleichtert den Nutzerinnen und Nutzern den Zugang zu Dienstleistungen, reduziert den Bedarf an persönlicher Interaktion, minimiert Wartezeiten und steigert somit die Effizienz. Ein Beispiel hierfür sind die Kiosk-Systeme in Fast-Food-Ketten, bei denen der Bestell- und Bezahlvorgang erheblich vereinfacht wird.
 
-- **Service und Self-Service:** Viele Infopoint-Systeme bieten Self-Service-Funktionen an, wie z.B. die Möglichkeit, Tickets zu kaufen, Reservierungen vorzunehmen oder Formulare auszufüllen. Dies erleichtert den Nutzern den Zugang zu Dienstleistungen und reduziert den Bedarf an persönlicher Interaktion mindert die Wartezeiten und steigern somit die Effizienz. Ein gutes Beispiel hierfür sind die Kiosk-System in Fast-Foot Ketten wie McDonalds. Das Bestellen und Bezahlen wird hierdurch deutlich vereinfacht ohne, dass es dafür einen Mitarbeiter braucht.
-
-- **Barrierefreiheit:** Moderne Infopoint-Systeme sind oft so gestaltet, dass sie den Bedürfnissen von Menschen mit Behinderungen gerecht werden. Dies kann durch die Integration von Funktionen wie Sprachausgabe, Bildschirmvergrößerung oder taktilen Eingabemöglichkeiten erreicht werden.
+Nicht zuletzt spielt die **Barrierefreiheit** eine wichtige Rolle. Moderne Infopoint-Systeme werden so gestaltet, dass sie den Bedürfnissen von Menschen mit Behinderungen gerecht werden. Dies kann durch die Integration von Funktionen wie Sprachausgabe, Bildschirmvergrößerung oder taktilen Eingabemöglichkeiten erreicht werden.
 
 #### Einsatzgebiete und Nutzen in Bildungseinrichtungen
 
-Wie sind oben genannte Aufgaben in Bildungseinrichtungen relevant? Wenn man näher darüber nachdenkt, ist der erste Punkt "Orientierung und Navigation" offensichtlich. Alleine an Tagen der offenen Türe wo viele Besucher durch das Schulgebäude laufen, ist die richtige Kommunikation unverzichtbar. Kaum jemand möchte sich mühsam durch das Gebäude kämpfen nur um am Ende festzustellen, dass man doch nicht alles gesehen hat. Gerade dann sind benutzerfreundliche Anlaufstellen wie Infopoints Gold wert. Dort können Besucher schnell und einfach die gewünschten Informationen finden, ohne lange suchen oder warten zu müssen.
+Die genannten Aufgabenbereiche weisen eine hohe Relevanz für Bildungseinrichtungen auf. Der Aspekt „Orientierung und Navigation" erweist sich als besonders bedeutsam. Insbesondere an Tagen der offenen Tür, an denen zahlreiche Besucherinnen und Besucher das Schulgebäude frequentieren, ist eine effektive Informationsvermittlung unverzichtbar. Die Orientierung in unbekannten Gebäuden kann ohne entsprechende Hilfsmittel zeitaufwendig sein und dazu führen, dass relevante Bereiche nicht aufgefunden werden. Benutzerfreundliche Anlaufstellen wie Infopoints ermöglichen es Besucherinnen und Besuchern, gewünschte Informationen effizient abzurufen.
 
-Auch der zweite Punkt "Anzeige aktueller Informationen" ist in Bildungseinrichtungen von großer Bedeutung. Schulen und Universitäten haben oft eine Vielzahl von Veranstaltungen, Kursen und Ankündigungen, die den Schülern und Studenten mitgeteilt werden müssen. Infopoint-Systeme können als zentrale Informationsquelle dienen, um sicherzustellen, dass alle Beteiligten stets über wichtige Neuigkeiten informiert sind. Dies fördert die Kommunikation und das Gemeinschaftsgefühl innerhalb der Bildungseinrichtung. Zusätzlich fördert es die Nachhaltigkeit, da nicht mehr die Pinnwand für eine vilefalt an Aushängen genutzt werden muss. 
+Der Aspekt „Anzeige aktueller Informationen" ist für Bildungseinrichtungen ebenfalls von erheblicher Bedeutung. Schulen und Universitäten verfügen häufig über eine Vielzahl von Veranstaltungen, Kursen und Ankündigungen, die den Schülerinnen und Schülern sowie Studierenden kommuniziert werden müssen. Infopoint-Systeme können als zentrale Informationsquelle fungieren und gewährleisten, dass alle Beteiligten stets über relevante Neuigkeiten informiert sind. Dies fördert die Kommunikation innerhalb der Bildungseinrichtung. Darüber hinaus wird die Nachhaltigkeit gefördert, da papierbasierte Aushänge an Pinnwänden reduziert werden können. 
 
 
 #### Anforderungen an moderne digitale Informationslösungen
 
-Moderne digitale Informationslösungen müssen eine Reihe von Anforderungen erfüllen, um effektiv und benutzerfreundlich zu sein. Hier sind einige der wichtigsten Anforderungen:
+Moderne digitale Informationslösungen müssen eine Reihe von Anforderungen erfüllen, um effektiv und benutzerfreundlich zu sein. An erster Stelle steht die **Benutzerfreundlichkeit**: Die Systeme sollten intuitiv und einfach zu bedienen sein, damit Nutzerinnen und Nutzer aller Altersgruppen und technischen Fähigkeiten problemlos darauf zugreifen können. Eine klare Navigation, verständliche Symbole und eine logische Struktur sind hierfür entscheidend.
 
-- **Benutzerfreundlichkeit:** Die Systeme sollten intuitiv und einfach zu bedienen sein, damit Nutzer aller Altersgruppen und technischen Fähigkeiten problemlos darauf zugreifen können. Eine klare Navigation, verständliche Symbole und eine logische Struktur sind entscheidend.
+Eng damit verbunden ist die **Zugänglichkeit**. Digitale Informationslösungen sollten barrierefrei gestaltet sein, um Menschen mit unterschiedlichen Fähigkeiten gerecht zu werden. Dies umfasst Funktionen wie Bildschirmleser-Kompatibilität, Tastaturnavigation und Anpassungsmöglichkeiten für Sehbehinderte.
 
-- **Zugänglichkeit:** Digitale Informationslösungen sollten barrierefrei gestaltet sein, um Menschen mit unterschiedlichen Fähigkeiten gerecht zu werden. Dies umfasst Funktionen wie Bildschirmleser-Kompatibilität, Tastaturnavigation und Anpassungsmöglichkeiten für Sehbehinderte.
+Die **Aktualität** der bereitgestellten Informationen ist ebenfalls von zentraler Bedeutung. Die Inhalte müssen stets aktuell und relevant sein, was eine einfache Möglichkeit zur Aktualisierung erfordert – sei es durch automatisierte Prozesse oder manuelle Eingriffe.
 
-- **Aktualität:** Die bereitgestellten Informationen müssen stets aktuell und relevant sein. Dies erfordert eine einfache Möglichkeit zur Aktualisierung der Inhalte, sei es durch automatisierte Prozesse oder manuelle Eingriffe.
-
-- **Skalierbarkeit:** Die Lösungen sollten in der Lage sein, mit dem Wachstum der Nutzerbasis und den sich ändernden Anforderungen der Bildungseinrichtung mitzuwachsen. Dies kann die Integration neuer Funktionen oder die Erweiterung der Infrastruktur umfassen.
-
-- **Integration:** Moderne Informationssysteme sollten nahtlos in bestehende IT-Infrastrukturen und Softwarelösungen integriert werden können, um einen reibungslosen Informationsfluss zu gewährleisten.
+Hinsichtlich der **Skalierbarkeit** sollten die Lösungen in der Lage sein, mit dem Wachstum der Nutzerbasis und den sich ändernden Anforderungen der Bildungseinrichtung mitzuwachsen. Dies kann die Integration neuer Funktionen oder die Erweiterung der Infrastruktur umfassen. Schließlich sollten moderne Informationssysteme eine nahtlose **Integration** in bestehende IT-Infrastrukturen und Softwarelösungen ermöglichen, um einen reibungslosen Informationsfluss zu gewährleisten.
 
 ### Hardware-Grundlagen für Informationssysteme
 
 #### Wichtige Hardwarekomponenten eines Infopoints
 
-Viele haben bestimmt schon einen Infopoint verwendet, doch was steckt eigentlich dahinter? Naja villeicht ich es doch einfacher als man denkt. Grundsätzlich besteht ein Infopoint aus: 
-- Computer 
-    - Dieser ist das zentrale Herzstücks eines Infopoints. Dieser ist hauptverantwortlich für die Visualisierung der Inhalte. Auf ihm läuft das Betriebssystem. Je performanter der Computer ist, desto komplexere Inhalte können dargestllet werden. Ein komplexerer Inhalt wäre z.B. ein 3 dimensinaler Raumplan eines Gebäudes.
+Die technische Struktur eines Infopoint-Systems ist grundlegend überschaubar und besteht im Wesentlichen aus drei Hauptkomponenten.
 
-- Display
-    - Das Display ist das wichtigste Bestandteil unseres Infopoints, es ist nämlich dafür verantwortlich, dass der Endbenutzer zu seinen Informationen kommt. Hier gibt es zwei möglichkeiten. Die erste wäre einen einfachen Bildschirm zu verwenden, welcher statische Inhalte zeigt. Die zweite Möglichkeit wäre einen Touchscreen zu verwenden. Der Vorteil? Der Infopoint wird interaktiv. Das führt zu einer Vielzahl weiteren Möglichkeiten welche man einem Benutzer bieten kann.  
+Der **Computer** bildet die zentrale Recheneinheit eines Infopoints und ist für die Verarbeitung und Visualisierung der Inhalte verantwortlich. Auf diesem läuft das Betriebssystem. Die Leistungsfähigkeit des Computers bestimmt, welche Komplexität die dargestellten Inhalte aufweisen können – ein Beispiel für komplexere Inhalte wäre ein dreidimensionaler Raumplan eines Gebäudes.
 
-- Gehäuse
-    - Das erste was der Benutzer sieht, ist das Gehäuse. Es hält die Komponenten (Computer und Display) zusammen und sorgt dabei für einen schlichten ansprechenden Look. Das Gehäuse sorgt außerdem dafür, dass der Infopoint zur restlichen Inneneinrichtung passt. Vorrausgesetzt, man lässt sich ein passendes Gehäuse anfertigen. Zusätzlich ist das Gehäuse ausschlaggebend über den Einsatzzweck. Beispielsweise muss das Gehäuse die Komponenten vor der Witterung schützen wenn der Infopoint draußen steht oder hängt.
+Das **Display** stellt die wichtigste Komponente des Infopoints dar, da es die Schnittstelle zwischen System und Endbenutzer bildet. Hierbei existieren zwei Optionen: Die erste Option besteht in der Verwendung eines einfachen Bildschirms zur Darstellung statischer Inhalte. Die zweite Option umfasst den Einsatz eines Touchscreens, wodurch der Infopoint interaktiv wird und eine Vielzahl weiterer Funktionsmöglichkeiten für die Benutzerinteraktion eröffnet.
+
+Das **Gehäuse** bildet den ersten visuellen Eindruck des Infopoints. Es vereint die Komponenten und gewährleistet ein ansprechendes Erscheinungsbild. Das Gehäuse kann so gestaltet werden, dass es sich in die vorhandene Inneneinrichtung einfügt, sofern eine entsprechende Anfertigung erfolgt. Darüber hinaus ist das Gehäuse maßgeblich für den Einsatzzweck: Bei einer Außeninstallation muss es beispielsweise die Komponenten vor Witterungseinflüssen schützen.
 
 #### Kriterien für die Hardwareauswahl
 
-Bei der Auswahl der Hardware für ein Infopoint-System sind mehrere Kriterien zu berücksichtigen, um sicherzustellen, dass das System den Anforderungen der Bildungseinrichtung gerecht wird, weswegen ich hier einige wichtige Kriterien aufliste:
+Bei der Auswahl der Hardware für ein Infopoint-System sind mehrere Kriterien zu berücksichtigen, um sicherzustellen, dass das System den Anforderungen der Bildungseinrichtung entspricht.
 
-- **Leistung:** Die Hardware muss ausreichend leistungsfähig sein, um die geplanten Anwendungen und Inhalte reibungslos auszuführen. Dies umfasst die Prozessorleistung, den Arbeitsspeicher und die Grafikkapazitäten.
+An erster Stelle steht die **Leistung**: Die Hardware muss ausreichend leistungsfähig sein, um die geplanten Anwendungen und Inhalte reibungslos auszuführen. Dies umfasst die Prozessorleistung, den Arbeitsspeicher und die Grafikkapazitäten. Da Infopoint-Systeme häufig rund um die Uhr in Betrieb sind, ist zudem die **Zuverlässigkeit** von besonderer Bedeutung – die Hardware muss robust sein, um Ausfallzeiten zu minimieren.
 
-- **Zuverlässigkeit:** Da Infopoint-Systeme oft rund um die Uhr in Betrieb sind, ist es wichtig, dass die Hardware robust und zuverlässig ist, um Ausfallzeiten zu minimieren.
+Aus wirtschaftlicher Perspektive spielen **Energieeffizienz** und **Kosten** eine entscheidende Rolle. Energieeffiziente Hardware trägt dazu bei, die Betriebskosten zu senken und die Umweltbelastung zu reduzieren. Das Budget der Bildungseinrichtung erfordert dabei ein ausgewogenes Verhältnis zwischen Leistung, Qualität und Anschaffungskosten.
 
-- **Energieeffizienz:** Energieeffiziente Hardware trägt dazu bei, die Betriebskosten zu senken und die Umweltbelastung zu reduzieren. Dies ist besonders wichtig für Systeme, die dauerhaft in Betrieb sind.
+Für die technische Integration ist die **Konnektivität** relevant: Die Hardware sollte über ausreichende Anschlussmöglichkeiten verfügen, um eine einfache Einbindung in das bestehende Netzwerk und die IT-Infrastruktur zu gewährleisten. Ebenso muss die **Kompatibilität** mit der geplanten Software und den Betriebssystemen gegeben sein.
 
-- **Konnektivität:** Die Hardware sollte über ausreichende Anschlussmöglichkeiten verfügen, um eine einfache Integration in das bestehende Netzwerk und die IT-Infrastruktur der Bildungseinrichtung zu gewährleisten.
-
-- **Kosten:** Das Budget der Bildungseinrichtung spielt eine entscheidende Rolle bei der Hardwareauswahl. Es ist wichtig, ein Gleichgewicht zwischen Leistung, Qualität und Kosten zu finden.
-
-- **Wartungsfreundlichkeit:** Die Hardware sollte so ausgewählt werden, dass sie leicht zu warten und zu reparieren ist, um langfristige Betriebskosten zu minimieren.
-
-- **Kompatibilität:** Die Hardware muss mit der geplanten Software und den Betriebssystemen kompatibel sein, um eine reibungslose Integration zu gewährleisten.
-
-- **Zukunftssicherheit:** Es ist ratsam, Hardware zu wählen, die zukünftige Erweiterungen und Upgrades ermöglicht, um den sich ändernden Anforderungen gerecht zu werden.
+Mit Blick auf den langfristigen Betrieb sind **Wartungsfreundlichkeit** und **Zukunftssicherheit** zu beachten. Die Hardware sollte leicht zu warten und zu reparieren sein, um langfristige Betriebskosten zu minimieren. Zudem ist es ratsam, Hardware zu wählen, die zukünftige Erweiterungen und Upgrades ermöglicht.
 
 #### Vergleich relevanter Hardwarekomponenten (ToDo)
 
@@ -91,180 +75,156 @@ Bei der Auswahl der Hardware für ein Infopoint-System sind mehrere Kriterien zu
 | Kosten            | Hoch                   | Mittel                 | Niedrig                |
 | Energieverbrauch  | Mittel                 | Hoch                   | Sehr niedrig           |
 
+:Hardwarwarevergleich
+
+
 #### Energieverbrauch, Zuverlässigkeit und Wartbarkeit
 
-Bei der Auswahl der Hardware für ein Infopoint-System sind Energieverbrauch, Zuverlässigkeit und Wartbarkeit entscheidende Faktoren, welche sich langfristig auf Effizienz und die Betriebskosten des Systems auswirken. Sollten die Effizienz und die Betriebskosten nicht beachtet werden, kann dies zu unerwartet hohen Kosten und Ausfallzeiten führen, was sich negativ auf die Nutzung des Geräts auswirkt. Wenn etwas nämlich nicht gut funktioniert, wird es vom Endverbraucher kaum benutzt und ist für die Institution eine reine Kostenstelle. Im Folgenden werden diese drei Aspekte näher erläutert:
+Bei der Auswahl der Hardware für ein Infopoint-System sind Energieverbrauch, Zuverlässigkeit und Wartbarkeit entscheidende Faktoren, welche sich langfristig auf Effizienz und die Betriebskosten des Systems auswirken. Sollten die Effizienz und die Betriebskosten nicht beachtet werden, kann dies zu unerwartet hohen Kosten und Ausfallzeiten führen, was sich negativ auf die Nutzung des Geräts auswirkt. Wenn etwas nämlich nicht gut funktioniert, wird es vom Endverbraucher kaum benutzt und ist für die Institution eine reine Kostenstelle.
 
-- **Energieverbrauch:** Ein niedriger Energieverbrauch ist wichtig, um die Betriebskosten zu minimieren und die Umweltbelastung zu reduzieren. Energieeffiziente Komponenten wie stromsparende Computer und Displays sollten bevorzugt werden. Dies ist besonders relevant für Infopoint-Systeme, die rund um die Uhr in Betrieb sind. Die Verwendung von Energiesparmodi und automatischen Abschaltfunktionen kann ebenfalls dazu beitragen, den Energieverbrauch zu senken.
+Ein niedriger **Energieverbrauch** ist wichtig, um die Betriebskosten zu minimieren und die Umweltbelastung zu reduzieren. Energieeffiziente Komponenten wie stromsparende Computer und Displays sollten bevorzugt werden. Dies ist besonders relevant für Infopoint-Systeme, die rund um die Uhr in Betrieb sind. Die Verwendung von Energiesparmodi und automatischen Abschaltfunktionen kann ebenfalls dazu beitragen, den Energieverbrauch zu senken.
 
-- **Zuverlässigkeit:** Die Hardware muss robust und langlebig sein, um Ausfallzeiten zu minimieren. Komponenten mit hoher Zuverlässigkeit, wie z.B. industrielle Grade SSDs anstelle von herkömmlichen Festplatten, tragen dazu bei, die Lebensdauer des Systems zu verlängern und Wartungsaufwand zu reduzieren.
+Hinsichtlich der **Zuverlässigkeit** muss die Hardware robust und langlebig sein, um Ausfallzeiten zu minimieren. Komponenten mit hoher Zuverlässigkeit, wie beispielsweise SSDs mit industriellem Qualitätsstandard anstelle von herkömmlichen Festplatten, tragen dazu bei, die Lebensdauer des Systems zu verlängern und den Wartungsaufwand zu reduzieren.
 
-- **Wartbarkeit:** Die Hardware sollte so ausgewählt werden, dass sie leicht zu warten und zu reparieren ist. Modular aufgebaute Systeme ermöglichen einen einfachen Austausch defekter Komponenten. Zudem sollte die Verfügbarkeit von Ersatzteilen und Support berücksichtigt werden. Außerdem ist es für künftige Erweiterungen von Vorteil, wenn die Hardware leicht aufgerüstet bzw. umgebaut werden kann.
+Die **Wartbarkeit** erfordert, dass die Hardware so ausgewählt wird, dass sie leicht zu warten und zu reparieren ist. Modular aufgebaute Systeme ermöglichen einen einfachen Austausch defekter Komponenten. Zudem sollte die Verfügbarkeit von Ersatzteilen und Support berücksichtigt werden. Außerdem ist es für künftige Erweiterungen von Vorteil, wenn die Hardware leicht aufgerüstet bzw. umgebaut werden kann.
 
 #### Kostenfaktoren bei Hardwareprojekten
 
-Bei Hardwareprojekten spielen verschiedene Kostenfaktoren eine entscheidende Rolle, die sorgfältig berücksichtigt werden müssen, um das Budget einzuhalten und die Wirtschaftlichkeit des Projekts zu gewährleisten. Im Folgenden werden die wichtigsten Kostenfaktoren erläutert:
+Bei Hardwareprojekten spielen verschiedene Kostenfaktoren eine entscheidende Rolle, die sorgfältig berücksichtigt werden müssen, um das Budget einzuhalten und die Wirtschaftlichkeit des Projekts zu gewährleisten.
 
-- **Anschaffungskosten:** Dies umfasst die Kosten für den Kauf der Hardwarekomponenten wie Computer, Displays, Gehäuse und Zubehör. Es ist wichtig, qualitativ hochwertige Komponenten zu wählen, die den Anforderungen des Projekts entsprechen, ohne das Budget zu überschreiten.
+Die **Anschaffungskosten** umfassen die Kosten für den Kauf der Hardwarekomponenten wie Computer, Displays, Gehäuse und Zubehör. Es ist wichtig, qualitativ hochwertige Komponenten zu wählen, die den Anforderungen des Projekts entsprechen, ohne das Budget zu überschreiten. Hinzu kommen **Installationskosten**, die durch die Installation und Einrichtung der Hardware entstehen. Dazu gehören Arbeitskosten für Techniker, die die Komponenten zusammenbauen, konfigurieren und testen.
 
-- **Installationskosten:** Diese Kosten entstehen durch die Installation und Einrichtung der Hardware. Dazu gehören Arbeitskosten für Techniker, die die Komponenten zusammenbauen, konfigurieren und testen.
+Während der Lebensdauer des Systems fallen **Betriebskosten** an, darunter Stromverbrauch, Wartung und Reparaturen. Energieeffiziente Hardware kann dazu beitragen, diese Kosten zu minimieren. Zusätzlich ist eine regelmäßige Wartung erforderlich, um die Zuverlässigkeit und Leistung der Hardware zu gewährleisten. Dies umfasst Kosten für Inspektionen, Software-Updates und den Austausch von Verschleißteilen.
 
-- **Betriebskosten:** Laufende Kosten wie Stromverbrauch, Wartung und Reparaturen fallen während der Lebensdauer des Systems an. Energieeffiziente Hardware kann dazu beitragen, diese Kosten zu minimieren. Zusätzlich ist eine regelmäßige Wartung erforderlich, um die Zuverlässigkeit und Leistung der Hardware zu gewährleisten. Dies umfasst Kosten für Inspektionen, Software-Updates und den Austausch von Verschleißteilen.
-
-- **Schulungskosten:** Falls das Personal geschult werden muss, um die Hardware zu bedienen oder zu warten, sollten auch diese Kosten berücksichtigt werden. Bestenfalls ist das System aber so benutzerfreundlich und gut dokumentiert, dass kaum Schulungsaufwand nötig ist.
+Falls das Personal für die Bedienung oder Wartung der Hardware geschult werden muss, sollten auch **Schulungskosten** berücksichtigt werden. Idealerweise ist das System jedoch so benutzerfreundlich konzipiert und dokumentiert, dass der Schulungsaufwand minimal bleibt.
 
 ### Grundlagen des UI/UX-Designs
 
 #### Bedeutung von nutzerzentriertem Design
 
-Nutzerzentriertes Design (User-Centered Design, UCD) ist ein Ansatz im Designprozess, welcher den Fokus auf die Bedürfnisse, Erwartungen und Einschränkungen des Endbenutzers legt. Dieser Ansatz ist besonders wichtig bei der Entwicklung von Informationssystemen wie Infopoints, da diese direkt von einer Vielzahl von Nutzern verwendet und verstanden werden müssen. Die Bedeutung von nutzerzentriertem Design lässt sich wie folgt zusammenfassen:
+Nutzerzentriertes Design (User-Centered Design, UCD) ist ein Ansatz im Designprozess, welcher den Fokus auf die Bedürfnisse, Erwartungen und Einschränkungen des Endbenutzers legt. Dieser Ansatz ist besonders wichtig bei der Entwicklung von Informationssystemen wie Infopoints, da diese direkt von einer Vielzahl von Nutzern verwendet und verstanden werden müssen.
 
-- **Verbesserte Benutzererfahrung:** Durch die Berücksichtigung der Nutzerbedürfnisse wird sichergestellt, dass das System intuitiv und einfach zu bedienen ist. Dies führt zu einer positiven Benutzererfahrung, welche die Akzeptanz und Nutzung des Systems positiv beeinflusst. Das heißt, dass der Benutzer mit einem Blick versteht wie er zu seinen Informationen kommt, ohne lange suchen zu müssen.
+Durch die Berücksichtigung der Nutzerbedürfnisse wird eine **verbesserte Benutzererfahrung** sichergestellt. Das System wird intuitiv und einfach zu bedienen, was zu einer positiven Benutzererfahrung führt und die Akzeptanz sowie die Nutzungsintensität positiv beeinflusst. Konkret bedeutet dies, dass Benutzerinnen und Benutzer auf den ersten Blick erfassen können, wie sie zu den gewünschten Informationen gelangen.
 
-- **Erhöhte Effizienz:** Ein nutzerzentriertes Design ermöglicht es den Benutzern, ihre Aufgaben schneller und effizienter zu erledigen. Dies ist besonders wichtig in Bildungseinrichtungen, wo Zeit oft knapp ist. Das heißt, wichtige Funktionen und Informationen sind sollten mit nur wenigen Klick erreichbar sein. Keiner möchte sich ewig durch unendliche Menüs klicken nur um eine Stundentafel zu finden.
+Ein nutzerzentriertes Design ermöglicht zudem eine **erhöhte Effizienz**. Benutzerinnen und Benutzer können ihre Aufgaben schneller erledigen, was besonders in Bildungseinrichtungen relevant ist, wo zeitliche Ressourcen begrenzt sind. Wichtige Funktionen und Informationen sollten mit möglichst wenigen Interaktionsschritten erreichbar sein, um eine aufwendige Navigation durch komplexe Menüstrukturen zu vermeiden.
 
-- **Reduzierte Fehlerquote:** Wenn das Design auf die Fähigkeiten und Erwartungen der Nutzer abgestimmt ist, werden Fehler bei der Bedienung minimiert. Dies führt zu einer reibungsloseren Nutzung des Systems. 
-
-- **Höhere Zufriedenheit:** Nutzer, die ein System als benutzerfreundlich und nützlich empfinden, sind eher zufrieden und bereit, es regelmäßig zu verwenden. Dies trägt zur langfristigen Nutzung und zum Erfolg des Infopoint-Systems bei.
+Wenn das Design auf die Fähigkeiten und Erwartungen der Nutzer abgestimmt ist, wird die **Fehlerquote** bei der Bedienung minimiert, was zu einer reibungsloseren Nutzung führt. Darüber hinaus sind Nutzerinnen und Nutzer, die ein System als benutzerfreundlich empfinden, eher zufrieden und bereit, es regelmäßig zu verwenden. Diese **höhere Zufriedenheit** trägt zur langfristigen Nutzung und zum Erfolg des Infopoint-Systems bei.
 
 #### Grundprinzipien (Usability, Accessibility, Informationsarchitektur)
 
-- **Usability (Benutzerfreundlichkeit):** Usability bezieht sich darauf, wie einfach und effizient ein Benutzer ein System nutzen kann, um seine Ziele zu erreichen. Ein benutzerfreundliches Design sollte klar strukturierte Navigation, verständliche Symbole und eine logische Anordnung der Inhalte bieten. Es sollte auch durchgängig gleich gestaltet und aufgebaut sein, damit Benutzer schnell lernen können, wie sie das System bedienen.
+Die Gestaltung von Infopoint-Systemen basiert auf drei wesentlichen Grundprinzipien. **Usability** (Benutzerfreundlichkeit) bezieht sich darauf, wie einfach und effizient ein Benutzer ein System nutzen kann, um seine Ziele zu erreichen. Ein benutzerfreundliches Design sollte klar strukturierte Navigation, verständliche Symbole und eine logische Anordnung der Inhalte bieten. Es sollte auch durchgängig gleich gestaltet und aufgebaut sein, damit Benutzer schnell lernen können, wie sie das System bedienen.
 
-- **Accessibility (Barrierefreiheit):** Barrierefreiheit stellt sicher, dass das System für alle Benutzer zugänglich ist, einschließlich Menschen mit Behinderungen. Dies umfasst die Integration von Funktionen wie Bildschirmleser-Kompatibilität, Tastaturnavigation und Anpassungsmöglichkeiten für Sehbehinderte. Ein barrierefreies Design gewährleistet, dass niemand aufgrund von physischen oder kognitiven Einschränkungen ausgeschlossen wird.
+**Accessibility** (Barrierefreiheit) stellt sicher, dass das System für alle Benutzer zugänglich ist, einschließlich Menschen mit Behinderungen. Dies umfasst die Integration von Funktionen wie Bildschirmleser-Kompatibilität, Tastaturnavigation und Anpassungsmöglichkeiten für Sehbehinderte. Ein barrierefreies Design gewährleistet, dass niemand aufgrund von physischen oder kognitiven Einschränkungen ausgeschlossen wird.
 
-- **Informationsarchitektur:** Die Informationsarchitektur bezieht sich auf die Organisation und Strukturierung der Inhalte innerhalb des Systems. Eine gut durchdachte Informationsarchitektur erleichtert es den Benutzern, die benötigten Informationen schnell zu finden. Dies umfasst die Kategorisierung von Inhalten, die Erstellung von Navigationsstrukturen und die Verwendung von Suchfunktionen.
+Die **Informationsarchitektur** bezieht sich auf die Organisation und Strukturierung der Inhalte innerhalb des Systems. Eine gut durchdachte Informationsarchitektur erleichtert es den Benutzern, die benötigten Informationen schnell zu finden. Dies umfasst die Kategorisierung von Inhalten, die Erstellung von Navigationsstrukturen und die Verwendung von Suchfunktionen.
 
 #### Wireframes, Mockups und Prototypen
 
-- **Wireframes:** Wireframes sind einfache, schematische Darstellungen der Benutzeroberfläche eines Systems. Sie konzentrieren sich auf die grundlegende Struktur und Anordnung der Elemente, ohne sich auf Designaspekte wie Farben oder Grafiken zu konzentrieren. Wireframes dienen dazu, die Funktionalität und Navigation des Systems zu planen und zu testen.
+Im Designprozess kommen verschiedene Darstellungsformen zum Einsatz, die aufeinander aufbauen. **Wireframes** sind einfache, schematische Darstellungen der Benutzeroberfläche eines Systems. Sie konzentrieren sich auf die grundlegende Struktur und Anordnung der Elemente, ohne sich auf Designaspekte wie Farben oder Grafiken zu konzentrieren. Wireframes dienen dazu, die Funktionalität und Navigation des Systems zu planen und zu testen.
 
-- **Mockups:** Mockups sind detailliertere visuelle Darstellungen der Benutzeroberfläche, die das endgültige Design und Layout des Systems zeigen. Sie enthalten Farben, Grafiken und typografische Elemente, um einen realistischen Eindruck davon zu vermitteln, wie das fertige System aussehen wird. Mockups helfen dabei, Designentscheidungen zu treffen und Feedback von Stakeholdern einzuholen.
+Auf Wireframes aufbauend entstehen **Mockups** als detailliertere visuelle Darstellungen der Benutzeroberfläche, die das endgültige Design und Layout des Systems zeigen. Sie enthalten Farben, Grafiken und typografische Elemente, um einen realistischen Eindruck davon zu vermitteln, wie das fertige System aussehen wird. Mockups helfen dabei, Designentscheidungen zu treffen und Feedback von Stakeholdern einzuholen.
 
-- **Prototypen:** Prototypen sind interaktive Modelle des Systems, die es den Benutzern ermöglichen, durch die Benutzeroberfläche zu navigieren und Funktionen zu testen. Prototypen können von einfachen klickbaren Wireframes bis hin zu voll funktionsfähigen Modellen reichen. Sie sind ein wertvolles Tool, um die Benutzererfahrung zu testeb und Verbesserungen vorzunehmen, bevor das System final entwickelt wird.
+**Prototypen** schließlich sind interaktive Modelle des Systems, die es den Benutzerinnen und Benutzern ermöglichen, durch die Benutzeroberfläche zu navigieren und Funktionen zu testen. Prototypen können von einfachen klickbaren Wireframes bis hin zu voll funktionsfähigen Modellen reichen. Sie stellen ein wertvolles Instrument dar, um die Benutzererfahrung zu testen und Verbesserungen vorzunehmen, bevor das System final entwickelt wird.
 
 #### Einführung in Adobe XD und seine Einsatzmöglichkeiten
 
-Adobe XD ist ein leistungsstarkes Design- und Prototyping-Tool, das speziell für die Erstellung von Benutzeroberflächen jeglicher Art entwickelt wurde. Das umfasst die Gestaltung von Webseiten, mobilen Apps und anderen digitalen Produkten. Die Möglichkeiten sind grenzenlos. Es bietet eine Vielzahl von Funktionen, die es Designern ermöglichen, Wireframes, Mockups und interaktive Prototypen effizient zu erstellen. Im Anschluss erläutere ich die wichtigsten Einsatzmöglichkeiten von Adobe XD:
+Adobe XD ist ein leistungsstarkes Design- und Prototyping-Tool, das speziell für die Erstellung von Benutzeroberflächen entwickelt wurde. Dies umfasst die Gestaltung von Webseiten, mobilen Applikationen und anderen digitalen Produkten. Das Tool bietet eine umfangreiche Funktionspalette, die es Designerinnen und Designern ermöglicht, Wireframes, Mockups und interaktive Prototypen effizient zu erstellen.
 
-- **Design von Benutzeroberflächen:** Adobe XD bietet eine intuitive Benutzeroberfläche und eine Vielzahl von Designwerkzeugen, mit denen Designer ansprechende und funktionale Benutzeroberflächen erstellen können. Es unterstützt Vektor- und Rastergrafiken, was eine hohe Flexibilität bei der Gestaltung ermöglicht. Zusätzlich gibt es vorgefertigte UI-Kits und Designvorlagen, die den Designprozess beschleunigen können. Außerdem gibt es eine Anbindung an die Adobe Creative Cloud, wodurch Designer problemlos auf andere Adobe-Tools wie Photoshop und Illustrator zugreifen können, um Grafiken zu erstellen und zu bearbeiten.
+Im Bereich **Design von Benutzeroberflächen** bietet Adobe XD eine intuitive Benutzeroberfläche und eine Vielzahl von Designwerkzeugen, mit denen ansprechende und funktionale Benutzeroberflächen erstellt werden können. Es unterstützt Vektor- und Rastergrafiken, was eine hohe Flexibilität bei der Gestaltung ermöglicht. Zusätzlich gibt es vorgefertigte UI-Kits und Designvorlagen, die den Designprozess beschleunigen können. Durch die Anbindung an die Adobe Creative Cloud können Designer problemlos auf andere Adobe-Tools wie Photoshop und Illustrator zugreifen, um Grafiken zu erstellen und zu bearbeiten.
 
-- **Erstellung von Wireframes und Mockups:** Mit Adobe XD können Designer schnell Wireframes und detaillierte Mockups erstellen. Die Drag-and-Drop-Funktionalität erleichtert das Platzieren und Anordnen von Elementen auf der Leinwand. 
+Die **Erstellung von Wireframes und Mockups** wird durch die Drag-and-Drop-Funktionalität erleichtert, die das Platzieren und Anordnen von Elementen auf der Leinwand vereinfacht. Im Bereich **Prototyping** ermöglicht Adobe XD die Erstellung interaktiver Prototypen, bei denen Übergänge, Animationen und Interaktionen hinzugefügt werden können, um ein realistisches Nutzungserlebnis zu simulieren.
 
-- **Prototyping:** Adobe XD ermöglicht die Erstellung interaktiver Prototypen, die es Designern und Stakeholdern ermöglichen, die Benutzererfahrung zu testen. Designer können Übergänge, Animationen und Interaktionen hinzufügen, um ein realistisches Nutzungserlebnis zu simulieren.
-
-- **Kollaboration:** Adobe XD unterstützt die Zusammenarbeit im Team, indem es Designern ermöglicht, ihre Arbeiten in Echtzeit zu teilen und Feedback von anderen Teammitgliedern oder Stakeholdern einzuholen. Dies fördert eine effiziente Kommunikation und erleichtert den Designprozess um ein Vielfaches.
+Für die **Kollaboration** unterstützt Adobe XD die Zusammenarbeit im Team, indem Arbeiten in Echtzeit geteilt und Feedback von anderen Teammitgliedern oder Stakeholdern eingeholt werden kann. Dies fördert eine effiziente Kommunikation und erleichtert den Designprozess erheblich.
 
 ### Projektmanagement-Grundlagen
 
 #### Projektlebenszyklus in Softwareprojekten
 
-Der Projektlebenszyklus in Softwareprojekten umfasst mehrere Phasen, die den gesamten Prozess von der Initiierung bis zum Abschluss des Projekts strukturieren. Diese Phasen helfen dabei, das Projekt systematisch zu planen, durchzuführen und zu überwachen. Die typischen Phasen eines Softwareprojekt-Lebenszyklus sind:
+Der Projektlebenszyklus in Softwareprojekten umfasst mehrere Phasen, die den gesamten Prozess von der Initiierung bis zum Abschluss des Projekts strukturieren. Diese Phasen helfen dabei, das Projekt systematisch zu planen, durchzuführen und zu überwachen.
 
-- **Initiierung:** In dieser Phase wird das Projekt definiert und die Machbarkeit bewertet. Es werden die Ziele, Anforderungen und der Umfang des Projekts festgelegt. Stakeholder werden identifiziert und erste Ressourcen geplant.
+In der **Initiierungsphase** wird das Projekt definiert und die Machbarkeit bewertet. Es werden die Ziele, Anforderungen und der Umfang des Projekts festgelegt, Stakeholder identifiziert und erste Ressourcen geplant. Darauf folgt die **Planungsphase**, in der detaillierte Pläne für die Durchführung erstellt werden. Dies umfasst die Erstellung eines Projektplans, die Zuweisung von Ressourcen, die Festlegung von Zeitplänen und die Identifizierung von Risiken.
 
-- **Planung:** In der Planungsphase werden detaillierte Pläne für die Durchführung des Projekts erstellt. Dies umfasst die Erstellung eines Projektplans, die Zuweisung von Ressourcen, die Festlegung von Zeitplänen und die Identifizierung von Risiken.
+Während der **Ausführungsphase** werden die geplanten Aktivitäten umgesetzt. Das Entwicklungsteam arbeitet an der Erstellung der Software, während das Projektmanagement den Fortschritt überwacht und sicherstellt, dass die Ziele erreicht werden. Die Phase der **Überwachung und Kontrolle** läuft parallel zur Ausführung und umfasst die kontinuierliche Überwachung des Projektfortschritts. Es werden Leistungsindikatoren verfolgt, Abweichungen vom Plan identifiziert und gegebenenfalls Korrekturmaßnahmen ergriffen.
 
-- **Ausführung:** Während der Ausführungsphase werden die geplanten Aktivitäten umgesetzt. Das Entwicklungsteam arbeitet an der Erstellung der Software, während das Projektmanagement den Fortschritt überwacht und sicherstellt, dass die Ziele erreicht werden.
-
-- **Überwachung und Kontrolle:** Diese Phase läuft parallel zur Ausführung und umfasst die kontinuierliche Überwachung des Projektfortschritts. Es werden Leistungsindikatoren verfolgt, Abweichungen vom Plan identifiziert und gegebenenfalls Korrekturmaßnahmen ergriffen.
-
-- **Abschluss:** In der Abschlussphase wird das Projekt formal beendet. Die Software wird ausgeliefert, Dokumentationen erstellt und eine Nachbesprechung durchgeführt, um Erfahrungen zu sammeln und Verbesserungen für zukünftige Projekte zu identifizieren.
+In der **Abschlussphase** wird das Projekt formal beendet. Die Software wird ausgeliefert, Dokumentationen erstellt und eine Nachbesprechung durchgeführt, um Erfahrungen zu sammeln und Verbesserungen für zukünftige Projekte zu identifizieren.
 
 
 #### Agile Methoden (Kanban, Scrum) im Überblick
 
-- **Kanban:** Kanban ist eine agile Methode, die sich auf die Visualisierung des Arbeitsflusses konzentriert. Es verwendet ein Kanban-Board, um Aufgaben in verschiedenen Phasen des Workflows darzustellen, z.B. "To Do", "In Progress" und "Done". Teams ziehen Aufgaben durch den Workflow, basierend auf ihrer Kapazität, was zu einer kontinuierlichen Verbesserung und Anpassung führt. Kanban fördert Transparenz und Flexibilität, da es keine festen Iterationen gibt und Prioritäten jederzeit angepasst werden können.
+Im Bereich des agilen Projektmanagements haben sich zwei Methoden besonders etabliert. **Kanban** ist eine agile Methode, die sich auf die Visualisierung des Arbeitsflusses konzentriert. Es verwendet ein Kanban-Board, um Aufgaben in verschiedenen Phasen des Workflows darzustellen, beispielsweise „To Do", „In Progress" und „Done". Teams ziehen Aufgaben durch den Workflow basierend auf ihrer Kapazität, was zu einer kontinuierlichen Verbesserung und Anpassung führt. Kanban fördert Transparenz und Flexibilität, da es keine festen Iterationen gibt und Prioritäten jederzeit angepasst werden können.
 
-- **Scrum:** Scrum ist eine weitere agile Methode, die auf festen Iterationen, sogenannten Sprints, basiert. Ein Sprint dauert in der Regel zwei bis vier Wochen, in denen ein funktionsfähiges Produktinkrement erstellt wird. Scrum umfasst spezifische Rollen wie den Product Owner, Scrum Master und das Entwicklungsteam. Es beinhaltet regelmäßige Meetings wie Daily Stand-ups, Sprint Planning, Sprint Review und Retrospektiven, um den Fortschritt zu überwachen und kontinuierliche Verbesserungen zu fördern. Scrum legt großen Wert auf Zusammenarbeit, Selbstorganisation und Anpassungsfähigkeit.
+**Scrum** hingegen basiert auf festen Iterationen, sogenannten Sprints. Ein Sprint dauert in der Regel zwei bis vier Wochen, in denen ein funktionsfähiges Produktinkrement erstellt wird. Scrum umfasst spezifische Rollen wie den Product Owner, Scrum Master und das Entwicklungsteam. Es beinhaltet regelmäßige Meetings wie Daily Stand-ups, Sprint Planning, Sprint Review und Retrospektiven, um den Fortschritt zu überwachen und kontinuierliche Verbesserungen zu fördern. Scrum legt großen Wert auf Zusammenarbeit, Selbstorganisation und Anpassungsfähigkeit.
 
 #### Aufgaben- und Zeitplanung
-Effektive Aufgaben- und Zeitplanung ist entscheidend für den Erfolg von Softwareprojekten. Hier sind einige bewährte Methoden und Tools, die dabei helfen können:
 
-- **Aufgabenmanagement-Tools:** Tools wie Jira, Trello oder GitHub Projects ermöglichen es Teams, Aufgaben zu erstellen, zuzuweisen und den Fortschritt zu verfolgen. Diese Tools bieten Funktionen wie Kanban-Boards, To-Do-Listen und Kalenderansichten, um die Organisation zu erleichtern.
+Effektive Aufgaben- und Zeitplanung ist entscheidend für den Erfolg von Softwareprojekten. **Aufgabenmanagement-Tools** wie Jira, Trello oder GitHub Projects ermöglichen es Teams, Aufgaben zu erstellen, zuzuweisen und den Fortschritt zu verfolgen. Diese Tools bieten Funktionen wie Kanban-Boards, To-Do-Listen und Kalenderansichten, um die Organisation zu erleichtern.
 
-- **Zeitplanung:** Die Verwendung von Gantt-Diagrammen oder Zeitplänen hilft dabei, den Projektzeitrahmen zu visualisieren und wichtige Meilensteine zu identifizieren. Dies ermöglicht es dem Team, den Fortschritt zu überwachen und sicherzustellen, dass das Projekt im Zeitplan bleibt.
+Für die **Zeitplanung** hilft die Verwendung von Gantt-Diagrammen oder Zeitplänen dabei, den Projektzeitrahmen zu visualisieren und wichtige Meilensteine zu identifizieren. Dies ermöglicht es dem Team, den Fortschritt zu überwachen und sicherzustellen, dass das Projekt im Zeitplan bleibt.
 
-- **Priorisierung:** Die Priorisierung von Aufgaben basierend auf ihrer Wichtigkeit und Dringlichkeit hilft dem Team, sich auf die wichtigsten Aktivitäten zu konzentrieren. Methoden wie die MoSCoW-Methode (Must have, Should have, Could have, Won't have) können dabei unterstützen.
+Die **Priorisierung** von Aufgaben basierend auf ihrer Wichtigkeit und Dringlichkeit hilft dem Team, sich auf die wichtigsten Aktivitäten zu konzentrieren. Methoden wie die MoSCoW-Methode (Must have, Should have, Could have, Won't have) können dabei unterstützen.
 
 #### Verwendung digitaler Tools für Projektorganisation
 
-- **Kommunikationstools:** Tools wie Slack, Microsoft Teams oder Zoom erleichtern die Kommunikation und Zusammenarbeit im Team, insbesondere bei verteilten Teams.
+Die Projektorganisation profitiert von verschiedenen digitalen Werkzeugen. **Kommunikationstools** wie Slack, Microsoft Teams oder Zoom erleichtern die Kommunikation und Zusammenarbeit im Team, insbesondere bei verteilten Teams. Für die Dokumentation ermöglichen Plattformen wie Confluence, Notion oder Google Docs die zentrale Speicherung und gemeinsame Bearbeitung von Projektdokumentationen.
 
-- **Dokumentations-Tools:** Plattformen wie Confluence, Notion oder Google Docs ermöglichen die zentrale Speicherung und gemeinsame Bearbeitung von Projektdokumentationen.
-
-- **Versionskontrolle:** Systeme wie Git und Plattformen wie GitHub oder GitLab helfen dabei, den Code zu verwalten, Änderungen nachzuverfolgen und die Zusammenarbeit im Entwicklungsteam zu erleichtern.
+Im Bereich der **Versionskontrolle** helfen Systeme wie Git und Plattformen wie GitHub oder GitLab dabei, den Code zu verwalten, Änderungen nachzuverfolgen und die Zusammenarbeit im Entwicklungsteam zu erleichtern.
 
 #### Risiken und Qualitätsmanagement
 
-- **Risikomanagement:** Die Identifizierung, Bewertung und Steuerung von Risiken ist entscheidend, um potenzielle Probleme frühzeitig zu erkennen und zu mitigieren. Dies umfasst die Erstellung eines Risikoregisters und die Entwicklung von Strategien zur Risikobewältigung.
+Das **Risikomanagement** umfasst die Identifizierung, Bewertung und Steuerung von Risiken und ist entscheidend, um potenzielle Probleme frühzeitig zu erkennen und zu mitigieren. Dies beinhaltet die Erstellung eines Risikoregisters und die Entwicklung von Strategien zur Risikobewältigung.
 
-- **Qualitätsmanagement:** Die Sicherstellung der Qualität der Software durch kontinuierliche Tests, Code-Reviews und die Einhaltung von Standards ist wichtig, um ein zuverlässiges und benutzerfreundliches Produkt zu liefern. Qualitätsmanagementprozesse sollten in den gesamten Projektlebenszyklus integriert werden.
+Das **Qualitätsmanagement** zielt auf die Sicherstellung der Softwarequalität durch kontinuierliche Tests, Code-Reviews und die Einhaltung von Standards ab. Dies ist wichtig, um ein zuverlässiges und benutzerfreundliches Produkt zu liefern. Qualitätsmanagementprozesse sollten in den gesamten Projektlebenszyklus integriert werden.
 
 ### Grundlagen zu Deployment & Containerisierung
 
 #### Herausforderungen beim Deployment auf verschiedener Hardware
 
-Das Deployment von Software auf unterschiedlicher Hardware kann eine Vielzahl von Herausforderungen mit sich bringen. Unterschiedliche Hardwarekonfigurationen, Betriebssysteme und Abhängigkeiten können zu Inkompatibilitäten führen, die den reibungslosen Betrieb der Software beeinträchtigen. Hier sind einige der häufigsten Herausforderungen:
+Das Deployment von Software auf unterschiedlicher Hardware kann eine Vielzahl von Herausforderungen mit sich bringen. Unterschiedliche Hardwarekonfigurationen, Betriebssysteme und Abhängigkeiten können zu Inkompatibilitäten führen, die den reibungslosen Betrieb der Software beeinträchtigen.
 
-- **Inkompatible Betriebssysteme:** Verschiedene Hardwareplattformen können unterschiedliche Betriebssysteme verwenden, was zu Problemen bei der Ausführung der Software führen kann. Beispielsweise kann eine Anwendung, die für Windows entwickelt wurde, nicht ohne weiteres auf einem Linux-basierten System laufen.
+Eine wesentliche Herausforderung stellen **inkompatible Betriebssysteme** dar. Verschiedene Hardwareplattformen können unterschiedliche Betriebssysteme verwenden, was zu Problemen bei der Ausführung der Software führen kann. Beispielsweise kann eine Anwendung, die für Windows entwickelt wurde, nicht ohne Weiteres auf einem Linux-basierten System laufen.
 
-- **Abhängigkeiten und Bibliotheken:** Unterschiedliche Hardware kann unterschiedliche Versionen von Abhängigkeiten und Bibliotheken erfordern. Dies kann zu Konflikten führen, wenn die Software auf einer Plattform läuft, die nicht die erforderlichen Versionen unterstützt.
+Hinzu kommt die Problematik unterschiedlicher **Abhängigkeiten und Bibliotheken**. Unterschiedliche Hardware kann unterschiedliche Versionen von Abhängigkeiten und Bibliotheken erfordern, was zu Konflikten führen kann, wenn die Software auf einer Plattform läuft, die nicht die erforderlichen Versionen unterstützt.
 
-- **Leistungsunterschiede:** Hardware mit unterschiedlichen Leistungsmerkmalen kann die Ausführungsgeschwindigkeit und das Verhalten der Software beeinflussen. Eine Anwendung, die auf leistungsstarker Hardware gut funktioniert, kann auf schwächerer Hardware langsam oder instabil sein.
+**Leistungsunterschiede** zwischen verschiedenen Hardwarekonfigurationen können die Ausführungsgeschwindigkeit und das Verhalten der Software beeinflussen. Eine Anwendung, die auf leistungsstarker Hardware gut funktioniert, kann auf schwächerer Hardware langsam oder instabil sein. Auch unterschiedliche **Netzwerkkonfigurationen** und Sicherheitsrichtlinien können den Zugriff auf Ressourcen und Dienste beeinträchtigen, die für die Software erforderlich sind.
 
-- **Netzwerkkonfigurationen:** Unterschiedliche Netzwerkkonfigurationen und Sicherheitsrichtlinien können den Zugriff auf Ressourcen und Dienste beeinträchtigen, die für die Software erforderlich sind.
-
-- **Wartung und Updates:** Das Verwalten von Updates und Patches auf verschiedenen Hardwareplattformen kann komplex sein, insbesondere wenn unterschiedliche Versionen der Software auf verschiedenen Systemen laufen.
+Schließlich kann die **Wartung und Aktualisierung** auf verschiedenen Hardwareplattformen komplex sein, insbesondere wenn unterschiedliche Versionen der Software auf verschiedenen Systemen laufen.
 
 #### Einführung in Virtualisierung und Containerisierung
 
-- **Virtualisierung:** Virtualisierung ist eine Technologie, die es ermöglicht, mehrere virtuelle Maschinen (VMs) auf einer physischen Hardware zu betreiben. Jede VM kann ein eigenes Betriebssystem und Anwendungen ausführen, was die Isolation und Flexibilität erhöht. Virtualisierung wird häufig verwendet, um Serverressourcen effizienter zu nutzen und verschiedene Umgebungen für Entwicklung, Test und Produktion bereitzustellen.
+Zur Lösung der genannten Deployment-Herausforderungen haben sich zwei Technologien etabliert. **Virtualisierung** ist eine Technologie, die es ermöglicht, mehrere virtuelle Maschinen (VMs) auf einer physischen Hardware zu betreiben. Jede VM kann ein eigenes Betriebssystem und Anwendungen ausführen, was die Isolation und Flexibilität erhöht. Virtualisierung wird häufig verwendet, um Serverressourcen effizienter zu nutzen und verschiedene Umgebungen für Entwicklung, Test und Produktion bereitzustellen.
 
-- **Containerisierung:** Containerisierung ist eine leichtgewichtigere Alternative zur Virtualisierung, bei der Anwendungen und ihre Abhängigkeiten in isolierten Containern verpackt werden. Container teilen sich den Kernel des Host-Betriebssystems, was zu einer geringeren Ressourcennutzung und schnelleren Startzeiten führt. Containerisierung ermöglicht es Entwicklern, Anwendungen konsistent über verschiedene Umgebungen hinweg bereitzustellen, unabhängig von der zugrunde liegenden Hardware.
+**Containerisierung** stellt eine leichtgewichtigere Alternative zur Virtualisierung dar, bei der Anwendungen und ihre Abhängigkeiten in isolierten Containern verpackt werden. Container teilen sich den Kernel des Host-Betriebssystems, was zu einer geringeren Ressourcennutzung und schnelleren Startzeiten führt. Containerisierung ermöglicht es Entwicklern, Anwendungen konsistent über verschiedene Umgebungen hinweg bereitzustellen, unabhängig von der zugrunde liegenden Hardware.
 
 #### Docker – Funktionsweise und Vorteile
 
-Docker ist eine weit verbreitete Plattform für die Containerisierung von Anwendungen. Es ermöglicht Entwicklern, Anwendungen und ihre Abhängigkeiten in sogenannten Docker-Containern zu verpacken, die auf jedem System mit Docker-Unterstützung ausgeführt werden können. Die Funktionsweise von Docker lässt sich wie folgt zusammenfassen:
+Docker ist eine weit verbreitete Plattform für die Containerisierung von Anwendungen. Es ermöglicht Entwicklern, Anwendungen und ihre Abhängigkeiten in sogenannten Docker-Containern zu verpacken, die auf jedem System mit Docker-Unterstützung ausgeführt werden können.
 
-- **Containerisierung:** Docker verwendet Container, um Anwendungen und ihre Abhängigkeiten zu isolieren. Jeder Container enthält alles, was die Anwendung benötigt, um ausgeführt zu werden, einschließlich Bibliotheken, Konfigurationsdateien und Laufzeitumgebungen.
+Die Funktionsweise von Docker basiert auf dem Konzept der **Containerisierung**: Docker verwendet Container, um Anwendungen und ihre Abhängigkeiten zu isolieren. Jeder Container enthält alles, was die Anwendung benötigt, um ausgeführt zu werden, einschließlich Bibliotheken, Konfigurationsdateien und Laufzeitumgebungen. Die Grundlage dafür bilden **Docker Images** – schreibgeschützte Vorlagen, die die Anwendungsumgebung definieren. Sie können aus einem Dockerfile erstellt werden, das die Schritte zur Erstellung des Images beschreibt. Images können in Registries wie Docker Hub gespeichert und geteilt werden. Die **Docker Engine** ist die Laufzeitumgebung, die Container erstellt und verwaltet sowie das Starten, Stoppen und Überwachen von Containern auf dem Host-System ermöglicht.
 
-- **Docker Images:** Docker-Images sind schreibgeschützte Vorlagen, die die Anwendungsumgebung definieren. Sie können aus einem Dockerfile erstellt werden, das die Schritte zur Erstellung des Images beschreibt. Images können in Registries wie Docker Hub gespeichert und geteilt werden.
-
-- **Docker Engine:** Die Docker Engine ist die Laufzeitumgebung, die Container erstellt und verwaltet. Sie ermöglicht das Starten, Stoppen und Überwachen von Containern auf dem Host-System.
-
-Die Vorteile von Docker umfassen:
-
-- **Portabilität:** Docker-Container können auf verschiedenen Systemen und Plattformen ausgeführt werden, ohne dass Änderungen an der Anwendung erforderlich sind. Dies erleichtert das Deployment und die Skalierung von Anwendungen.
-
-- **Konsistenz:** Da Container alle Abhängigkeiten enthalten, wird sichergestellt, dass die Anwendung in verschiedenen Umgebungen gleich funktioniert, was Entwicklungs- und Testprozesse vereinfacht.
-
-- **Ressourceneffizienz:** Docker-Container sind leichtgewichtig und benötigen weniger Ressourcen als virtuelle Maschinen, was zu einer besseren Ausnutzung der Hardware führt.
+Die Vorteile von Docker sind vielfältig. Die **Portabilität** ermöglicht es, Docker-Container auf verschiedenen Systemen und Plattformen auszuführen, ohne dass Änderungen an der Anwendung erforderlich sind, was das Deployment und die Skalierung von Anwendungen erleichtert. Die **Konsistenz** wird dadurch gewährleistet, dass Container alle Abhängigkeiten enthalten, sodass die Anwendung in verschiedenen Umgebungen gleich funktioniert. Dies vereinfacht Entwicklungs- und Testprozesse. Schließlich zeichnen sich Docker-Container durch **Ressourceneffizienz** aus – sie sind leichtgewichtig und benötigen weniger Ressourcen als virtuelle Maschinen, was zu einer besseren Ausnutzung der Hardware führt.
 
 #### Images, Container, Volumes & Multi-Container-Setups
 
-- **Images:** Docker-Images sind die Blaupausen für Container. Sie enthalten das Dateisystem und die Konfiguration, die zum Ausführen einer Anwendung erforderlich sind. Images können versioniert und in Registries gespeichert werden, um sie einfach zu verteilen.
+Für das Verständnis von Docker sind vier zentrale Konzepte relevant. **Images** sind die Blaupausen für Container und enthalten das Dateisystem und die Konfiguration, die zum Ausführen einer Anwendung erforderlich sind. Images können versioniert und in Registries gespeichert werden, um sie einfach zu verteilen.
 
-- **Container:** Container sind laufende Instanzen von Docker-Images. Sie sind isoliert und enthalten alle notwendigen Komponenten, um die Anwendung auszuführen. Container können gestartet, gestoppt und gelöscht werden, ohne das Host-System zu beeinträchtigen.
+**Container** sind laufende Instanzen von Docker-Images. Sie sind isoliert und enthalten alle notwendigen Komponenten, um die Anwendung auszuführen. Container können gestartet, gestoppt und gelöscht werden, ohne das Host-System zu beeinträchtigen.
 
-- **Volumes:** Volumes sind persistente Speicherbereiche, die von Docker-Containern verwendet werden können, um Daten zu speichern, die über die Lebensdauer eines Containers hinaus erhalten bleiben sollen. Sie ermöglichen es Containern, Daten zu teilen und zu sichern.
+**Volumes** sind persistente Speicherbereiche, die von Docker-Containern verwendet werden können, um Daten zu speichern, die über die Lebensdauer eines Containers hinaus erhalten bleiben sollen. Sie ermöglichen es Containern, Daten zu teilen und zu sichern.
 
-- **Multi-Container-Setups:** In komplexen Anwendungen können mehrere Container zusammenarbeiten, um verschiedene Dienste bereitzustellen. Tools wie Docker Compose ermöglichen die Definition und Verwaltung von Multi-Container-Anwendungen, indem sie die Konfiguration in einer einzigen Datei zusammenfassen.
+In komplexen Anwendungen können durch **Multi-Container-Setups** mehrere Container zusammenarbeiten, um verschiedene Dienste bereitzustellen. Tools wie Docker Compose ermöglichen die Definition und Verwaltung von Multi-Container-Anwendungen, indem sie die Konfiguration in einer einzigen Datei zusammenfassen.
 
 #### Bedeutung für plattformunabhängige Systeme
 
-Die Verwendung von Containerisierungstechnologien wie Docker ist entscheidend für die Entwicklung plattformunabhängiger Systeme. Durch die Verpackung von Anwendungen und ihren Abhängigkeiten in Containern wird sichergestellt, dass sie konsistent auf verschiedenen Hardwareplattformen und Betriebssystemen ausgeführt werden können. Dies bietet mehrere Vorteile:
+Die Verwendung von Containerisierungstechnologien wie Docker ist entscheidend für die Entwicklung plattformunabhängiger Systeme. Durch die Verpackung von Anwendungen und ihren Abhängigkeiten in Containern wird sichergestellt, dass sie konsistent auf verschiedenen Hardwareplattformen und Betriebssystemen ausgeführt werden können.
 
-- **Einfaches Deployment:** Container können problemlos auf verschiedenen Umgebungen bereitgestellt werden, sei es auf lokalen Maschinen, in Rechenzentren oder in der Cloud. Dies erleichtert den Übergang von der Entwicklung zur Produktion.
-
-- **Skalierbarkeit:** Plattformunabhängige Systeme können leicht skaliert werden, indem Container auf mehreren Hosts verteilt werden. Dies ermöglicht eine flexible Anpassung an wechselnde Anforderungen und Lasten.
+Dies ermöglicht ein **einfaches Deployment**: Container können problemlos auf verschiedenen Umgebungen bereitgestellt werden, sei es auf lokalen Maschinen, in Rechenzentren oder in der Cloud. Dies erleichtert den Übergang von der Entwicklung zur Produktion. Darüber hinaus können plattformunabhängige Systeme leicht skaliert werden, indem Container auf mehreren Hosts verteilt werden. Diese **Skalierbarkeit** ermöglicht eine flexible Anpassung an wechselnde Anforderungen und Lasten.
 
 
 ## Praktische Arbeit
 
-> Hier beschreiben Sie ihren praktischen Teil. Es geht darum seine Implementierung / Versuche so darzustellen dass anhand dieser dre Leser erkennen kann was sie wie gemacht haben.
+Die folgenden Abschnitte beschreiben den praktischen Teil dieser Arbeit. Die Implementierung und durchgeführten Arbeiten werden so dargestellt, dass Leserinnen und Leser nachvollziehen können, welche Schritte unternommen und welche Methoden angewandt wurden.
 
-Die Frage nach der Detailgenauigkeit lässt sich wie folgt beantworten: So, dass man Ihre Aufgabenstellung vollständig  nachvollziehen kann wenn man nur diese Diplomarbeit in Händen hat!
+Die Detailgenauigkeit orientiert sich dabei am Grundsatz: Die Aufgabenstellung soll vollständig nachvollziehbar sein, wenn ausschließlich diese Diplomarbeit als Informationsquelle vorliegt.
 
 ### Konzeption des Infopoint-Systems
 
