@@ -55,13 +55,7 @@ export default function EventsPage() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
     useEffect(() => {
-        if (!BASE_URL) {
-            setError("VITE_API_BASE_URL ist nicht gesetzt");
-            return;
-        }
 
         const controller = new AbortController();
 
@@ -71,7 +65,7 @@ export default function EventsPage() {
                 setError("");
 
                 // limit kannst du ändern
-                const res = await fetch(`${BASE_URL}/api/v1/events/20`, {
+                const res = await fetch(`/api/v1/events/20`, {
                     headers: { Accept: "application/json" },
                     signal: controller.signal,
                 });
@@ -98,7 +92,7 @@ export default function EventsPage() {
         })();
 
         return () => controller.abort();
-    }, [BASE_URL]);
+    }, []);
 
     const sorted = useMemo(() => {
         // newest first (desc)

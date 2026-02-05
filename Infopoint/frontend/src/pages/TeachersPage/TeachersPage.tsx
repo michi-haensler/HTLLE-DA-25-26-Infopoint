@@ -22,8 +22,6 @@ export default function TeachersPage() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
     const getRoom = (t: TeacherInfoDTO): string => {
         const cs: any = t.currentSubject as any;
         return cs?.room ?? cs?.roomName ?? "---";
@@ -38,11 +36,6 @@ export default function TeachersPage() {
 
     // ---------- Fake Popular (läuft über /search) ----------
     useEffect(() => {
-        if (!BASE_URL) {
-            setPopularError("VITE_API_BASE_URL ist nicht gesetzt");
-            return;
-        }
-
         // nur laden, wenn Suchfeld leer ist
         if (!showPopular) return;
 
@@ -53,11 +46,12 @@ export default function TeachersPage() {
                 setPopularLoading(true);
                 setPopularError("");
 
-                const url = new URL(`${BASE_URL}/api/v1/teacher-finder/search`);
-                url.searchParams.set("q", FAKE_POPULAR_QUERY);
-                url.searchParams.set("date", date);
+                const params = new URLSearchParams({
+                    q: FAKE_POPULAR_QUERY,
+                    date: date
+                });
 
-                const res = await fetch(url.toString(), {
+                const res = await fetch(`/api/v1/teacher-finder/search?${params}`, {
                     headers: { Accept: "application/json" },
                     signal: controller.signal,
                 });
@@ -80,7 +74,7 @@ export default function TeachersPage() {
         })();
 
         return () => controller.abort();
-    }, [BASE_URL, date, showPopular]);
+    }, [date, showPopular]);
 
     // ---------- Search ----------
     useEffect(() => {
@@ -93,12 +87,6 @@ export default function TeachersPage() {
             return;
         }
 
-        if (!BASE_URL) {
-            setError("VITE_API_BASE_URL ist nicht gesetzt");
-            setLoading(false);
-            return;
-        }
-
         setLoading(true);
         setError("");
 
@@ -106,11 +94,12 @@ export default function TeachersPage() {
 
         const t = setTimeout(async () => {
             try {
-                const url = new URL(`${BASE_URL}/api/v1/teacher-finder/search`);
-                url.searchParams.set("q", query);
-                url.searchParams.set("date", date);
+                const params = new URLSearchParams({
+                    q: query,
+                    date: date
+                });
 
-                const res = await fetch(url.toString(), {
+                const res = await fetch(`/api/v1/teacher-finder/search?${params}`, {
                     headers: { Accept: "application/json" },
                     signal: controller.signal,
                 });
@@ -134,7 +123,7 @@ export default function TeachersPage() {
             clearTimeout(t);
             controller.abort();
         };
-    }, [q, date, BASE_URL]);
+    }, [q, date]);
 
     return (
         <div className={styles.page}>

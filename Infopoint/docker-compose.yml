@@ -1,0 +1,51 @@
+services:
+  # Cockpit CMS - Headless CMS für Content Management
+  cockpit:
+    image: cockpithq/cockpit:core-latest
+    container_name: infopoint-cockpit
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      # Lokaler Storage-Ordner mit Standard-Konfiguration
+      - ./resources/cockpit-data:/var/www/html/storage
+    environment:
+      - COCKPIT_SESSION_NAME=cockpit
+    networks:
+      - infopoint-network
+
+  # Spring Boot Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: infopoint-backend
+    restart: unless-stopped
+    ports:
+      - "8888:8888"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - COCKPIT_URL=http://cockpit:80
+      - COCKPIT_API_KEY=API-4411907c14a99505c286559eef0f81979256f987
+    depends_on:
+      - cockpit
+    networks:
+      - infopoint-network
+
+  # React/Vite Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: infopoint-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - infopoint-network
+
+networks:
+  infopoint-network:
+    driver: bridge

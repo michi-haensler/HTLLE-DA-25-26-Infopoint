@@ -4,27 +4,24 @@ import styles from "./MapPage.module.css";
 type Floor = "OG1" | "EG" | "KE";
 
 export default function MapPage() {
-    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
     // Default: 1. Stock
     const [floor, setFloor] = useState<Floor>("OG1");
     const [error, setError] = useState("");
 
     // 👉 Hier kannst du später echte Endpoints pro Stockwerk verwenden
-    // z.B. `${BASE_URL}/api/v1/map/image?floor=OG1`
+    // z.B. `/api/v1/map/image?floor=OG1`
     const imgSrc = useMemo(() => {
-        if (!BASE_URL) return "";
         switch (floor) {
             case "OG1":
-                return `${BASE_URL}/api/v1/map/image`; // aktuell: dein Endpoint
+                return `/api/v1/map/image`; // aktuell: dein Endpoint
             case "EG":
-                return `${BASE_URL}/api/v1/map/image`; // placeholder: später eigener Endpoint
+                return `/api/v1/map/image`; // placeholder: später eigener Endpoint
             case "KE":
-                return `${BASE_URL}/api/v1/map/image`; // placeholder: später eigener Endpoint
+                return `/api/v1/map/image`; // placeholder: später eigener Endpoint
             default:
-                return `${BASE_URL}/api/v1/map/image`;
+                return `/api/v1/map/image`;
         }
-    }, [BASE_URL, floor]);
+    }, [floor]);
 
     const floorLabel = (f: Floor) => {
         if (f === "OG1") return "1. St";
@@ -40,22 +37,14 @@ export default function MapPage() {
                 <div className={styles.content}>
                     {/* Bild */}
                     <div className={styles.mapArea}>
-                        {!BASE_URL && (
-                            <div className={styles.errorBox}>
-                                VITE_API_BASE_URL ist nicht gesetzt
-                            </div>
-                        )}
-
-                        {BASE_URL && (
-                            <img
-                                className={styles.mapImage}
-                                src={imgSrc}
-                                alt={`Lageplan ${floorLabel(floor)}`}
-                                onError={() =>
-                                    setError("Lageplan konnte nicht geladen werden (Backend/CORS/CMS?)")
-                                }
-                            />
-                        )}
+                        <img
+                            className={styles.mapImage}
+                            src={imgSrc}
+                            alt={`Lageplan ${floorLabel(floor)}`}
+                            onError={() =>
+                                setError("Lageplan konnte nicht geladen werden (Backend/CORS/CMS?)")
+                            }
+                        />
 
                         {error && <div className={styles.errorBox}>{error}</div>}
                     </div>

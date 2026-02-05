@@ -14,17 +14,11 @@ function pickTitle(n: CockpitNews): string {
 }
 
 export default function NewsPage() {
-    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
     const [items, setItems] = useState<CockpitNews[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
     useEffect(() => {
-        if (!BASE_URL) {
-            setError("VITE_API_BASE_URL ist nicht gesetzt");
-            return;
-        }
 
         const controller = new AbortController();
 
@@ -33,10 +27,7 @@ export default function NewsPage() {
                 setLoading(true);
                 setError("");
 
-                const url = new URL(`${BASE_URL}/api/v1/news`);
-                url.searchParams.set("limit", "10");
-
-                const res = await fetch(url.toString(), {
+                const res = await fetch(`/api/v1/news?limit=10`, {
                     headers: { Accept: "application/json" },
                     signal: controller.signal,
                 });
@@ -59,7 +50,7 @@ export default function NewsPage() {
         })();
 
         return () => controller.abort();
-    }, [BASE_URL]);
+    }, []);
 
     const list = useMemo(() => items, [items]);
 

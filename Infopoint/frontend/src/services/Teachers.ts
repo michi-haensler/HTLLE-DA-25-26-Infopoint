@@ -6,14 +6,10 @@ export type TeacherInfoDTO = {
     currentSubject: any | null;
 };
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
 export async function searchTeachers(q: string, date: string): Promise<TeacherInfoDTO[]> {
-    const url = new URL(`${BASE_URL}/api/v1/teacher-finder/search`);
-    url.searchParams.set("q", q);
-    url.searchParams.set("date", date);
+    const params = new URLSearchParams({ q, date });
 
-    const res = await fetch(url.toString());
+    const res = await fetch(`/api/v1/teacher-finder/search?${params}`);
     if (!res.ok) {
         throw new Error("Teacher search failed");
     }

@@ -1,14 +1,12 @@
 // --- API mit Timeout & robusten Fallbacks --- //
 
-const BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8080/api";
-
 // Helfer: Fetch mit Timeout (default 3000 ms)
 async function getJSON<T>(path: string, timeoutMs = 3000): Promise<T> {
   const controller = new AbortController();
   const t = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
-    const res = await fetch(`${BASE_URL}${path}`, { signal: controller.signal });
+    const res = await fetch(`/api${path}`, { signal: controller.signal });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return (await res.json()) as T;
   } finally {

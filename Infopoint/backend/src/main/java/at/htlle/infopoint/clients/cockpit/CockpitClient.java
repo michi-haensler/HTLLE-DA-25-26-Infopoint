@@ -1,9 +1,9 @@
 package at.htlle.infopoint.clients.cockpit;
 
+import at.htlle.infopoint.config.CockpitConfig;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -11,22 +11,18 @@ import java.util.List;
 public class CockpitClient {
 
     private final WebClient webClient;
+    private final CockpitConfig cockpitConfig;
 
-    // <-- selbst geschriebener Konstruktor
-    public CockpitClient(WebClient webClient) {
-        this.webClient = webClient;
-    }
-
-    @Autowired
-    public CockpitClient(WebClient.Builder builder) {
+    public CockpitClient(WebClient.Builder builder, CockpitConfig cockpitConfig) {
         this.webClient = builder.build();
+        this.cockpitConfig = cockpitConfig;
     }
 
     public List<CockpitNews> getNews(int limit) {
         return webClient
                 .get()
-                .uri("http://localhost:8080/api/content/items/news?limit=" + limit)
-                .header("api-key", "API-c603802aed1873dbb9ad600f771780aff83a085e")
+                .uri(cockpitConfig.getUrl() + "/api/content/items/news?limit=" + limit)
+                .header("api-key", cockpitConfig.getApiKey())
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<List<CockpitNews>>() {})
                 .block();
@@ -35,7 +31,8 @@ public class CockpitClient {
     public List<CockpitEvent> getAppointments(int limit) {
         return webClient
                 .get()
-                .uri("http://localhost:8081/api/content/items/appointments?limit=" + limit)
+                .uri(cockpitConfig.getUrl() + "/api/content/items/appointments?limit=" + limit)
+                .header("api-key", cockpitConfig.getApiKey())
                 .retrieve()
                 .bodyToMono(CockpitEventResponse.class)
                 .block()
@@ -45,8 +42,8 @@ public class CockpitClient {
     public String getMapImage() {
         return webClient
                 .get()
-                .uri("http://localhost:8080/api/assets/image/6910ca4fce0a2ca54f063e5b?m=resize&w=1920&h=1080")
-                .header("api-key", "API-c603802aed1873dbb9ad600f771780aff83a085e")
+                .uri(cockpitConfig.getUrl() + "/api/assets/image/6910ca4fce0a2ca54f063e5b?m=resize&w=1920&h=1080")
+                .header("api-key", cockpitConfig.getApiKey())
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
@@ -55,8 +52,8 @@ public class CockpitClient {
     public byte[] getMapImageMeta() {
         return webClient
                 .get()
-                .uri("http://localhost:8080/api/assets/6910ca4fce0a2ca54f063e5b")
-                .header("api-key", "API-c603802aed1873dbb9ad600f771780aff83a085e")
+                .uri(cockpitConfig.getUrl() + "/api/assets/6910ca4fce0a2ca54f063e5b")
+                .header("api-key", cockpitConfig.getApiKey())
                 .retrieve()
                 .bodyToMono(byte[].class)
                 .block();
