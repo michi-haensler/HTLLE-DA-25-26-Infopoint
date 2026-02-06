@@ -3,7 +3,7 @@
 
 ## Ausgangslage
 
-### Was ist meine Teilaufgabe?
+### Teilaufgabenbereich
 
 Mein Aufgabenbereich innerhalb des Projekts umfasste die Frontend-Entwicklung der Anwendung. Ziel war es, eine übersichtliche, moderne und benutzerfreundliche Oberfläche zu erstellen, die auf unterschiedlichen Endgeräten zuverlässig funktioniert.
 
@@ -617,7 +617,7 @@ die einzelnen Seiten der Anwendung als Routen definiert und einer jeweiligen
 Seitenkomponente zugeordnet. Dadurch bleibt die URL-Struktur klar nachvollziehbar
 und Seitenwechsel erfolgen innerhalb der SPA ohne vollständigen Neuladevorgang.
 
-```tsx
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Router" .tsx}
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./RootLayout";
 
@@ -649,7 +649,8 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #### Wiederverwendbare Navigation (Header-Komponente)
 
 Die Navigation wurde als eigene Komponente umgesetzt, um sie konsistent auf allen
