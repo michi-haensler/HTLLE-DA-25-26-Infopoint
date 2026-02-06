@@ -64,20 +64,6 @@ Für die technische Integration ist die **Konnektivität** relevant: Die Hardwar
 
 Mit Blick auf den langfristigen Betrieb sind **Wartungsfreundlichkeit** und **Zukunftssicherheit** zu beachten. Die Hardware sollte leicht zu warten und zu reparieren sein, um langfristige Betriebskosten zu minimieren. Zudem ist es ratsam, Hardware zu wählen, die zukünftige Erweiterungen und Upgrades ermöglicht.
 
-#### Vergleich relevanter Hardwarekomponenten (ToDo)
-
-| Komponente        | Option A               | Option B               | Option C               |
-|-------------------|------------------------|------------------------|------------------------|
-| Computer          | Mini-PC (Intel NUC)    | All-in-One PC          | Raspberry Pi 4         |
-| Display           | 24" Touchscreen        | 27" Monitor            | 32" Touchscreen        |
-| Gehäuse           | Standardgehäuse        | Wetterfestes Gehäuse   | Designgehäuse          |
-| Leistung          | Hoch                   | Mittel                 | Niedrig                |
-| Kosten            | Hoch                   | Mittel                 | Niedrig                |
-| Energieverbrauch  | Mittel                 | Hoch                   | Sehr niedrig           |
-
-:Hardwarwarevergleich
-
-
 #### Energieverbrauch, Zuverlässigkeit und Wartbarkeit
 
 Bei der Auswahl der Hardware für ein Infopoint-System sind Energieverbrauch, Zuverlässigkeit und Wartbarkeit entscheidende Faktoren, welche sich langfristig auf Effizienz und die Betriebskosten des Systems auswirken. Sollten die Effizienz und die Betriebskosten nicht beachtet werden, kann dies zu unerwartet hohen Kosten und Ausfallzeiten führen, was sich negativ auf die Nutzung des Geräts auswirkt. Wenn etwas nämlich nicht gut funktioniert, wird es vom Endverbraucher kaum benutzt und ist für die Institution eine reine Kostenstelle.
@@ -222,30 +208,65 @@ Dies ermöglicht ein **einfaches Deployment**: Container können problemlos auf 
 
 ## Praktische Arbeit
 
-Die folgenden Abschnitte beschreiben den praktischen Teil dieser Arbeit. Die Implementierung und durchgeführten Arbeiten werden so dargestellt, dass Leserinnen und Leser nachvollziehen können, welche Schritte unternommen und welche Methoden angewandt wurden.
-
-Die Detailgenauigkeit orientiert sich dabei am Grundsatz: Die Aufgabenstellung soll vollständig nachvollziehbar sein, wenn ausschließlich diese Diplomarbeit als Informationsquelle vorliegt.
-
 ### Konzeption des Infopoint-Systems
 
 #### Anforderungen an das System
+
+Die Anforderungen an das Infopoint-System wurden großteils in Zusammenarbeit mit unserem Auftraggeber definiert. Ein großes Anliegen war dabei die Lehrer Suchfunktion, welche es den Schülern ermöglichen soll, schnell und einfach Informationen über den Aufenthalt ihrer Lehrkräfte zu erhalten. Zusätzlich sollte das System eine benutzerfreundliche Oberfläche bieten, die es den Nutzern ermöglicht, sich intuitiv zurechtzufinden und die gewünschten Informationen ohne großen Aufwand abzurufen.
+
 #### Zielgruppe und Nutzungsszenarien
+
+Die primäre Zielgruppe des Infopoint-Systems sind die Schülerinnen und Schüler der Schule, die das System nutzen, um Informationen über Lehrkräfte, Stundenpläne und schulische Veranstaltungen abzurufen. Ein weiteres Nutzungsszenario umfasst die Orientierung innerhalb des Schulgebäudes, insbesondere für neue Schülerinnen und Schüler sowie Besucherinnen und Besucher.
+
 #### Technische Rahmenbedingungen
+
+Die technischen Rahmenbedingungen für das Infopoint-System umfassen die Auswahl geeigneter Hardwarekomponenten, die den Anforderungen der Schule entsprechen. Dazu gehören ein leistungsfähiger Computer, ein benutzerfreundliches Display (idealerweise ein Touchscreen) und ein robustes Gehäuse, das den Einsatz im Schulumfeld ermöglicht. Zudem muss das System später in das bestehende Netzwerk der Schule integriert werden, um eine einfache Aktualisierung der Inhalte zu gewährleisten.
+
 #### Gesamtarchitektur des Projekts
+
+Die Gesamtarchitektur des Infopoint-Systems besteht aus mehreren Komponenten, die nahtlos zusammenarbeiten, um eine optimale Benutzererfahrung zu gewährleisten. Das System umfasst ein Frontend, das die Benutzeroberfläche darstellt, ein Backend, das die Geschäftslogik und Datenverarbeitung übernimmt, sowie ein Content-Management-System (CMS), das die Verwaltung und Aktualisierung der Inhalte ermöglicht. Die Kommunikation zwischen diesen Komponenten erfolgt über definierte Schnittstellen, um eine modulare und skalierbare Architektur zu gewährleisten. Ausgeliefert wird das System in einer containerisierten Umgebung mittels Docker, um eine einfache Bereitstellung auf diversen System zu ermöglichen.
 
 ### Hardwareauswahl und Kostenanalyse
 
-#### Evaluierte Hardwarevarianten
+#### Evaluierte Hardwarevarianten (ToDo)
+
+| Komponente        | Option A               | Option B               | Option C               |
+|-------------------|------------------------|------------------------|------------------------|
+| Computer          | Mini-PC (Intel NUC)    | All-in-One PC          | Raspberry Pi 4         |
+| Display           | 24" Touchscreen        | 27" Monitor            | 32" Touchscreen        |
+| Gehäuse           | Standardgehäuse        | Wetterfestes Gehäuse   | Designgehäuse          |
+| Leistung          | Hoch                   | Mittel                 | Niedrig                |
+| Kosten            | Hoch                   | Mittel                 | Niedrig                |
+| Energieverbrauch  | Mittel                 | Hoch                   | Sehr niedrig           |
+
+:Hardwarwarevergleich
+
 #### Entscheidungsprozess und Bewertungskriterien
+
+Bei der Auswahl der Hardware für das Infopoint-System wurden verschiedene Kriterien berücksichtigt, um sicherzustellen, dass die ausgewählten Komponenten den Anforderungen der Schule entsprechen. Zu den wichtigsten Bewertungskriterien gehörten Leistung, Zuverlässigkeit, Energieverbrauch, Kosten und Wartbarkeit. Jedoch liegt die Finale Entscheidung beim Auftraggeber.
+
 #### Final ausgewählte Hardware
-#### Kostenübersicht und Budgetplanung
+
+Leider konnte aufgrund von fehlendem Budget des Auftraggebers keine Auswahl und Beschaffung der Hardware erfolgen. Das Projektteam hat jedoch eine Empfehlung für die optimale Hardwarekonfiguration ausgesprochen, die den Anforderungen des Infopoint-Systems gerecht wird.
 
 ### Design und Erstellung der Mockups
 
 #### Vorgehen beim Designprozess
+
+Der Designprozess für das Infopoint-System begann mit der Erstellung von Wireframes, um die grundlegende Struktur und Anordnung der Benutzeroberfläche zu planen. Anschließend wurden detaillierte Mockups erstellt, die das endgültige Design und Layout des Systems visualisieren. Dabei wurde besonderes Augenmerk auf Benutzerfreundlichkeit und Barrierefreiheit gelegt, um sicherzustellen, dass das System für alle Nutzergruppen zugänglich ist.
+
 #### Erstellung der Wireframes in Adobe XD
+
+Wireframes wurden in Adobe XD erstellt, um die grundlegende Struktur und Navigation des Infopoint-Systems zu planen. Dabei wurden verschiedene Layout-Optionen getestet, um die beste Anordnung der Elemente zu finden. Die Wireframes dienten als Grundlage für die spätere Entwicklung der detaillierten Mockups.
+
 #### Entwicklung des finalen UI-Designs
+
+Das finale UI-Design wurde auf Basis der Wireframes entwickelt, wobei Adobe XD verwendet wurde, um ein ansprechendes und funktionales Design zu erstellen. Es wurden Farben, Typografie und Grafiken ausgewählt, die zur Identität der Schule passen und eine positive Benutzererfahrung fördern.
+
 #### Vorteile der Mockups für die Entwicklung
+
+Die Erstellung von Mockups ermöglichte es dem Projektteam bzw. speziell dem Frontend Developer, das Design des Infopoint-Systems frühzeitig zu visualisieren und Feedback vom Auftraggeber einzuholen. Dies half dabei, potenzielle Probleme zu identifizieren und Anpassungen vorzunehmen, bevor die eigentliche Entwicklung begann. Mockups dienten auch als Referenz für Entwicklerinnen und Entwickler, um sicherzustellen, dass das endgültige Produkt den Design und Funktionsvorgaben entspricht.
+
 #### Beispiele und Screenshots
 
 ### Projektmanagement in der Umsetzung
