@@ -86,7 +86,7 @@ Dies ist besonders bei größeren Projekten oder bei der späteren Erweiterung d
 
 Beispiel:
 
-GET /api/v1/events → 200 OK
+GET /api/v1/events -> 200 OK
 ```json
 [
 	{ "id": 1, "title": "Tag der offenen Tür", "date": "2026-03-15" },
