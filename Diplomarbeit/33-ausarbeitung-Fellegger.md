@@ -19,9 +19,9 @@ Im Zuge der Entwicklung wurden verschiedene UI- und Layout-Konzepte umgesetzt, u
 
 Im Projekt „Digitaler Infopoint“ nimmt das Frontend eine besonders wichtige Rolle ein, da es den direkten Kontaktpunkt zwischen den dargestellten Informationen und den Benutzerinnen und Benutzern bildet. Unabhängig davon, wie gut die zugrunde liegenden Daten oder die eingesetzte Hardware sind, entscheidet letztlich die Benutzeroberfläche darüber, ob Informationen schnell erfasst, verstanden und sinnvoll genutzt werden können.
 
-Im schulischen Umfeld zeigt sich aus Frontend-Sicht häufig, dass bestehende digitale Informationssysteme nicht optimal umgesetzt sind. Viele Oberflächen sind statisch aufgebaut, wirken unübersichtlich oder lassen sich nur mit großem Aufwand warten und anpassen. Inhalte sind dabei oft fest im Quellcode hinterlegt oder können nur mit technischem Know-how geändert werden, wodurch Aktualisierungen verzögert erfolgen oder ganz ausbleiben (vgl. @mdn_learn).
+Im schulischen Umfeld zeigt sich aus Frontend-Sicht häufig, dass bestehende digitale Informationssysteme nicht optimal umgesetzt sind. Viele Oberflächen sind statisch aufgebaut, wirken unübersichtlich oder lassen sich nur mit großem Aufwand warten und anpassen. Inhalte sind dabei oft fest im Quellcode hinterlegt oder können nur mit technischem Know-how geändert werden, wodurch Aktualisierungen verzögert erfolgen oder ganz ausbleiben [@mdn_learn].
 
-Ein weiterer zentraler Aspekt ist die Benutzerfreundlichkeit. Gerade Infopoints, die auf großen Displays im öffentlichen Raum eingesetzt werden, müssen klar strukturiert, gut lesbar und intuitiv bedienbar sein. Ungeeignete Schriftgrößen, schwache Kontraste oder überladene Layouts erschweren die schnelle Orientierung und führen dazu, dass Informationen nicht effektiv wahrgenommen werden (vgl. @nng_usability).
+Ein weiterer zentraler Aspekt ist die Benutzerfreundlichkeit. Gerade Infopoints, die auf großen Displays im öffentlichen Raum eingesetzt werden, müssen klar strukturiert, gut lesbar und intuitiv bedienbar sein. Ungeeignete Schriftgrößen, schwache Kontraste oder überladene Layouts erschweren die schnelle Orientierung und führen dazu, dass Informationen nicht effektiv wahrgenommen werden [@nng_usability].
 
 Zusätzlich stellt die Darstellung unterschiedlicher Inhaltstypen eine Herausforderung dar. Texte, Bilder, Lagepläne oder Stundenpläne müssen einheitlich und konsistent präsentiert werden, um ein stimmiges Gesamtbild zu erzeugen. Ohne ein durchdachtes Komponenten- und Designkonzept entstehen schnell inkonsistente Oberflächen und schwer wartbarer Code, was spätere Erweiterungen oder Anpassungen erheblich erschwert.
 
@@ -42,7 +42,7 @@ sollen so aufbereitet werden, dass sie auf großen Displays schnell erfasst
 werden können. Besonderer Wert wird dabei auf eine übersichtliche
 Strukturierung, gut lesbare Typografie sowie eine konsistente visuelle
 Gestaltung gelegt, um die Informationsaufnahme zu erleichtern
-(vgl. @nng_usability).
+[@nng_usability].
 
 Darüber hinaus soll das Frontend in der Lage sein, dynamische Inhalte zu
 verarbeiten, die über ein Content-Management-System bereitgestellt werden.
@@ -50,20 +50,20 @@ Diese Inhalte dürfen nicht statisch im Quellcode hinterlegt sein, sondern
 müssen zur Laufzeit geladen und dargestellt werden. Dadurch können
 Aktualisierungen ohne Änderungen am Frontend-Code vorgenommen werden, was den
 Wartungsaufwand reduziert und die Aktualität der angezeigten Informationen
-sicherstellt (vgl. @contentful_headless).
+sicherstellt [@contentful_headless].
 
 Ein weiteres wesentliches Ziel ist die technische Wartbarkeit und
 Erweiterbarkeit des Frontends. Durch eine komponentenbasierte Architektur
 sollen wiederverwendbare UI-Bausteine geschaffen werden, die eine einheitliche
 Gestaltung ermöglichen und zukünftige Erweiterungen erleichtern. Neue Seiten
 oder Funktionen sollen mit möglichst geringem Entwicklungsaufwand integrierbar
-sein (vgl. @react_docs).
+sein [@react_docs].
 
 Zusätzlich spielt die Performance des Frontends eine zentrale Rolle. Kurze
 Ladezeiten, flüssige Übergänge und ein reaktionsschnelles Verhalten sollen eine
 angenehme Benutzererfahrung gewährleisten. Gerade bei einem öffentlich
 zugänglichen Infopoint ist eine stabile und zuverlässige Darstellung der
-Inhalte von besonderer Bedeutung (vgl. @webdev_performance).
+Inhalte von besonderer Bedeutung [@webdev_performance].
 
 ### Anforderungen an die Web-Oberfläche
 
@@ -80,28 +80,27 @@ Abstände müssen so gewählt werden, dass Informationen auch aus größerer
 Entfernung gut erkennbar sind. Eine konsistente Typografie sowie ein
 reduziertes und ruhiges Layout tragen maßgeblich dazu bei, die visuelle
 Wahrnehmung zu unterstützen und eine Überforderung der Benutzerinnen und
-Benutzer zu vermeiden (vgl. @nng_usability).
+Benutzer zu vermeiden [@nng_usability].
 
 Darüber hinaus muss die Web-Oberfläche flexibel mit unterschiedlichen
 Inhaltstypen umgehen können. Texte, Bilder, Lagepläne oder Stundenpläne werden
 dynamisch aus einem Content-Management-System geladen und müssen einheitlich
 dargestellt werden. Die Oberfläche darf dabei nicht von statisch im Quellcode
 hinterlegten Inhalten abhängig sein, sondern muss auf Änderungen der Inhalte
-zur Laufzeit reagieren können (vgl. @contentful_headless).
+zur Laufzeit reagieren können [@contentful_headless].
 
 Auch die Performance stellt eine zentrale Anforderung an das Frontend dar. Die
 Web-Oberfläche soll kurze Ladezeiten aufweisen und flüssig reagieren, um eine
 durchgehend angenehme Benutzererfahrung zu gewährleisten. Insbesondere bei
 bildlastigen Inhalten ist auf eine effiziente Darstellung zu achten, da lange
-Ladezeiten die Akzeptanz des Systems deutlich beeinträchtigen können (vgl.
-@webdev_performance).
+Ladezeiten die Akzeptanz des Systems deutlich beeinträchtigen können [@webdev_performance].
 
 Zusätzlich spielt die Wartbarkeit des Frontends eine entscheidende Rolle. Die
 Web-Oberfläche soll auf einer klar strukturierten, komponentenbasierten
 Architektur aufbauen, sodass wiederverwendbare UI-Elemente entstehen. Diese
 Struktur erleichtert nicht nur die Weiterentwicklung des Systems, sondern
 stellt auch sicher, dass Design- und Funktionsanpassungen konsistent und
-nachvollziehbar umgesetzt werden können (vgl. @react_docs).
+nachvollziehbar umgesetzt werden können [@react_docs].
 
 ### Client-Server-Modell aus Frontend-Sicht
 
@@ -117,7 +116,7 @@ Anfragen an den Server zu senden und die empfangenen Daten in geeigneter Form
 darzustellen. Die Kommunikation erfolgt dabei üblicherweise über das
 HTTP-Protokoll. Der Client fordert beispielsweise Informationen zu
 Neuigkeiten, Terminen oder Lageplänen an und erhält diese in strukturierter
-Form zurück, meist als JSON-Daten (vgl. @mdn_http).
+Form zurück, meist als JSON-Daten [@mdn_http].
 
 Ein wesentliches Merkmal des Client-Server-Modells ist die klare Trennung
 zwischen Darstellung und Datenhaltung. Während das Frontend ausschließlich
@@ -125,7 +124,7 @@ für die visuelle Aufbereitung der Inhalte sowie für die Benutzerinteraktion
 verantwortlich ist, erfolgt die Verwaltung und Speicherung der Daten auf
 Serverseite. Diese Trennung ermöglicht es, das Frontend unabhängig vom
 Backend weiterzuentwickeln oder auszutauschen, ohne das gesamte System neu
-konzipieren zu müssen (vgl. @client_server_wiki).
+konzipieren zu müssen [@client_server_wiki].
 
 Für den digitalen Infopoint bedeutet dieses Architekturmodell, dass alle
 angezeigten Inhalte zur Laufzeit vom Server geladen werden. Das Frontend
@@ -142,22 +141,21 @@ kommt eine REST-basierte Architektur zum Einsatz. REST
 verteilte Systeme, bei dem Ressourcen eindeutig über URLs adressiert und über
 standardisierte HTTP-Methoden angesprochen werden. Aus Frontend-Sicht bietet
 REST eine strukturierte und gut verständliche Möglichkeit, Daten vom Server
-abzurufen und weiterzuverarbeiten (vgl. @rest_api).
+abzurufen und weiterzuverarbeiten [@rest_api].
 
 Im Rahmen des Frontends werden überwiegend Lesezugriffe auf Daten durchgeführt.
 Über HTTP-GET-Anfragen fordert das Frontend Inhalte wie Neuigkeiten, Termine
 oder Informationen zu Lehrpersonen vom Server an. Die Antworten werden
 typischerweise im JSON-Format bereitgestellt, da dieses Format leicht zu
 verarbeiten ist und sich besonders gut für die Übertragung strukturierter
-Daten eignet (vgl. @mdn_fetch).
+Daten eignet [@mdn_fetch].
 
 Ein wesentlicher Vorteil der REST-Architektur besteht in ihrer
 Zustandslosigkeit. Jede Anfrage enthält alle notwendigen Informationen, um vom
 Server verarbeitet zu werden. Das Frontend muss daher keine serverseitigen
 Sitzungszustände verwalten, sondern kann jede Anfrage unabhängig von vorherigen
 Interaktionen stellen. Dies vereinfacht die Implementierung im Frontend und
-trägt zur Skalierbarkeit und Stabilität des Gesamtsystems bei (vgl.
-@rest_api).
+trägt zur Skalierbarkeit und Stabilität des Gesamtsystems bei [@rest_api].
 
 Für den digitalen Infopoint bedeutet dieser Ansatz, dass Inhalte jederzeit
 aktuell vom Server abgerufen werden können. Änderungen im
@@ -207,7 +205,7 @@ des digitalen Infopoints. Im Gegensatz zu klassischen Webseiten, bei denen bei
 jeder Benutzerinteraktion eine neue Seite vom Server geladen wird, besteht
 eine SPA aus einer einzigen HTML-Seite. Inhalte werden dabei dynamisch
 nachgeladen und innerhalb der bestehenden Seite aktualisiert
-(vgl. @mdn_spa).
+[@mdn_spa].
 
 Aus Frontend-Sicht bietet dieses Architekturkonzept wesentliche Vorteile.
 Nach dem initialen Laden der Anwendung erfolgen Seitenwechsel und
@@ -215,7 +213,7 @@ Inhaltsänderungen ohne einen vollständigen Neuladevorgang. Dadurch entsteht
 ein flüssiges und reaktionsschnelles Benutzererlebnis, das insbesondere bei
 einem öffentlich zugänglichen Infopoint von großer Bedeutung ist. Kurze
 Reaktionszeiten erleichtern die Informationsaufnahme und tragen maßgeblich zur
-Akzeptanz des Systems bei (vgl. @spa_wiki).
+Akzeptanz des Systems bei [@spa_wiki].
 
 Ein weiterer Vorteil von Single Page Applications liegt in der klaren Trennung
 zwischen Daten und Darstellung. Das Frontend lädt die benötigten Inhalte über
@@ -248,14 +246,14 @@ und aktualisiert werden, ohne dass ein Neustart der Anwendung oder ein
 manueller Eingriff erforderlich ist. Dadurch stehen aktuelle Inhalte wie
 Terminänderungen oder kurzfristige Ankündigungen sofort zur Verfügung, was
 insbesondere im Schulbetrieb einen großen Mehrwert darstellt
-(vgl. @contentful_headless).
+[@contentful_headless].
 
 Darüber hinaus tragen moderne Frontends wesentlich zur Verbesserung der
 Benutzerfreundlichkeit bei. Durch klar strukturierte Layouts, gut lesbare
 Typografie und eine konsistente visuelle Gestaltung können Informationen auch
 in stark frequentierten Bereichen schnell erfasst werden. Eine intuitive
 Benutzeroberfläche reduziert die kognitive Belastung der Nutzerinnen und
-Nutzer und erhöht damit die Akzeptanz des Systems (vgl. @nng_usability).
+Nutzer und erhöht damit die Akzeptanz des Systems [@nng_usability].
 
 Ein weiterer Vorteil moderner Frontend-Lösungen besteht in ihrer Wartbarkeit
 und Erweiterbarkeit. Komponentenbasierte Architekturen ermöglichen eine klare
@@ -263,7 +261,7 @@ Trennung von Funktionalität und Darstellung sowie die Wiederverwendung
 einzelner UI-Elemente. Neue Funktionen oder Seiten können dadurch mit
 vergleichsweise geringem Aufwand integriert werden. Dies ist besonders im
 schulischen Umfeld relevant, da sich organisatorische Anforderungen im Laufe
-der Zeit ändern können (vgl. @react_docs).
+der Zeit ändern können [@react_docs].
 
 Zusätzlich leisten moderne Frontends einen Beitrag zur Nachhaltigkeit. Durch
 die digitale Bereitstellung von Informationen kann der Bedarf an gedruckten
@@ -288,14 +286,14 @@ kleine, wiederverwendbare Komponenten zu unterteilen. Diese Komponenten
 kapseln sowohl die Darstellungslogik als auch das Verhalten und können
 weitgehend unabhängig voneinander entwickelt, getestet und erweitert werden.
 Dadurch entsteht eine klare und übersichtliche Struktur, welche die
-Wartbarkeit des Frontends deutlich verbessert (vgl. @react_docs).
+Wartbarkeit des Frontends deutlich verbessert [@react_docs].
 
 Ein weiterer wichtiger Aspekt ist die weite Verbreitung von React sowie die
 große und aktive Community. Durch die hohe Akzeptanz des Frameworks stehen
 zahlreiche Bibliotheken, Werkzeuge und umfangreiche Dokumentationen zur
 Verfügung. Dies erleichtert die Entwicklung erheblich und reduziert das
 Risiko, auf proprietäre oder schlecht unterstützte Lösungen angewiesen zu
-sein (vgl. @react_community).
+sein [@react_community].
 
 Darüber hinaus unterstützt React eine effiziente Aktualisierung der
 Benutzeroberfläche durch das Konzept des virtuellen DOM. Änderungen am
@@ -303,7 +301,7 @@ Anwendungszustand führen nicht zu einem vollständigen Neurendern der gesamten
 Seite, sondern lediglich zu gezielten Aktualisierungen der betroffenen
 Komponenten. Dies trägt wesentlich zur Performance der Anwendung bei und ist
 insbesondere für einen dauerhaft laufenden Infopoint von großer Bedeutung
-(vgl. @react_vdom).
+[@react_vdom].
 
 ### Komponentenbasierte Architektur in React
 
@@ -319,7 +317,7 @@ Navigationsleisten, Karten, Listen oder Buttons können als eigenständige
 Komponenten umgesetzt und an mehreren Stellen innerhalb der Anwendung
 wiederverwendet werden. Änderungen an einer Komponente wirken sich dadurch
 konsistent auf alle Verwendungsstellen aus, was den Pflegeaufwand deutlich
-reduziert (vgl. @react_docs).
+reduziert [@react_docs].
 
 Darüber hinaus fördert die komponentenbasierte Architektur eine klare Trennung
 von Verantwortlichkeiten. Jede Komponente kapselt ihre eigene Logik, ihren
@@ -340,7 +338,7 @@ Zusätzlich unterstützt die komponentenbasierte Architektur die kontinuierliche
 Weiterentwicklung des Frontends. Neue Funktionen oder Seiten können durch das
 Ergänzen weiterer Komponenten realisiert werden, ohne bestehende Strukturen
 grundlegend verändern zu müssen. Dies trägt wesentlich zur Skalierbarkeit und
-Zukunftssicherheit des Frontend-Systems bei (vgl. @component_architecture).
+Zukunftssicherheit des Frontend-Systems bei [@component_architecture].
 
 ### State-Management im React-Frontend
 
@@ -358,14 +356,14 @@ UI-bezogene Zustände wie Ladeindikatoren, ausgewählte Elemente oder aktuell
 angezeigte Inhalte zu verwalten. Dieser Ansatz ermöglicht eine klare und
 übersichtliche Strukturierung des Frontend-Codes und stellt sicher, dass
 Zustandsänderungen automatisch zu einer Aktualisierung der Benutzeroberfläche
-führen (vgl. @react_hooks).
+führen [@react_hooks].
 
 Neben lokalem State kann es erforderlich sein, Zustände über mehrere
 Komponenten hinweg zu teilen. Für diesen Zweck bietet React die sogenannte
 Context API, mit der globale Zustände zentral bereitgestellt werden können.
 Dies ist insbesondere dann sinnvoll, wenn mehrere Komponenten auf dieselben
 Daten zugreifen müssen, beispielsweise auf global geladene Inhalte oder
-Konfigurationswerte des Infopoints (vgl. @react_context).
+Konfigurationswerte des Infopoints [@react_context].
 
 Für den digitalen Infopoint ist ein bewusst einfach gehaltenes
 State-Management ausreichend, da die Anwendung in erster Linie zur Anzeige von
@@ -394,7 +392,7 @@ und ermöglicht es, URLs bestimmten Komponenten zuzuordnen. Aus
 Frontend-Sicht erlaubt dies eine klare Trennung der einzelnen Seitenbereiche,
 wie beispielsweise Startseite, Neuigkeiten, Termine oder Lagepläne. Jede Route
 repräsentiert dabei einen klar abgegrenzten Anwendungszustand, der direkt über
-die URL angesprochen werden kann (vgl. @react_router).
+die URL angesprochen werden kann [@react_router].
 
 Ein wesentlicher Vorteil des clientseitigen Routings liegt in der verbesserten
 Benutzererfahrung. Seitenwechsel erfolgen ohne vollständigen Neuladevorgang,
@@ -407,7 +405,7 @@ Darüber hinaus ermöglicht das Routing eine strukturierte und nachvollziehbare
 Navigation innerhalb der Anwendung. Navigationskomponenten wie eine feste
 Menüleiste oder klickbare Karten können gezielt auf definierte Routen
 verweisen. Dadurch wird eine intuitive Benutzerführung unterstützt und die
-Orientierung innerhalb der Anwendung erleichtert (vgl. @spa_navigation).
+Orientierung innerhalb der Anwendung erleichtert [@spa_navigation].
 
 Für den digitalen Infopoint ist ein bewusst einfach gehaltenes
 Navigationskonzept ausreichend. Die Anzahl der verfügbaren Seiten ist
@@ -428,14 +426,14 @@ der Benutzeroberfläche beschrieben wird, ohne explizit festlegen zu müssen,
 wie einzelne DOM-Elemente aktualisiert werden. React übernimmt diese Aufgabe
 intern und sorgt dafür, dass Änderungen am Anwendungszustand effizient in der
 Benutzeroberfläche umgesetzt werden. Dadurch wird der Code übersichtlicher,
-leichter verständlich und weniger fehleranfällig (vgl. @react_rendering).
+leichter verständlich und weniger fehleranfällig [@react_rendering].
 
 Die Datenbindung erfolgt in React in der Regel über sogenannte Props und State.
 Props dienen dazu, Daten von übergeordneten Komponenten an untergeordnete
 Komponenten weiterzugeben. Der State beschreibt hingegen den aktuellen Zustand
 einer Komponente oder der Anwendung insgesamt und kann sich im Laufe der
 Nutzung verändern. Durch diese klare Trennung lassen sich Datenflüsse im
-Frontend gut nachvollziehen und gezielt steuern (vgl. @react_props_state).
+Frontend gut nachvollziehen und gezielt steuern [@react_props_state].
 
 Für den digitalen Infopoint ist dieses Konzept besonders relevant, da Inhalte
 dynamisch über API-Schnittstellen geladen werden. Sobald neue Daten vom Server
@@ -448,7 +446,7 @@ Benutzeroberfläche. React vergleicht den aktuellen Zustand der UI mit dem
 vorherigen Zustand und nimmt nur jene Änderungen am DOM vor, die tatsächlich
 erforderlich sind. Dieses Vorgehen trägt wesentlich zur Performance der
 Anwendung bei und ist insbesondere für Systeme relevant, die dauerhaft im
-Betrieb sind, wie etwa der digitale Infopoint (vgl. @react_vdom).
+Betrieb sind, wie etwa der digitale Infopoint [@react_vdom].
 
 ### Styling und UI-Gestaltung im React-Frontend
 
@@ -466,14 +464,14 @@ gestalten. Durch die Kapselung von Styles auf Komponentenebene kann verhindert
 werden, dass Designänderungen unbeabsichtigt andere Teile der Anwendung
 beeinflussen. Dieser Ansatz unterstützt eine saubere Trennung von Darstellung
 und Logik und trägt wesentlich zur langfristigen Wartbarkeit des Frontends bei
-(vgl. @css_modular).
+[@css_modular].
 
 Ein weiterer wichtiger Aspekt der UI-Gestaltung ist die visuelle Konsistenz.
 Farben, Schriftarten, Abstände und wiederkehrende UI-Elemente sollten
 einheitlich eingesetzt werden, um eine klare visuelle Sprache zu schaffen. Ein
 konsistentes Design erleichtert den Benutzerinnen und Benutzern die
 Orientierung innerhalb der Anwendung und trägt dazu bei, Inhalte schneller und
-effizienter zu erfassen (vgl. @material_design).
+effizienter zu erfassen [@material_design].
 
 Für den digitalen Infopoint ist zudem die Anpassung an große Displays von
 besonderer Bedeutung. Bedienelemente müssen ausreichend groß dimensioniert
@@ -617,7 +615,7 @@ die einzelnen Seiten der Anwendung als Routen definiert und einer jeweiligen
 Seitenkomponente zugeordnet. Dadurch bleibt die URL-Struktur klar nachvollziehbar
 und Seitenwechsel erfolgen innerhalb der SPA ohne vollständigen Neuladevorgang.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Router" .tsx}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Implementierung Router" .tsx}
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./RootLayout";
 
@@ -658,7 +656,7 @@ Seiten verwenden zu können. Zusätzlich wird über die aktuelle URL erkenntlich
 gemacht, welcher Navigationspunkt aktiv ist. Dadurch ist die Orientierung für
 Benutzerinnen und Benutzer jederzeit gegeben.
 
-```tsx
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Implementierung Header" .tsx}
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 
@@ -704,7 +702,7 @@ export default function Header() {
     </header>
   );
 }
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Umsetzung der Startseite und zentraler UI-Komponenten
 
@@ -755,7 +753,7 @@ Der folgende Codeausschnitt zeigt den Aufbau der Startseite. Die Navigation zu
 den einzelnen Bereichen erfolgt über `Link`-Elemente des clientseitigen
 Routings.
 
-```tsx
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Implementierung HomePage" .tsx}
 import { Link } from "react-router-dom";
 import styles from "./HomePage.module.css";
 
@@ -813,7 +811,8 @@ export default function HomePage() {
     </main>
   );
 }
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #### Wiederverwendbare UI-Komponente (Card)
 
 Neben seitenbezogenen Komponenten wurden wiederverwendbare UI-Bausteine
@@ -822,7 +821,7 @@ welche sowohl als klickbares Element (Navigation) als auch als reiner Container
 verwendet werden kann. Dadurch bleibt das UI konsistent und Erweiterungen
 lassen sich schneller umsetzen.
 
-```tsx
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Implementierung Card" .tsx}
 import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
 
@@ -840,7 +839,7 @@ export default function Card({ title, to, children }: Props) {
     </Comp>
   );
 }
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Anbindung an das Content-Management-System (CMS)
 
@@ -895,7 +894,7 @@ strukturierte Daten zurück.
 
 ##### Service-Modul für die API-Kommunikation
 
-```ts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Lehrersuche CMS-/Backend-Anbindung" .tsx}
 export type TeacherInfoDTO = {
   fullHeader: string;
   lastName: string;
@@ -918,7 +917,7 @@ export async function searchTeachers(q: string, date: string): Promise<TeacherIn
 
   return res.json();
 }
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Der Rückgabewert des Service-Moduls wird anschließend in der Seitenkomponente
 TeachersPage verarbeitet. Dort werden Eingaben (Suchbegriff und Datum) als
 State verwaltet, API-Anfragen asynchron ausgelöst und die Ergebnisse inkl.
@@ -926,8 +925,7 @@ Lade- und Fehlerzustand in der Oberfläche dargestellt.
 
 ##### Verwendung des Service-Moduls in der TeachersPage
 
-```tsx
-// Auszug aus: TeachersPage.tsx
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Auszug aus TeachersPage" .tsx}
 useEffect(() => {
   const query = q.trim();
 
@@ -981,7 +979,7 @@ useEffect(() => {
     controller.abort();
   };
 }, [q, date, BASE_URL]);
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Umsetzung der Inhaltsseiten (Neuigkeiten, Termine, Lagepläne)
 
@@ -1052,8 +1050,7 @@ wodurch die Anwendung zwischen Entwicklungs- und Produktionsumgebung flexibel
 konfigurierbar bleibt. Zusätzlich wird ein `AbortController` verwendet, um
 Requests bei einem Seitenwechsel oder Unmount sauber abzubrechen.
 
-```tsx
-// Auszug aus: EventsPage.tsx
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Auszug EventPage" .tsx}
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 useEffect(() => {
@@ -1095,9 +1092,10 @@ useEffect(() => {
 
   return () => controller.abort();
 }, [BASE_URL]);
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Umsetzung spezieller Funktionen (Lehrersuche und Screensaver)
+
 Neben den klassischen Inhaltsseiten wurden im Frontend des digitalen
 Infopoints auch spezielle Funktionen umgesetzt, die den praktischen Nutzen
 des Systems im Schulalltag deutlich erhöhen. Ziel dieser Erweiterungen war es,
@@ -1226,14 +1224,14 @@ benutzerfreundlich. Dies ist besonders wichtig für den dauerhaften Einsatz im
 schulischen Umfeld, in dem der Infopoint jederzeit einen professionellen
 Eindruck vermitteln soll.
 
-```tsx
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Fehlerbehandlung" .tsx}
 {loading && <div className={styles.info}>Wird geladen…</div>}
 {error && <div className={`${styles.info} ${styles.error}`}>Fehler: {error}</div>}
 
 {!loading && !error && sorted.length === 0 && (
   <div className={styles.info}>Keine Termine vorhanden</div>
 )}
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Performanceoptimierung im Frontend
 Die Performance des Frontends ist ein zentraler Faktor für den zuverlässigen
@@ -1274,7 +1272,7 @@ Infopoints auch bei längerem Betrieb reaktionsschnell, stabil und zuverlässig
 bleibt. Die Performanceoptimierungen tragen somit wesentlich dazu bei, dass
 der Infopoint den Anforderungen des schulischen Alltags gerecht wird.
 
-```tsx
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Performanceoptimierung" .tsx}
 const t = setTimeout(async () => {
   const res = await fetch(url.toString(), {
     signal: controller.signal,
@@ -1300,7 +1298,8 @@ const sorted = useMemo(() => {
     return db - da;
   });
 }, [events]);
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Durch die Verwendung von Memoisierung werden aufwendige Berechnungen nur
 dann ausgeführt, wenn sich die zugrunde liegenden Daten tatsächlich ändern.
 
@@ -1344,9 +1343,9 @@ abschließenden Schritt der praktischen Umsetzung. Sie stellen sicher, dass
 der digitale Infopoint nicht nur technisch funktioniert, sondern auch im
 täglichen Schulbetrieb dauerhaft und zuverlässig eingesetzt werden kann.
 
-```ts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Deployment" .tsx}
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Herausforderungen und Lösungsansätze im Frontend
 Während der Entwicklung des Frontends für den digitalen Infopoint traten
