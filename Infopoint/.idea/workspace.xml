@@ -4,37 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57c346ea-c658-4d24-8f88-d90c2666f2ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/RootLayout.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/Teachers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/events.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/map.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/at/htlle/infopoint/clients/cockpit/CockpitClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/at/htlle/infopoint/clients/cockpit/CockpitClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/at/htlle/infopoint/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/at/htlle/infopoint/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/at/htlle/infopoint/controller/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/at/htlle/infopoint/controller/MapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/at/htlle/infopoint/service/MapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/at/htlle/infopoint/service/MapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/RootLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/RootLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/header/Header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/screensaver/Screensaver.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/screensaver/Screensaver.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/screensaver/Screensaver.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/features/screensaver/Screensaver.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/features/screensaver/ScreensaverContext.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/EventsPage/EventsPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/EventsPage/EventsPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/EventsPage/EventsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/EventsPage/EventsPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/HomePage/HomePage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/HomePage/HomePage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InfoPage/InfoPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/InfoPage/InfoPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InfoPage/InfoPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/InfoPage/InfoPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InstaFeedPage/InstaFeedPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/InstaFeedPage/InstaFeedPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/InstaFeedPage/InstaFeedPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/InstaFeedPage/InstaFeedPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/KlassenStundenplanPage/KlassenStundenplanPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/KlassenStundenplanPage/KlassenStundenplanPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LaborStundenplanPage/LaborStundenplanPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LaborStundenplanPage/LaborStundenplanPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/MapPage/MapPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/MapPage/MapPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/MapPage/MapPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/MapPage/MapPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/TeachersPage/TeachersPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/TeachersPage/TeachersPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/TeachersPage/TeachersPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/TeachersPage/TeachersPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/shared/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/shared/styles/index.css" afterDir="false" />
-    </list>
+    <list default="true" id="57c346ea-c658-4d24-8f88-d90c2666f2ca" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,6 +99,7 @@
       <workItem from="1767807060853" duration="3459000" />
       <workItem from="1767811313894" duration="2147000" />
       <workItem from="1767813631473" duration="5762000" />
+      <workItem from="1768126612040" duration="885000" />
     </task>
     <servers />
   </component>
