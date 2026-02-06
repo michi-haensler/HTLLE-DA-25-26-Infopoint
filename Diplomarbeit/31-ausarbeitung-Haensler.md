@@ -269,9 +269,9 @@ Die Erstellung von Mockups ermöglichte es dem Projektteam bzw. speziell dem Fro
 
 #### Beispiele und Screenshots
 
-![Infopoint Homescreen](img/Infopoint-Homescreen_Design.png){width=100%}
-![Infopoint Lageplan](img/Infopoint-Lageplan_Design.png){width=100%}
-![Infopoint Lehrer Suche](img/Infopoint-Lehrer-Suche_Design.png){width=100%}
+![Infopoint Homescreen](img/Infopoint-Homescreen_Design.png){width=75%}
+![Infopoint Lageplan](img/Infopoint-Lageplan_Design.png){width=75%}
+![Infopoint Lehrer Suche](img/Infopoint-Lehrer-Suche_Design.png){width=75%}
 
 ### Projektmanagement in der Umsetzung
 
