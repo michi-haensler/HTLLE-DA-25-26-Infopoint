@@ -269,22 +269,104 @@ Die Erstellung von Mockups ermöglichte es dem Projektteam bzw. speziell dem Fro
 
 #### Beispiele und Screenshots
 
-![Infopoint Homescreen](img/Infopoint-Homescreen_Design.png){width=75%}
-![Infopoint Lageplan](img/Infopoint-Lageplan_Design.png){width=75%}
-![Infopoint Lehrer Suche](img/Infopoint-Lehrer-Suche_Design.png){width=75%}
+![Infopoint-Homescreen\label{fig:Infopoint-Homescreen}](img/Infopoint-Homescreen_Design.png){width=100%}
+![Infopoint-Lageplan\label{fig:Infopoint-Lageplan}](img/Infopoint-Lageplan_Design.png){width=100%}
+![Infopoint-Lehrer-Suche\label{fig:Infopoint-Lehrer-Suche}](img/Infopoint-Lehrer-Suche_Design.png){width=100%}
 
 ### Projektmanagement in der Umsetzung
 
 #### Strukturierung der Aufgaben in GitHub Projects
+
+Gearbeitet wurde mit einer Mischung aus Canban und Scrum welche oft auch als Scrumban bezeichnen wird. Das heißt es gibt feste Sprints, aber die Aufgaben werden in einem Kanban-Board organisiert. Dafür wurde ein GitHub Project mit einem Canban-Board und einer Roadmap erstellt. Daort werden die Aufgaben für die Entwicklung des Infopoint-Systems organisiert. Das Board wurde in verschiedene Spalten unterteilt, um den Zustand der Aufgaben übersichtlich darstellen zu können. Diese Spalten sind „To Do", „In Progress" und „Done". Jede Aufgabe bzw. jedes Issue wurde mit einer klaren Beschreibung, Priorität, Zuweisung und einem klarem Fälligkeitsdatum versehen, um die Zusammenarbeit im Team besser koordinieren zu können. Zusätzlich wurden die Aufgaben auch jeweils an Meilensteine geknüpft um einen besseren Überblick auf den Gesamtstatus des Projektes zu haben. Die Roadmap gab uns zusätzlich eine gute Übersicht über die Plannung und Einschätzung unserer Zeit.
+
+![Canban-Board\label{fig:Canban-Board}](img/Canban-Board.png){width=100%}
+
 #### Arbeitsabläufe und Verteilung im Team
+
+Durch die im vorhinein festgelegten Projektrollen war jedem Teammitglied klar, welche Aufgabenbereiche zu seinem Verantwortungsbereich gehören. Zusätzlich gab es über Github Projects immer eine Festgelegte Zuordnung einzelner Aufgaben auf bestimmte Teammitglieder. Außerdem gab es regelmäßige Meetings und auch kleiner Gespräche zwischen den Teammitgliedern um den Fortschritt zu besprechen, Herausforderungen zu identifizieren und die nächsten Schritte zu planen. Die Arbeitsabläufe wurden grundsätzlich sehr flexibel gestaltet, in Sprints aufgeteilt und abgearbeitet, um eine iterative Entwicklung zu ermöglichen. Dies erlaubte es uns, schnell auf Feedback zu reagieren und Anpassungen vorzunehmen, um die bestmögliche Lösung für den Infopoint und unseren Auftraggeber zu entwickeln.
+
 #### Dokumentation des Fortschritts
+
+Die Dokumentation des Fortschritts erfolgte hauptsächlich über GitHub, wo alle Aufgaben, Issues und Meilensteine dokumentiert und verfolgt wurden. Über die Roadmap und das Canban-Board konnten wir jederzeit den aktuellen Stand des Projekts einsehen und sicherstellen, dass wir auf Kurs bleiben. Zusätzlich wurden wichtige Entscheidungen, Herausforderungen und Lösungen in regelmäßigen Meetings dokumentiert, um eine transparente Kommunikation im Team zu gewährleisten.
+
 #### Reflexion über die Effektivität der Methode
+
+Die Kombination aus Kanban und Scrum, also Scrumban, erwies sich als sehr effektiv für die Organisation unseres Projekts. Die festen Sprints halfen uns dabei, klare Ziele zu setzen und den Fortschritt zu messen, während die Flexibilität des Kanban-Boards es uns ermöglichte, schnell auf Veränderungen und Feedback zu reagieren. Durch die klare Strukturierung der Aufgaben und die regelmäßige Kommunikation im Team konnten wir effizient zusammenarbeiten und sicherstellen, dass alle Teammitglieder auf dem gleichen Stand waren. Insgesamt hat diese Methode dazu beigetragen, dass wir unser Projekt erfolgreich umsetzen konnten.
 
 ### Deployment mittels Docker
 
 #### Aufbau der Docker-Umgebung
+
+Die Docker-Umgebung für das Infopoint-System wurde so aufgebaut, dass sie die verschiedenen Komponenten des Systems wie Frontend, Backend und CMS in separaten Containern isoliert sind. Jeder Container enthält die notwendigen Abhängigkeiten und Konfigurationen, um die jeweilige Komponente auszuführen. Die Kommunikation zwischen den Containern erfolgt über definierte REST-API Schnittstellen, um eine modulare und skalierbare Architektur zu gewährleisten. Jedoch wurden die Container über ein Docker-Compose-File zusammengeführt, um die Verwaltung und Bereitstellung der Multi-Container-Anwendung zu erleichtern. Das Docker-Compose-File definiert die Dienste, Netzwerke und Volumes, die für den Betrieb des Infopoint-Systems erforderlich sind, und ermöglicht es, das gesamte System mit einem einzigen Befehl zu starten.
+
 #### Containerisierung des Frontends, Backends und CMS
-#### Multi-Container-Komposition (optional: Docker Compose)
+
+Jede Komponente des Infopoint-Systems wurde in einem eigenen Docker-Container containerisiert. Das Frontend wurde mit einem Webserver-Container bereitgestellt, der die Benutzeroberfläche hostet. Das Backend wurde in einem separaten Container ausgeführt, der die Geschäftslogik und Datenverarbeitung übernimmt. Das CMS wurde ebenfalls in einem eigenen Container betrieben. Das CMS läuft aber nicht über ein eigenes Programm, sondern über ein Docker Image. Dieses Image enthält die notwendige Software, um das CMS zu betreiben, und ermöglicht es, die Inhalte des Infopoint-Systems einfach zu verwalten und zu aktualisieren. Die Kommunikation zwischen den Containern erfolgt wie bereits beschrieben über definierte REST-API Schnittstellen, um eine modulare und skalierbare Architektur zu schaffen.
+
+#### Multi-Container-Komposition
+
+Die Multi-Container-Komposition wurde mit Docker Compose realisiert, um die Verwaltung und Bereitstellung der verschiedenen Container zu erleichtern. Das Docker-Compose-File definiert die Dienste für das Frontend, Backend und CMS sowie die Netzwerke und Volumes, die für den Betrieb des Infopoint-Systems erforderlich sind. Durch die Verwendung von Docker Compose können alle Container mit einem einzigen Befehl gestartet, gestoppt und verwaltet werden, was den Deployment-Prozess für nicht vertraute Benutzer erheblich vereinfacht. 
+
+Das Docker-Compose File sieht wie folgt aus:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Docker-Compose" .yaml}
+services:
+  # Cockpit CMS
+  cockpit:
+    image: cockpithq/cockpit:core-latest
+    container_name: infopoint-cockpit
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      # Lokaler Storage-Ordner mit der Vorkonfiguration
+      - ./resources/cockpit-data:/var/www/html/storage
+    environment:
+      - COCKPIT_SESSION_NAME=cockpit
+    networks:
+      - infopoint-network
+
+  # Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: infopoint-backend
+    restart: unless-stopped
+    ports:
+      - "8888:8888"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - COCKPIT_URL=http://cockpit:80
+      - COCKPIT_API_KEY=API-4411907c14a99505c286559eef0f81979256f987
+    depends_on:
+      - cockpit
+    networks:
+      - infopoint-network
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: infopoint-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - infopoint-network
+
+networks:
+  infopoint-network:
+    driver: bridge
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Der Endverbraucher sieht nach dem erstmaligen Starten des Systems in Docker Desktop nur die drei Container für Frontend, Backend und CMS, welche er mit einem Klick starten und stoppen kann.
+
+![Docker-Desktop\label{fig:Docker-Desktop}](img/Docker-Desktop.png){width=100%}
+
 #### Herausforderungen beim Deployment auf unterschiedlicher Hardware
 #### Optimierungen, Lessons Learned
 

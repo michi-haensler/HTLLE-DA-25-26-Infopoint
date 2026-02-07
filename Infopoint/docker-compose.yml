@@ -1,5 +1,5 @@
 services:
-  # Cockpit CMS - Headless CMS für Content Management
+  # Cockpit CMS
   cockpit:
     image: cockpithq/cockpit:core-latest
     container_name: infopoint-cockpit
@@ -7,14 +7,14 @@ services:
     ports:
       - "8080:80"
     volumes:
-      # Lokaler Storage-Ordner mit Standard-Konfiguration
+      # Lokaler Storage-Ordner mit der Vorkonfiguration
       - ./resources/cockpit-data:/var/www/html/storage
     environment:
       - COCKPIT_SESSION_NAME=cockpit
     networks:
       - infopoint-network
 
-  # Spring Boot Backend
+  # Backend
   backend:
     build:
       context: ./backend
@@ -32,7 +32,7 @@ services:
     networks:
       - infopoint-network
 
-  # React/Vite Frontend
+  # Frontend
   frontend:
     build:
       context: ./frontend
