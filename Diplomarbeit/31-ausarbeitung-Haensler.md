@@ -25,7 +25,7 @@ Nicht zuletzt spielt die **Barrierefreiheit** eine wichtige Rolle. Moderne Infop
 
 #### Einsatzgebiete und Nutzen in Bildungseinrichtungen
 
-Die genannten Aufgabenbereiche weisen eine hohe Relevanz für Bildungseinrichtungen auf. Der Aspekt „Orientierung und Navigation" erweist sich als besonders bedeutsam. Insbesondere an Tagen der offenen Tür, an denen zahlreiche Besucherinnen und Besucher das Schulgebäude frequentieren, ist eine effektive Informationsvermittlung unverzichtbar. Die Orientierung in unbekannten Gebäuden kann ohne entsprechende Hilfsmittel zeitaufwendig sein und dazu führen, dass relevante Bereiche nicht aufgefunden werden. Benutzerfreundliche Anlaufstellen wie Infopoints ermöglichen es Besucherinnen und Besuchern, gewünschte Informationen effizient abzurufen.
+Die genannten Aufgabenbereiche weisen eine hohe Relevanz für Bildungseinrichtungen auf. Der Aspekt Orientierung und Navigation erweist sich als besonders bedeutsam. Insbesondere an Tagen der offenen Tür, an denen zahlreiche Besucherinnen und Besucher das Schulgebäude frequentieren, ist eine effektive Informationsvermittlung unverzichtbar. Die Orientierung in unbekannten Gebäuden kann ohne entsprechende Hilfsmittel zeitaufwendig sein und dazu führen, dass relevante Bereiche nicht aufgefunden werden. Benutzerfreundliche Anlaufstellen wie Infopoints ermöglichen es Besucherinnen und Besuchern, gewünschte Informationen effizient abzurufen.
 
 Der Aspekt „Anzeige aktueller Informationen" ist für Bildungseinrichtungen ebenfalls von erheblicher Bedeutung. Schulen und Universitäten verfügen häufig über eine Vielzahl von Veranstaltungen, Kursen und Ankündigungen, die den Schülerinnen und Schülern sowie Studierenden kommuniziert werden müssen. Infopoint-Systeme können als zentrale Informationsquelle fungieren und gewährleisten, dass alle Beteiligten stets über relevante Neuigkeiten informiert sind. Dies fördert die Kommunikation innerhalb der Bildungseinrichtung. Darüber hinaus wird die Nachhaltigkeit gefördert, da papierbasierte Aushänge an Pinnwänden reduziert werden können. 
 
@@ -365,7 +365,7 @@ networks:
     driver: bridge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Der Endverbraucher sieht nach dem erstmaligen Starten des Systems in Docker Desktop nur die drei Container für Frontend, Backend und CMS, welche er mit einem Klick starten und stoppen kann.
+Der Endverbraucher sieht nach dem erstmaligen Starten des Systems in Docker Desktop nur die drei Container für Frontend, Backend und CMS, welche gesammelt in den Infopoint Container zusammengefasst sind und mit einem Klick gestartet und gestoppt werden können.
 
 ![Docker-Desktop\label{fig:Docker-Desktop}](img/Docker-Desktop.png){width=100%}
 
