@@ -21,7 +21,9 @@ Eine weitere zentrale Funktion ist die **Anzeige aktueller Informationen**. Info
 
 Im Bereich **Service und Self-Service** bieten zahlreiche Infopoint-Systeme Funktionen wie den Ticketerwerb, Reservierungen oder das Ausfüllen von Formularen an. Dies erleichtert den Nutzerinnen und Nutzern den Zugang zu Dienstleistungen, reduziert den Bedarf an persönlicher Interaktion, minimiert Wartezeiten und steigert somit die Effizienz. Ein Beispiel hierfür sind die Kiosk-Systeme in Fast-Food-Ketten, bei denen der Bestell- und Bezahlvorgang erheblich vereinfacht wird.
 
-Nicht zuletzt spielt die **Barrierefreiheit** eine wichtige Rolle. Moderne Infopoint-Systeme werden so gestaltet, dass sie den Bedürfnissen von Menschen mit Behinderungen gerecht werden. Dies kann durch die Integration von Funktionen wie Sprachausgabe, Bildschirmvergrößerung oder taktilen Eingabemöglichkeiten erreicht werden.
+Nicht zuletzt spielt die **Barrierefreiheit** eine wichtige Rolle. Moderne Infopoint-Systeme werden so gestaltet, dass sie den Bedürfnissen von Menschen mit Behinderungen gerecht werden. Dies kann durch die Integration von Funktionen wie Sprachausgabe, Bildschirmvergrößerung oder taktilen Eingabemöglichkeiten erreicht werden. 
+
+[@Infopoints] 
 
 #### Einsatzgebiete und Nutzen in Bildungseinrichtungen
 
@@ -94,7 +96,9 @@ Durch die Berücksichtigung der Nutzerbedürfnisse wird eine **verbesserte Benut
 
 Ein nutzerzentriertes Design ermöglicht zudem eine **erhöhte Effizienz**. Benutzerinnen und Benutzer können ihre Aufgaben schneller erledigen, was besonders in Bildungseinrichtungen relevant ist, wo zeitliche Ressourcen begrenzt sind. Wichtige Funktionen und Informationen sollten mit möglichst wenigen Interaktionsschritten erreichbar sein, um eine aufwendige Navigation durch komplexe Menüstrukturen zu vermeiden.
 
-Wenn das Design auf die Fähigkeiten und Erwartungen der Nutzer abgestimmt ist, wird die **Fehlerquote** bei der Bedienung minimiert, was zu einer reibungsloseren Nutzung führt. Darüber hinaus sind Nutzerinnen und Nutzer, die ein System als benutzerfreundlich empfinden, eher zufrieden und bereit, es regelmäßig zu verwenden. Diese **höhere Zufriedenheit** trägt zur langfristigen Nutzung und zum Erfolg des Infopoint-Systems bei.
+Wenn das Design auf die Fähigkeiten und Erwartungen der Nutzer abgestimmt ist, wird die **Fehlerquote** bei der Bedienung minimiert, was zu einer reibungsloseren Nutzung führt. Darüber hinaus sind Nutzerinnen und Nutzer, die ein System als benutzerfreundlich empfinden, eher zufrieden und bereit, es regelmäßig zu verwenden. Diese **höhere Zufriedenheit** trägt zur langfristigen Nutzung und zum Erfolg des Infopoint-Systems bei. 
+
+[@User-Centered-Design]
 
 #### Grundprinzipien (Usability, Accessibility, Informationsarchitektur)
 
@@ -102,7 +106,9 @@ Die Gestaltung von Infopoint-Systemen basiert auf drei wesentlichen Grundprinzip
 
 **Accessibility** (Barrierefreiheit) stellt sicher, dass das System für alle Benutzer zugänglich ist, einschließlich Menschen mit Behinderungen. Dies umfasst die Integration von Funktionen wie Bildschirmleser-Kompatibilität, Tastaturnavigation und Anpassungsmöglichkeiten für Sehbehinderte. Ein barrierefreies Design gewährleistet, dass niemand aufgrund von physischen oder kognitiven Einschränkungen ausgeschlossen wird.
 
-Die **Informationsarchitektur** bezieht sich auf die Organisation und Strukturierung der Inhalte innerhalb des Systems. Eine gut durchdachte Informationsarchitektur erleichtert es den Benutzern, die benötigten Informationen schnell zu finden. Dies umfasst die Kategorisierung von Inhalten, die Erstellung von Navigationsstrukturen und die Verwendung von Suchfunktionen.
+Die **Informationsarchitektur** bezieht sich auf die Organisation und Strukturierung der Inhalte innerhalb des Systems. Eine gut durchdachte Informationsarchitektur erleichtert es den Benutzern, die benötigten Informationen schnell zu finden. Dies umfasst die Kategorisierung von Inhalten, die Erstellung von Navigationsstrukturen und die Verwendung von Suchfunktionen. 
+
+[@UI-UX]
 
 #### Wireframes, Mockups und Prototypen
 
@@ -110,7 +116,9 @@ Im Designprozess kommen verschiedene Darstellungsformen zum Einsatz, die aufeina
 
 Auf Wireframes aufbauend entstehen **Mockups** als detailliertere visuelle Darstellungen der Benutzeroberfläche, die das endgültige Design und Layout des Systems zeigen. Sie enthalten Farben, Grafiken und typografische Elemente, um einen realistischen Eindruck davon zu vermitteln, wie das fertige System aussehen wird. Mockups helfen dabei, Designentscheidungen zu treffen und Feedback von Stakeholdern einzuholen.
 
-**Prototypen** schließlich sind interaktive Modelle des Systems, die es den Benutzerinnen und Benutzern ermöglichen, durch die Benutzeroberfläche zu navigieren und Funktionen zu testen. Prototypen können von einfachen klickbaren Wireframes bis hin zu voll funktionsfähigen Modellen reichen. Sie stellen ein wertvolles Instrument dar, um die Benutzererfahrung zu testen und Verbesserungen vorzunehmen, bevor das System final entwickelt wird.
+**Prototypen** schließlich sind interaktive Modelle des Systems, die es den Benutzerinnen und Benutzern ermöglichen, durch die Benutzeroberfläche zu navigieren und Funktionen zu testen. Prototypen können von einfachen klickbaren Wireframes bis hin zu voll funktionsfähigen Modellen reichen. Sie stellen ein wertvolles Instrument dar, um die Benutzererfahrung zu testen und Verbesserungen vorzunehmen, bevor das System final entwickelt wird. 
+
+[@UI-UX]
 
 #### Einführung in Adobe XD und seine Einsatzmöglichkeiten
 
@@ -120,7 +128,9 @@ Im Bereich **Design von Benutzeroberflächen** bietet Adobe XD eine intuitive Be
 
 Die **Erstellung von Wireframes und Mockups** wird durch die Drag-and-Drop-Funktionalität erleichtert, die das Platzieren und Anordnen von Elementen auf der Leinwand vereinfacht. Im Bereich **Prototyping** ermöglicht Adobe XD die Erstellung interaktiver Prototypen, bei denen Übergänge, Animationen und Interaktionen hinzugefügt werden können, um ein realistisches Nutzungserlebnis zu simulieren.
 
-Für die **Kollaboration** unterstützt Adobe XD die Zusammenarbeit im Team, indem Arbeiten in Echtzeit geteilt und Feedback von anderen Teammitgliedern oder Stakeholdern eingeholt werden kann. Dies fördert eine effiziente Kommunikation und erleichtert den Designprozess erheblich.
+Für die **Kollaboration** unterstützt Adobe XD die Zusammenarbeit im Team, indem Arbeiten in Echtzeit geteilt und Feedback von anderen Teammitgliedern oder Stakeholdern eingeholt werden kann. Dies fördert eine effiziente Kommunikation und erleichtert den Designprozess erheblich. 
+
+[@Adobe-XD]
 
 ### Projektmanagement-Grundlagen
 
@@ -132,7 +142,7 @@ In der **Initiierungsphase** wird das Projekt definiert und die Machbarkeit bewe
 
 Während der **Ausführungsphase** werden die geplanten Aktivitäten umgesetzt. Das Entwicklungsteam arbeitet an der Erstellung der Software, während das Projektmanagement den Fortschritt überwacht und sicherstellt, dass die Ziele erreicht werden. Die Phase der **Überwachung und Kontrolle** läuft parallel zur Ausführung und umfasst die kontinuierliche Überwachung des Projektfortschritts. Es werden Leistungsindikatoren verfolgt, Abweichungen vom Plan identifiziert und gegebenenfalls Korrekturmaßnahmen ergriffen.
 
-In der **Abschlussphase** wird das Projekt formal beendet. Die Software wird ausgeliefert, Dokumentationen erstellt und eine Nachbesprechung durchgeführt, um Erfahrungen zu sammeln und Verbesserungen für zukünftige Projekte zu identifizieren.
+In der **Abschlussphase** wird das Projekt formal beendet. Die Software wird ausgeliefert, Dokumentationen erstellt und eine Nachbesprechung durchgeführt, um Erfahrungen zu sammeln und Verbesserungen für zukünftige Projekte zu identifizieren. 
 
 
 #### Agile Methoden (Kanban, Scrum) im Überblick
@@ -173,7 +183,9 @@ Hinzu kommt die Problematik unterschiedlicher **Abhängigkeiten und Bibliotheken
 
 **Leistungsunterschiede** zwischen verschiedenen Hardwarekonfigurationen können die Ausführungsgeschwindigkeit und das Verhalten der Software beeinflussen. Eine Anwendung, die auf leistungsstarker Hardware gut funktioniert, kann auf schwächerer Hardware langsam oder instabil sein. Auch unterschiedliche **Netzwerkkonfigurationen** und Sicherheitsrichtlinien können den Zugriff auf Ressourcen und Dienste beeinträchtigen, die für die Software erforderlich sind.
 
-Schließlich kann die **Wartung und Aktualisierung** auf verschiedenen Hardwareplattformen komplex sein, insbesondere wenn unterschiedliche Versionen der Software auf verschiedenen Systemen laufen.
+Schließlich kann die **Wartung und Aktualisierung** auf verschiedenen Hardwareplattformen komplex sein, insbesondere wenn unterschiedliche Versionen der Software auf verschiedenen Systemen laufen. 
+
+[@Docker-Benefits]
 
 #### Einführung in Virtualisierung und Containerisierung
 
@@ -301,7 +313,7 @@ Die Kombination aus Kanban und Scrum, also Scrumban, erwies sich als sehr effekt
 
 Die Docker-Umgebung für das Infopoint-System wurde so aufgebaut, dass sie die verschiedenen Komponenten des Systems wie Frontend, Backend und CMS in separaten Containern isoliert sind. Jeder Container enthält die notwendigen Abhängigkeiten und Konfigurationen, um die jeweilige Komponente auszuführen. Die Kommunikation zwischen den Containern erfolgt über definierte REST-API Schnittstellen, um eine modulare und skalierbare Architektur zu gewährleisten. Jedoch wurden die Container über ein Docker-Compose-File zusammengeführt, um die Verwaltung und Bereitstellung der Multi-Container-Anwendung zu erleichtern. Das Docker-Compose-File definiert die Dienste, Netzwerke und Volumes, die für den Betrieb des Infopoint-Systems erforderlich sind, und ermöglicht es, das gesamte System mit einem einzigen Befehl zu starten.
 
-#### Containerisierung des Frontends, Backends und CMS
+#### Containerisierung des Frontends, Backends und CMS (ToDo Docker einzelne Files verlinken)
 
 Jede Komponente des Infopoint-Systems wurde in einem eigenen Docker-Container containerisiert. Das Frontend wurde mit einem Webserver-Container bereitgestellt, der die Benutzeroberfläche hostet. Das Backend wurde in einem separaten Container ausgeführt, der die Geschäftslogik und Datenverarbeitung übernimmt. Das CMS wurde ebenfalls in einem eigenen Container betrieben. Das CMS läuft aber nicht über ein eigenes Programm, sondern über ein Docker Image. Dieses Image enthält die notwendige Software, um das CMS zu betreiben, und ermöglicht es, die Inhalte des Infopoint-Systems einfach zu verwalten und zu aktualisieren. Die Kommunikation zwischen den Containern erfolgt wie bereits beschrieben über definierte REST-API Schnittstellen, um eine modulare und skalierbare Architektur zu schaffen.
 
@@ -365,7 +377,7 @@ networks:
     driver: bridge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Der Endverbraucher sieht nach dem erstmaligen Starten des Systems in Docker Desktop nur die drei Container für Frontend, Backend und CMS, welche gesammelt in den Infopoint Container zusammengefasst sind und mit einem Klick gestartet und gestoppt werden können.
+Der Endverbraucher sieht nach dem erstmaligen Starten des Systems in Docker Desktop nur die drei Container für Frontend, Backend und CMS, welche gesammelt in den Infopoint Container zusammengefasst sind und mit einem Klick gestartet und gestoppt werden können. Im finalen Betriebsszenario wird das System jedoch so konfiguriert, dass es automatisch mit dem Start des Computers gestartet wird, um eine kontinuierliche Verfügbarkeit zu gewährleisten. 
 
 ![Docker-Desktop\label{fig:Docker-Desktop}](img/Docker-Desktop.png){width=100%}
 
