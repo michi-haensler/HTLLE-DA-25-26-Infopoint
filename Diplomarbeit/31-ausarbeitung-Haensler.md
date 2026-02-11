@@ -13,7 +13,7 @@ Der vorliegende Teilbereich umfasst die Hardwareauswahl, das Design, die Konzept
 
 #### Definition und Aufgaben von Infopoint-Systemen
 
-Ein Infopoint-System bezeichnet eine digitale Lösung zur effizienten und benutzerfreundlichen Bereitstellung von Informationen. Derartige Systeme finden sich häufig in öffentlichen Einrichtungen wie Schulen, Universitäten, Bibliotheken oder Museen und dienen dazu, Besucherinnen und Besuchern sowie Nutzerinnen und Nutzern den Zugang zu relevanten Informationen zu erleichtern. Infopoint-Systeme können unterschiedliche Ausprägungen annehmen, darunter interaktive Kioske, digitale Anzeigetafeln oder mobile Anwendungen. Sie werden in der Regel maßgeschneidert konzipiert, um die spezifischen Anwendungsfälle der jeweiligen Einrichtungen optimal abzudecken. Ein prominentes Beispiel für ein Infopoint-System stellt das Self-Service-Bestellsystem von Fast-Food-Ketten dar. Hier können Kundinnen und Kunden ihre Bestellungen eigenständig aufgeben, ohne persönliche Interaktion mit dem Personal, was die Effizienz steigert und Wartezeiten reduziert.
+Ein Infopoint-System bezeichnet eine digitale Lösung zur effizienten und benutzerfreundlichen Bereitstellung von Informationen. Derartige Systeme finden sich häufig in öffentlichen Einrichtungen wie Schulen, Universitäten, Bibliotheken oder Museen und dienen dazu, Besucherinnen und Besuchern sowie Nutzerinnen und Nutzern den Zugang zu relevanten Informationen zu erleichtern. Infopoint-Systeme können unterschiedliche Ausprägungen annehmen, darunter interaktive Kioske, digitale Anzeigetafeln oder mobile Anwendungen. Sie werden in der Regel maßgeschneidert konzipiert, um die spezifischen Anwendungsfälle der jeweiligen Einrichtungen optimal abzudecken. Ein prominentes Beispiel für ein Infopoint-System stellt das Self-Service-Bestellsystem von Fast-Food-Ketten dar. Hier können Kundinnen und Kunden ihre Bestellungen eigenständig aufgeben, ohne persönliche Interaktion mit dem Personal, was die Effizienz steigert und Wartezeiten reduziert. [vgl. @Infopoints]
 
 Die konkreten Aufgaben eines Infopoint-Systems lassen sich in mehrere Kategorien einteilen. Im Bereich **Orientierung und Navigation** fungieren derartige Informationssysteme als Orientierungshilfe, indem sie interaktive Karten, Wegbeschreibungen und Standortinformationen einzelner Räume bereitstellen. Dies erweist sich insbesondere in großen Gebäudekomplexen oder auf weitläufigen Campusgeländen als vorteilhaft. Entsprechende Anwendungen finden sich beispielsweise in Einkaufszentren oder Flughäfen.
 
@@ -21,9 +21,7 @@ Eine weitere zentrale Funktion ist die **Anzeige aktueller Informationen**. Info
 
 Im Bereich **Service und Self-Service** bieten zahlreiche Infopoint-Systeme Funktionen wie den Ticketerwerb, Reservierungen oder das Ausfüllen von Formularen an. Dies erleichtert den Nutzerinnen und Nutzern den Zugang zu Dienstleistungen, reduziert den Bedarf an persönlicher Interaktion, minimiert Wartezeiten und steigert somit die Effizienz. Ein Beispiel hierfür sind die Kiosk-Systeme in Fast-Food-Ketten, bei denen der Bestell- und Bezahlvorgang erheblich vereinfacht wird.
 
-Nicht zuletzt spielt die **Barrierefreiheit** eine wichtige Rolle. Moderne Infopoint-Systeme werden so gestaltet, dass sie den Bedürfnissen von Menschen mit Behinderungen gerecht werden. Dies kann durch die Integration von Funktionen wie Sprachausgabe, Bildschirmvergrößerung oder taktilen Eingabemöglichkeiten erreicht werden. 
-
-[@Infopoints] 
+Nicht zuletzt spielt die **Barrierefreiheit** eine wichtige Rolle. Moderne Infopoint-Systeme werden so gestaltet, dass sie den Bedürfnissen von Menschen mit Behinderungen gerecht werden. Dies kann durch die Integration von Funktionen wie Sprachausgabe, Bildschirmvergrößerung oder taktilen Eingabemöglichkeiten erreicht werden.  
 
 #### Einsatzgebiete und Nutzen in Bildungseinrichtungen
 
