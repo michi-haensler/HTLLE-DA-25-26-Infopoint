@@ -21,7 +21,7 @@ Eine weitere zentrale Funktion ist die **Anzeige aktueller Informationen**. Info
 
 Im Bereich **Service und Self-Service** bieten zahlreiche Infopoint-Systeme Funktionen wie den Ticketerwerb, Reservierungen oder das Ausfüllen von Formularen an. Dies erleichtert den Nutzerinnen und Nutzern den Zugang zu Dienstleistungen, reduziert den Bedarf an persönlicher Interaktion, minimiert Wartezeiten und steigert somit die Effizienz. Ein Beispiel hierfür sind die Kiosk-Systeme in Fast-Food-Ketten, bei denen der Bestell- und Bezahlvorgang erheblich vereinfacht wird.
 
-Nicht zuletzt spielt die **Barrierefreiheit** eine wichtige Rolle. Moderne Infopoint-Systeme werden so gestaltet, dass sie den Bedürfnissen von Menschen mit Behinderungen gerecht werden. Dies kann durch die Integration von Funktionen wie Sprachausgabe, Bildschirmvergrößerung oder taktilen Eingabemöglichkeiten erreicht werden.  
+Nicht zuletzt spielt die **Barrierefreiheit** eine wichtige Rolle. Moderne Infopoint-Systeme werden so gestaltet, dass sie den Bedürfnissen von Menschen mit Behinderungen gerecht werden. Dies kann durch die Integration von Funktionen wie Sprachausgabe, Bildschirmvergrößerung oder taktilen Eingabemöglichkeiten erreicht werden. (vgl. [@Lee_Park_Park_Kim_2023])
 
 #### Einsatzgebiete und Nutzen in Bildungseinrichtungen
 
@@ -46,11 +46,11 @@ Hinsichtlich der **Skalierbarkeit** sollten die Lösungen in der Lage sein, mit 
 
 Die technische Struktur eines Infopoint-Systems ist grundlegend überschaubar und besteht im Wesentlichen aus drei Hauptkomponenten.
 
-Der **Computer** bildet die zentrale Recheneinheit eines Infopoints und ist für die Verarbeitung und Visualisierung der Inhalte verantwortlich. Auf diesem läuft das Betriebssystem. Die Leistungsfähigkeit des Computers bestimmt, welche Komplexität die dargestellten Inhalte aufweisen können – ein Beispiel für komplexere Inhalte wäre ein dreidimensionaler Raumplan eines Gebäudes.
+Der **Computer** bildet die zentrale Recheneinheit eines Infopoints und ist für die Verarbeitung und Visualisierung der Inhalte verantwortlich. Auf diesem läuft das Betriebssystem. Die Leistungsfähigkeit des Computers bestimmt, welche Komplexität die dargestellten Inhalte aufweisen können – ein Beispiel für komplexere Inhalte wäre ein dreidimensionaler Raumplan eines Gebäudes. (vgl. [@Infopoints-Hardware])
 
-Das **Display** stellt die wichtigste Komponente des Infopoints dar, da es die Schnittstelle zwischen System und Endbenutzer bildet. Hierbei existieren zwei Optionen: Die erste Option besteht in der Verwendung eines einfachen Bildschirms zur Darstellung statischer Inhalte. Die zweite Option umfasst den Einsatz eines Touchscreens, wodurch der Infopoint interaktiv wird und eine Vielzahl weiterer Funktionsmöglichkeiten für die Benutzerinteraktion eröffnet.
+Das **Display** stellt die wichtigste Komponente des Infopoints dar, da es die Schnittstelle zwischen System und Endbenutzer bildet. Hierbei existieren zwei Optionen: Die erste Option besteht in der Verwendung eines einfachen Bildschirms zur Darstellung statischer Inhalte. Die zweite Option umfasst den Einsatz eines Touchscreens, wodurch der Infopoint interaktiv wird und eine Vielzahl weiterer Funktionsmöglichkeiten für die Benutzerinteraktion eröffnet. (vgl. [@Infopoints-Hardware])
 
-Das **Gehäuse** bildet den ersten visuellen Eindruck des Infopoints. Es vereint die Komponenten und gewährleistet ein ansprechendes Erscheinungsbild. Das Gehäuse kann so gestaltet werden, dass es sich in die vorhandene Inneneinrichtung einfügt, sofern eine entsprechende Anfertigung erfolgt. Darüber hinaus ist das Gehäuse maßgeblich für den Einsatzzweck: Bei einer Außeninstallation muss es beispielsweise die Komponenten vor Witterungseinflüssen schützen.
+Das **Gehäuse** bildet den ersten visuellen Eindruck des Infopoints. Es vereint die Komponenten und gewährleistet ein ansprechendes Erscheinungsbild. Das Gehäuse kann so gestaltet werden, dass es sich in die vorhandene Inneneinrichtung einfügt, sofern eine entsprechende Anfertigung erfolgt. Darüber hinaus ist das Gehäuse maßgeblich für den Einsatzzweck: Bei einer Außeninstallation muss es beispielsweise die Komponenten vor Witterungseinflüssen schützen. (vgl. [@Infopoints-Hardware])
 
 #### Kriterien für die Hardwareauswahl
 
