@@ -3,53 +3,74 @@
  * Labor-Stundenpläne Collection
  * 
  * Jede Klasse kann mehrere Bilder haben.
- * 
- * Felder:
- * - className: Name der Klasse (z.B. "5AHWIN")
- * - description: Optionale Beschreibung
- * - images: Array von Bildern (Assets)
- * - sortOrder: Sortierreihenfolge
  */
 
 return [
     'name' => 'laborplaene',
     'label' => 'Labor-Stundenpläne',
-    'group' => 'Stundenpläne',
+    'info' => 'Stundenpläne für Labor-Klassen mit Bildern',
+    'type' => 'collection',
     'fields' => [
-        [
+        0 => [
             'name' => 'className',
             'type' => 'text',
             'label' => 'Klassenname',
+            'info' => 'z.B. 5AHWIN, 4BHITM',
+            'group' => '',
+            'i18n' => false,
             'required' => true,
+            'multiple' => false,
+            'meta' => [],
             'opts' => [
-                'placeholder' => 'z.B. 5AHWIN'
-            ]
+                'multiline' => false,
+                'showCount' => true,
+                'readonly' => false,
+                'placeholder' => 'z.B. 5AHWIN',
+                'minlength' => NULL,
+                'maxlength' => NULL,
+            ],
         ],
-        [
+        1 => [
             'name' => 'description',
             'type' => 'text',
             'label' => 'Beschreibung',
+            'info' => 'Optionale Beschreibung des Stundenplans',
+            'group' => '',
+            'i18n' => false,
             'required' => false,
+            'multiple' => false,
+            'meta' => [],
             'opts' => [
-                'placeholder' => 'Optionale Beschreibung'
-            ]
+                'multiline' => true,
+                'showCount' => true,
+                'placeholder' => 'Optionale Beschreibung',
+            ],
         ],
-        [
+        2 => [
             'name' => 'images',
             'type' => 'asset',
             'label' => 'Stundenplan-Bilder',
+            'info' => 'Ein oder mehrere Bilder des Stundenplans',
+            'group' => '',
+            'i18n' => false,
             'required' => false,
-            'opts' => [
-                'multiple' => true
-            ]
+            'multiple' => true,
+            'meta' => [],
+            'opts' => [],
         ],
-        [
+        3 => [
             'name' => 'sortOrder',
             'type' => 'number',
             'label' => 'Sortierung',
-            'default' => 0
-        ]
+            'info' => 'Reihenfolge in der Anzeige',
+            'group' => '',
+            'i18n' => false,
+            'required' => false,
+            'multiple' => false,
+            'meta' => [],
+            'opts' => [],
+        ],
     ],
     'preview' => ['className', 'description'],
-    'sortable' => true
+    'sortable' => true,
 ];
