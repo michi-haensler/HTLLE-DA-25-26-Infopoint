@@ -149,6 +149,7 @@
     gap: var(--space-md, 18px);
     max-height: 60vh;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .list .itemButton {
