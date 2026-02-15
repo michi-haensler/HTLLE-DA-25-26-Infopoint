@@ -102,13 +102,14 @@
 }
 
 .iconCircle {
-  width: clamp(60px, 8vw, 80px);
-  height: clamp(60px, 8vw, 80px);
+  width: clamp(90px, 12vw, 130px);
+  height: clamp(90px, 12vw, 130px);
   border-radius: 50%;
   background: var(--color-text-muted, #7e7e7e);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
   transition: 
     background-color var(--transition-fast, 0.15s ease),
     transform var(--transition-fast, 0.15s ease);
@@ -119,8 +120,8 @@
   transform: scale(1.1);
 }
 
-.iconCircle .material-icons {
-  font-size: clamp(28px, 4vw, 40px);
+.iconCircle :global(.material-icons) {
+  font-size: clamp(42px, 6vw, 62px) !important;
   color: var(--color-text-primary, #ffffff);
 }
 

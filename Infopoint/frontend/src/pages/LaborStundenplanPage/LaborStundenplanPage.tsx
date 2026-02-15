@@ -72,6 +72,16 @@ export default function LaborStundenplanPage() {
 
     return (
         <div className={styles.page}>
+            <div className={styles.backRow}>
+                <button
+                    className={styles.backButton}
+                    onClick={() => navigate("/stundenplan")}
+                    type="button"
+                >
+                    <span className="material-icons">arrow_back</span>
+                    Zurück
+                </button>
+            </div>
             <h1 className={styles.title}>Laborstundenpläne</h1>
 
             {/* Search Row */}

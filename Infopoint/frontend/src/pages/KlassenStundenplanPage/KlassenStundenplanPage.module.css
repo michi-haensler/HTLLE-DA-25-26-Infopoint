@@ -8,6 +8,37 @@
     color: var(--color-text-primary, #fff);
 }
 
+.backRow {
+    width: min(1200px, 92vw);
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: var(--space-md, 16px);
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm, 8px);
+    padding: var(--space-sm, 10px) var(--space-md, 18px);
+    background: var(--color-bg-elevated, #212121);
+    border: none;
+    border-radius: var(--radius-md, 12px);
+    color: var(--color-text-primary, #fff);
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: var(--font-weight-semibold, 600);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.backButton:hover {
+    background: var(--color-primary, rgba(70, 140, 255, 0.95));
+    transform: translateX(-4px);
+}
+
+.backButton :global(.material-icons) {
+    font-size: 24px;
+}
+
 .title {
     margin: 0;
     font-size: clamp(2rem, 5vw, 3rem);
@@ -149,7 +180,8 @@
     gap: var(--space-md, 18px);
     max-height: 60vh;
     overflow-y: auto;
-    overflow-x: hidden;
+    padding-right: 12px;
+    margin-right: -12px;
 }
 
 .list .itemButton {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./KlassenStundenplanPage.module.css";
 
 type CurrentLesson = {
@@ -21,6 +22,7 @@ function todayISO(): string {
 }
 
 export default function KlassenStundenplanPage() {
+    const navigate = useNavigate();
     const [q, setQ] = useState("");
     const [date, setDate] = useState(todayISO());
 
@@ -131,6 +133,16 @@ export default function KlassenStundenplanPage() {
 
     return (
         <div className={styles.page}>
+            <div className={styles.backRow}>
+                <button
+                    className={styles.backButton}
+                    onClick={() => navigate("/stundenplan")}
+                    type="button"
+                >
+                    <span className="material-icons">arrow_back</span>
+                    Zurück
+                </button>
+            </div>
             <h1 className={styles.title}>Klassenstundenpläne</h1>
 
             {/* Search Row */}

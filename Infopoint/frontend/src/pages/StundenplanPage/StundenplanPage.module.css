@@ -85,13 +85,14 @@
 
 /* runder Icon-Kreis */
 .iconCircle {
-    width: clamp(80px, 10vw, 120px);
-    height: clamp(80px, 10vw, 120px);
+    width: clamp(90px, 12vw, 140px);
+    height: clamp(90px, 12vw, 140px);
     border-radius: 50%;
     background: var(--color-text-muted, #808080);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: visible;
     margin-bottom: var(--space-lg, 26px);
     transition: 
         background-color var(--transition-fast),
@@ -103,8 +104,8 @@
     transform: scale(1.1) rotate(5deg);
 }
 
-.iconCircle .material-icons {
-    font-size: clamp(36px, 5vw, 56px);
+.iconCircle :global(.material-icons) {
+    font-size: clamp(52px, 7vw, 78px) !important;
     color: var(--color-text-primary, #ffffff);
 }
 

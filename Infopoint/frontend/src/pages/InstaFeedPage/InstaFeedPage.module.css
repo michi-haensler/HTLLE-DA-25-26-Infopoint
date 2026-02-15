@@ -21,6 +21,7 @@
     display: flex;
     justify-content: center;
     animation: fadeIn var(--transition-normal, 0.25s ease);
+    pointer-events: none;
 }
 
 @keyframes fadeIn {
