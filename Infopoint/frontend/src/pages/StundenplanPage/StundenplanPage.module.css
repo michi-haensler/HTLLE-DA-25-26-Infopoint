@@ -1,80 +1,129 @@
 .container {
-  min-height: calc(100vh - 50px);
-  background: var(--bg-dark);
-  padding: 40px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    min-height: calc(100vh - 50px);
+    background: var(--color-bg-base, #181818);
+    padding: var(--space-xl, 40px) var(--space-lg, 24px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title {
-  margin: 0;
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--text-white);
-  margin-bottom: 200px;
-  margin-top: 32px;
-  text-align: center;
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-text-primary, #ffffff);
+    margin-bottom: clamp(80px, 15vw, 200px);
+    margin-top: var(--space-xl, 32px);
+    text-align: center;
+    animation: fadeSlideDown 0.5s ease;
 }
 
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Zwei Karten nebeneinander (bei Platz) */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(260px, 1fr));
-  gap: 64px;
-  width: 100%;
-  max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: var(--space-2xl, 64px);
+    width: 100%;
+    max-width: var(--content-max-width, 1200px);
 }
 
 /* Karte im Stil des Mockups */
 .card {
-  background: #191919;          /* dunkles Grau wie Start-Karten */
-  border-radius: 36px;
-  padding: 40px 32px 32px;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  cursor: pointer;
+    background: var(--color-bg-elevated, #212121);
+    border-radius: var(--radius-xl, 36px);
+    padding: var(--space-xl, 40px) var(--space-xl, 32px) var(--space-xl, 32px);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
+    transition: 
+        transform var(--transition-fast, 0.15s ease), 
+        box-shadow var(--transition-fast, 0.15s ease);
+    cursor: pointer;
+    animation: cardPop 0.5s ease backwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes cardPop {
+    0% { 
+        opacity: 0; 
+        transform: scale(0.85) translateY(30px); 
+    }
+    70% { 
+        transform: scale(1.02) translateY(-5px); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: scale(1) translateY(0); 
+    }
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.65);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.65);
+}
+
+.card:focus-visible {
+    outline: 2px solid var(--color-primary, rgba(70, 140, 255, 0.95));
+    outline-offset: 4px;
 }
 
 /* runder Icon-Kreis */
 .iconCircle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: #808080;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 26px;
+    width: clamp(80px, 10vw, 120px);
+    height: clamp(80px, 10vw, 120px);
+    border-radius: 50%;
+    background: var(--color-text-muted, #808080);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-lg, 26px);
+    transition: 
+        background-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.card:hover .iconCircle {
+    background: var(--color-primary, rgba(70, 140, 255, 0.95));
+    transform: scale(1.1) rotate(5deg);
 }
 
 .iconCircle .material-icons {
-  font-size: 56px;
-  color: #ffffff; /* Icon weiß */
+    font-size: clamp(36px, 5vw, 56px);
+    color: var(--color-text-primary, #ffffff);
 }
 
 /* Text unter der Karte */
 .label {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ffffff;
-  text-align: center;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-text-primary, #ffffff);
+    text-align: center;
 }
 
-/* einspaltig auf schmalen Screens (nur beim Entwickeln wichtig) */
+/* einspaltig auf schmalen Screens */
 @media (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl, 40px);
+    }
+
+    .container {
+        padding: var(--space-lg, 24px) var(--space-md, 16px);
+    }
 }

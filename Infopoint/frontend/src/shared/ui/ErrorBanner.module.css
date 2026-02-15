@@ -1,0 +1,72 @@
+.banner {
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  animation: slideIn var(--transition-normal);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.icon {
+  color: var(--color-error-text);
+  font-size: 20px;
+}
+
+.title {
+  color: var(--color-error-text);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-md);
+}
+
+.message {
+  color: var(--color-error-text);
+  margin: 0;
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+.retryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  
+  background: transparent;
+  border: 1px solid var(--color-error-border);
+  border-radius: var(--radius-sm);
+  
+  color: var(--color-error-text);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.retryButton:hover {
+  background: rgba(88, 35, 35, 0.5);
+}
+
+.retryButton .material-icons {
+  font-size: 16px;
+  color: var(--color-error-text);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

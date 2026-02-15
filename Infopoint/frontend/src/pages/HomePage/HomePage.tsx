@@ -10,7 +10,7 @@ export default function HomePage() {
       </section>
 
       <section className={styles.grid}>
-        <Link to="/news" className={styles.card}>
+        <Link to="/info" className={styles.card}>
           <div className={styles.iconCircle}>
             <span className="material-icons">article</span>
           </div>

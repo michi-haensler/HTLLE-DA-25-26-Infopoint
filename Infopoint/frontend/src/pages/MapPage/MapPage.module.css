@@ -2,8 +2,8 @@
     height: 100vh;
     max-height: 100vh;
     overflow: hidden;
-    background: #181818;
-    color: #fff;
+    background: var(--color-bg-base, #181818);
+    color: var(--color-text-primary, #fff);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,24 +14,41 @@
 .title {
     margin: 0;
     font-size: clamp(1.5rem, 4vh, 3rem);
-    font-weight: 700;
-    color: #ffffff;
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-text-primary, #ffffff);
     margin-bottom: 2vh;
     flex-shrink: 0;
+    animation: fadeSlideDown 0.5s ease;
 }
 
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .card {
     width: min(1400px, 96vw);
     flex: 1;
     min-height: 0;
-    background: #212121;
-    border-radius: 20px;
+    background: var(--color-bg-elevated, #212121);
+    border-radius: var(--radius-xl, 20px);
     padding: 2vh 2vw;
-    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.32);
+    box-shadow: var(--shadow-lg, 0 18px 34px rgba(0, 0, 0, 0.32));
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    animation: fadeIn var(--transition-normal, 0.25s ease);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .content {
@@ -45,7 +62,7 @@
 
 .mapArea {
     background: #2a2a2a;
-    border-radius: 18px;
+    border-radius: var(--radius-xl, 18px);
     padding: 1.5vh 1.5vw;
     display: flex;
     align-items: center;
@@ -61,14 +78,31 @@
     height: auto;
     object-fit: contain;
     display: block;
-    border-radius: 14px;
+    border-radius: var(--radius-lg, 14px);
     background: #1f1f1f;
+    animation: zoomIn 0.4s ease;
+    transition: transform var(--transition-fast);
+}
+
+.mapImage:hover {
+    transform: scale(1.02);
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Rechte Seitenleiste */
 .floorPanel {
-    background: #212121;
-    border-radius: 18px;
+    background: var(--color-bg-elevated, #212121);
+    border-radius: var(--radius-xl, 18px);
     padding: 1.5vh 1vw;
     display: flex;
     flex-direction: column;
@@ -80,25 +114,57 @@
     flex: 1;
     min-height: 60px;
     max-height: 120px;
-    border-radius: 18px;
+    border-radius: var(--radius-xl, 18px);
     border: none;
     background: #6a6a6a;
-    color: #fff;
+    color: var(--color-text-primary, #fff);
     font-size: clamp(0.8rem, 1.5vw, 1.8rem);
-    font-weight: 900;
+    font-weight: var(--font-weight-black, 900);
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--shadow-md, 0 10px 20px rgba(0, 0, 0, 0.25));
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
     text-align: center;
     padding: 0.5vh 0.3vw;
     line-height: 1.2;
+    transition: 
+        background-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+    animation: slideInBtn 0.3s ease backwards;
+}
+
+.floorBtn:nth-child(1) { animation-delay: 0.1s; }
+.floorBtn:nth-child(2) { animation-delay: 0.15s; }
+.floorBtn:nth-child(3) { animation-delay: 0.2s; }
+.floorBtn:nth-child(4) { animation-delay: 0.25s; }
+.floorBtn:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes slideInBtn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.floorBtn:hover:not(.floorBtnActive) {
+    background: #7a7a7a;
+    transform: scale(1.05);
 }
 
 .floorBtnActive {
-    background: #bcbcbc;
-    color: #fff;
+    background: var(--color-primary, rgba(70, 140, 255, 0.95));
+    color: var(--color-text-primary, #fff);
+}
+
+.floorBtn:focus-visible {
+    outline: 2px solid var(--color-primary, rgba(70, 140, 255, 0.95));
+    outline-offset: 2px;
 }
 
 .floorBtn:active {
@@ -106,20 +172,20 @@
 }
 
 .errorBox {
-    margin-top: 12px;
-    color: #ffb4b4;
-    font-weight: 800;
+    margin-top: var(--space-md, 12px);
+    color: var(--color-error-text, #ffb4b4);
+    font-weight: var(--font-weight-bold, 800);
     text-align: center;
 }
 
 .loadingBox {
-    color: #888;
+    color: var(--color-text-muted, #888);
     font-size: 1.5rem;
     padding: 4rem;
 }
 
 .noMaps {
-    color: #888;
+    color: var(--color-text-muted, #888);
     font-size: 1rem;
     text-align: center;
     padding: 1rem;

@@ -1,0 +1,71 @@
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-xl);
+  animation: fadeIn var(--transition-normal);
+}
+
+.fullScreen {
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg-base);
+  z-index: var(--z-modal);
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.spinner .material-icons {
+  animation: spin 1s linear infinite;
+  color: var(--color-primary);
+}
+
+/* Sizes */
+.sm {
+  width: 24px;
+  height: 24px;
+}
+
+.sm .material-icons {
+  font-size: 24px;
+}
+
+.md {
+  width: 40px;
+  height: 40px;
+}
+
+.md .material-icons {
+  font-size: 40px;
+}
+
+.lg {
+  width: 64px;
+  height: 64px;
+}
+
+.lg .material-icons {
+  font-size: 64px;
+}
+
+.text {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

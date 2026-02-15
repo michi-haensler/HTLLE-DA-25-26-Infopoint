@@ -1,73 +1,133 @@
 .container {
   min-height: 100vh;
-  background: #181818;
+  background: var(--color-bg-base, #181818);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 24px;
+  padding: var(--space-xl, 40px) var(--space-lg, 24px);
 }
 
 .hero {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: var(--space-xl, 40px);
 }
 
 .title {
   margin: 0;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 48px;
-  margin-top: 32px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-primary, #ffffff);
+  margin-bottom: var(--space-2xl, 48px);
+  margin-top: var(--space-xl, 32px);
+  animation: fadeSlideDown 0.5s ease;
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .subtitle {
-  margin-top: 8px;
-  font-size: 1.2rem;
-  color: #ffffff;
-  margin-bottom: 128px;
+  margin-top: var(--space-sm, 8px);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-secondary, #ffffff);
+  margin-bottom: clamp(48px, 10vw, 128px);
+  animation: fadeIn 0.8s ease 0.2s backwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px 40px;
+  gap: var(--space-lg, 28px) var(--space-xl, 40px);
   width: 100%;
-  max-width: 1100px;
+  max-width: var(--content-max-width, 1100px);
 }
 
 .card {
-  background: #212121;
-  border-radius: 24px;
-  padding: 26px 32px;
+  background: var(--color-bg-elevated, #212121);
+  border-radius: var(--radius-xl, 24px);
+  padding: var(--space-lg, 26px) var(--space-xl, 32px);
   text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  transition: transform 0.15s ease, background 0.15s ease;
+  gap: var(--space-md, 18px);
+  box-shadow: var(--shadow-lg, 0 12px 30px rgba(0, 0, 0, 0.35));
+  transition: 
+    transform var(--transition-fast, 0.15s ease), 
+    background var(--transition-fast, 0.15s ease),
+    box-shadow var(--transition-fast, 0.15s ease);
+  animation: scaleUp 0.4s ease backwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.2s; }
+.card:nth-child(5) { animation-delay: 0.25s; }
+.card:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes scaleUp {
+  from { 
+    opacity: 0; 
+    transform: scale(0.9) translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1) translateY(0); 
+  }
 }
 
 .card:hover {
-  background: #202020;
-  transform: translateY(-2px);
+  background: #252525;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--color-primary, rgba(70, 140, 255, 0.95));
+  outline-offset: 4px;
 }
 
 .iconCircle {
-  width: 80px;
-  height: 80px;
+  width: clamp(60px, 8vw, 80px);
+  height: clamp(60px, 8vw, 80px);
   border-radius: 50%;
-  background: #7e7e7e;
+  background: var(--color-text-muted, #7e7e7e);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 
+    background-color var(--transition-fast, 0.15s ease),
+    transform var(--transition-fast, 0.15s ease);
+}
+
+.card:hover .iconCircle {
+  background: var(--color-primary, rgba(70, 140, 255, 0.95));
+  transform: scale(1.1);
+}
+
+.iconCircle .material-icons {
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--color-text-primary, #ffffff);
 }
 
 .cardLabel {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-primary, #ffffff);
 }
 
 @media (max-width: 1100px) {
@@ -79,5 +139,9 @@
 @media (max-width: 700px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+  
+  .container {
+    padding: var(--space-lg, 24px) var(--space-md, 16px);
   }
 }

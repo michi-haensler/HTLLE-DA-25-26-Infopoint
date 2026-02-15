@@ -1,34 +1,44 @@
 .header {
-    height: 84px;
+    position: relative;
+    height: var(--header-height, 84px);
     width: 100%;
-    background: #2f2f2f;
-    color: #fff;
+    background: var(--color-bg-header, #2f2f2f);
+    color: var(--color-text-primary, #fff);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 28px;
+    padding: 0 var(--space-lg, 28px);
+    z-index: var(--z-sticky, 200);
 }
 
 /* Linker Block: Logo + Nav */
 .left {
     display: flex;
     align-items: center;
-    gap: 26px; /* Abstand zwischen Logo und Links */
+    gap: var(--space-lg, 26px);
     min-width: 0;
 }
 
+.brand {
+    display: flex;
+    align-items: baseline;
+    text-decoration: none;
+    gap: var(--space-xs, 4px);
+}
+
 .htl {
-    font-size: 54px;
-    font-weight: 900;
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: var(--font-weight-black, 900);
+    color: var(--color-text-primary, #fff);
     line-height: 1;
 }
 
 .leoben {
-    font-size: 54px;
-    font-weight: 900;
-    color: rgba(70, 140, 255, 0.95);
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: var(--font-weight-black, 900);
+    color: var(--color-primary, rgba(70, 140, 255, 0.95));
     line-height: 1;
 }
 
@@ -36,35 +46,57 @@
 .nav {
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: var(--space-md, 22px);
     flex-wrap: nowrap;
     white-space: nowrap;
-    overflow: hidden; /* falls Bildschirm zu schmal */
 }
 
 .navLink {
-    color: #fff;
+    color: var(--color-text-primary, #fff);
     text-decoration: none;
-    font-weight: 800;
+    font-weight: var(--font-weight-bold, 800);
     opacity: 0.8;
-    font-size: 22px;
-    padding: 10px 14px;
-    border-radius: 12px;
+    font-size: clamp(14px, 1.5vw, 22px);
+    padding: var(--space-sm, 10px) var(--space-md, 14px);
+    border-radius: var(--radius-md, 12px);
+    transition: 
+        opacity var(--transition-fast, 0.15s ease),
+        background-color var(--transition-fast, 0.15s ease),
+        transform var(--transition-fast, 0.15s ease);
+    position: relative;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary, rgba(70, 140, 255, 0.95));
+    transition: width var(--transition-fast), left var(--transition-fast);
+    border-radius: 1px;
 }
 
 .navLink:hover {
     opacity: 1;
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--color-bg-hover, rgba(255, 255, 255, 0.06));
+    transform: translateY(-2px);
+}
+
+.navLink:hover::after {
+    width: 60%;
+    left: 20%;
 }
 
 .active {
     opacity: 1;
-    background: rgba(70, 140, 255, 0.18);
+    background: var(--color-primary-light, rgba(70, 140, 255, 0.18));
 }
 
-/* Home rechts */
+/* Home rechts (Desktop) */
 .home {
-    color: #fff;
+    color: var(--color-text-primary, #fff);
     text-decoration: none;
 
     display: inline-flex;
@@ -73,7 +105,12 @@
 
     width: 64px;
     height: 64px;
-    border-radius: 14px;
+    border-radius: var(--radius-lg, 14px);
+    transition: background-color var(--transition-fast, 0.15s ease);
+}
+
+.home:hover {
+    background: var(--color-bg-hover, rgba(255, 255, 255, 0.06));
 }
 
 .home :global(.material-icons) {
@@ -82,4 +119,139 @@
 
 .home:active {
     transform: translateY(1px);
+}
+
+/* Mobile Menu Toggle Button */
+.menuToggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    
+    width: 48px;
+    height: 48px;
+    
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md, 12px);
+    
+    color: var(--color-text-primary, #fff);
+    cursor: pointer;
+    
+    transition: background-color var(--transition-fast, 0.15s ease);
+}
+
+.menuToggle:hover {
+    background: var(--color-bg-hover, rgba(255, 255, 255, 0.06));
+}
+
+.menuToggle :global(.material-icons) {
+    font-size: 32px;
+}
+
+/* Mobile Navigation */
+.mobileNav {
+    position: fixed;
+    top: var(--header-height, 84px);
+    right: 0;
+    bottom: 0;
+    
+    width: min(320px, 85vw);
+    padding: var(--space-lg, 24px);
+    
+    background: var(--color-bg-header, #2f2f2f);
+    
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm, 8px);
+    
+    transform: translateX(100%);
+    transition: transform var(--transition-normal, 0.25s ease);
+    
+    z-index: var(--z-modal, 300);
+    overflow-y: auto;
+}
+
+.mobileNavOpen {
+    transform: translateX(0);
+}
+
+.mobileNavLink {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md, 16px);
+    
+    padding: var(--space-md, 16px);
+    
+    color: var(--color-text-primary, #fff);
+    text-decoration: none;
+    font-size: var(--font-size-lg, 18px);
+    font-weight: var(--font-weight-semibold, 600);
+    
+    border-radius: var(--radius-md, 12px);
+    
+    transition: background-color var(--transition-fast, 0.15s ease);
+}
+
+.mobileNavLink:hover {
+    background: var(--color-bg-hover, rgba(255, 255, 255, 0.06));
+}
+
+.mobileActive {
+    background: var(--color-primary-light, rgba(70, 140, 255, 0.18));
+}
+
+/* Backdrop */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    top: var(--header-height, 84px);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: calc(var(--z-modal, 300) - 1);
+    animation: fadeIn var(--transition-fast, 0.15s ease);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .nav {
+        gap: var(--space-sm, 12px);
+    }
+    
+    .navLink {
+        padding: var(--space-xs, 8px) var(--space-sm, 10px);
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        height: var(--header-height-mobile, 64px);
+        padding: 0 var(--space-md, 16px);
+    }
+    
+    /* Hide desktop nav */
+    .nav {
+        display: none;
+    }
+    
+    /* Hide desktop home */
+    .home {
+        display: none;
+    }
+    
+    /* Show hamburger menu */
+    .menuToggle {
+        display: flex;
+    }
+    
+    .mobileNav {
+        top: var(--header-height-mobile, 64px);
+    }
+    
+    .backdrop {
+        top: var(--header-height-mobile, 64px);
+    }
 }

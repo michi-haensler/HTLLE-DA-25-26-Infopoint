@@ -1,90 +1,148 @@
 .page {
     min-height: 100vh;
-    background: #181818;
-    color: #fff;
+    background: var(--color-bg-base, #181818);
+    color: var(--color-text-primary, #fff);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 44px 28px;
+    padding: var(--space-xl, 44px) var(--space-lg, 28px);
 }
 
 .title {
     margin: 0;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 48px;
-    margin-top: 32px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-text-primary, #ffffff);
+    margin-bottom: var(--space-2xl, 48px);
+    margin-top: var(--space-xl, 32px);
+    animation: fadeSlideDown 0.5s ease;
 }
 
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-/* großer Container mit blauer Outline wie im Screenshot */
+/* Container */
 .card {
     width: min(1300px, 92vw);
-    background: #212121;
-    border-radius: 20px;
-    padding: 26px;
-    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.32);
-    outline: 2px solid rgba(70, 140, 255, 0.85);
-    outline-offset: 0;
+    background: var(--color-bg-elevated, #212121);
+    border-radius: var(--radius-xl, 20px);
+    padding: var(--space-lg, 26px);
+    box-shadow: var(--shadow-lg, 0 18px 34px rgba(0, 0, 0, 0.32));
+    animation: slideUp var(--transition-normal, 0.25s ease);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .info {
-    font-size: 18px;
+    font-size: var(--font-size-lg, 18px);
     opacity: 0.92;
-    margin-bottom: 14px;
+    margin-bottom: var(--space-md, 14px);
 }
 
 .error {
-    color: #ffb4b4;
-    font-weight: 800;
+    color: var(--color-error-text, #ffb4b4);
+    font-weight: var(--font-weight-bold, 800);
 }
 
 /* Liste */
 .list {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    padding-top: 6px;
+    gap: var(--space-md, 18px);
+    padding-top: var(--space-xs, 6px);
 }
 
 /* einzelne Event-Zeile */
 .row {
-    background: #181818;
-    border-radius: 18px;
-    padding: 22px 26px;
+    background: var(--color-bg-base, #181818);
+    border-radius: var(--radius-xl, 18px);
+    padding: var(--space-lg, 22px) var(--space-lg, 26px);
     display: grid;
     grid-template-columns: 1.6fr 0.7fr 0.7fr;
     align-items: center;
-    gap: 16px;
+    gap: var(--space-md, 16px);
+    transition: 
+        background-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+    animation: slideInRow 0.4s ease backwards;
+}
+
+.row:nth-child(1) { animation-delay: 0.05s; }
+.row:nth-child(2) { animation-delay: 0.1s; }
+.row:nth-child(3) { animation-delay: 0.15s; }
+.row:nth-child(4) { animation-delay: 0.2s; }
+.row:nth-child(5) { animation-delay: 0.25s; }
+.row:nth-child(6) { animation-delay: 0.3s; }
+.row:nth-child(7) { animation-delay: 0.35s; }
+.row:nth-child(8) { animation-delay: 0.4s; }
+
+@keyframes slideInRow {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.row:hover {
+    background: #1f1f1f;
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md, 0 4px 16px rgba(0, 0, 0, 0.25));
 }
 
 .colTitle {
-    font-size: 28px;
-    font-weight: 900;
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-weight: var(--font-weight-black, 900);
 }
 
 .colDate {
-    font-size: 26px;
-    font-weight: 900;
+    font-size: clamp(16px, 2.2vw, 26px);
+    font-weight: var(--font-weight-black, 900);
     text-align: center;
     white-space: nowrap;
 }
 
 .colRight {
-    font-size: 24px;
-    font-weight: 900;
+    font-size: clamp(14px, 2vw, 24px);
+    font-weight: var(--font-weight-black, 900);
     text-align: right;
     white-space: nowrap;
+    color: var(--color-primary, rgba(70, 140, 255, 0.95));
 }
 
 /* responsive */
 @media (max-width: 900px) {
     .row {
         grid-template-columns: 1fr;
+        text-align: center;
     }
     .colDate,
     .colRight {
-        text-align: left;
+        text-align: center;
+    }
+
+    .page {
+        padding: var(--space-lg, 24px) var(--space-md, 16px);
     }
 }
