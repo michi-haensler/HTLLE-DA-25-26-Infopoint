@@ -1,12 +1,20 @@
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./InfoPage.module.css";
+
+type CockpitImage = {
+    _id?: string;
+    path?: string;
+    title?: string;
+    mime?: string;
+};
 
 type CockpitNews = {
     _id: string;
     title?: string;
-    // falls ihr andere Felder habt, egal – wir zeigen hier nur Titel
-    // description?: string;
-    // content?: string;
+    teaser?: string;
+    content?: string;
+    image?: CockpitImage;
 };
 
 function pickTitle(n: CockpitNews): string {
@@ -14,6 +22,7 @@ function pickTitle(n: CockpitNews): string {
 }
 
 export default function NewsPage() {
+    const navigate = useNavigate();
     const [items, setItems] = useState<CockpitNews[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
@@ -55,8 +64,7 @@ export default function NewsPage() {
     const list = useMemo(() => items, [items]);
 
     const onOpen = (n: CockpitNews) => {
-        // später: Navigation auf Detailseite oder Modal öffnen
-        console.log("open news:", n._id);
+        navigate(`/news/${n._id}`);
     };
 
     return (

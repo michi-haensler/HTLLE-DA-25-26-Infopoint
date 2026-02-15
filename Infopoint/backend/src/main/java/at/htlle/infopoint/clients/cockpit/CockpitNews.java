@@ -1,10 +1,15 @@
 package at.htlle.infopoint.clients.cockpit;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public record CockpitNews(
-        String _id,
-        String title,
+        @JsonProperty("_id") String _id,
+        @JsonAlias({"title", "News Name"}) String title,
         String teaser,
         String content,
-        String image
+        CockpitImage image
 ) {}
 

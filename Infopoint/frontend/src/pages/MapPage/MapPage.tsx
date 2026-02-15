@@ -1,33 +1,41 @@
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./MapPage.module.css";
 
-type Floor = "OG1" | "EG" | "KE";
+type MapItem = {
+    _id: string;
+    floor: string;
+    label?: string;
+    sortOrder?: number;
+};
 
 export default function MapPage() {
-    // Default: 1. Stock
-    const [floor, setFloor] = useState<Floor>("OG1");
+    const [maps, setMaps] = useState<MapItem[]>([]);
+    const [selectedFloor, setSelectedFloor] = useState<string>("");
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(true);
 
-    // 👉 Hier kannst du später echte Endpoints pro Stockwerk verwenden
-    // z.B. `/api/v1/map/image?floor=OG1`
-    const imgSrc = useMemo(() => {
-        switch (floor) {
-            case "OG1":
-                return `/api/v1/map/image`; // aktuell: dein Endpoint
-            case "EG":
-                return `/api/v1/map/image`; // placeholder: später eigener Endpoint
-            case "KE":
-                return `/api/v1/map/image`; // placeholder: später eigener Endpoint
-            default:
-                return `/api/v1/map/image`;
-        }
-    }, [floor]);
+    // Maps vom Backend laden
+    useEffect(() => {
+        (async () => {
+            try {
+                setLoading(true);
+                const res = await fetch("/api/v1/map");
+                if (!res.ok) throw new Error("Maps konnten nicht geladen werden");
+                const data = (await res.json()) as MapItem[];
+                setMaps(data);
+                // Ersten Floor als Default setzen
+                if (data.length > 0 && !selectedFloor) {
+                    setSelectedFloor(data[0].floor);
+                }
+            } catch (e) {
+                setError(e instanceof Error ? e.message : "Fehler beim Laden");
+            } finally {
+                setLoading(false);
+            }
+        })();
+    }, []);
 
-    const floorLabel = (f: Floor) => {
-        if (f === "OG1") return "1. St";
-        if (f === "EG") return "EG";
-        return "KE";
-    };
+    const imgSrc = selectedFloor ? `/api/v1/map/image/${selectedFloor}` : "/api/v1/map/image";
 
     return (
         <div className={styles.page}>
@@ -37,58 +45,42 @@ export default function MapPage() {
                 <div className={styles.content}>
                     {/* Bild */}
                     <div className={styles.mapArea}>
-                        <img
-                            className={styles.mapImage}
-                            src={imgSrc}
-                            alt={`Lageplan ${floorLabel(floor)}`}
-                            onError={() =>
-                                setError("Lageplan konnte nicht geladen werden (Backend/CORS/CMS?)")
-                            }
-                        />
+                        {loading ? (
+                            <div className={styles.loadingBox}>Wird geladen...</div>
+                        ) : (
+                            <img
+                                className={styles.mapImage}
+                                src={imgSrc}
+                                alt={`Lageplan ${selectedFloor}`}
+                                onError={() =>
+                                    setError("Lageplan konnte nicht geladen werden")
+                                }
+                            />
+                        )}
 
                         {error && <div className={styles.errorBox}>{error}</div>}
                     </div>
 
-                    {/* Buttons rechts */}
+                    {/* Buttons rechts - dynamisch aus CMS */}
                     <div className={styles.floorPanel}>
-                        <button
-                            type="button"
-                            className={`${styles.floorBtn} ${
-                                floor === "OG1" ? styles.floorBtnActive : ""
-                            }`}
-                            onClick={() => {
-                                setError("");
-                                setFloor("OG1");
-                            }}
-                        >
-                            1. St
-                        </button>
-
-                        <button
-                            type="button"
-                            className={`${styles.floorBtn} ${
-                                floor === "EG" ? styles.floorBtnActive : ""
-                            }`}
-                            onClick={() => {
-                                setError("");
-                                setFloor("EG");
-                            }}
-                        >
-                            EG
-                        </button>
-
-                        <button
-                            type="button"
-                            className={`${styles.floorBtn} ${
-                                floor === "KE" ? styles.floorBtnActive : ""
-                            }`}
-                            onClick={() => {
-                                setError("");
-                                setFloor("KE");
-                            }}
-                        >
-                            KE
-                        </button>
+                        {maps.map((m) => (
+                            <button
+                                key={m._id}
+                                type="button"
+                                className={`${styles.floorBtn} ${
+                                    selectedFloor === m.floor ? styles.floorBtnActive : ""
+                                }`}
+                                onClick={() => {
+                                    setError("");
+                                    setSelectedFloor(m.floor);
+                                }}
+                            >
+                                {m.label || m.floor}
+                            </button>
+                        ))}
+                        {maps.length === 0 && !loading && (
+                            <div className={styles.noMaps}>Keine Pläne im CMS</div>
+                        )}
                     </div>
                 </div>
             </div>

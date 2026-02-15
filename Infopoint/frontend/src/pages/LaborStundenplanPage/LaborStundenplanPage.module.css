@@ -1,89 +1,166 @@
-.container {
-    min-height: calc(100vh - 50px);
+.page {
+    min-height: 100vh;
     background: #181818;
-    padding: 40px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .title {
-    margin: 0 0 24px;
+    padding: 48px 24px;
+    color: #fff;
+}
+
+.title {
+    margin: 0;
     font-size: 3rem;
     font-weight: 700;
     color: #ffffff;
-    text-align: center;
-  }
-  
-  .panel {
-    background: #4f4f4f;
-    border-radius: 28px;
-    padding: 24px 32px;
-    width: 100%;
-    max-width: 1150px;
-  }
-  
-  .list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .row {
-    background: #777777;
-    border-radius: 22px;
-    padding: 14px 22px;
+    margin-bottom: 48px;
+    margin-top: 32px;
+}
+
+.searchRow {
+    width: min(1200px, 92vw);
     display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-  
-  .row:last-child {
-    margin-bottom: 0;
-  }
-  
-  .rowInner {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 2fr 1fr; /* Labor | Raum */
-    column-gap: 24px;
-    align-items: center;
-  }
-  
-  .colLab,
-  .colRoom {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #ffffff;
-  }
-  
-  .colLab {
-    text-align: left;
-  }
-  
-  .colRoom {
-    text-align: right;
-  }
-  
-  /* Pfeil rechts */
-  .arrowButton {
-    margin-left: 16px;
-    display: flex;
+    gap: 16px;
     align-items: center;
     justify-content: center;
-    border-radius: 999px;
-    background: transparent;
+    margin-bottom: 28px;
+}
+
+.search {
+    flex: 1;
+    height: 68px;
+    background: #5b5b5b;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.searchInput {
+    flex: 1;
+    height: 100%;
     border: none;
-    cursor: pointer;
-    padding: 4px;
-    text-decoration: none;
-  }
-  
-  .arrowButton .material-icons {
-    font-size: 28px;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    appearance: none;
+    -webkit-appearance: none;
+    box-shadow: none;
+}
+
+.searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+}
+
+.searchIcon {
+    font-size: 34px;
+    opacity: 0.9;
+    margin-left: 10px;
+}
+
+.card {
+    width: min(1200px, 92vw);
+    background: #212121;
     color: #ffffff;
-  }
-  
-  .arrowButton:hover .material-icons {
-    transform: translateX(2px);
-  }
+    border-radius: 18px;
+    padding: 26px 26px 30px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.error {
+    color: #ffb4b4;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/* Button wrapper for clickable items */
+.itemButton {
+    border: none;
+    background: transparent;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+}
+
+.itemButton:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.35);
+    outline-offset: 6px;
+    border-radius: 18px;
+}
+
+.item {
+    background: #7e7e7e;
+    border-radius: 16px;
+    color: #ffffff;
+    padding: 22px 26px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 0.5fr;
+    align-items: center;
+    column-gap: 18px;
+    transition: background 0.2s;
+}
+
+.item:hover {
+    background: #8e8e8e;
+}
+
+.name {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.description {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.imageCount {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.empty {
+    text-align: center;
+    padding: 40px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .name,
+    .description,
+    .imageCount {
+        text-align: left;
+        font-size: 18px;
+    }
+}

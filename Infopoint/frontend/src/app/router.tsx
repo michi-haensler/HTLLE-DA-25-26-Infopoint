@@ -3,13 +3,14 @@ import RootLayout from "./RootLayout";
 import HomePage from "../pages/HomePage/HomePage";
 import InfoPage from "../pages/InfoPage/InfoPage";
 import MapPage from "../pages/MapPage/MapPage";
-import NewsPage from "../pages/InfoPage/InfoPage";
 import InstaFeedPage from "../pages/InstaFeedPage/InstaFeedPage";
 import TeachersPage from "../pages/TeachersPage/TeachersPage";
 import EventsPage from "../pages/EventsPage/EventsPage";
 import StundenplanPage from "../pages/StundenplanPage/StundenplanPage";
 import KlassenStundenplanPage  from "../pages/KlassenStundenplanPage/KlassenStundenplanPage";
 import LaborStundenplanPage from "../pages/LaborStundenplanPage/LaborStundenplanPage";
+import LaborDetailPage from "../pages/LaborDetailPage/LaborDetailPage";
+import NewsDetailPage from "../pages/NewsDetailPage/NewsDetailPage";
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +20,8 @@ export const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "info", element: <InfoPage /> },
       { path: "map", element: <MapPage /> },
-      { path: "news", element: <NewsPage /> },
+      { path: "news", element: <InfoPage /> },
+      { path: "news/:id", element: <NewsDetailPage /> },
       { path: "insta", element: <InstaFeedPage /> },
       { path: "teachers", element: <TeachersPage /> },
       { path: "events", element: <EventsPage /> },
@@ -27,6 +29,8 @@ export const router = createBrowserRouter([
       { path: "stundenplan", element: <StundenplanPage /> },
       { path: "stundenplan/klassen", element: <KlassenStundenplanPage /> },
       { path: "stundenplan/labore", element: <LaborStundenplanPage /> },
+      { path: "laborstundenplan", element: <LaborStundenplanPage /> },
+      { path: "laborstundenplan/:id", element: <LaborDetailPage /> },
     ],
   },
 ]);

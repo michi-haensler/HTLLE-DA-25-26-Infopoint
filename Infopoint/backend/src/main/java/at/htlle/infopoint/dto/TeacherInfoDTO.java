@@ -1,7 +1,6 @@
 package at.htlle.infopoint.dto;
 
 import at.htlle.infopoint.clients.webuntis.CurrentLesson;
-import org.springframework.lang.Nullable;
 
 /**
  * Repräsentiert einen Lehrer für Dropdowns und Suchergebnisse.

@@ -18,12 +18,15 @@ async function getJSON<T>(path: string, timeoutMs = 3000): Promise<T> {
 export type EventItem = { id: string; title: string; date: string; location?: string };
 export type Substitution = { id: string; teacher: string; class: string; time: string };
 export type RoomPlan = { id: string; room: string; info: string };
+export type NewsImage = { _id?: string; path?: string; title?: string; mime?: string };
+export type NewsItem = { _id: string; title?: string; teaser?: string; content?: string; image?: NewsImage };
 
 // Jede Funktion: versucht API (mit Timeout) -> bei Fehler ODER Timeout -> Fallback
 export async function fetchEvents(): Promise<EventItem[]> {
   try {
-    return await getJSON<EventItem[]>("/events", 3000);
-  } catch {
+    return await getJSON<EventItem[]>("/v1/events/20", 3000);
+  } catch (error) {
+    console.error("Failed to fetch events:", error);
     return [
       { id: "e1", title: "Tag der offenen Tür", date: "2025-11-22", location: "Aula" },
       { id: "e2", title: "Maturaball", date: "2026-01-20", location: "Kongress Leoben" },
@@ -33,8 +36,9 @@ export async function fetchEvents(): Promise<EventItem[]> {
 
 export async function fetchSubstitutions(): Promise<Substitution[]> {
   try {
-    return await getJSON<Substitution[]>("/substitutions", 3000);
-  } catch {
+    return await getJSON<Substitution[]>("/v1/substitutions", 3000);
+  } catch (error) {
+    console.error("Failed to fetch substitutions:", error);
     return [
       { id: "s1", teacher: "Mag. Huber", class: "4A/BIT", time: "2. EH" },
       { id: "s2", teacher: "DI Mayer", class: "3AHW", time: "4. EH" },
@@ -44,11 +48,21 @@ export async function fetchSubstitutions(): Promise<Substitution[]> {
 
 export async function fetchRoomPlans(): Promise<RoomPlan[]> {
   try {
-    return await getJSON<RoomPlan[]>("/room-plans", 3000);
-  } catch {
+    return await getJSON<RoomPlan[]>("/v1/room-plans", 3000);
+  } catch (error) {
+    console.error("Failed to fetch room plans:", error);
     return [
       { id: "r1", room: "E-112", info: "Labor blockiert – Wartung" },
       { id: "r2", room: "B-204", info: "Raumwechsel nach C-105" },
     ];
+  }
+}
+
+export async function fetchNewsById(id: string): Promise<NewsItem | null> {
+  try {
+    return await getJSON<NewsItem>(`/v1/news/${id}`, 3000);
+  } catch (error) {
+    console.error("Failed to fetch news by id:", error);
+    return null;
   }
 }

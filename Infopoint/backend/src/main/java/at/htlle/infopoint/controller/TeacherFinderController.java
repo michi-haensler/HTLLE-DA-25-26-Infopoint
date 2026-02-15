@@ -1,15 +1,12 @@
 package at.htlle.infopoint.controller;
 
-import at.htlle.infopoint.dto.PresenceDto;
 import at.htlle.infopoint.dto.TeacherInfoDTO;
 import at.htlle.infopoint.service.TeacherService;
-import at.htlle.infopoint.service.TimetableService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.Instant;
 import java.util.List;
 
 @RestController

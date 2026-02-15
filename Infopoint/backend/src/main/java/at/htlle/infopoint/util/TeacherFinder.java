@@ -13,15 +13,30 @@ public class TeacherFinder {
             JsonNode root,
             String query
     ) {
+        List<TeacherInfoDTO> results = new ArrayList<>();
+        
+        if (root == null) {
+            return results;
+        }
+        
+        JsonNode payload = root.get("payload");
+        if (payload == null) {
+            return results;
+        }
+        
+        JsonNode rows = payload.get("rows");
+        if (rows == null || !rows.isArray()) {
+            return results;
+        }
+
         String q = query.toLowerCase();
         int now = ConvertToUntisTimeUtil.nowAsUntisTime();
 
-        List<TeacherInfoDTO> results = new ArrayList<>();
-
-        JsonNode rows = root.get("payload").get("rows");
-
         for (JsonNode row : rows) {
-            String header = row.get("header").asText();
+            JsonNode headerNode = row.get("header");
+            if (headerNode == null) continue;
+            
+            String header = headerNode.asText();
             TeacherInfoDTO info = TeacherHeaderParser.parse(header);
 
             if (!(info.fullHeader().toLowerCase().contains(q)
@@ -33,29 +48,32 @@ public class TeacherFinder {
 
             CurrentLesson currentLesson = null;
 
-            for (JsonNode cell : row.get("cells")) {
-                for (JsonNode period : cell.get("periods")) {
+            JsonNode cells = row.get("cells");
+            if (cells != null && cells.isArray()) {
+                for (JsonNode cell : cells) {
+                    JsonNode periods = cell.get("periods");
+                    if (periods == null || !periods.isArray()) continue;
+                    
+                    for (JsonNode period : periods) {
+                        if (period.path("isCancelled").asBoolean(false)) continue;
 
-                    if (period.path("isCancelled").asBoolean(false)) continue;
+                        int start = period.path("startTime").asInt(0);
+                        int end = period.path("endTime").asInt(0);
 
-                    int start = period.get("startTime").asInt();
-                    int end = period.get("endTime").asInt();
-
-                    if (now >= start && now < end) {
-                        currentLesson = new CurrentLesson(
-                                period.path("subjects").asText(""),
-                                period.path("rooms").asText(""),
-                                period.path("klassen").asText(""),
-                                start,
-                                end
-                        );
-                        break;
+                        if (now >= start && now < end) {
+                            currentLesson = new CurrentLesson(
+                                    period.path("subjects").asText(""),
+                                    period.path("rooms").asText(""),
+                                    period.path("klassen").asText(""),
+                                    start,
+                                    end
+                            );
+                            break;
+                        }
                     }
+                    if (currentLesson != null) break;
                 }
-                if (currentLesson != null) break;
             }
-
-//            CurrentLesson defaultLesson = new CurrentLesson("Not Found", "Not Found", "Not Found", 0, 0);
 
             results.add(new TeacherInfoDTO(
                     header,
@@ -68,7 +86,5 @@ public class TeacherFinder {
 
         return results;
     }
-
-
 }
 

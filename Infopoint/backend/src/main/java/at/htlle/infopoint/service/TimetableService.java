@@ -1,6 +1,5 @@
 package at.htlle.infopoint.service;
 
-import at.htlle.infopoint.clients.webuntis.WebUntisClient;
 import at.htlle.infopoint.dto.PresenceDto;
 import org.springframework.stereotype.Service;
 
