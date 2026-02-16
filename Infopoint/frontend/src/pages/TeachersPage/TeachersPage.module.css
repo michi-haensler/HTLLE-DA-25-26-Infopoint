@@ -1,11 +1,12 @@
 .page {
-    min-height: 100vh;
+    height: 100%;
     background: var(--color-bg-base, #181818);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: var(--space-2xl, 48px) var(--space-lg, 24px);
+    padding: var(--space-lg, 24px) var(--space-lg, 24px);
     color: var(--color-text-primary, #fff);
+    overflow: hidden;
 }
 
 .title {
@@ -111,6 +112,10 @@
 
 .card {
     width: min(1200px, 92vw);
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
     background: var(--color-bg-elevated, #212121);
     color: var(--color-text-primary, #ffffff);
     border-radius: var(--radius-xl, 18px);
@@ -147,6 +152,11 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-md, 18px);
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 12px;
+    margin-right: -12px;
 }
 
 .list .itemButton {

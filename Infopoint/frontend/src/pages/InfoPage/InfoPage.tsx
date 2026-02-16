@@ -15,10 +15,21 @@ type CockpitNews = {
     teaser?: string;
     content?: string;
     image?: CockpitImage;
+    _created?: number; // Unix timestamp
 };
 
 function pickTitle(n: CockpitNews): string {
     return (n.title ?? "Neuigkeit").trim();
+}
+
+function formatDate(timestamp?: number): string {
+    if (!timestamp) return "";
+    const date = new Date(timestamp * 1000);
+    return date.toLocaleDateString("de-AT", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric"
+    });
 }
 
 export default function NewsPage() {
@@ -61,7 +72,14 @@ export default function NewsPage() {
         return () => controller.abort();
     }, []);
 
-    const list = useMemo(() => items, [items]);
+    // Sortieren: neueste oben (absteigend nach _created)
+    const list = useMemo(() => {
+        return [...items].sort((a, b) => {
+            const da = a._created ?? 0;
+            const db = b._created ?? 0;
+            return db - da;
+        });
+    }, [items]);
 
     const onOpen = (n: CockpitNews) => {
         navigate(`/news/${n._id}`);
@@ -87,10 +105,16 @@ export default function NewsPage() {
                             className={styles.itemButton}
                             onClick={() => onOpen(n)}
                         >
-                            <span className={styles.itemText}>{pickTitle(n)}</span>
-                            <span className={styles.chevron} aria-hidden="true">
-                ›
-              </span>
+                            <div className={styles.itemContent}>
+                                <span className={styles.itemText}>{pickTitle(n)}</span>
+                                {n._created && (
+                                    <span className={styles.itemDate}>
+                                        <span className={`material-icons ${styles.dateIcon}`} aria-hidden="true">event</span>
+                                        {formatDate(n._created)}
+                                    </span>
+                                )}
+                            </div>
+                            <span className={styles.chevron} aria-hidden="true">›</span>
                         </button>
                     ))}
                 </div>

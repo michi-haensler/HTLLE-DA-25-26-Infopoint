@@ -1,5 +1,6 @@
 .shell {
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
     background: var(--color-bg-base, #181818);
     color: var(--color-text-primary, #fff);
     display: flex;
@@ -9,8 +10,22 @@
 .content {
     flex: 1;
     min-height: 0;
+    overflow: hidden;
     outline: none; /* Remove focus outline from main content */
     animation: fadeIn var(--transition-normal, 0.25s ease);
+}
+
+/* Mobile: Scrollen erlauben */
+@media (max-width: 900px) {
+    .shell {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+    }
+    
+    .content {
+        overflow: visible;
+    }
 }
 
 @keyframes fadeIn {

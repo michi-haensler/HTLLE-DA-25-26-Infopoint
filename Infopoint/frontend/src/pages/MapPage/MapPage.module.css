@@ -1,6 +1,5 @@
 .page {
-    height: 100vh;
-    max-height: 100vh;
+    height: 100%;
     overflow: hidden;
     background: var(--color-bg-base, #181818);
     color: var(--color-text-primary, #fff);

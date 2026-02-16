@@ -10,6 +10,7 @@ public record CockpitNews(
         @JsonAlias({"title", "News Name"}) String title,
         String teaser,
         String content,
-        CockpitImage image
+        CockpitImage image,
+        @JsonProperty("_created") Long _created
 ) {}
 

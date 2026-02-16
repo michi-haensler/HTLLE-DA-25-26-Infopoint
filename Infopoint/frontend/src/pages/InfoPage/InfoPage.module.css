@@ -1,11 +1,12 @@
 .page {
-    min-height: 100vh;
+    height: 100%;
     background: var(--color-bg-base, #181818);
     color: var(--color-text-primary, #fff);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: var(--space-xl, 44px) var(--space-lg, 28px);
+    padding: var(--space-lg, 24px) var(--space-lg, 28px);
+    overflow: hidden;
 }
 
 .title {
@@ -32,6 +33,10 @@
 /* Container */
 .card {
     width: min(1250px, 92vw);
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
     background: var(--color-bg-elevated, #212121);
     border-radius: var(--radius-xl, 20px);
     padding: var(--space-lg, 26px);
@@ -66,6 +71,11 @@
     flex-direction: column;
     gap: var(--space-sm, 12px);
     padding: var(--space-sm, 10px) 0 0 0;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 12px;
+    margin-right: -12px;
 }
 
 .list .itemButton {
@@ -112,6 +122,27 @@
         transform var(--transition-fast),
         background-color var(--transition-fast),
         box-shadow var(--transition-fast);
+}
+
+.itemContent {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs, 6px);
+    text-align: left;
+}
+
+.itemDate {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs, 6px);
+    font-size: clamp(13px, 1.5vw, 16px);
+    color: var(--color-text-muted, rgba(255, 255, 255, 0.6));
+    font-weight: var(--font-weight-medium, 500);
+}
+
+.dateIcon {
+    font-size: 16px;
+    color: var(--color-primary, rgba(70, 140, 255, 0.95));
 }
 
 .itemButton:hover {

@@ -1,9 +1,10 @@
 .page {
-    min-height: 100vh;
+    height: 100%;
     background: var(--color-bg-base, #181818);
     padding: var(--space-xl, 32px) var(--space-lg, 24px);
     max-width: 1000px;
     margin: 0 auto;
+    overflow-y: auto;
 }
 
 .backButton {

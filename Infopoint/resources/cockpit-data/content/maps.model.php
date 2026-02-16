@@ -31,5 +31,11 @@ return [
         ]
     ],
     'preview' => ['floor', 'label'],
-    'sortable' => true
+    'sortable' => true,
+    'group' => '',
+    'meta' => NULL,
+    '_created' => 1763400000,
+    '_modified' => 1763400000,
+    'color' => NULL,
+    'revisions' => false,
 ];

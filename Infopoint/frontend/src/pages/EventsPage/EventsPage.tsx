@@ -33,21 +33,56 @@ function fmtDate(d: Date | null): string {
     return d.toLocaleDateString("de-AT", { day: "2-digit", month: "2-digit", year: "numeric" });
 }
 
+function fmtDateShort(d: Date | null): string {
+    if (!d) return "---";
+    return d.toLocaleDateString("de-AT", { day: "2-digit", month: "2-digit" });
+}
+
 function fmtTime(d: Date | null): string {
     if (!d) return "";
     return d.toLocaleTimeString("de-AT", { hour: "2-digit", minute: "2-digit" });
+}
+
+// Prüft ob zwei Daten am gleichen Tag sind
+function isSameDay(d1: Date | null, d2: Date | null): boolean {
+    if (!d1 || !d2) return true;
+    return d1.getFullYear() === d2.getFullYear() &&
+           d1.getMonth() === d2.getMonth() &&
+           d1.getDate() === d2.getDate();
+}
+
+// Datum-Spalte: "DD.MM.YYYY" oder "DD.MM. - DD.MM.YYYY" für mehrtägige
+function formatDateRange(ev: CockpitEvent): string {
+    const start = parseDate(ev.start);
+    const end = parseDate(ev.end);
+    
+    if (!start) return "---";
+    
+    // Mehrtägiger Termin?
+    if (end && !isSameDay(start, end)) {
+        return `${fmtDateShort(start)} – ${fmtDate(end)}`;
+    }
+    
+    return fmtDate(start);
 }
 
 // Rechte Spalte: wenn Start-Zeit vorhanden -> "HH:MM Uhr", sonst Description (kurz)
 function rightColumn(ev: CockpitEvent): string {
     const start = parseDate(ev.start);
     const t = fmtTime(start);
-    if (t) return `${t} Uhr`;
+    if (t && t !== "00:00") return `${t} Uhr`;
 
     const desc = (ev.description ?? "").trim();
     if (!desc) return "";
-    // kurz halten wie im Screenshot
     return desc.length > 18 ? desc.slice(0, 18) + "…" : desc;
+}
+
+// Berechnet den Beginn von gestern (Mitternacht)
+function getYesterdayMidnight(): Date {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    now.setDate(now.getDate() - 1);
+    return now;
 }
 
 export default function EventsPage() {
@@ -95,11 +130,23 @@ export default function EventsPage() {
     }, []);
 
     const sorted = useMemo(() => {
-        // newest first (desc)
-        return [...events].sort((a, b) => {
+        const cutoff = getYesterdayMidnight().getTime();
+        
+        // Filtern: nur Termine die noch nicht vorbei sind
+        // (End-Datum oder Start-Datum muss >= gestern Mitternacht sein)
+        const filtered = events.filter((ev) => {
+            const end = parseDate(ev.end);
+            const start = parseDate(ev.start);
+            const relevantDate = end ?? start;
+            if (!relevantDate) return false;
+            return relevantDate.getTime() >= cutoff;
+        });
+        
+        // Sortieren: nächster Termin oben (aufsteigend)
+        return filtered.sort((a, b) => {
             const da = parseDate(a.start)?.getTime() ?? 0;
             const db = parseDate(b.start)?.getTime() ?? 0;
-            return db - da;
+            return da - db;
         });
     }, [events]);
 
@@ -117,12 +164,23 @@ export default function EventsPage() {
 
                 <div className={styles.list}>
                     {sorted.map((ev) => {
-                        const d = parseDate(ev.start);
+                        const timeStr = rightColumn(ev);
                         return (
                             <div key={ev._id} className={styles.row}>
-                                <div className={styles.colTitle}>{ev.title}</div>
-                                <div className={styles.colDate}>{fmtDate(d)}</div>
-                                <div className={styles.colRight}>{rightColumn(ev)}</div>
+                                <div className={styles.colTitle}>
+                                    <span className={styles.titleDot}></span>
+                                    {ev.title}
+                                </div>
+                                <div className={styles.colDate}>
+                                    <span className={`material-icons ${styles.icon}`}>calendar_today</span>
+                                    {formatDateRange(ev)}
+                                </div>
+                                {timeStr && (
+                                    <div className={styles.colRight}>
+                                        <span className={`material-icons ${styles.icon}`}>schedule</span>
+                                        {timeStr}
+                                    </div>
+                                )}
                             </div>
                         );
                     })}
