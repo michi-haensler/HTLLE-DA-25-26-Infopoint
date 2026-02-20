@@ -66,7 +66,7 @@ Mit Blick auf den langfristigen Betrieb sind **Wartungsfreundlichkeit** und **Zu
 
 #### Energieverbrauch, Zuverlässigkeit und Wartbarkeit
 
-Bei der Auswahl der Hardware für ein Infopoint-System sind Energieverbrauch, Zuverlässigkeit und Wartbarkeit entscheidende Faktoren, welche sich langfristig auf Effizienz und die Betriebskosten des Systems auswirken. Sollten die Effizienz und die Betriebskosten nicht beachtet werden, kann dies zu unerwartet hohen Kosten und Ausfallzeiten führen, was sich negativ auf die Nutzung des Geräts auswirkt. Wenn etwas nämlich nicht gut funktioniert, wird es vom Endverbraucher kaum benutzt und ist für die Institution eine reine Kostenstelle.
+Bei der Auswahl der Hardware für ein Infopoint-System sind Energieverbrauch, Zuverlässigkeit und Wartbarkeit entscheidende Faktoren, welche sich langfristig auf die Effizienz und die Betriebskosten des Systems auswirken. Eine Vernachlässigung dieser Aspekte kann zu unerwartet hohen Kosten und Ausfallzeiten führen, was sich negativ auf die Nutzungsintensität des Geräts auswirkt. Systeme mit unzureichender Funktionalität werden erfahrungsgemäß von Endnutzern kaum verwendet und stellen für die Institution lediglich eine Kostenstelle dar.
 
 Ein niedriger **Energieverbrauch** ist wichtig, um die Betriebskosten zu minimieren und die Umweltbelastung zu reduzieren. Energieeffiziente Komponenten wie stromsparende Computer und Displays sollten bevorzugt werden. Dies ist besonders relevant für Infopoint-Systeme, die rund um die Uhr in Betrieb sind. Die Verwendung von Energiesparmodi und automatischen Abschaltfunktionen kann ebenfalls dazu beitragen, den Energieverbrauch zu senken.
 
@@ -88,47 +88,43 @@ Falls das Personal für die Bedienung oder Wartung der Hardware geschult werden 
 
 #### Bedeutung von nutzerzentriertem Design
 
-Nutzerzentriertes Design (User-Centered Design, UCD) ist ein Ansatz im Designprozess, welcher den Fokus auf die Bedürfnisse, Erwartungen und Einschränkungen des Endbenutzers legt. Dieser Ansatz ist besonders wichtig bei der Entwicklung von Informationssystemen wie Infopoints, da diese direkt von einer Vielzahl von Nutzern verwendet und verstanden werden müssen.
+Nutzerzentriertes Design (User-Centered Design, UCD) ist ein Ansatz im Designprozess, welcher den Fokus auf die Bedürfnisse, Erwartungen und Einschränkungen des Endbenutzers legt. Dieser Ansatz ist besonders wichtig bei der Entwicklung von Informationssystemen wie Infopoints, da diese direkt von einer Vielzahl von Nutzern verwendet und verstanden werden müssen. (vgl. [@User-Centered-Design])
 
-Durch die Berücksichtigung der Nutzerbedürfnisse wird eine **verbesserte Benutzererfahrung** sichergestellt. Das System wird intuitiv und einfach zu bedienen, was zu einer positiven Benutzererfahrung führt und die Akzeptanz sowie die Nutzungsintensität positiv beeinflusst. Konkret bedeutet dies, dass Benutzerinnen und Benutzer auf den ersten Blick erfassen können, wie sie zu den gewünschten Informationen gelangen.
+Durch die Berücksichtigung der Nutzerbedürfnisse wird eine **verbesserte Benutzererfahrung** sichergestellt. Das System wird intuitiv und einfach zu bedienen, was zu einer positiven Benutzererfahrung führt und die Akzeptanz sowie die Nutzungsintensität positiv beeinflusst. Konkret bedeutet dies, dass Benutzerinnen und Benutzer auf den ersten Blick erfassen können, wie sie zu den gewünschten Informationen gelangen. (vgl. [@User-Centered-Design] & [@UI-UX])
 
-Ein nutzerzentriertes Design ermöglicht zudem eine **erhöhte Effizienz**. Benutzerinnen und Benutzer können ihre Aufgaben schneller erledigen, was besonders in Bildungseinrichtungen relevant ist, wo zeitliche Ressourcen begrenzt sind. Wichtige Funktionen und Informationen sollten mit möglichst wenigen Interaktionsschritten erreichbar sein, um eine aufwendige Navigation durch komplexe Menüstrukturen zu vermeiden.
+Ein nutzerzentriertes Design ermöglicht zudem eine **erhöhte Effizienz**. Benutzerinnen und Benutzer können ihre Aufgaben schneller erledigen, was besonders in Bildungseinrichtungen relevant ist, wo zeitliche Ressourcen begrenzt sind. Wichtige Funktionen und Informationen sollten mit möglichst wenigen Interaktionsschritten erreichbar sein, um eine aufwendige Navigation durch komplexe Menüstrukturen zu vermeiden. (vgl. [@User-Centered-Design] & [@UI-UX])
 
-Wenn das Design auf die Fähigkeiten und Erwartungen der Nutzer abgestimmt ist, wird die **Fehlerquote** bei der Bedienung minimiert, was zu einer reibungsloseren Nutzung führt. Darüber hinaus sind Nutzerinnen und Nutzer, die ein System als benutzerfreundlich empfinden, eher zufrieden und bereit, es regelmäßig zu verwenden. Diese **höhere Zufriedenheit** trägt zur langfristigen Nutzung und zum Erfolg des Infopoint-Systems bei. 
+Wenn das Design auf die Fähigkeiten und Erwartungen der Nutzer abgestimmt ist, wird die **Fehlerquote** bei der Bedienung minimiert, was zu einer reibungsloseren Nutzung führt. Darüber hinaus sind Nutzerinnen und Nutzer, die ein System als benutzerfreundlich empfinden, eher zufrieden und bereit, es regelmäßig zu verwenden. Diese **höhere Zufriedenheit** trägt zur langfristigen Nutzung und zum Erfolg des Infopoint-Systems bei. (vgl. [@User-Centered-Design])
 
-[@User-Centered-Design]
 
 #### Grundprinzipien (Usability, Accessibility, Informationsarchitektur)
 
-Die Gestaltung von Infopoint-Systemen basiert auf drei wesentlichen Grundprinzipien. **Usability** (Benutzerfreundlichkeit) bezieht sich darauf, wie einfach und effizient ein Benutzer ein System nutzen kann, um seine Ziele zu erreichen. Ein benutzerfreundliches Design sollte klar strukturierte Navigation, verständliche Symbole und eine logische Anordnung der Inhalte bieten. Es sollte auch durchgängig gleich gestaltet und aufgebaut sein, damit Benutzer schnell lernen können, wie sie das System bedienen.
+Die Gestaltung von Infopoint-Systemen basiert auf drei wesentlichen Grundprinzipien. **Usability** (Benutzerfreundlichkeit) bezieht sich darauf, wie einfach und effizient ein Benutzer ein System nutzen kann, um seine Ziele zu erreichen. Ein benutzerfreundliches Design sollte klar strukturierte Navigation, verständliche Symbole und eine logische Anordnung der Inhalte bieten. Es sollte auch durchgängig gleich gestaltet und aufgebaut sein, damit Benutzer schnell lernen können, wie sie das System bedienen. (vgl. [@UI-UX])
 
-**Accessibility** (Barrierefreiheit) stellt sicher, dass das System für alle Benutzer zugänglich ist, einschließlich Menschen mit Behinderungen. Dies umfasst die Integration von Funktionen wie Bildschirmleser-Kompatibilität, Tastaturnavigation und Anpassungsmöglichkeiten für Sehbehinderte. Ein barrierefreies Design gewährleistet, dass niemand aufgrund von physischen oder kognitiven Einschränkungen ausgeschlossen wird.
+**Accessibility** (Barrierefreiheit) stellt sicher, dass das System für alle Benutzer zugänglich ist, einschließlich Menschen mit Behinderungen. Dies umfasst die Integration von Funktionen wie Bildschirmleser-Kompatibilität, Tastaturnavigation und Anpassungsmöglichkeiten für Sehbehinderte. Ein barrierefreies Design gewährleistet, dass niemand aufgrund von physischen oder kognitiven Einschränkungen ausgeschlossen wird. (vgl. [@UI-UX])
 
-Die **Informationsarchitektur** bezieht sich auf die Organisation und Strukturierung der Inhalte innerhalb des Systems. Eine gut durchdachte Informationsarchitektur erleichtert es den Benutzern, die benötigten Informationen schnell zu finden. Dies umfasst die Kategorisierung von Inhalten, die Erstellung von Navigationsstrukturen und die Verwendung von Suchfunktionen. 
+Die **Informationsarchitektur** bezieht sich auf die Organisation und Strukturierung der Inhalte innerhalb des Systems. Eine gut durchdachte Informationsarchitektur erleichtert es den Benutzern, die benötigten Informationen schnell zu finden. Dies umfasst die Kategorisierung von Inhalten, die Erstellung von Navigationsstrukturen und die Verwendung von Suchfunktionen. (vgl. [@UI-UX])
 
-[@UI-UX]
 
 #### Wireframes, Mockups und Prototypen
 
-Im Designprozess kommen verschiedene Darstellungsformen zum Einsatz, die aufeinander aufbauen. **Wireframes** sind einfache, schematische Darstellungen der Benutzeroberfläche eines Systems. Sie konzentrieren sich auf die grundlegende Struktur und Anordnung der Elemente, ohne sich auf Designaspekte wie Farben oder Grafiken zu konzentrieren. Wireframes dienen dazu, die Funktionalität und Navigation des Systems zu planen und zu testen.
+Im Designprozess kommen verschiedene Darstellungsformen zum Einsatz, die aufeinander aufbauen. **Wireframes** sind einfache, schematische Darstellungen der Benutzeroberfläche eines Systems. Sie konzentrieren sich auf die grundlegende Struktur und Anordnung der Elemente, ohne sich auf Designaspekte wie Farben oder Grafiken zu konzentrieren. Wireframes dienen dazu, die Funktionalität und Navigation des Systems zu planen und zu testen. (vgl. [@UI-UX])
 
-Auf Wireframes aufbauend entstehen **Mockups** als detailliertere visuelle Darstellungen der Benutzeroberfläche, die das endgültige Design und Layout des Systems zeigen. Sie enthalten Farben, Grafiken und typografische Elemente, um einen realistischen Eindruck davon zu vermitteln, wie das fertige System aussehen wird. Mockups helfen dabei, Designentscheidungen zu treffen und Feedback von Stakeholdern einzuholen.
+Auf Wireframes aufbauend entstehen **Mockups** als detailliertere visuelle Darstellungen der Benutzeroberfläche, die das endgültige Design und Layout des Systems zeigen. Sie enthalten Farben, Grafiken und typografische Elemente, um einen realistischen Eindruck davon zu vermitteln, wie das fertige System aussehen wird. Mockups helfen dabei, Designentscheidungen zu treffen und Feedback von Stakeholdern einzuholen. (vgl. [@UI-UX])
 
-**Prototypen** schließlich sind interaktive Modelle des Systems, die es den Benutzerinnen und Benutzern ermöglichen, durch die Benutzeroberfläche zu navigieren und Funktionen zu testen. Prototypen können von einfachen klickbaren Wireframes bis hin zu voll funktionsfähigen Modellen reichen. Sie stellen ein wertvolles Instrument dar, um die Benutzererfahrung zu testen und Verbesserungen vorzunehmen, bevor das System final entwickelt wird. 
+**Prototypen** schließlich sind interaktive Modelle des Systems, die es den Benutzerinnen und Benutzern ermöglichen, durch die Benutzeroberfläche zu navigieren und Funktionen zu testen. Prototypen können von einfachen klickbaren Wireframes bis hin zu voll funktionsfähigen Modellen reichen. Sie stellen ein wertvolles Instrument dar, um die Benutzererfahrung zu testen und Verbesserungen vorzunehmen, bevor das System final entwickelt wird.  (vgl. [@UI-UX])
 
-[@UI-UX]
 
 #### Einführung in Adobe XD und seine Einsatzmöglichkeiten
 
-Adobe XD ist ein leistungsstarkes Design- und Prototyping-Tool, das speziell für die Erstellung von Benutzeroberflächen entwickelt wurde. Dies umfasst die Gestaltung von Webseiten, mobilen Applikationen und anderen digitalen Produkten. Das Tool bietet eine umfangreiche Funktionspalette, die es Designerinnen und Designern ermöglicht, Wireframes, Mockups und interaktive Prototypen effizient zu erstellen.
+Adobe XD ist ein leistungsstarkes Design- und Prototyping-Tool, das speziell für die Erstellung von Benutzeroberflächen entwickelt wurde. Dies umfasst die Gestaltung von Webseiten, mobilen Applikationen und anderen digitalen Produkten. Das Tool bietet eine umfangreiche Funktionspalette, die es Designerinnen und Designern ermöglicht, Wireframes, Mockups und interaktive Prototypen effizient zu erstellen. (vgl. [@Adobe-XD])
 
-Im Bereich **Design von Benutzeroberflächen** bietet Adobe XD eine intuitive Benutzeroberfläche und eine Vielzahl von Designwerkzeugen, mit denen ansprechende und funktionale Benutzeroberflächen erstellt werden können. Es unterstützt Vektor- und Rastergrafiken, was eine hohe Flexibilität bei der Gestaltung ermöglicht. Zusätzlich gibt es vorgefertigte UI-Kits und Designvorlagen, die den Designprozess beschleunigen können. Durch die Anbindung an die Adobe Creative Cloud können Designer problemlos auf andere Adobe-Tools wie Photoshop und Illustrator zugreifen, um Grafiken zu erstellen und zu bearbeiten.
+Im Bereich **Design von Benutzeroberflächen** bietet Adobe XD eine intuitive Benutzeroberfläche und eine Vielzahl von Designwerkzeugen, mit denen ansprechende und funktionale Benutzeroberflächen erstellt werden können. Es unterstützt Vektor- und Rastergrafiken, was eine hohe Flexibilität bei der Gestaltung ermöglicht. Zusätzlich gibt es vorgefertigte UI-Kits und Designvorlagen, die den Designprozess beschleunigen können. Durch die Anbindung an die Adobe Creative Cloud können Designer problemlos auf andere Adobe-Tools wie Photoshop und Illustrator zugreifen, um Grafiken zu erstellen und zu bearbeiten. (vgl. [@Adobe-XD])
 
-Die **Erstellung von Wireframes und Mockups** wird durch die Drag-and-Drop-Funktionalität erleichtert, die das Platzieren und Anordnen von Elementen auf der Leinwand vereinfacht. Im Bereich **Prototyping** ermöglicht Adobe XD die Erstellung interaktiver Prototypen, bei denen Übergänge, Animationen und Interaktionen hinzugefügt werden können, um ein realistisches Nutzungserlebnis zu simulieren.
+Die **Erstellung von Wireframes und Mockups** wird durch die Drag-and-Drop-Funktionalität erleichtert, die das Platzieren und Anordnen von Elementen auf der Leinwand vereinfacht. Im Bereich **Prototyping** ermöglicht Adobe XD die Erstellung interaktiver Prototypen, bei denen Übergänge, Animationen und Interaktionen hinzugefügt werden können, um ein realistisches Nutzungserlebnis zu simulieren. (vgl. [@Adobe-XD])
 
-Für die **Kollaboration** unterstützt Adobe XD die Zusammenarbeit im Team, indem Arbeiten in Echtzeit geteilt und Feedback von anderen Teammitgliedern oder Stakeholdern eingeholt werden kann. Dies fördert eine effiziente Kommunikation und erleichtert den Designprozess erheblich. 
+Für die **Kollaboration** unterstützt Adobe XD die Zusammenarbeit im Team, indem Arbeiten in Echtzeit geteilt und Feedback von anderen Teammitgliedern oder Stakeholdern eingeholt werden kann. Dies fördert eine effiziente Kommunikation und erleichtert den Designprozess erheblich. (vgl. [@Adobe-XD])
 
-[@Adobe-XD]
 
 ### Projektmanagement-Grundlagen
 
@@ -222,7 +218,7 @@ Dies ermöglicht ein **einfaches Deployment**: Container können problemlos auf 
 
 #### Anforderungen an das System
 
-Die Anforderungen an das Infopoint-System wurden großteils in Zusammenarbeit mit unserem Auftraggeber definiert. Ein großes Anliegen war dabei die Lehrer Suchfunktion, welche es den Schülern ermöglichen soll, schnell und einfach Informationen über den Aufenthalt ihrer Lehrkräfte zu erhalten. Zusätzlich sollte das System eine benutzerfreundliche Oberfläche bieten, die es den Nutzern ermöglicht, sich intuitiv zurechtzufinden und die gewünschten Informationen ohne großen Aufwand abzurufen.
+Die Anforderungen an das Infopoint-System wurden überwiegend in Zusammenarbeit mit dem Auftraggeber definiert. Ein zentrales Anliegen stellte dabei die Lehrersuchfunktion dar, welche es den Schülerinnen und Schülern ermöglichen soll, zeitnah Informationen über den Aufenthaltsort ihrer Lehrkräfte zu erhalten. Darüber hinaus sollte das System eine benutzerfreundliche Oberfläche bieten, die eine intuitive Orientierung ermöglicht und den Abruf der gewünschten Informationen mit minimalem Aufwand gewährleistet.
 
 #### Zielgruppe und Nutzungsszenarien
 
@@ -234,7 +230,7 @@ Die technischen Rahmenbedingungen für das Infopoint-System umfassen die Auswahl
 
 #### Gesamtarchitektur des Projekts
 
-Die Gesamtarchitektur des Infopoint-Systems besteht aus mehreren Komponenten, die nahtlos zusammenarbeiten, um eine optimale Benutzererfahrung zu gewährleisten. Das System umfasst ein Frontend, das die Benutzeroberfläche darstellt, ein Backend, das die Geschäftslogik und Datenverarbeitung übernimmt, sowie ein Content-Management-System (CMS), das die Verwaltung und Aktualisierung der Inhalte ermöglicht. Die Kommunikation zwischen diesen Komponenten erfolgt über definierte Schnittstellen, um eine modulare und skalierbare Architektur zu gewährleisten. Ausgeliefert wird das System in einer containerisierten Umgebung mittels Docker, um eine einfache Bereitstellung auf diversen System zu ermöglichen.
+Die Gesamtarchitektur des Infopoint-Systems besteht aus mehreren Komponenten, die nahtlos zusammenarbeiten, um eine optimale Benutzererfahrung zu gewährleisten. Das System umfasst ein Frontend, das die Benutzeroberfläche darstellt, ein Backend, das die Geschäftslogik und Datenverarbeitung übernimmt, sowie ein Content-Management-System (CMS), das die Verwaltung und Aktualisierung der Inhalte ermöglicht. Die Kommunikation zwischen diesen Komponenten erfolgt über definierte Schnittstellen, um eine modulare und skalierbare Architektur zu gewährleisten. Ausgeliefert wird das System in einer containerisierten Umgebung mittels Docker, um eine einfache Bereitstellung auf diversen Systemen zu ermöglichen.
 
 ### Hardwareauswahl und Kostenanalyse
 
@@ -249,11 +245,11 @@ Die Gesamtarchitektur des Infopoint-Systems besteht aus mehreren Komponenten, di
 | Kosten            | Hoch                   | Mittel                 | Niedrig                |
 | Energieverbrauch  | Mittel                 | Hoch                   | Sehr niedrig           |
 
-:Hardwarwarevergleich
+:Hardwarevergleich
 
 #### Entscheidungsprozess und Bewertungskriterien
 
-Bei der Auswahl der Hardware für das Infopoint-System wurden verschiedene Kriterien berücksichtigt, um sicherzustellen, dass die ausgewählten Komponenten den Anforderungen der Schule entsprechen. Zu den wichtigsten Bewertungskriterien gehörten Leistung, Zuverlässigkeit, Energieverbrauch, Kosten und Wartbarkeit. Jedoch liegt die Finale Entscheidung beim Auftraggeber.
+Bei der Auswahl der Hardware für das Infopoint-System wurden verschiedene Kriterien berücksichtigt, um sicherzustellen, dass die ausgewählten Komponenten den Anforderungen der Schule entsprechen. Zu den wichtigsten Bewertungskriterien gehörten Leistung, Zuverlässigkeit, Energieverbrauch, Kosten und Wartbarkeit. Die finale Entscheidung obliegt jedoch dem Auftraggeber.
 
 #### Final ausgewählte Hardware
 
@@ -275,7 +271,7 @@ Das finale UI-Design wurde auf Basis der Wireframes entwickelt, wobei Adobe XD v
 
 #### Vorteile der Mockups für die Entwicklung
 
-Die Erstellung von Mockups ermöglichte es dem Projektteam bzw. speziell dem Frontend Developer, das Design des Infopoint-Systems frühzeitig zu visualisieren und Feedback vom Auftraggeber einzuholen. Dies half dabei, potenzielle Probleme zu identifizieren und Anpassungen vorzunehmen, bevor die eigentliche Entwicklung begann. Mockups dienten auch als Referenz für Entwicklerinnen und Entwickler, um sicherzustellen, dass das endgültige Produkt den Design und Funktionsvorgaben entspricht.
+Die Erstellung von Mockups ermöglichte es dem Projektteam, insbesondere dem Frontend-Entwickler, das Design des Infopoint-Systems frühzeitig zu visualisieren und Feedback vom Auftraggeber einzuholen. Dies unterstützte die Identifikation potenzieller Probleme und ermöglichte Anpassungen vor Beginn der eigentlichen Entwicklung. Mockups dienten zudem als Referenz für Entwicklerinnen und Entwickler, um die Übereinstimmung des endgültigen Produkts mit den Design- und Funktionsvorgaben sicherzustellen.
 
 #### Beispiele und Screenshots
 
@@ -289,35 +285,35 @@ Die Erstellung von Mockups ermöglichte es dem Projektteam bzw. speziell dem Fro
 
 #### Strukturierung der Aufgaben in GitHub Projects
 
-Gearbeitet wurde mit einer Mischung aus Canban und Scrum welche oft auch als Scrumban bezeichnen wird. Das heißt es gibt feste Sprints, aber die Aufgaben werden in einem Kanban-Board organisiert. Dafür wurde ein GitHub Project mit einem Canban-Board und einer Roadmap erstellt. Daort werden die Aufgaben für die Entwicklung des Infopoint-Systems organisiert. Das Board wurde in verschiedene Spalten unterteilt, um den Zustand der Aufgaben übersichtlich darstellen zu können. Diese Spalten sind „To Do", „In Progress" und „Done". Jede Aufgabe bzw. jedes Issue wurde mit einer klaren Beschreibung, Priorität, Zuweisung und einem klarem Fälligkeitsdatum versehen, um die Zusammenarbeit im Team besser koordinieren zu können. Zusätzlich wurden die Aufgaben auch jeweils an Meilensteine geknüpft um einen besseren Überblick auf den Gesamtstatus des Projektes zu haben. Die Roadmap gab uns zusätzlich eine gute Übersicht über die Plannung und Einschätzung unserer Zeit.
+Im Rahmen des Projekts wurde eine Kombination aus Kanban und Scrum angewandt, die häufig als Scrumban bezeichnet wird. Dieses Hybridmodell kombiniert feste Sprints mit der Organisation der Aufgaben in einem Kanban-Board. Zu diesem Zweck wurde ein GitHub Project mit einem Kanban-Board und einer Roadmap erstellt, in dem die Aufgaben für die Entwicklung des Infopoint-Systems organisiert werden. Das Board wurde in die Spalten „To Do", „In Progress" und „Done" unterteilt, um den Status der Aufgaben übersichtlich darzustellen. Jede Aufgabe bzw. jedes Issue wurde mit einer präzisen Beschreibung, Priorität, Zuweisung und einem definierten Fälligkeitsdatum versehen, um die Koordination im Team zu optimieren. Zusätzlich wurden die Aufgaben an Meilensteine geknüpft, um einen besseren Überblick über den Gesamtstatus des Projekts zu gewährleisten. Die Roadmap bot darüber hinaus eine strukturierte Übersicht zur Planung und Zeiteinschätzung.
 
-![Canban-Board\label{fig:Canban-Board}](img/Canban-Board.png){width=100%}
+![Kanban-Board\label{fig:Kanban-Board}](img/Canban-Board.png){width=100%}
 
 #### Arbeitsabläufe und Verteilung im Team
 
-Durch die im vorhinein festgelegten Projektrollen war jedem Teammitglied klar, welche Aufgabenbereiche zu seinem Verantwortungsbereich gehören. Zusätzlich gab es über Github Projects immer eine Festgelegte Zuordnung einzelner Aufgaben auf bestimmte Teammitglieder. Außerdem gab es regelmäßige Meetings und auch kleiner Gespräche zwischen den Teammitgliedern um den Fortschritt zu besprechen, Herausforderungen zu identifizieren und die nächsten Schritte zu planen. Die Arbeitsabläufe wurden grundsätzlich sehr flexibel gestaltet, in Sprints aufgeteilt und abgearbeitet, um eine iterative Entwicklung zu ermöglichen. Dies erlaubte es uns, schnell auf Feedback zu reagieren und Anpassungen vorzunehmen, um die bestmögliche Lösung für den Infopoint und unseren Auftraggeber zu entwickeln.
+Durch die im Vorhinein festgelegten Projektrollen war jedem Teammitglied der jeweilige Verantwortungsbereich bekannt. Ergänzend erfolgte über GitHub Projects eine verbindliche Zuordnung einzelner Aufgaben zu den jeweiligen Teammitgliedern. Darüber hinaus fanden regelmäßige Meetings sowie informelle Abstimmungen zwischen den Teammitgliedern statt, um den Fortschritt zu evaluieren, Herausforderungen zu identifizieren und die weiteren Schritte zu planen. Die Arbeitsabläufe wurden flexibel gestaltet und in Sprints strukturiert, um eine iterative Entwicklung zu ermöglichen. Dies gewährleistete eine zeitnahe Reaktion auf Feedback sowie die Durchführung erforderlicher Anpassungen zur Entwicklung einer optimalen Lösung für das Infopoint-System.
 
 #### Dokumentation des Fortschritts
 
-Die Dokumentation des Fortschritts erfolgte hauptsächlich über GitHub, wo alle Aufgaben, Issues und Meilensteine dokumentiert und verfolgt wurden. Über die Roadmap und das Canban-Board konnten wir jederzeit den aktuellen Stand des Projekts einsehen und sicherstellen, dass wir auf Kurs bleiben. Zusätzlich wurden wichtige Entscheidungen, Herausforderungen und Lösungen in regelmäßigen Meetings dokumentiert, um eine transparente Kommunikation im Team zu gewährleisten.
+Die Dokumentation des Projektfortschritts erfolgte primär über GitHub, wo sämtliche Aufgaben, Issues und Meilensteine erfasst und nachverfolgt wurden. Über die Roadmap und das Kanban-Board war jederzeit eine Einsicht in den aktuellen Projektstand möglich, was die Einhaltung des Zeitplans sicherstellte. Zusätzlich wurden wesentliche Entscheidungen, identifizierte Herausforderungen und entwickelte Lösungsansätze in regelmäßigen Meetings dokumentiert, um eine transparente Kommunikation innerhalb des Teams zu gewährleisten.
 
 #### Reflexion über die Effektivität der Methode
 
-Die Kombination aus Kanban und Scrum, also Scrumban, erwies sich als sehr effektiv für die Organisation unseres Projekts. Die festen Sprints halfen uns dabei, klare Ziele zu setzen und den Fortschritt zu messen, während die Flexibilität des Kanban-Boards es uns ermöglichte, schnell auf Veränderungen und Feedback zu reagieren. Durch die klare Strukturierung der Aufgaben und die regelmäßige Kommunikation im Team konnten wir effizient zusammenarbeiten und sicherstellen, dass alle Teammitglieder auf dem gleichen Stand waren. Insgesamt hat diese Methode dazu beigetragen, dass wir unser Projekt erfolgreich umsetzen konnten.
+Die Kombination aus Kanban und Scrum (Scrumban) erwies sich als effektive Methode für die Projektorganisation. Die festen Sprints ermöglichten die Definition klarer Ziele und die Messung des Fortschritts, während die Flexibilität des Kanban-Boards eine zeitnahe Reaktion auf Veränderungen und Feedback erlaubte. Die strukturierte Aufgabenorganisation und die regelmäßige Kommunikation im Team förderten eine effiziente Zusammenarbeit und stellten sicher, dass alle Teammitglieder über einen einheitlichen Informationsstand verfügten. Diese methodische Herangehensweise trug maßgeblich zur erfolgreichen Projektumsetzung bei.
 
 ### Deployment mittels Docker
 
 #### Aufbau der Docker-Umgebung
 
-Die Docker-Umgebung für das Infopoint-System wurde so aufgebaut, dass sie die verschiedenen Komponenten des Systems wie Frontend, Backend und CMS in separaten Containern isoliert sind. Jeder Container enthält die notwendigen Abhängigkeiten und Konfigurationen, um die jeweilige Komponente auszuführen. Die Kommunikation zwischen den Containern erfolgt über definierte REST-API Schnittstellen, um eine modulare und skalierbare Architektur zu gewährleisten. Jedoch wurden die Container über ein Docker-Compose-File zusammengeführt, um die Verwaltung und Bereitstellung der Multi-Container-Anwendung zu erleichtern. Das Docker-Compose-File definiert die Dienste, Netzwerke und Volumes, die für den Betrieb des Infopoint-Systems erforderlich sind, und ermöglicht es, das gesamte System mit einem einzigen Befehl zu starten.
+Die Docker-Umgebung für das Infopoint-System wurde so konzipiert, dass die verschiedenen Komponenten des Systems – Frontend, Backend und CMS – in separaten Containern isoliert betrieben werden. Jeder Container enthält die notwendigen Abhängigkeiten und Konfigurationen zur Ausführung der jeweiligen Komponente. Die Kommunikation zwischen den Containern erfolgt über definierte REST-API-Schnittstellen, um eine modulare und skalierbare Architektur zu gewährleisten. Zur Vereinfachung der Verwaltung und Bereitstellung der Multi-Container-Anwendung wurden die Container über ein Docker-Compose-File orchestriert. Das Docker-Compose-File definiert die Dienste, Netzwerke und Volumes, die für den Betrieb des Infopoint-Systems erforderlich sind, und ermöglicht es, das gesamte System mit einem einzigen Befehl zu starten.
 
 #### Containerisierung des Frontends, Backends und CMS (ToDo Docker einzelne Files verlinken)
 
-Jede Komponente des Infopoint-Systems wurde in einem eigenen Docker-Container containerisiert. Das Frontend wurde mit einem Webserver-Container bereitgestellt, der die Benutzeroberfläche hostet. Das Backend wurde in einem separaten Container ausgeführt, der die Geschäftslogik und Datenverarbeitung übernimmt. Das CMS wurde ebenfalls in einem eigenen Container betrieben. Das CMS läuft aber nicht über ein eigenes Programm, sondern über ein Docker Image. Dieses Image enthält die notwendige Software, um das CMS zu betreiben, und ermöglicht es, die Inhalte des Infopoint-Systems einfach zu verwalten und zu aktualisieren. Die Kommunikation zwischen den Containern erfolgt wie bereits beschrieben über definierte REST-API Schnittstellen, um eine modulare und skalierbare Architektur zu schaffen.
+Jede Komponente des Infopoint-Systems wurde in einem dedizierten Docker-Container containerisiert. Das Frontend wurde mittels eines Webserver-Containers bereitgestellt, der die Benutzeroberfläche hostet. Das Backend wird in einem separaten Container ausgeführt, welcher die Geschäftslogik und Datenverarbeitung übernimmt. Das CMS wurde ebenfalls in einem eigenständigen Container betrieben, wobei dieses nicht über ein eigenes Programm, sondern über ein vorgefertigtes Docker-Image läuft. Dieses Image enthält die notwendige Software zum Betrieb des CMS und ermöglicht eine unkomplizierte Verwaltung und Aktualisierung der Inhalte des Infopoint-Systems. Die Kommunikation zwischen den Containern erfolgt, wie bereits dargelegt, über definierte REST-API-Schnittstellen, um eine modulare und skalierbare Architektur zu realisieren.
 
 #### Multi-Container-Komposition
 
-Die Multi-Container-Komposition wurde mit Docker Compose realisiert, um die Verwaltung und Bereitstellung der verschiedenen Container zu erleichtern. Das Docker-Compose-File definiert die Dienste für das Frontend, Backend und CMS sowie die Netzwerke und Volumes, die für den Betrieb des Infopoint-Systems erforderlich sind. Durch die Verwendung von Docker Compose können alle Container mit einem einzigen Befehl gestartet, gestoppt und verwaltet werden, was den Deployment-Prozess für nicht vertraute Benutzer erheblich vereinfacht. 
+Die Multi-Container-Komposition wurde mit Docker Compose realisiert, um die Verwaltung und Bereitstellung der verschiedenen Container zu erleichtern. Das Docker-Compose-File definiert die Dienste für Frontend, Backend und CMS sowie die Netzwerke und Volumes, die für den Betrieb des Infopoint-Systems erforderlich sind. Durch die Verwendung von Docker Compose können sämtliche Container mit einem einzigen Befehl gestartet, gestoppt und verwaltet werden, was den Deployment-Prozess auch für Anwender ohne tiefgreifende technische Kenntnisse erheblich vereinfacht. 
 
 Das Docker-Compose File sieht wie folgt aus:
 
@@ -375,21 +371,72 @@ networks:
     driver: bridge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Der Endverbraucher sieht nach dem erstmaligen Starten des Systems in Docker Desktop nur die drei Container für Frontend, Backend und CMS, welche gesammelt in den Infopoint Container zusammengefasst sind und mit einem Klick gestartet und gestoppt werden können. Im finalen Betriebsszenario wird das System jedoch so konfiguriert, dass es automatisch mit dem Start des Computers gestartet wird, um eine kontinuierliche Verfügbarkeit zu gewährleisten. 
+Nach dem erstmaligen Starten des Systems werden dem Endanwender in Docker Desktop lediglich die drei Container für Frontend, Backend und CMS angezeigt, welche gemeinsam im Infopoint-Container zusammengefasst sind und per Mausklick gestartet bzw. gestoppt werden können. Im finalen Betriebsszenario wird das System so konfiguriert, dass es automatisch beim Systemstart initialisiert wird, um eine kontinuierliche Verfügbarkeit zu gewährleisten. 
 
 ![Docker-Desktop\label{fig:Docker-Desktop}](img/Docker-Desktop.png){width=100%}
 
 #### Herausforderungen beim Deployment auf unterschiedlicher Hardware
-#### Optimierungen, Lessons Learned
+
+Im Rahmen der praktischen Umsetzung des Infopoint-Systems zeigte sich, dass das Deployment auf unterschiedlicher Hardware mit mehreren technischen Herausforderungen verbunden ist. Während die Software grundsätzlich plattformunabhängig entwickelt wurde, ergeben sich in der Praxis hardwareabhängige Unterschiede, die berücksichtigt werden müssen.
+
+Eine zentrale Herausforderung besteht in der variierenden Leistungsfähigkeit der eingesetzten Hardware. Unterschiede bei Prozessorarchitektur, etwa zwischen x86- und ARM-basierten Systemen, sowie beim verfügbaren Arbeitsspeicher oder der Grafikeinheit wirken sich unmittelbar auf die Ladezeiten der Weboberfläche, die Reaktionszeit des Touchscreens sowie die Container-Startzeiten aus. Insbesondere bei leistungsschwächerer Hardware kann es zu spürbaren Verzögerungen kommen, wenn mehrere Dienste wie Backend, Frontend und Datenbank gleichzeitig ausgeführt werden.
+
+Eng damit verbunden ist die Problematik der Betriebssystem- und Treiberkompatibilität. Nicht jede Hardware unterstützt alle Betriebssysteme oder Treiber gleichermaßen, was beim Deployment zu Schwierigkeiten bei der Touchscreen-Treibererkennung, der korrekten Bildschirmauflösung und Skalierung, der GPU-Beschleunigung im Browser sowie bei Energieverwaltungsfunktionen führen kann. Insbesondere bei All-in-One-Systemen oder spezialisierten Industrie-PCs sind häufig herstellerspezifische Treiber erforderlich, die vorab umfassend getestet werden müssen.
+
+Das System ist zudem auf Netzwerkzugriff angewiesen, etwa für Updates oder API Zugriffe. Unterschiede zwischen kabelgebundenen und drahtlosen Netzwerkverbindungen reichen aus, um die funktionalität der Software stark zu beeinträchtigen.
+
+Ein weiterer praktischer Aspekt betraf die Einrichtung des Kiosk-Modus, der einen automatischen Systemstart, den automatischen Containerstart, den Browser im Vollbildmodus sowie die Deaktivierung von Benutzerinteraktionen außerhalb der Anwendung umfasst. Die konkrete Umsetzung dieser Funktionalitäten variiert je nach verwendeter Linux-Distribution, Desktop-Environment und Window-Manager erheblich, wodurch zusätzlicher Konfigurationsaufwand entsteht.
+
+Da das System für den Dauerbetrieb konzipiert ist, mussten schließlich auch Aspekte der Energieverwaltung berücksichtigt werden. Dies umfasst die Konfiguration eines automatischen Neustarts bei Stromausfall sowie die Deaktivierung von Standby und Energiespar-Modi. 
 
 ### Ergebnis und Funktionsweise des Systems
+
 #### Vorstellung des fertigen Infopoints
+
+Das fertige Infopoint-System präsentiert sich als benutzerfreundliche und funktionale Lösung, die den Schülerinnen und Schülern der Schule einen unkomplizierten Zugang zu Informationen über Lehrkräfte, Stundenpläne und schulische Veranstaltungen ermöglicht. Die Benutzeroberfläche wurde intuitiv gestaltet, um eine schnelle Orientierung zu gewährleisten, und bietet verschiedene Funktionen, die den Anforderungen der unterschiedlichen Nutzergruppen gerecht werden.
+
+Das System ist derzeit auf einem Schul-PC implementiert, auf dem Ubuntu Desktop als Betriebssystem installiert ist. Ubuntu wurde so konfiguriert, dass beim Systemstart automatisch eine Überprüfung des GitHub-Repositorys erfolgt. Sofern Änderungen im Repository vorliegen, wird dieses auf dem lokalen System aktualisiert und die Docker-Container werden neu gebaut. Im Anschluss startet das System automatisch im Kiosk-Modus, wodurch der Browser im Vollbildmodus geöffnet wird und die Benutzeroberfläche des Infopoints anzeigt.
+
+Für die Verwaltung und Aktualisierung der Inhalte ist es erforderlich, den Kiosk-Modus zu verlassen und das CMS-System über den Browser aufzurufen. Dort werden die vorgefertigten Collections angezeigt, in denen Daten ergänzt, geändert oder gelöscht werden können. Die Bedienung des CMS wurde bewusst einfach gehalten, um auch Personen ohne tiefgreifende technische Kenntnisse die Pflege der Inhalte zu ermöglichen.
+
 #### Bedienablauf und Nutzererfahrung
-#### Erfüllung der Anforderungen
+
+Die Nutzererfahrung des Infopoint-Systems wurde darauf ausgerichtet, eine schnelle und intuitive Navigation zu ermöglichen. Bei Inaktivität zeigt das System zunächst einen Standby-Bildschirm an, der durch Berührung des Touchscreens verlassen werden kann. Anschließend wird der Homescreen angezeigt, der verschiedene Optionen wie die Lehrersuchfunktion, den Lageplan des Schulgebäudes sowie Informationen zu aktuellen Veranstaltungen bietet. Durch die Verwendung klar erkennbarer Icons und einer logischen Anordnung der Navigationselemente können die Nutzer die gewünschten Informationen mit wenigen Interaktionsschritten abrufen. Die Reaktionszeiten der Benutzeroberfläche wurden optimiert, um ein flüssiges Nutzungserlebnis zu gewährleisten.
+
+![Standby-Ansicht\label{fig:Standby-Ansicht}](img/StandbyScreen-Final.png){width=50%}
+
+![Home-Bildschirm\label{fig:Home-Bildschirm}](img/HomeScreen-Final.png){width=50%}
 
 ### Fazit und Ausblick
 
-#### Zusammenfassung der Ergebnisse
 #### Rückblick auf die Projektarbeit
+
+Die Entwicklung des Infopoint-Systems stellte ein umfassendes Projekt dar, das verschiedene Disziplinen der Informatik vereinte. Von der initialen Konzeptionsphase über die Hardwarerecherche und das UI-Design bis hin zur technischen Implementierung und dem containerisierten Deployment wurden sämtliche Phasen des Softwareentwicklungsprozesses durchlaufen.
+
+Die Zusammenarbeit im Team erwies sich als produktiv und effizient. Die frühzeitige Festlegung von Verantwortungsbereichen und die konsequente Nutzung von GitHub Projects als Projektmanagement-Tool ermöglichten eine strukturierte Arbeitsweise. Die Anwendung der Scrumban-Methodik unterstützte dabei sowohl die langfristige Planung als auch die flexible Reaktion auf kurzfristige Anforderungsänderungen.
+
+Technisch konnte das gesetzte Ziel erreicht werden: Es wurde ein funktionsfähiges Informationssystem entwickelt, das die definierten Anforderungen erfüllt. Die Entscheidung für eine containerisierte Architektur mittels Docker erwies sich als vorteilhaft, da sie eine hohe Portabilität und einfache Wartbarkeit des Systems gewährleistet. Die Verwendung moderner Webtechnologien für das Frontend ermöglicht zudem eine flexible Anpassung und Erweiterung der Benutzeroberfläche.
+
+Herausfordernd gestalteten sich insbesondere die Integration verschiedener Systemkomponenten sowie die Konfiguration des Kiosk-Modus für den Dauerbetrieb. Diese Aspekte erforderten umfangreiche Recherchen und Tests, führten jedoch zu einem tiefgreifenden Verständnis der eingesetzten Technologien.
+
 #### Potenzial für zukünftige Erweiterungen
+
+Das entwickelte Infopoint-System bietet zahlreiche Ansatzpunkte für zukünftige Erweiterungen, die den Funktionsumfang und die Integration in die schulische IT-Infrastruktur verbessern können.
+
+Eine naheliegende Erweiterung stellt die vollständige Integration in das Schulnetzwerk dar. Durch die Anbindung an bestehende Authentifizierungssysteme könnten personalisierte Informationen bereitgestellt werden, etwa individuelle Stundenpläne für angemeldete Schülerinnen und Schüler. Zudem würde eine Netzwerkintegration die zentrale Verwaltung und Überwachung des Systems durch die IT-Administration der Schule ermöglichen.
+
+Eine weitere Erweiterungsmöglichkeit besteht in der Integration des Infopoints in die Schulhomepage. Hierbei könnten ausgewählte Funktionen des Infopoints auch über die Webpräsenz der Schule zugänglich gemacht werden, sodass Schülerinnen und Schüler sowie Erziehungsberechtigte relevante Informationen auch von externen Geräten abrufen können. Dies würde den Nutzen des Systems über den physischen Standort hinaus erweitern.
+
+Schließlich bietet sich die Integration des CMS-Systems des Infopoints mit dem Content-Management-System der Schulhomepage an. Eine solche Verknüpfung würde die Datenpflege erheblich vereinfachen, da Inhalte nur einmal eingepflegt werden müssten und automatisch auf beiden Plattformen verfügbar wären. Dies würde nicht nur den administrativen Aufwand reduzieren, sondern auch die Konsistenz der bereitgestellten Informationen sicherstellen.
+
+Darüber hinaus wäre die Implementierung weiterer Funktionen denkbar, etwa einen Barierrefreien Zugang über eine Sprachausgabe, oder die Erweiterung um mehrsprachige Unterstützung für internationale Schülerinnen und Schüler.
+
 #### Persönliche Reflexion
+
+Die Arbeit am Infopoint-Projekt stellte eine wertvolle Erfahrung dar, die sowohl fachliche als auch persönliche Lerneffekte mit sich brachte. Als Verantwortlicher für Hardwareauswahl, Design, Konzeption und Projektmanagement war es erforderlich, verschiedene Kompetenzbereiche zu koordinieren und zu einem  Gesamtkonzept zusammenzuführen.
+
+Die Erstellung der Mockups in Adobe XD ermöglichte einen tiefen Einblick in die Prinzipien des UI/UX-Designs. Die Entwicklung des Designs, von ersten Wireframes bis zum finalen Interface, verdeutlichte die Bedeutung eines nutzerzentrierten Ansatzes. Besonders lehrreich war dabei die Erkenntnis, dass vermeintlich intuitive Designentscheidungen einer kritischen Überprüfung und kontinuierlichen Verfeinerung bedürfen.
+
+Die Übernahme des Projektmanagements bot die Möglichkeit, theoretisches Wissen über agile Methoden in der Praxis anzuwenden. Die Einrichtung und Pflege des GitHub-Projekts sowie die Organisation der Teamarbeit erforderten organisatorische Fähigkeiten und eine klare Kommunikation. Die Erfahrung zeigte, dass eine strukturierte Herangehensweise und transparente Dokumentation wesentlich zum Projekterfolg beitragen.
+
+Rückblickend lässt sich feststellen, dass das Projekt die Komplexität realer Softwareentwicklungsprojekte widerspiegelte. Die Notwendigkeit, technische Entscheidungen unter Berücksichtigung von Budgetrestriktionen zu treffen, externe Abhängigkeiten zu koordinieren und auf unvorhergesehene Herausforderungen zu reagieren, vermittelte praxisnahe Einblicke in den Berufsalltag der Softwareentwicklung. Diese Erfahrungen werden bei zukünftigen Projekten von unmittelbarem Nutzen sein.

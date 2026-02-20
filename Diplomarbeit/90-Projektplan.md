@@ -180,72 +180,103 @@ Der Informationsfluss ist wie folgt geregelt: Änderungen werden im Team-Chat un
 
 ## Anwendungsfälle
 
-Dieser Abschnitt beschreibt die Anwendungsfälle (Use Cases) der Anwendung. Die Beschreibung erfolgt auf hohem Abstraktionsniveau ohne implementierungsspezifische Details. Die Benennung orientiert sich an den Zielen aus Sicht der Akteure, beispielsweise „Mitglied anmelden", „Geld abheben" oder „Auto zurückgeben".
-
-Jeder Anwendungsfall wird nach einem einheitlichen Muster beschrieben. In den folgenden Absätzen findet sich zunächst eine allgemeine Beschreibung der Anwendungsfallstruktur, gefolgt von einem konkreten Beispiel.
-
-Zur Veranschaulichung der Interaktion zwischen Akteuren und Anwendungsfällen dient folgende Übersichtsgrafik:
-
-![Übersicht Anwendungsfälle](img/anwendungsfalldiagramm.png){width=60%}
-
-\newpage
-### Anwendungsfallname
-Anwendungsfälle erhalten einen eindeutigen Namen, aus dem sich der Inhalt des Anwendungsfalls ableiten lässt. Bei agiler Arbeitsweise entspricht ein Anwendungsfall einer User Story im Backlog, die im Laufe des Projekts (in einem Sprint) abgearbeitet wird.
-
-#### Kurzbeschreibung
-Dieser Abschnitt enthält eine kurze Beschreibung des Anwendungsfallinhalts im Umfang von zwei bis drei Zeilen.
-      
-#### Trigger
-Der fachliche Auslöser für die Ausführung dieses Anwendungsfalls.
-
-#### Vorbedingung
-Alle Bedingungen, die erfüllt sein müssen, damit dieser Anwendungsfall ausgeführt werden kann. Falls keine Vorbedingungen existieren, wird „keine" angegeben.
-      
-#### Nachbedingung
-Der erwartete Zustand nach einem erfolgreichen Durchlauf des Anwendungsfalls.
-
-#### Akteure
-Akteure sind beteiligte Personen oder Systeme außerhalb des beschriebenen Systems, beispielsweise Anwender, angemeldete Anwender, Kunden, Systeme oder Abrechnungsprozesse.
-
-#### Standardablauf
-Dieser Abschnitt stellt das typische Szenario dar, das leicht verständlich oder am häufigsten vorkommend ist. Am Ende steht die Zielerreichung des Primärakteurs. Die Ablaufschritte werden nummeriert und in strukturierter Sprache beschrieben. Ablaufpläne können ebenfalls verwendet werden. Mittels UML lassen sich diese Ablaufschritte in Aktivitätsdiagrammen oder anwendungsfallorientierten Sequenzdiagrammen darstellen.
-
-#### Fehlersituationen
-Szenarien, die sich außerhalb des Standardablaufs bei der versuchten Zielerreichung ereignen können. Sie werden als konditionale Verzweigungen der normalen Ablaufschritte dargestellt. Am Ende steht ein Misserfolg, die Zielerreichung des Primärakteurs oder eine Rückkehr zum Standardablauf.
-
-#### Systemzustand im Fehlerfall
-Der erwartete Zustand nach einem erfolglosen Durchlauf des Anwendungsfalls.
-
+Dieser Abschnitt beschreibt die Anwendungsfälle (Use Cases) der Anwendung. Die Beschreibung erfolgt auf hohem Abstraktionsniveau ohne implementierungsspezifische Details.
 
 \newpage
 ### Informationen beschaffen
+
 #### Kurzbeschreibung
-Der Endverbraucher (User) ruft über den Infopoint Informationen zu aktuellen Veranstaltungen, Events, Vertretungen oder Raumplänen ab.
+Der Endverbraucher ruft über den Infopoint Informationen zu aktuellen Veranstaltungen, Neuigkeiten oder Stundenplänen ab. Das System lädt die entsprechenden Inhalte aus dem CMS und stellt diese auf der Benutzeroberfläche dar.
 
 #### Trigger
-Der User tippt auf den Startbildschirm, um zur Benutzeroberfläche zu gelangen.
+Der Endverbraucher tippt auf den Standby-Bildschirm des Infopoints, um zur Benutzeroberfläche zu gelangen.
 
 #### Vorbedingung
 Der Infopoint ist eingeschaltet und betriebsbereit. Der Endverbraucher befindet sich vor dem Gerät.
-      
+
 #### Nachbedingung
-Der User hat alle benötigten Informationen erhalten.
+Der Endverbraucher hat alle benötigten Informationen erhalten und der Infopoint kehrt nach einer definierten Zeit der Inaktivität in den Standby-Modus zurück.
 
 #### Akteure
-Endverbraucher (User)
-
-#### Fehlersituationen
-Der Infopoint kann aufgrund fehlender Internetverbindung oder anderer technischer Störungen nicht auf aktuelle Daten zugreifen.
-
-#### Systemzustand im Fehlerfall
-Dem User wird eine Fehlermeldung angezeigt.
+Endverbraucher (Schülerinnen und Schüler, Besucherinnen und Besucher)
 
 #### Standardablauf
 
-1. Der User nähert sich dem Infopoint und tippt auf den Bildschirm, um den Bildschirmschoner zu deaktivieren.
-2. Auf dem Homescreen wird eine Auswahl an Funktionen angezeigt.
-3. Durch Auswahl der gewünschten Funktion werden die entsprechenden Informationen dargestellt.
+1. Der Endverbraucher nähert sich dem Infopoint und tippt auf den Standby-Bildschirm.
+2. Das System wechselt vom Standby-Modus zum Homescreen.
+3. Auf dem Homescreen wird eine Übersicht der verfügbaren Funktionen angezeigt.
+4. Der Endverbraucher wählt eine gewünschte Funktion, etwa Veranstaltungen oder Neuigkeiten.
+5. Das System lädt die aktuellen Daten über die REST-API aus dem CMS und zeigt sie an.
+6. Der Endverbraucher liest die dargestellten Informationen.
+7. Nach einer Phase der Inaktivität kehrt das System automatisch in den Standby-Modus zurück.
 
-#### Alternativabläufe
+#### Fehlersituationen
+Das System kann aufgrund einer fehlenden oder unterbrochenen Verbindung zum Backend nicht auf aktuelle Daten zugreifen.
 
-Falls die gewünschte Funktion nicht verfügbar ist, wird eine Fehlermeldung ausgegeben.
+#### Systemzustand im Fehlerfall
+Dem Endverbraucher wird eine entsprechende Fehlermeldung angezeigt. Das System bleibt betriebsbereit und kehrt nach einer definierten Zeit in den Standby-Modus zurück.
+
+\newpage
+### Lehrperson suchen
+
+#### Kurzbeschreibung
+Der Endverbraucher sucht über die Lehrersuchfunktion des Infopoints nach einer bestimmten Lehrperson und ruft Informationen über deren aktuellen Aufenthaltsort ab.
+
+#### Trigger
+Der Endverbraucher wählt auf dem Homescreen die Funktion „Lehrperson suchen".
+
+#### Vorbedingung
+Der Infopoint ist betriebsbereit und der Endverbraucher befindet sich auf dem Homescreen. Die Lehrerdaten sind im CMS gepflegt.
+
+#### Nachbedingung
+Der Endverbraucher hat den aktuellen Aufenthaltsort der gesuchten Lehrperson in Erfahrung gebracht.
+
+#### Akteure
+Endverbraucher (Schülerinnen und Schüler)
+
+#### Standardablauf
+
+1. Der Endverbraucher tippt auf dem Homescreen auf die Kachel „Lehrperson suchen".
+2. Das System navigiert zur Lehrerübersichtsseite und lädt die verfügbaren Lehrerprofile aus dem Backend.
+3. Die Lehrpersonen werden in einer übersichtlichen Liste dargestellt.
+4. Der Endverbraucher tippt auf den Namen der gesuchten Lehrperson.
+5. Das System zeigt die Detailansicht mit Informationen über den aktuellen Aufenthaltsort der Lehrperson an.
+6. Der Endverbraucher erhält die benötigte Information und kehrt wahlweise zur Übersicht oder zum Homescreen zurück.
+
+#### Fehlersituationen
+Die gesuchte Lehrperson ist nicht im System erfasst oder die Verbindung zum Backend ist unterbrochen.
+
+#### Systemzustand im Fehlerfall
+Ist die Lehrperson nicht vorhanden, wird eine entsprechende Hinweismeldung angezeigt. Bei einer Verbindungsunterbrechung wird eine allgemeine Fehlermeldung eingeblendet.
+
+\newpage
+### Lageplan einsehen
+
+#### Kurzbeschreibung
+Der Endverbraucher ruft den interaktiven Lageplan des Schulgebäudes auf, um sich über die räumliche Anordnung des Schulgebäudes zu orientieren und bestimmte Räume oder Bereiche zu lokalisieren.
+
+#### Trigger
+Der Endverbraucher wählt auf dem Homescreen die Funktion „Lageplan".
+
+#### Vorbedingung
+Der Infopoint ist betriebsbereit und der Endverbraucher befindet sich auf dem Homescreen. Die Lageplanressourcen sind im CMS hinterlegt.
+
+#### Nachbedingung
+Der Endverbraucher hat sich erfolgreich über die räumliche Struktur des Schulgebäudes orientiert und den gesuchten Bereich lokalisiert.
+
+#### Akteure
+Endverbraucher (Schülerinnen und Schüler, Besucherinnen und Besucher)
+
+#### Standardablauf
+
+1. Der Endverbraucher tippt auf dem Homescreen auf die Kachel „Lageplan".
+2. Das System navigiert zur Lageplananzeige und lädt die Plandaten über die REST-API.
+3. Der Lageplan des Schulgebäudes wird auf dem Display dargestellt.
+4. Der Endverbraucher navigiert durch den Plan, um den gesuchten Raum oder Bereich zu finden.
+5. Der Endverbraucher hat sich erfolgreich orientiert und kehrt wahlweise zum Homescreen zurück.
+
+#### Fehlersituationen
+Die Lageplanressourcen können aufgrund einer Verbindungsunterbrechung nicht geladen werden.
+
+#### Systemzustand im Fehlerfall
+Dem Endverbraucher wird eine Fehlermeldung angezeigt. Das System bleibt betriebsbereit und kehrt nach einer definierten Zeit der Inaktivität in den Standby-Modus zurück.
