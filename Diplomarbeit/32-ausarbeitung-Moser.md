@@ -189,29 +189,201 @@ Durch diese Funktionalitäten wird eine klare Trennung zwischen Inhalt und Darst
 
 
 ## Praktische Arbeit
+
 ### Überblick über die praktische Umsetzung
-Der praktische Teil dieser Diplomarbeit umfasst die Konzeption, Implementierung und Dokumentation des Backends sowie die Konfigurierung des Content-Management-Systems (CMS) für das entwickelte Infopoint-System. Ziel war es, eine stabile, wartbare, erweiterbare und performante serverseitige Lösung zu realisieren, welche die Verwaltung und Bereitstellung von Inhalten möglichst einfach ermöglicht.
+Der praktische Teil umfasst die **Konzeption, Implementierung und Dokumentation** des Backends sowie die **Konfiguration und Anbindung** des Content-Management-Systems (Cockpit CMS).  
+Ziel war eine serverseitige Lösung, die **stabil**, **wartbar**, **erweiterbar** und im Alltag **einfach zu bedienen** ist. Inhalte sollen im CMS gepflegt werden können und anschließend über eine REST API standardisiert im Infopoint-Frontend angezeigt werden.
 
-Zu Beginn der Umsetzung wurden die funktionalen Anforderungen analysiert und gemeinsam mit dem Frontend-Team abgestimmt. Dabei wurde definiert, welche Daten benötigt werden, wie diese strukturiert gespeichert werden sollen und über welche Schnittstellen das Frontend darauf zugreifen kann.
+Zu Beginn wurden die Anforderungen gemeinsam mit dem Frontend abgestimmt. Dabei wurde festgelegt:
+- **welche Inhalte** gebraucht werden (z. B. Events, News, Kategorien),
+- **welche Felder** diese Inhalte haben (z. B. Titel, Datum, Beschreibung),
+- und über **welche API-Endpunkte** das Frontend diese Daten abrufen kann.
 
-#### Vorgehen und Artefakte
-- Definition der benötigten Ressourcen (z. B. Events, News, Kategorien) und deren Datenfelder.
-- Entwurf der REST-Endpunkte inkl. HTTP-Methoden, Statuscodes und Fehlerformat.
-- Erstellung von DTOs für eine klare Trennung zwischen interner Repräsentation und externer API.
-- Festlegung von Validierungsregeln (Pflichtfelder, Längen/Format) und einheitlicher Fehlerbehandlung.
-- Basisdokumentation der Schnittstellen (OpenAPI/Swagger) zur Abstimmung mit dem Frontend.
+### Systemgrenzen und Verantwortlichkeiten
+Damit die Lösung übersichtlich bleibt, wurden klare Zuständigkeiten definiert:
 
-#### Entwicklungsumgebung und Tooling
-- Backend mit Spring Boot (Maven) und Konfiguration.
-- Lokales Setup über Container-Orchestrierung (Docker Compose) für Backend, Frontend und Cockpit CMS
-- Einheitliche Build-/Run-Skripte sowie konsistentes Logging für Nachvollziehbarkeit.
+- **Cockpit CMS:** Inhalte anlegen und pflegen (z. B. Events erstellen, News bearbeiten, Bilder hochladen)
+- **Backend:** Inhalte aus dem CMS abholen, prüfen/aufbereiten und als REST API bereitstellen
+- **Frontend/Infopoint:** Inhalte anzeigen und Benutzerinteraktion umsetzen
 
-#### Implementierung Backend
-- Schichtentrennung in Controller (API), Services (Geschäftslogik) und DTOs (Datenübertragung).
-- Validierung eingehender Requests und strukturierte Fehlerantworten durch einen globalen Exception-Handler.
-- API-Versionierung (z. B. `/api/v1/...`) und CORS-Konfiguration für den sicheren Zugriff des Frontends.
-- Optionale Zwischenspeicherung ausgewählter, häufig gelesener Inhalte zur Reduktion externer Zugriffe.
+Beispiel:
+- Eine Lehrperson erstellt im Cockpit CMS ein neues Event.
+- Das Backend liefert dieses Event über `/api/v1/events`.
+- Das Frontend zeigt es als „Nächstes Event“ am Infopoint an.
 
+### Vorgehen und erstellte Artefakte
+Die Umsetzung erfolgte in klaren Schritten. Dabei sind folgende Artefakte entstanden:
+
+- **Ressourcen-Definition:** Welche Datenobjekte gibt es?  
+  Beispiele: `events`, `news`, `categories`
+
+- **API-Entwurf:** Welche Endpunkte gibt es und wie sind sie aufgebaut?  
+  Beispiel:
+  - `GET /api/v1/events` → Liste aller Events
+  - `GET /api/v1/events/{id}` → Details zu einem Event
+
+- **DTO-Konzept:** Trennung zwischen internen Objekten und dem, was die API ausgibt  
+  Beispiel:
+  - Intern kann ein Objekt mehr Felder haben (z. B. interne IDs oder Metadaten)
+  - Nach außen liefert die API nur das, was das Frontend braucht (z. B. Titel, Datum, Text)
+
+- **Validierung & Fehlerformat:** Einheitliche Regeln und klare Fehlermeldungen  
+  Beispiel:
+  - Wenn `title` fehlt → Rückgabe `400 Bad Request` mit verständlicher Fehlermeldung
+
+- **API-Dokumentation:** Dokumentation für das Frontend-Team (OpenAPI/Swagger)
+
+### Entwicklungsumgebung und Tooling
+Für eine reproduzierbare Entwicklungsumgebung wurden folgende Werkzeuge genutzt:
+
+- **Spring Boot + Maven:** Backend-Implementierung und Dependency-Management
+- **Docker Compose:** gemeinsamer Start von Backend, Frontend und Cockpit CMS
+- **Logging:** einheitliche Log-Ausgaben zur Fehleranalyse und Nachvollziehbarkeit
+
+Beispiel:
+- Mit einem einzigen Start-Befehl werden alle Services hochgefahren,
+  damit jeder im Team mit derselben Umgebung arbeiten kann.
+
+### Planung und Systemarchitektur
+Das Backend wurde so aufgebaut, dass die einzelnen Teile klar getrennt sind:
+
+- **Controller-Schicht (API):** nimmt HTTP-Anfragen entgegen und gibt Antworten zurück  
+- **Service-Schicht (Logik):** verarbeitet Daten und enthält die Geschäftslogik  
+- **DTO-Schicht (Datenübertragung):** definiert, welche Daten die API liefert  
+- **CMS-Anbindung:** holt Inhalte aus dem Cockpit CMS und macht sie nutzbar
+
+Diese Trennung macht das System wartbar und erleichtert Erweiterungen,
+weil Änderungen meist nur in einer Schicht notwendig sind.
+
+### Implementierung des Backends
+
+Die Implementierung des Backends erfolgte nach dem Prinzip der klaren Schichtentrennung. Ziel war es, eine übersichtliche und wartbare Struktur zu schaffen, bei der jede Schicht eine klar definierte Aufgabe übernimmt. Der Ablauf einer typischen Anfrage folgt dabei immer demselben Muster:
+
+1. Eine HTTP-Anfrage erreicht den Controller.
+2. Der Controller delegiert die Verarbeitung an die Service-Schicht.
+3. Der Service verarbeitet die Daten und kommuniziert mit dem CMS.
+4. Das Ergebnis wird als DTO zurückgegeben.
+5. Der Controller liefert eine standardisierte HTTP-Antwort an das Frontend.
+
+---
+
+### Ablauf einer Anfrage (Beispiel: Events abrufen)
+
+Um die Funktionsweise zu verdeutlichen, wird folgend ein typischer Ablauf beschrieben:
+
+Ein Client sendet eine Anfrage an:
+
+- GET `/api/v1/events`
+
+Der Controller nimmt diese Anfrage entgegen und ruft den entsprechenden Service auf.
+
+```java
+@RestController
+@RequestMapping("/api/v1/events")
+public class EventsController {
+
+    private final EventService eventService; // <-- Service für Events
+
+    public EventsController(EventService eventService) {
+        this.eventService = eventService;
+    }
+
+    @GetMapping("/{limit}")
+    public List<CockpitEvent> get(@PathVariable int limit) {
+        return eventService.get(limit);
+    }
+}
+
+```
+
+---
+
+### Service-Schicht (Geschäftslogik)
+
+Die Service-Schicht übernimmt die eigentliche Verarbeitung der Daten.  
+Hier wird definiert:
+
+- Wie Daten aus dem CMS geladen werden
+- Wie sie ggf. gefiltert oder sortiert werden
+- Wie sie in DTOs umgewandelt werden
+
+Ein zentraler Bestandteil der Service-Schicht ist die Kommunikation mit dem Cockpit CMS.  
+Dafür wird eine eigene Client-Klasse (`CockpitClient`) verwendet. Diese Klasse kapselt die externe Kommunikation und sorgt dafür, dass HTTP-Aufrufe zum CMS nicht direkt im Service implementiert werden. Dadurch bleibt der Service übersichtlich und unabhängig von technischen Details der CMS-Anbindung.
+
+```java
+@Service
+public class EventService {
+
+	private final CockpitClient cockpitClient; // <-- Verbindung zu Cockpit
+
+    public EventService(CockpitClient cockpitClient) {
+        this.cockpitClient = cockpitClient;
+    }
+
+    public List<CockpitEvent> get(int limit) {
+        return cockpitClient.getAppointments(limit); // <-- holt Events
+    }
+}
+```
+
+In diesem Beispiel ruft die Methode `get(int limit)` die Methode `getAppointments(limit)` des `CockpitClient` auf.
+Der Service selbst enthält keine HTTP-Logik, sondern delegiert diese Aufgabe vollständig an den Client.
+Dadurch bleibt die Geschäftslogik klar getrennt von der technischen Kommunikation.
+
+---
+
+### Verwendung von DTOs
+
+DTOs (Data Transfer Objects) dienen dazu, nur die Daten nach außen zu geben, die das Frontend wirklich benötigt.  
+Interne Felder oder CMS-spezifische Informationen werden nicht direkt weitergegeben.
+
+Beispiel:
+Ein Event im CMS könnte folgende Felder enthalten:
+- id
+- title
+- description
+- internalMetadata
+- createdAt
+- updatedAt
+
+Die API gibt jedoch nur zurück:
+- title
+- description
+- date
+
+```java
+public record EventDto(
+        Long id,
+        String title,
+        Instant start,
+        Instant end,
+        String location,
+        String type,
+        String description,
+        String imageUrl
+) {}
+```
+
+---
+
+### API-Versionierung und Struktur
+Die API ist versioniert aufgebaut.  
+Alle Endpunkte befinden sich unter:
+
+- `/api/v1/...`
+
+Diese Struktur ermöglicht es, später eine neue Version (`/api/v2`) einzuführen, ohne bestehende Clients zu beeinflussen.
+
+```java
+@RequestMapping("/api/v1/events")
+```
+---
+
+### Zusammenfassung der Backend-Implementierung
+
+Durch die klare Trennung von Controller, Service und DTOs wurde eine saubere und wartbare Struktur geschaffen.  
+Jede Anfrage folgt einem definierten Ablauf, wodurch das System nachvollziehbar und erweiterbar bleibt.  
+Die Validierung und globale Fehlerbehandlung sorgen zusätzlich für Stabilität und klare Rückmeldungen an das Frontend.
 #### Integration des Cockpit CMS
 - Anbindung an das CMS zur Verwaltung von Inhalten (Texte, Bilder, Veranstaltungen, Kategorien).
 - Saubere Trennung: CMS verwaltet Inhalte, Backend bereitet sie auf und stellt sie über standardisierte Endpunkte bereit.
@@ -227,12 +399,4 @@ Zu Beginn der Umsetzung wurden die funktionalen Anforderungen analysiert und gem
 - Persistente Volumes für CMS-Daten und konfigurierbare Umgebungsvariablen (z. B. Basis-URL).
 - Logging und einfache Metriken zur Überwachung des laufenden Systems; klare Deployment-Schritte für Test und Produktion.
 
-### Planung und Systemarchitektur:
-Auf Basis der Anforderungen wurde eine grundlegende Backend-Architektur entworfen. Diese basiert auf einer klaren Trennung zwischen:
-- API-Schicht (Schnittstellen für das Frontend)
-- Geschäftslogik (Services)
-- DTOs (Data Transfare Objects, Objekte zur besseren und sicheren Datenübertragung)
-- Datenzugriffsschicht (CMS)
-
-Diese Struktur erleichtert die Wartung des Systems und ermöglicht spätere Erweiterungen.
 
