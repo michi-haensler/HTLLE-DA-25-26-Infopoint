@@ -15,8 +15,94 @@
     animation: fadeIn var(--transition-normal, 0.25s ease);
 }
 
+.secretActive * {
+    pointer-events: none !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+.secretActive *::before,
+.secretActive *::after {
+    animation: none !important;
+    transition: none !important;
+}
+
+.secretActive [data-ragdoll="true"] {
+    pointer-events: auto !important;
+    cursor: grab;
+}
+
+.secretActive [data-ragdoll="true"]:active {
+    cursor: grabbing;
+}
+
+.secretActive .easterControls,
+.secretActive .easterClose {
+    pointer-events: auto !important;
+}
+
+.easterOverlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 250;
+    background:
+        repeating-linear-gradient(
+            180deg,
+            rgba(45, 212, 191, 0.08) 0 2px,
+            transparent 2px 6px
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(45, 212, 191, 0.16),
+            transparent 45%
+        );
+    animation: easterGlow 0.9s ease-in-out infinite alternate;
+}
+
+.easterControls {
+    position: fixed;
+    right: var(--space-lg, 24px);
+    bottom: var(--space-lg, 24px);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm, 8px);
+}
+
+.easterHint {
+    pointer-events: none;
+    border: 1px solid rgba(45, 212, 191, 0.55);
+    background: rgba(14, 34, 32, 0.92);
+    color: #b8fff5;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: var(--font-weight-semibold, 600);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    animation: hintAppear 0.24s ease;
+}
+
+.easterClose {
+    border: 1px solid rgba(45, 212, 191, 0.8);
+    background: rgba(45, 212, 191, 0.2);
+    color: #e9fffc;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: var(--font-weight-semibold, 600);
+    cursor: pointer;
+    transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.easterClose:hover {
+    background: rgba(45, 212, 191, 0.32);
+    transform: translateY(-1px);
+}
+
 /* Mobile/Tablet: Scrollen erlauben */
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .shell {
         height: auto;
         min-height: 100vh;
@@ -31,4 +117,26 @@
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@keyframes easterGlow {
+    from {
+        opacity: 0.35;
+        filter: saturate(100%);
+    }
+    to {
+        opacity: 0.55;
+        filter: saturate(120%);
+    }
+}
+
+@keyframes hintAppear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

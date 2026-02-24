@@ -8,14 +8,47 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * Utility-Klasse zum Suchen und Parsen von Klasseninformationen
  * aus der WebUntis-Tagesübersicht (analog zu TeacherFinder).
  */
 public class ClassFinder {
+    private static String extractRowEventText(JsonNode row) {
+        JsonNode cells = row.get("cells");
+        if (cells == null || !cells.isArray()) {
+            return "";
+        }
+
+        Set<String> labels = new LinkedHashSet<>();
+        for (JsonNode cell : cells) {
+            boolean isEvent = cell.path("isEvent").asBoolean(false);
+            String text = cell.path("text").asText("").trim();
+            if (isEvent && !text.isBlank()) {
+                labels.add(text);
+            }
+        }
+
+        return String.join(" / ", labels);
+    }
+
+    private static String resolveSubject(JsonNode period, String rowEventText) {
+        String subject = period.path("subjects").asText("").trim();
+        if (!subject.isBlank()) {
+            return subject;
+        }
+
+        boolean irregular = period.path("isIrregular").asBoolean(false);
+        if (irregular && !rowEventText.isBlank()) {
+            return rowEventText;
+        }
+
+        return subject;
+    }
 
     /**
      * Durchsucht die WebUntis-Daten nach Klassen.
@@ -53,6 +86,7 @@ public class ClassFinder {
             // Klassenname ist üblicherweise direkt im Header
             String className = header;
             String shortCode = header;
+            String rowEventText = extractRowEventText(row);
             
             // Suche nach Übereinstimmung
             if (!className.toLowerCase().contains(q)) {
@@ -75,7 +109,7 @@ public class ClassFinder {
 
                         if (now >= start && now < end) {
                             currentLesson = new CurrentLesson(
-                                    period.path("subjects").asText(""),
+                                    resolveSubject(period, rowEventText),
                                     period.path("rooms").asText(""),
                                     period.path("teachers").asText(""), // Bei Klassen: Lehrer statt Klassen
                                     start,
@@ -86,6 +120,16 @@ public class ClassFinder {
                     }
                     if (currentLesson != null) break;
                 }
+            }
+
+            if (currentLesson == null && !rowEventText.isBlank()) {
+                currentLesson = new CurrentLesson(
+                        rowEventText,
+                        "",
+                        "",
+                        0,
+                        2359
+                );
             }
 
             results.add(new ClassInfoDTO(
@@ -131,6 +175,7 @@ public class ClassFinder {
             String header = headerNode.asText().trim();
             String className = header;
             String shortCode = header;
+            String rowEventText = extractRowEventText(row);
 
             CurrentLesson currentLesson = null;
 
@@ -148,7 +193,7 @@ public class ClassFinder {
 
                         if (now >= start && now < end) {
                             currentLesson = new CurrentLesson(
-                                    period.path("subjects").asText(""),
+                                    resolveSubject(period, rowEventText),
                                     period.path("rooms").asText(""),
                                     period.path("teachers").asText(""),
                                     start,
@@ -159,6 +204,16 @@ public class ClassFinder {
                     }
                     if (currentLesson != null) break;
                 }
+            }
+
+            if (currentLesson == null && !rowEventText.isBlank()) {
+                currentLesson = new CurrentLesson(
+                        rowEventText,
+                        "",
+                        "",
+                        0,
+                        2359
+                );
             }
 
             results.add(new ClassInfoDTO(
@@ -199,6 +254,7 @@ public class ClassFinder {
             if (headerNode == null) continue;
 
             String header = headerNode.asText().trim();
+            String rowEventText = extractRowEventText(row);
             if (!header.equalsIgnoreCase(wanted)) {
                 continue;
             }
@@ -217,15 +273,18 @@ public class ClassFinder {
                         boolean irregular = period.path("isIrregular").asBoolean(false);
                         int start = period.path("startTime").asInt(0);
                         int end = period.path("endTime").asInt(0);
+                        String subject = resolveSubject(period, rowEventText);
+                        boolean event = irregular && !rowEventText.isBlank() && subject.equals(rowEventText);
 
                         ClassLessonDTO lesson = new ClassLessonDTO(
-                                period.path("subjects").asText(""),
+                                subject,
                                 period.path("rooms").asText(""),
                                 period.path("teachers").asText(""),
                                 start,
                                 end,
                                 cancelled,
-                                irregular
+                                irregular,
+                                event
                         );
                         lessons.add(lesson);
 
@@ -234,6 +293,21 @@ public class ClassFinder {
                         }
                     }
                 }
+            }
+
+            if (lessons.isEmpty() && !rowEventText.isBlank()) {
+                ClassLessonDTO eventLesson = new ClassLessonDTO(
+                        rowEventText,
+                        "",
+                        "",
+                        0,
+                        2359,
+                        false,
+                        true,
+                        true
+                );
+                lessons.add(eventLesson);
+                currentLesson = eventLesson;
             }
 
             lessons.sort(Comparator.comparingInt(ClassLessonDTO::startTime));

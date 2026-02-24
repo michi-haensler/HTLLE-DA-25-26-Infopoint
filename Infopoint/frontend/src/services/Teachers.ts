@@ -25,6 +25,7 @@ export type TeacherLessonDTO = {
     endTime: number;
     cancelled: boolean;
     irregular: boolean;
+    event: boolean;
 };
 
 export type TeacherDayDTO = {

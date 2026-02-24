@@ -33,7 +33,7 @@ export default function Header() {
     ];
 
     return (
-        <header className={styles.header}>
+        <header className={styles.header} data-secret-trigger="header">
             {/* LINKS: Logo + Navigation */}
             <div className={styles.left}>
                 <Link to="/" className={styles.brand} aria-label="HTL Leoben - Startseite">

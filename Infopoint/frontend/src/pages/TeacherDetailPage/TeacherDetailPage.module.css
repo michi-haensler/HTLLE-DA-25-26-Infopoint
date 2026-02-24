@@ -157,6 +157,24 @@
     box-shadow: 0 0 0 1px rgba(70, 140, 255, 0.35);
 }
 
+.lessonEventAllDay {
+    border-color: #2dd4bf;
+    box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.45);
+    background: rgba(45, 212, 191, 0.10);
+}
+
+.lessonEventShort {
+    border-color: #1fb9a6;
+    box-shadow: 0 0 0 1px rgba(31, 185, 166, 0.35);
+    background: rgba(31, 185, 166, 0.08);
+}
+
+.lessonCurrent.lessonEventAllDay,
+.lessonCurrent.lessonEventShort {
+    border-color: var(--color-primary, rgba(70, 140, 255, 0.95));
+    box-shadow: 0 0 0 1px rgba(70, 140, 255, 0.35);
+}
+
 .time {
     font-size: clamp(14px, 1.6vw, 18px);
     font-weight: var(--font-weight-bold, 700);
@@ -183,6 +201,7 @@
 
 .badgeCurrent,
 .badgeCancelled,
+.badgeEvent,
 .badgeIrregular,
 .badgeUpcoming,
 .badgePast {
@@ -205,6 +224,11 @@
 .badgeIrregular {
     background: rgba(255, 159, 67, 0.22);
     color: #ffd8a8;
+}
+
+.badgeEvent {
+    background: rgba(45, 212, 191, 0.22);
+    color: #b8fff5;
 }
 
 .badgeUpcoming {

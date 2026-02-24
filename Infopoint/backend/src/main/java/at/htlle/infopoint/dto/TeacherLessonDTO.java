@@ -7,5 +7,6 @@ public record TeacherLessonDTO(
         int startTime,
         int endTime,
         boolean cancelled,
-        boolean irregular
+        boolean irregular,
+        boolean event
 ) {}

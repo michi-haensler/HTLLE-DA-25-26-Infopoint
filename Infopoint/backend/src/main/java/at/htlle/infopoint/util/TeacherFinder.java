@@ -196,15 +196,18 @@ public class TeacherFinder {
                         boolean irregular = period.path("isIrregular").asBoolean(false);
                         int start = period.path("startTime").asInt(0);
                         int end = period.path("endTime").asInt(0);
+                        String subject = resolveSubject(period, rowEventText);
+                        boolean event = irregular && !rowEventText.isBlank() && subject.equals(rowEventText);
 
                         TeacherLessonDTO lesson = new TeacherLessonDTO(
-                                resolveSubject(period, rowEventText),
+                                subject,
                                 period.path("rooms").asText(""),
                                 period.path("klassen").asText(""),
                                 start,
                                 end,
                                 cancelled,
-                                irregular
+                                irregular,
+                                event
                         );
                         lessons.add(lesson);
 

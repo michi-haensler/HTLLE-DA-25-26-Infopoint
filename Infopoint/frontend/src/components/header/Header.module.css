@@ -216,7 +216,7 @@
 }
 
 /* Responsive Breakpoints */
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .nav {
         gap: var(--space-sm, 12px);
     }
@@ -226,7 +226,7 @@
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .header {
         height: var(--header-height-mobile, 64px);
         padding: 0 var(--space-md, 16px);

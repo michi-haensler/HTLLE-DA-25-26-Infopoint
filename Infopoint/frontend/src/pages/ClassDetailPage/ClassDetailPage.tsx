@@ -114,6 +114,8 @@ export default function ClassDetailPage() {
                                 const isCurrent = currentLessonId === lessonId;
                                 const isPast = isToday && lesson.endTime <= now && !isCurrent;
                                 const isUpcoming = isToday && lesson.startTime > now;
+                                const isEvent = lesson.event && !lesson.cancelled;
+                                const isAllDayEvent = isEvent && lesson.startTime === 0 && lesson.endTime === 2359;
                                 const isIrregular = lesson.irregular && !lesson.cancelled;
 
                                 return (
@@ -123,6 +125,8 @@ export default function ClassDetailPage() {
                                             lesson.cancelled ? styles.lessonCancelled : ""
                                         } ${isCurrent ? styles.lessonCurrent : ""} ${
                                             isIrregular ? styles.lessonIrregular : ""
+                                        } ${isAllDayEvent ? styles.lessonEventAllDay : ""} ${
+                                            isEvent && !isAllDayEvent ? styles.lessonEventShort : ""
                                         }`}
                                     >
                                         <div className={styles.time}>
@@ -131,8 +135,15 @@ export default function ClassDetailPage() {
                                         <div className={styles.subjectRow}>
                                             <span className={styles.subject}>{lessonTitle(lesson)}</span>
                                             {lesson.cancelled && <span className={styles.badgeCancelled}>Entfällt</span>}
-                                            {isCurrent && !lesson.cancelled && <span className={styles.badgeCurrent}>Jetzt</span>}
-                                            {isIrregular && <span className={styles.badgeIrregular}>Änderung</span>}
+                                            {isCurrent && !lesson.cancelled && !isAllDayEvent && (
+                                                <span className={styles.badgeCurrent}>Jetzt</span>
+                                            )}
+                                            {isEvent && (
+                                                <span className={styles.badgeEvent}>
+                                                    {isAllDayEvent ? "Ganztägige Veranstaltung" : "Veranstaltung"}
+                                                </span>
+                                            )}
+                                            {!isEvent && isIrregular && <span className={styles.badgeIrregular}>Änderung</span>}
                                             {isUpcoming && !lesson.cancelled && (
                                                 <span className={styles.badgeUpcoming}>Später</span>
                                             )}
