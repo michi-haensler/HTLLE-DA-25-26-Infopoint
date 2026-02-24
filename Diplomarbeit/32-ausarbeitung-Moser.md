@@ -219,8 +219,8 @@ Die Umsetzung erfolgte in klaren Schritten. Dabei sind folgende Artefakte entsta
 
 - **API-Entwurf:** Welche Endpunkte gibt es und wie sind sie aufgebaut?  
   Beispiel:
-  - `GET /api/v1/events` → Liste aller Events
-  - `GET /api/v1/events/{id}` → Details zu einem Event
+  - `GET /api/v1/events` -> Liste aller Events
+  - `GET /api/v1/events/{id}` -> Details zu einem Event
 
 - **DTO-Konzept:** Trennung zwischen internen Objekten und dem, was die API ausgibt  
   Beispiel:
@@ -229,7 +229,7 @@ Die Umsetzung erfolgte in klaren Schritten. Dabei sind folgende Artefakte entsta
 
 - **Validierung & Fehlerformat:** Einheitliche Regeln und klare Fehlermeldungen  
   Beispiel:
-  - Wenn `title` fehlt → Rückgabe `400 Bad Request` mit verständlicher Fehlermeldung
+  - Wenn `title` fehlt -> Rückgabe `400 Bad Request` mit verständlicher Fehlermeldung
 
 - **API-Dokumentation:** Dokumentation für das Frontend-Team (OpenAPI/Swagger)
 
