@@ -15,8 +15,8 @@
     animation: fadeIn var(--transition-normal, 0.25s ease);
 }
 
-/* Mobile: Scrollen erlauben */
-@media (max-width: 900px) {
+/* Mobile/Tablet: Scrollen erlauben */
+@media (max-width: 1200px) {
     .shell {
         height: auto;
         min-height: 100vh;

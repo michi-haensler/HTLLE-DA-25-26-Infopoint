@@ -214,6 +214,7 @@ public class ClassFinder {
 
                     for (JsonNode period : periods) {
                         boolean cancelled = period.path("isCancelled").asBoolean(false);
+                        boolean irregular = period.path("isIrregular").asBoolean(false);
                         int start = period.path("startTime").asInt(0);
                         int end = period.path("endTime").asInt(0);
 
@@ -223,7 +224,8 @@ public class ClassFinder {
                                 period.path("teachers").asText(""),
                                 start,
                                 end,
-                                cancelled
+                                cancelled,
+                                irregular
                         );
                         lessons.add(lesson);
 

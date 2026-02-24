@@ -6,5 +6,6 @@ public record ClassLessonDTO(
         String teachers,
         int startTime,
         int endTime,
-        boolean cancelled
+        boolean cancelled,
+        boolean irregular
 ) {}

@@ -111,13 +111,16 @@ export default function TeacherDetailPage() {
                                 const isCurrent = currentLessonId === lessonId;
                                 const isPast = isToday && lesson.endTime <= now && !isCurrent;
                                 const isUpcoming = isToday && lesson.startTime > now;
+                                const isIrregular = lesson.irregular && !lesson.cancelled;
 
                                 return (
                                     <div
                                         key={`${lessonId}-${lesson.subject}-${idx}`}
                                         className={`${styles.lesson} ${
                                             lesson.cancelled ? styles.lessonCancelled : ""
-                                        } ${isCurrent ? styles.lessonCurrent : ""}`}
+                                        } ${isCurrent ? styles.lessonCurrent : ""} ${
+                                            isIrregular ? styles.lessonIrregular : ""
+                                        }`}
                                     >
                                         <div className={styles.time}>
                                             {formatUntisTime(lesson.startTime)}-{formatUntisTime(lesson.endTime)}
@@ -126,6 +129,7 @@ export default function TeacherDetailPage() {
                                             <span className={styles.subject}>{lessonTitle(lesson)}</span>
                                             {lesson.cancelled && <span className={styles.badgeCancelled}>Entfällt</span>}
                                             {isCurrent && !lesson.cancelled && <span className={styles.badgeCurrent}>Jetzt</span>}
+                                            {isIrregular && <span className={styles.badgeIrregular}>Änderung</span>}
                                             {isUpcoming && !lesson.cancelled && (
                                                 <span className={styles.badgeUpcoming}>Später</span>
                                             )}

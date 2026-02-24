@@ -104,8 +104,8 @@ body,
   background-color: var(--color-bg-base);
 }
 
-/* Mobile: Scrollen erlauben */
-@media (max-width: 900px) {
+/* Mobile/Tablet: Scrollen erlauben */
+@media (max-width: 1200px) {
   html,
   body,
   #root {

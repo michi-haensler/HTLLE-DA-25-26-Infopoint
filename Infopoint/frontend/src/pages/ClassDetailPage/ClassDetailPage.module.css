@@ -147,6 +147,16 @@
     box-shadow: 0 0 0 1px rgba(70, 140, 255, 0.35);
 }
 
+.lessonIrregular {
+    border-color: #ff9f43;
+    box-shadow: 0 0 0 1px rgba(255, 159, 67, 0.4);
+}
+
+.lessonCurrent.lessonIrregular {
+    border-color: var(--color-primary, rgba(70, 140, 255, 0.95));
+    box-shadow: 0 0 0 1px rgba(70, 140, 255, 0.35);
+}
+
 .time {
     font-size: clamp(14px, 1.6vw, 18px);
     font-weight: var(--font-weight-bold, 700);
@@ -173,6 +183,7 @@
 
 .badgeCurrent,
 .badgeCancelled,
+.badgeIrregular,
 .badgeUpcoming,
 .badgePast {
     border-radius: 999px;
@@ -189,6 +200,11 @@
 .badgeCancelled {
     background: var(--color-error-bg, #2a1313);
     color: var(--color-error-text, #ffb4b4);
+}
+
+.badgeIrregular {
+    background: rgba(255, 159, 67, 0.22);
+    color: #ffd8a8;
 }
 
 .badgeUpcoming {

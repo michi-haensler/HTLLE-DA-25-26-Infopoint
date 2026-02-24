@@ -5,6 +5,7 @@ export type ClassLesson = {
     startTime: number;
     endTime: number;
     cancelled: boolean;
+    irregular: boolean;
 };
 
 export type CurrentLesson = {

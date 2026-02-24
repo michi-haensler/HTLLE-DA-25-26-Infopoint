@@ -24,6 +24,7 @@ export type TeacherLessonDTO = {
     startTime: number;
     endTime: number;
     cancelled: boolean;
+    irregular: boolean;
 };
 
 export type TeacherDayDTO = {
