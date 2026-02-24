@@ -1,7 +1,9 @@
 package at.htlle.infopoint.controller;
 
+import at.htlle.infopoint.dto.ClassDayDTO;
 import at.htlle.infopoint.dto.ClassInfoDTO;
 import at.htlle.infopoint.service.ClassService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -46,5 +48,12 @@ public class ClassFinderController {
     @GetMapping("/all")
     public List<ClassInfoDTO> getAll(@RequestParam String date) {
         return classService.getAllClasses(date);
+    }
+
+    @GetMapping("/day")
+    public ResponseEntity<ClassDayDTO> day(@RequestParam String shortCode, @RequestParam String date) {
+        return classService.getClassDay(shortCode, date)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }

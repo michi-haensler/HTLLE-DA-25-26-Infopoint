@@ -88,28 +88,6 @@
     margin-left: var(--space-sm, 10px);
 }
 
-.date {
-    height: 68px;
-    min-width: 180px;
-    background: var(--color-text-muted, #5b5b5b);
-    border: none;
-    outline: none;
-    color: var(--color-text-primary, #fff);
-    font-size: clamp(16px, 1.5vw, 20px);
-    border-radius: var(--radius-lg, 16px);
-    padding: 0 var(--space-md, 14px);
-    box-shadow: var(--shadow-md, 0 10px 24px rgba(0, 0, 0, 0.25));
-    appearance: none;
-    -webkit-appearance: none;
-    cursor: pointer;
-    transition: box-shadow var(--transition-fast);
-}
-
-.date:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--color-primary, rgba(70, 140, 255, 0.6));
-}
-
 .card {
     width: min(1200px, 92vw);
     flex: 1;
@@ -239,6 +217,13 @@
     text-align: right;
 }
 
+.empty {
+    text-align: center;
+    padding: var(--space-xl, 40px);
+    color: var(--color-text-muted, rgba(255, 255, 255, 0.5));
+    font-size: var(--font-size-lg, 20px);
+}
+
 @media (max-width: 768px) {
     .item {
         grid-template-columns: 1fr;
@@ -258,7 +243,4 @@
         width: 100%;
     }
     
-    .date {
-        width: 100%;
-    }
 }

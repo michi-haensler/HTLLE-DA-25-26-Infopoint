@@ -1,12 +1,14 @@
 package at.htlle.infopoint.service;
 
 import at.htlle.infopoint.clients.webuntis.WebUntisClient;
+import at.htlle.infopoint.dto.ClassDayDTO;
 import at.htlle.infopoint.dto.ClassInfoDTO;
 import at.htlle.infopoint.util.ClassFinder;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Service für Klasseninformationen - analog zu TeacherService.
@@ -41,5 +43,10 @@ public class ClassService {
     public List<ClassInfoDTO> getAllClasses(String date) {
         JsonNode json = webUntisClient.getClassOverview(date);
         return ClassFinder.getAll(json);
+    }
+
+    public Optional<ClassDayDTO> getClassDay(String shortCode, String date) {
+        JsonNode json = webUntisClient.getClassOverview(date);
+        return ClassFinder.findClassDay(json, shortCode);
     }
 }

@@ -1,30 +1,28 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./TeachersPage.module.css";
 import { type TeacherInfoDTO } from "../../services/Teachers";
 
 function todayISO(): string {
-    return new Date().toISOString().slice(0, 10);
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
 }
 
-const FAKE_POPULAR_QUERY = "a"; // liefert meistens viele Treffer
-
 export default function TeachersPage() {
+    const navigate = useNavigate();
+    const date = todayISO();
     const [q, setQ] = useState("");
-    const [date, setDate] = useState(todayISO());
-
-    // "Häufig gesucht" (fake)
-    const [popular, setPopular] = useState<TeacherInfoDTO[]>([]);
-    const [popularLoading, setPopularLoading] = useState(false);
-    const [popularError, setPopularError] = useState("");
-
-    // echte Suche
-    const [results, setResults] = useState<TeacherInfoDTO[]>([]);
+    const [teachers, setTeachers] = useState<TeacherInfoDTO[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
     const getRoom = (t: TeacherInfoDTO): string => {
-        const cs: any = t.currentSubject as any;
-        return cs?.room ?? cs?.roomName ?? "---";
+        const cs = t.currentSubject;
+        const room = cs?.room?.trim();
+        return room ? room : "---";
     };
 
     const displayName = (t: TeacherInfoDTO): string => {
@@ -32,22 +30,21 @@ export default function TeachersPage() {
         return t.fullHeader ?? t.shortCode;
     };
 
-    const showPopular = q.trim().length === 0;
+    const openTeacherDetails = (shortCode: string) => {
+        navigate(`/teachers/${encodeURIComponent(shortCode)}?date=${encodeURIComponent(date)}`);
+    };
 
-    // ---------- Fake Popular (läuft über /search) ----------
+    // ---------- Alle Lehrer laden ----------
     useEffect(() => {
-        // nur laden, wenn Suchfeld leer ist
-        if (!showPopular) return;
-
         const controller = new AbortController();
 
         (async () => {
             try {
-                setPopularLoading(true);
-                setPopularError("");
+                setLoading(true);
+                setError("");
 
                 const params = new URLSearchParams({
-                    q: FAKE_POPULAR_QUERY,
+                    q: "",
                     date: date
                 });
 
@@ -62,68 +59,28 @@ export default function TeachersPage() {
                 }
 
                 const data = (await res.json()) as TeacherInfoDTO[];
-
-                // NUR Top 5 anzeigen
-                setPopular(data.slice(0, 5));
+                setTeachers(data);
             } catch (e) {
                 if (e instanceof DOMException && e.name === "AbortError") return;
-                setPopularError(e instanceof Error ? e.message : "Load failed");
+                setError(e instanceof Error ? e.message : "Laden fehlgeschlagen");
             } finally {
-                setPopularLoading(false);
+                setLoading(false);
             }
         })();
 
         return () => controller.abort();
-    }, [date, showPopular]);
+    }, [date]);
 
-    // ---------- Search ----------
-    useEffect(() => {
-        const query = q.trim();
-
-        if (query.length < 2) {
-            setResults([]);
-            setError("");
-            setLoading(false);
-            return;
-        }
-
-        setLoading(true);
-        setError("");
-
-        const controller = new AbortController();
-
-        const t = setTimeout(async () => {
-            try {
-                const params = new URLSearchParams({
-                    q: query,
-                    date: date
-                });
-
-                const res = await fetch(`/api/v1/teacher-finder/search?${params}`, {
-                    headers: { Accept: "application/json" },
-                    signal: controller.signal,
-                });
-
-                if (!res.ok) {
-                    const text = await res.text();
-                    throw new Error(`HTTP ${res.status}: ${text}`);
-                }
-
-                const data = (await res.json()) as TeacherInfoDTO[];
-                setResults(data);
-            } catch (e) {
-                if (e instanceof DOMException && e.name === "AbortError") return;
-                setError(e instanceof Error ? e.message : "Load failed");
-            } finally {
-                setLoading(false);
-            }
-        }, 300);
-
-        return () => {
-            clearTimeout(t);
-            controller.abort();
-        };
-    }, [q, date]);
+    const query = q.toLowerCase().trim();
+    const filteredTeachers = teachers.filter((t) => {
+        if (!query) return true;
+        const name = `${t.lastName} ${t.firstName}`.toLowerCase();
+        return (
+            name.includes(query) ||
+            t.shortCode.toLowerCase().includes(query) ||
+            t.fullHeader.toLowerCase().includes(query)
+        );
+    });
 
     return (
         <div className={styles.page}>
@@ -141,78 +98,43 @@ export default function TeachersPage() {
                     />
                     <span className={styles.searchIcon} aria-hidden="true">⌕</span>
                 </div>
-
-                <input
-                    className={styles.date}
-                    type="date"
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                    title="Datum"
-                />
             </div>
 
-            {/* POPULAR CARD (Fake) */}
-            {showPopular && (
-                <div className={styles.card}>
-                    <div className={styles.status}>
-                        <span>Häufig gesucht</span>
-
-                        {popularLoading ? (
-                            <span>Wird geladen…</span>
-                        ) : popularError ? (
-                            <span className={styles.error}>Fehler: {popularError}</span>
-                        ) : (
-                            <span>{popular.length} / 5</span>
-                        )}
-                    </div>
-
-                    <div className={styles.list}>
-                        {popular.map((t) => (
-                            <button
-                                key={`${t.shortCode}-${t.lastName}-${t.firstName}`}
-                                className={styles.itemButton}
-                                onClick={() => setQ(t.shortCode)} // Klick = suche nach Kürzel
-                                type="button"
-                            >
-                                <div className={styles.item}>
-                                    <div className={styles.name}>{displayName(t)}</div>
-                                    <div className={styles.code}>{t.shortCode}</div>
-                                    <div className={styles.room}>Raum: {getRoom(t)}</div>
-                                </div>
-                            </button>
-                        ))}
-                    </div>
+            <div className={styles.card}>
+                <div className={styles.status}>
+                    <span>Alle Lehrer</span>
+                    {loading ? (
+                        <span>Wird geladen…</span>
+                    ) : error ? (
+                        <span className={styles.error}>Fehler: {error}</span>
+                    ) : (
+                        <span>{filteredTeachers.length} Lehrer</span>
+                    )}
                 </div>
-            )}
 
-            {/* SEARCH RESULTS CARD */}
-            {!showPopular && (
-                <div className={styles.card}>
-                    <div className={styles.status}>
-                        {loading ? (
-                            <span>Wird geladen…</span>
-                        ) : error ? (
-                            <span className={styles.error}>Fehler: {error}</span>
-                        ) : (
-                            <span>{results.length} Treffer</span>
-                        )}
-                        <span />
-                    </div>
-
-                    <div className={styles.list}>
-                        {results.map((t) => (
-                            <div
-                                key={`${t.shortCode}-${t.lastName}-${t.firstName}`}
-                                className={styles.item}
-                            >
+                <div className={styles.list}>
+                    {filteredTeachers.map((t) => (
+                        <button
+                            key={`${t.shortCode}-${t.lastName}-${t.firstName}`}
+                            className={styles.itemButton}
+                            onClick={() => openTeacherDetails(t.shortCode)}
+                            type="button"
+                        >
+                            <div className={styles.item}>
                                 <div className={styles.name}>{displayName(t)}</div>
                                 <div className={styles.code}>{t.shortCode}</div>
                                 <div className={styles.room}>Raum: {getRoom(t)}</div>
                             </div>
-                        ))}
-                    </div>
+                        </button>
+                    ))}
+
+                    {!loading && filteredTeachers.length === 0 && (
+                        <div className={styles.empty}>
+                            {q.trim() ? "Keine Lehrer gefunden" : "Keine Lehrer vorhanden"}
+                        </div>
+                    )}
                 </div>
-            )}
+            </div>
         </div>
     );
 }

@@ -42,9 +42,17 @@ public class WebUntisClient {
      * Format: "Tagesübersicht Klassen" (analog zu Lehrerübersicht)
      */
     public JsonNode getClassOverview(String date) {
+        try {
+            return fetchDayOverviewByFormat(date, "Tagesübersicht Klass");
+        } catch (Exception ignored) {
+            return fetchDayOverviewByFormat(date, "Tagesübersicht Klassen");
+        }
+    }
+
+    private JsonNode fetchDayOverviewByFormat(String date, String format) {
         Map<String, String> requestBody = Map.of(
                 "date", date,
-                "format", "Tagesübersicht Klassen"
+                "format", format
         );
         return webClient
                 .post()
