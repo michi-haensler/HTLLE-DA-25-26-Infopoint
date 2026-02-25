@@ -143,7 +143,7 @@ export default function ClassDetailPage() {
                                                     {isAllDayEvent ? "Ganztägige Veranstaltung" : "Veranstaltung"}
                                                 </span>
                                             )}
-                                            {!isEvent && isIrregular && <span className={styles.badgeIrregular}>Änderung</span>}
+                                            {!isEvent && isIrregular && <span className={styles.badgeIrregular}>Vertretung</span>}
                                             {isUpcoming && !lesson.cancelled && (
                                                 <span className={styles.badgeUpcoming}>Später</span>
                                             )}
