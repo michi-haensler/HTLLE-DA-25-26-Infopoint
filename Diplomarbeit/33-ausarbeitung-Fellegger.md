@@ -38,7 +38,7 @@ die Nutzbarkeit des gesamten Systems.
 
 Ein zentrales Ziel ist die klare und intuitive Darstellung der bereitgestellten
 Informationen. Inhalte wie Neuigkeiten, Termine, Lagepläne oder Stundenpläne
-sollen so aufbereitet werden, dass sie auf großen Displays schnell erfasst
+sollen so aufbereitet werden, dass sie auf einen großen Displays schnell erfasst
 werden können. Besonderer Wert wird dabei auf eine übersichtliche
 Strukturierung, gut lesbare Typografie sowie eine konsistente visuelle
 Gestaltung gelegt, um die Informationsaufnahme zu erleichtern
@@ -569,7 +569,7 @@ die Wartbarkeit des Codes deutlich verbessert und spätere Anpassungen
 vereinfacht. Zugriff auf externe Datenquellen
 getrennt.
 
-Hier noch Projektstruktur einfügen!!!
+![Standby-Ansicht\label{fig:Standby-Ansicht}](img/Projektstrukturbaum_Frontend.png){width=100%}
 
 ### Umsetzung der Navigation und des Routings
 
@@ -618,16 +618,19 @@ und Seitenwechsel erfolgen innerhalb der SPA ohne vollständigen Neuladevorgang.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Implementierung Router" .tsx}
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./RootLayout";
-
 import HomePage from "../pages/HomePage/HomePage";
 import InfoPage from "../pages/InfoPage/InfoPage";
 import MapPage from "../pages/MapPage/MapPage";
 import InstaFeedPage from "../pages/InstaFeedPage/InstaFeedPage";
 import TeachersPage from "../pages/TeachersPage/TeachersPage";
+import TeacherDetailPage from "../pages/TeacherDetailPage/TeacherDetailPage";
 import EventsPage from "../pages/EventsPage/EventsPage";
 import StundenplanPage from "../pages/StundenplanPage/StundenplanPage";
-import KlassenStundenplanPage from "../pages/KlassenStundenplanPage/KlassenStundenplanPage";
+import KlassenStundenplanPage  from "../pages/KlassenStundenplanPage/KlassenStundenplanPage";
+import ClassDetailPage from "../pages/ClassDetailPage/ClassDetailPage";
 import LaborStundenplanPage from "../pages/LaborStundenplanPage/LaborStundenplanPage";
+import LaborDetailPage from "../pages/LaborDetailPage/LaborDetailPage";
+import NewsDetailPage from "../pages/NewsDetailPage/NewsDetailPage";
 
 export const router = createBrowserRouter([
   {
@@ -637,13 +640,19 @@ export const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "info", element: <InfoPage /> },
       { path: "map", element: <MapPage /> },
+      { path: "news", element: <InfoPage /> },
+      { path: "news/:id", element: <NewsDetailPage /> },
       { path: "insta", element: <InstaFeedPage /> },
       { path: "teachers", element: <TeachersPage /> },
+      { path: "teachers/:shortCode", element: <TeacherDetailPage /> },
       { path: "events", element: <EventsPage /> },
 
       { path: "stundenplan", element: <StundenplanPage /> },
       { path: "stundenplan/klassen", element: <KlassenStundenplanPage /> },
+      { path: "stundenplan/klassen/:shortCode", element: <ClassDetailPage /> },
       { path: "stundenplan/labore", element: <LaborStundenplanPage /> },
+      { path: "laborstundenplan", element: <LaborStundenplanPage /> },
+      { path: "laborstundenplan/:id", element: <LaborDetailPage /> },
     ],
   },
 ]);
@@ -657,50 +666,112 @@ gemacht, welcher Navigationspunkt aktiv ist. Dadurch ist die Orientierung für
 Benutzerinnen und Benutzer jederzeit gegeben.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Implementierung Header" .tsx}
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 
 export default function Header() {
-  const location = useLocation();
+    const location = useLocation();
+    const [menuOpen, setMenuOpen] = useState(false);
 
-  const isActive = (path: string) =>
-    location.pathname === path || location.pathname.startsWith(path + "/");
+    // Close menu on route change
+    useEffect(() => {
+        setMenuOpen(false);
+    }, [location.pathname]);
 
-  return (
-    <header className={styles.header}>
-      <div className={styles.left}>
-        <div className={styles.brand}>
-          <span className={styles.htl}>HTL</span>
-          <span className={styles.leoben}>Leoben</span>
-        </div>
+    // Close menu on escape key
+    useEffect(() => {
+        const handleEscape = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setMenuOpen(false);
+        };
+        window.addEventListener('keydown', handleEscape);
+        return () => window.removeEventListener('keydown', handleEscape);
+    }, []);
 
-        <nav className={styles.nav}>
-          <Link to="/info" className={`${styles.navLink} ${isActive("/info") ? styles.active : ""}`}>
-            Neuigkeiten
-          </Link>
-          <Link to="/map" className={`${styles.navLink} ${isActive("/map") ? styles.active : ""}`}>
-            Lageplan
-          </Link>
-          <Link to="/events" className={`${styles.navLink} ${isActive("/events") ? styles.active : ""}`}>
-            Termine
-          </Link>
-          <Link to="/teachers" className={`${styles.navLink} ${isActive("/teachers") ? styles.active : ""}`}>
-            Lehrer finden
-          </Link>
-          <Link to="/stundenplan" className={`${styles.navLink} ${isActive("/stundenplan") ? styles.active : ""}`}>
-            Stundenpläne
-          </Link>
-          <Link to="/insta" className={`${styles.navLink} ${isActive("/insta") ? styles.active : ""}`}>
-            Instagram
-          </Link>
-        </nav>
-      </div>
+    const isActive = (path: string) =>
+        location.pathname === path || location.pathname.startsWith(path + "/");
 
-      <Link to="/" className={styles.home} title="Home">
-        <span className="material-icons">home</span>
-      </Link>
-    </header>
-  );
+    const navLinks = [
+        { to: "/info", label: "Neuigkeiten" },
+        { to: "/map", label: "Lageplan" },
+        { to: "/events", label: "Termine" },
+        { to: "/teachers", label: "Lehrer finden" },
+        { to: "/stundenplan", label: "Stundenpläne" },
+        { to: "/insta", label: "Instagram" },
+    ];
+
+    return (
+        <header className={styles.header} data-secret-trigger="header">
+            {/* LINKS: Logo + Navigation */}
+            <div className={styles.left}>
+                <Link to="/" className={styles.brand} aria-label="HTL Leoben - Startseite">
+                    <span className={styles.htl}>HTL</span>
+                    <span className={styles.leoben}>Leoben</span>
+                </Link>
+
+                {/* Desktop Navigation */}
+                <nav className={styles.nav} aria-label="Hauptnavigation">
+                    {navLinks.map(link => (
+                        <Link
+                            key={link.to}
+                            to={link.to}
+                            className={`${styles.navLink} ${isActive(link.to) ? styles.active : ""}`}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                </nav>
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <button 
+                className={styles.menuToggle}
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-expanded={menuOpen}
+                aria-controls="mobile-menu"
+                aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+            >
+                <span className="material-icons">
+                    {menuOpen ? 'close' : 'menu'}
+                </span>
+            </button>
+
+            {/* Mobile Navigation */}
+            <nav 
+                id="mobile-menu"
+                className={`${styles.mobileNav} ${menuOpen ? styles.mobileNavOpen : ""}`}
+                aria-label="Mobile Navigation"
+            >
+                <Link to="/" className={styles.mobileNavLink}>
+                    <span className="material-icons">home</span>
+                    Startseite
+                </Link>
+                {navLinks.map(link => (
+                    <Link
+                        key={link.to}
+                        to={link.to}
+                        className={`${styles.mobileNavLink} ${isActive(link.to) ? styles.mobileActive : ""}`}
+                    >
+                        {link.label}
+                    </Link>
+                ))}
+            </nav>
+
+            {/* Backdrop for mobile menu */}
+            {menuOpen && (
+                <div 
+                    className={styles.backdrop} 
+                    onClick={() => setMenuOpen(false)}
+                    aria-hidden="true"
+                />
+            )}
+
+            {/* RECHTS: Home Icon (Desktop only) */}
+            <Link to="/" className={styles.home} title="Home" aria-label="Zur Startseite">
+                <span className="material-icons">home</span>
+            </Link>
+        </header>
+    );
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -750,7 +821,7 @@ Unterseite. Dadurch entsteht ein schneller Einstieg in die Anwendung, ohne
 dass Benutzerinnen und Benutzer lange suchen müssen.
 
 Der folgende Codeausschnitt zeigt den Aufbau der Startseite. Die Navigation zu
-den einzelnen Bereichen erfolgt über `Link`-Elemente des clientseitigen
+den einzelnen Bereichen erfolgt über Link-Elemente des clientseitigen
 Routings.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Implementierung HomePage" .tsx}
@@ -766,7 +837,7 @@ export default function HomePage() {
       </section>
 
       <section className={styles.grid}>
-        <Link to="/news" className={styles.card}>
+        <Link to="/info" className={styles.card}>
           <div className={styles.iconCircle}>
             <span className="material-icons">article</span>
           </div>
@@ -822,22 +893,19 @@ verwendet werden kann. Dadurch bleibt das UI konsistent und Erweiterungen
 lassen sich schneller umsetzen.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Implementierung Card" .tsx}
-import { Link } from "react-router-dom";
-import styles from "./Card.module.css";
+import { Link } from 'react-router-dom'
+import styles from './Card.module.css'
 
-type Props = { title: string; to?: string; children?: React.ReactNode };
+type Props = { title: string; to?: string; children?: React.ReactNode }
 
 export default function Card({ title, to, children }: Props) {
-  const Comp: any = to ? Link : "div";
-
+  const Comp: any = to ? Link : 'div'
   return (
     <Comp to={to} className={styles.card}>
       <div className={styles.title}>{title}</div>
-      <div className={styles.body}>
-        {children ?? <div className={styles.placeholder} />}
-      </div>
+      <div className={styles.body}>{children ?? <div className={styles.placeholder} />}</div>
     </Comp>
-  );
+  )
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -896,26 +964,52 @@ strukturierte Daten zurück.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Lehrersuche CMS-/Backend-Anbindung" .tsx}
 export type TeacherInfoDTO = {
-  fullHeader: string;
-  lastName: string;
-  firstName: string;
-  shortCode: string;
-  currentSubject: any | null;
+    fullHeader: string;
+    lastName: string;
+    firstName: string;
+    shortCode: string;
+    currentSubject: TeacherLessonDTO | null;
 };
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
 export async function searchTeachers(q: string, date: string): Promise<TeacherInfoDTO[]> {
-  const url = new URL(`${BASE_URL}/api/v1/teacher-finder/search`);
-  url.searchParams.set("q", q);
-  url.searchParams.set("date", date);
+    const params = new URLSearchParams({ q, date });
 
-  const res = await fetch(url.toString());
-  if (!res.ok) {
-    throw new Error("Teacher search failed");
-  }
+    const res = await fetch(`/api/v1/teacher-finder/search?${params}`);
+    if (!res.ok) {
+        throw new Error("Teacher search failed");
+    }
 
-  return res.json();
+    return res.json();
+}
+
+export type TeacherLessonDTO = {
+    subject: string;
+    room: string;
+    classes: string;
+    startTime: number;
+    endTime: number;
+    cancelled: boolean;
+    irregular: boolean;
+    event: boolean;
+};
+
+export type TeacherDayDTO = {
+    fullHeader: string;
+    lastName: string;
+    firstName: string;
+    shortCode: string;
+    currentLesson: TeacherLessonDTO | null;
+    lessons: TeacherLessonDTO[];
+};
+
+export async function getTeacherDay(shortCode: string, date: string): Promise<TeacherDayDTO> {
+    const params = new URLSearchParams({ shortCode, date });
+    const res = await fetch(`/api/v1/teacher-finder/day?${params}`);
+    if (!res.ok) {
+        throw new Error("Teacher day not found");
+    }
+
+    return res.json();
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Der Rückgabewert des Service-Moduls wird anschließend in der Seitenkomponente
@@ -927,58 +1021,40 @@ Lade- und Fehlerzustand in der Oberfläche dargestellt.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Auszug aus TeachersPage" .tsx}
 useEffect(() => {
-  const query = q.trim();
+        const controller = new AbortController();
 
-  // erst ab 2 Zeichen suchen
-  if (query.length < 2) {
-    setResults([]);
-    setError("");
-    setLoading(false);
-    return;
-  }
+        (async () => {
+            try {
+                setLoading(true);
+                setError("");
 
-  if (!BASE_URL) {
-    setError("VITE_API_BASE_URL ist nicht gesetzt");
-    setLoading(false);
-    return;
-  }
+                const params = new URLSearchParams({
+                    q: "",
+                    date: date
+                });
 
-  setLoading(true);
-  setError("");
+                const res = await fetch(`/api/v1/teacher-finder/search?${params}`, {
+                    headers: { Accept: "application/json" },
+                    signal: controller.signal,
+                });
 
-  const controller = new AbortController();
+                if (!res.ok) {
+                    const text = await res.text();
+                    throw new Error(`HTTP ${res.status}: ${text}`);
+                }
 
-  const t = setTimeout(async () => {
-    try {
-      const url = new URL(`${BASE_URL}/api/v1/teacher-finder/search`);
-      url.searchParams.set("q", query);
-      url.searchParams.set("date", date);
+                const data = (await res.json()) as TeacherInfoDTO[];
+                setTeachers(data);
+            } catch (e) {
+                if (e instanceof DOMException && e.name === "AbortError") return;
+                setError(e instanceof Error ? e.message : "Laden fehlgeschlagen");
+            } finally {
+                setLoading(false);
+            }
+        })();
 
-      const res = await fetch(url.toString(), {
-        headers: { Accept: "application/json" },
-        signal: controller.signal,
-      });
-
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`HTTP ${res.status}: ${text}`);
-      }
-
-      const data = (await res.json()) as TeacherInfoDTO[];
-      setResults(data);
-    } catch (e) {
-      if (e instanceof DOMException && e.name === "AbortError") return;
-      setError(e instanceof Error ? e.message : "Load failed");
-    } finally {
-      setLoading(false);
-    }
-  }, 300);
-
-  return () => {
-    clearTimeout(t);
-    controller.abort();
-  };
-}, [q, date, BASE_URL]);
+        return () => controller.abort();
+    }, [date]);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Umsetzung der Inhaltsseiten (Neuigkeiten, Termine, Lagepläne)
@@ -1051,47 +1127,38 @@ konfigurierbar bleibt. Zusätzlich wird ein `AbortController` verwendet, um
 Requests bei einem Seitenwechsel oder Unmount sauber abzubrechen.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Auszug EventPage" .tsx}
-const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
 useEffect(() => {
-  if (!BASE_URL) {
-    setError("VITE_API_BASE_URL ist nicht gesetzt");
-    return;
-  }
+    const controller = new AbortController();
 
-  const controller = new AbortController();
+    (async () => {
+        try {
+            setLoading(true);
+            setError("");
 
-  (async () => {
-    try {
-      setLoading(true);
-      setError("");
+            const res = await fetch(
+                `${import.meta.env.VITE_API_BASE_URL}/api/v1/events/20`,
+                {
+                    headers: { Accept: "application/json" },
+                    signal: controller.signal,
+                }
+            );
 
-      const res = await fetch(`${BASE_URL}/api/v1/events/20`, {
-        headers: { Accept: "application/json" },
-        signal: controller.signal,
-      });
+            if (!res.ok) {
+                throw new Error(`HTTP ${res.status}`);
+            }
 
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(
-          res.status >= 500
-            ? "Termine derzeit nicht verfügbar"
-            : `HTTP ${res.status}: ${text}`
-        );
-      }
+            const data = await res.json();
+            setEvents(data);
+        } catch (e) {
+            if (e instanceof DOMException && e.name === "AbortError") return;
+            setError("Load failed");
+        } finally {
+            setLoading(false);
+        }
+    })();
 
-      const data = (await res.json()) as CockpitEvent[];
-      setEvents(data);
-    } catch (e) {
-      if (e instanceof DOMException && e.name === "AbortError") return;
-      setError(e instanceof Error ? e.message : "Load failed");
-    } finally {
-      setLoading(false);
-    }
-  })();
-
-  return () => controller.abort();
-}, [BASE_URL]);
+    return () => controller.abort();
+}, []);
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Umsetzung spezieller Funktionen (Lehrersuche und Screensaver)
@@ -1145,34 +1212,34 @@ Benutzereingabe erfolgt, kehrt das Frontend wieder in die reguläre Ansicht
 zurück. Diese automatische Umschaltung macht den Infopoint besonders
 geeignet für den dauerhaften Einsatz im Schulgebäude.
 
-```tsx
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Screensaver" .tsx}
 import styles from "./Screensaver.module.css";
 
 type Props = {
-    onStart: () => void;
+  onStart: () => void;
 };
 
 export default function Screensaver({ onStart }: Props) {
-    return (
-        <div
-            className={styles.overlay}
-            onClick={onStart}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") onStart();
-            }}
-        >
-            <div className={styles.center}>
-                <div className={styles.title}>Infopoint</div>
-                <div className={styles.subtitle}>HTL Leoben</div>
-            </div>
+  return (
+    <div
+      className={styles.overlay}
+      onClick={onStart}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") onStart();
+      }}
+    >
+      <div className={styles.center}>
+        <div className={styles.title}>Infopoint</div>
+        <div className={styles.subtitle}>HTL Leoben</div>
+      </div>
 
-            <div className={styles.hint}>Zum Starten klicken</div>
-        </div>
-    );
+      <div className={styles.hint}>Zum Starten klicken</div>
+    </div>
+  );
 }
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #### Nutzen der erweiterten Funktionen
 
@@ -1224,15 +1291,6 @@ benutzerfreundlich. Dies ist besonders wichtig für den dauerhaften Einsatz im
 schulischen Umfeld, in dem der Infopoint jederzeit einen professionellen
 Eindruck vermitteln soll.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Fehlerbehandlung" .tsx}
-{loading && <div className={styles.info}>Wird geladen…</div>}
-{error && <div className={`${styles.info} ${styles.error}`}>Fehler: {error}</div>}
-
-{!loading && !error && sorted.length === 0 && (
-  <div className={styles.info}>Keine Termine vorhanden</div>
-)}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 ### Performanceoptimierung im Frontend
 Die Performance des Frontends ist ein zentraler Faktor für den zuverlässigen
 Betrieb des digitalen Infopoints. Da die Anwendung im Schulgebäude dauerhaft
@@ -1271,34 +1329,6 @@ Insgesamt stellen diese Maßnahmen sicher, dass das Frontend des digitalen
 Infopoints auch bei längerem Betrieb reaktionsschnell, stabil und zuverlässig
 bleibt. Die Performanceoptimierungen tragen somit wesentlich dazu bei, dass
 der Infopoint den Anforderungen des schulischen Alltags gerecht wird.
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Performanceoptimierung" .tsx}
-const t = setTimeout(async () => {
-  const res = await fetch(url.toString(), {
-    signal: controller.signal,
-  });
-  const data = await res.json();
-  setResults(data);
-}, 300);
-
-return () => {
-  clearTimeout(t);
-  controller.abort();
-};
-```
-Um unnötige Netzwerkanfragen zu vermeiden, wurde die Lehrersuche mit einem
-Debounce-Mechanismus umgesetzt, der Anfragen erst nach kurzer Eingabepause
-auslöst.
-
-```tsx
-const sorted = useMemo(() => {
-  return [...events].sort((a, b) => {
-    const da = parseDate(a.start)?.getTime() ?? 0;
-    const db = parseDate(b.start)?.getTime() ?? 0;
-    return db - da;
-  });
-}, [events]);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Durch die Verwendung von Memoisierung werden aufwendige Berechnungen nur
 dann ausgeführt, wenn sich die zugrunde liegenden Daten tatsächlich ändern.
@@ -1344,7 +1374,7 @@ der digitale Infopoint nicht nur technisch funktioniert, sondern auch im
 täglichen Schulbetrieb dauerhaft und zuverlässig eingesetzt werden kann.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Deployment" .tsx}
-const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+VITE_API_BASE_URL=http://localhost:8888
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Herausforderungen und Lösungsansätze im Frontend
