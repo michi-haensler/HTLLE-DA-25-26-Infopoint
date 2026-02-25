@@ -211,7 +211,59 @@ Beispiel:
 - Das Backend liefert dieses Event über `/api/v1/events`.
 - Das Frontend zeigt es als „Nächstes Event“ am Infopoint an.
 
+### Projektsetup und Entwicklungsumgebung
+Zu Beginn der praktischen Umsetzung des Backends wurde eine strukturierte und stabile Basis geschaffen.
+Das Backend wurde als eigenständiges Spring-Boot-Projekt umgesetzt und klar vom Frontend getrennt.
+Diese Trennung ermöglicht eine unabhängige Weiterentwicklung beider Systeme und sorgt für eine saubere Aufgabenteilung innerhalb des Projekts.
+
+Als Entwicklungsumgebung wurde **IntelliJ IDEA** verwendet.
+IntelliJ bietet eine umfassende Unterstützung für Spring Boot und Maven und erleichtert dadurch die Entwicklung erheblich.
+Funktionen wie automatische Code-Vervollständigung, integrierte Fehleranalyse, Refactoring-Werkzeuge sowie eine direkte Integration von Build- und Run-Konfigurationen ermöglichen eine effiziente und strukturierte Arbeitsweise.
+
+Das Projekt wurde mit **Maven** verwaltet, wodurch alle Abhängigkeiten zentral in der `pom.xml` definiert sind.
+IntelliJ übernimmt dabei automatisch das Laden und Verwalten der benötigten Libraries (**dependencies**) [@Maven-Docs].
+Änderungen an Dependencies werden direkt erkannt und in das Projekt integriert.
+Dies sorgt für eine konsistente und reproduzierbare Entwicklungsumgebung.
+
+Ein weiterer wichtiger Bestandteil der Entwicklungsumgebung war die Nutzung eines Versionsverwaltungssystems (Git) [@Git-Docs].
+Dadurch konnten Änderungen am Backend nachvollziehbar dokumentiert, Zwischenstände gesichert und bei Bedarf frühere Versionen wiederhergestellt werden.
+Dies unterstützte sowohl die eigene Arbeitsweise als auch die Zusammenarbeit im Team.
+
+Insgesamt bildete die gewählte Entwicklungsumgebung die Grundlage für eine effiziente und strukturierte Backend-Entwicklung.
+Durch die Kombination aus **IntelliJ** und **Maven** konnte eine stabile, gut wartbare und reproduzierbare Projektstruktur geschaffen werden.
+
+### Projekt- und Ordnerstruktur des Backends
+Bei der Umsetzung des Backends wurde von Beginn an auf eine klare und nachvollziehbare Projektstruktur geachtet.
+Eine saubere Ordnerstruktur ist besonders bei größeren Anwendungen wichtig, da sie die Wartbarkeit verbessert und neuen Entwicklern eine schnelle Orientierung im Projekt ermöglicht.
+
+Das Backend basiert auf einem typischen Spring-Boot-Projektaufbau.
+Der Quellcode befindet sich im Verzeichnis `src/main/java`, während Konfigurationsdateien wie die `application.yml` bzw. `application.properties` im Ordner `src/main/resources` abgelegt sind.
+
+Innerhalb des Hauptpakets wurde der Code zusätzlich logisch gegliedert.
+Die wichtigsten Unterpakete sind:
+
+- `controller` – Enthält die REST-Controller, welche die HTTP-Anfragen entgegennehmen.
+- `service` – Beinhaltet die Geschäftslogik der Anwendung.
+- `clients` – Enthält externe Schnittstellen, z. B. den CockpitClient und WebUntisClient.
+- `dto` – Definiert Data Transfer Objects zur strukturierten Datenübertragung.
+- `config` – Beinhaltet Konfigurationsklassen (z. B. für WebClient oder CMS-Zugriff).
+- `util` - Stellt Hilfsklassen zur leichteren Verarbeitung von Daten (z.B. TimeConverter)
+
+Diese klare Trennung sorgt dafür, dass jede Klasse eine eindeutige Aufgabe hat und Verantwortlichkeiten nicht vermischt werden.
+Änderungen an einer Schicht, beispielsweise an der API oder an der CMS-Anbindung, können dadurch durchgeführt werden, ohne andere Teile des Systems unnötig zu beeinflussen.
+
+Die durchdachte Projektstruktur bildet somit eine wichtige Grundlage für eine stabile, erweiterbare und langfristig wartbare Backend-Architektur.
+
+![Projektstruktur\label{fig:Projektstruktur}](img/Backend_Projektstruktur.PNG){width=100%}
+
 ### Vorgehen und erstellte Artefakte
+Im Rahmen der Umsetzung sind mehrere sogenannte **Artefakte** entstanden.  
+Als Artefakte bezeichnet man alle greifbaren Ergebnisse, die während eines Entwicklungsprozesses erstellt werden.
+Dabei handelt es sich nicht nur um fertigen Programmcode, sondern auch um Konzepte, Entwürfe, Definitionen oder Dokumentationen, die für die Umsetzung notwendig sind.  
+
+Artefakte helfen dabei, das System strukturiert zu planen, nachvollziehbar umzusetzen und später leichter zu warten oder zu erweitern.
+Sie dienen außerdem als gemeinsame Grundlage für die Abstimmung im Team, insbesondere zwischen Backend- und Frontend-Entwicklung.
+
 Die Umsetzung erfolgte in klaren Schritten. Dabei sind folgende Artefakte entstanden:
 
 - **Ressourcen-Definition:** Welche Datenobjekte gibt es?  
@@ -267,7 +319,7 @@ Die Implementierung des Backends erfolgte nach dem Prinzip der klaren Schichtent
 
 ---
 
-### Ablauf einer Anfrage (Beispiel: Events abrufen)
+### Ablauf einer Anfrage (Beispiel: Events abrufen) [@Spring-Boot-Docs]
 
 Um die Funktionsweise zu verdeutlichen, wird folgend ein typischer Ablauf beschrieben:
 
@@ -335,7 +387,7 @@ Dadurch bleibt die Geschäftslogik klar getrennt von der technischen Kommunikati
 ### Verwendung von DTOs
 
 DTOs (Data Transfer Objects) dienen dazu, nur die Daten nach außen zu geben, die das Frontend wirklich benötigt.  
-Interne Felder oder CMS-spezifische Informationen werden nicht direkt weitergegeben.
+Interne Felder oder CMS-spezifische Informationen werden nicht direkt weitergegeben. [@DTOs-information]
 
 Beispiel:
 Ein Event im CMS könnte folgende Felder enthalten:
@@ -379,6 +431,81 @@ Diese Struktur ermöglicht es, später eine neue Version (`/api/v2`) einzuführe
 ```
 ---
 
+### CockpitClient (CMS-Anbindung)
+Der **CockpitClient** ist die zentrale Verbindung zwischen Backend und dem **Cockpit CMS**. Seine Aufgabe ist es, Inhalte wie News, Events, Karten oder Laborpläne aus dem CMS abzurufen und dem Backend als Java-Objekte bereitzustellen. Damit bleibt die Kommunikation mit dem CMS an einer Stelle gebündelt: Controller und Services müssen keine URLs, Header oder Speziallogik für Cockpit kennen, sondern rufen nur Methoden wie `getNews(...)` oder `getAppointments(...)` auf. Die Zugriffsdaten (CMS-URL und API-Key) werden über eine eigene Konfiguration (`CockpitConfig`) eingebunden. Zusätzlich wurde die maximale In-Memory-Größe des WebClients erhöht, damit auch größere Medien (z. B. Bilder) verarbeitet werden können. Bei Fehlern (z. B. falscher API-Key, CMS nicht erreichbar) fängt der Client Ausnahmen ab und gibt sichere Rückgabewerte zurück (z. B. `List.of()` oder `null`), damit das Backend stabil bleibt und das Frontend nicht durch Exceptions „abstürzt“.
+
+**CockpitClient – Beispiel für den Abruf von News über REST** [@SLF4J-Docs]
+```java
+@Component
+public class CockpitClient {
+
+    private final WebClient webClient;
+    private final CockpitConfig cockpitConfig;
+    private static final Logger log = LoggerFactory.getLogger(CockpitClient.class);
+
+    public CockpitClient(WebClient.Builder builder, CockpitConfig cockpitConfig) {
+        this.webClient = builder
+                .codecs(c -> c.defaultCodecs().maxInMemorySize(16 * 1024 * 1024))
+                .build();
+        this.cockpitConfig = cockpitConfig;
+    }
+
+    public List<CockpitNews> getNews(int limit) {
+        try {
+            return webClient.get()
+                    .uri(cockpitConfig.getUrl() + "/api/content/items/news?limit=" + limit)
+                    .header("api-key", cockpitConfig.getApiKey())
+                    .retrieve()
+                    .bodyToMono(new ParameterizedTypeReference<List<CockpitNews>>() {})
+                    .block();
+        } catch (WebClientResponseException e) {
+            return List.of();
+        }
+    }
+}
+```
+
+### WebUntisClient (Stundenplan Anbindung)
+Der **WebUntisClient** dient dazu, externe Informationen aus **WebUntis** abzurufen und im Infopoint anzuzeigen (z. B. Tagesübersicht für Lehrer oder Klassen). Der Client nutzt ebenfalls den **WebClient**, um HTTP-Anfragen an WebUntis zu senden. Im Gegensatz zum **CockpitClient** arbeitet WebUntis hier mit einem GET-Request auf einen Monitor-Endpunkt, bei dem ein Request-Body mit Parametern wie `date` und `format` mitgeschickt wird. Da Eingaben vom Frontend fehlerhaft sein können (z. B. ein ungültiges Datum), normalisiert der Client zuerst den Datumswert und verwendet bei Fehlern automatisch das aktuelle Datum als Fallback. Zusätzlich gibt es eine Schutzlogik (`safeFetchDayOverview`): Falls WebUntis nicht erreichbar ist oder ein Fehler auftritt, wird nicht einfach eine Exception weitergeworfen, sondern ein leeres, aber gültiges JSON-Objekt zurückgegeben. Das sorgt dafür, dass die Anzeige am Infopoint weiterhin funktioniert, auch wenn die externe Quelle kurzzeitig Probleme hat.
+
+**WebUntisClient - Abruf der Tagesübersicht für Klassen mit Fallback** [@SLF4J-Docs]
+```java
+@Component
+public class WebUntisClient {
+
+    private final WebClient webClient;
+    private static final Logger log = LoggerFactory.getLogger(CockpitClient.class);
+
+    public WebUntisClient(WebClient.Builder webClient) {
+        this.webClient = webClient
+                .baseUrl("https://htlleoben.webuntis.com/WebUntis")
+                .build();
+    }
+
+    public JsonNode getClassOverview(String date) {
+        String normalizedDate = normalizeDate(date);
+        try {
+            return safeFetchDayOverview(normalizedDate, "Tagesübersicht Klass");
+        } catch (Exception ignored) {
+            return safeFetchDayOverview(normalizedDate, "Tagesübersicht Klassen");
+        }
+    }
+
+    private JsonNode fetchDayOverviewByFormat(String date, String format) {
+        Map<String, String> requestBody = Map.of("date", date, "format", format);
+        return webClient.post()
+                .uri(uriBuilder -> uriBuilder
+                        .path("/monitor/dayoverview/data")
+                        .queryParam("school", "htlleoben")
+                        .build())
+                .header("X-Requested-With", "XMLHttpRequest")
+                .bodyValue(requestBody)
+                .retrieve()
+                .bodyToMono(JsonNode.class)
+                .block();
+    }
+}
+```
 ### Zusammenfassung der Backend-Implementierung
 
 Durch die klare Trennung von Controller, Service und DTOs wurde eine saubere und wartbare Struktur geschaffen.  
