@@ -285,17 +285,6 @@ Die Umsetzung erfolgte in klaren Schritten. Dabei sind folgende Artefakte entsta
 
 - **API-Dokumentation:** Dokumentation für das Frontend-Team (OpenAPI/Swagger)
 
-### Entwicklungsumgebung und Tooling
-Für eine reproduzierbare Entwicklungsumgebung wurden folgende Werkzeuge genutzt:
-
-- **Spring Boot + Maven:** Backend-Implementierung und Dependency-Management
-- **Docker Compose:** gemeinsamer Start von Backend, Frontend und Cockpit CMS
-- **Logging:** einheitliche Log-Ausgaben zur Fehleranalyse und Nachvollziehbarkeit
-
-Beispiel:
-- Mit einem einzigen Start-Befehl werden alle Services hochgefahren,
-  damit jeder im Team mit derselben Umgebung arbeiten kann.
-
 ### Planung und Systemarchitektur
 Das Backend wurde so aufgebaut, dass die einzelnen Teile klar getrennt sind:
 
@@ -319,7 +308,23 @@ Die Implementierung des Backends erfolgte nach dem Prinzip der klaren Schichtent
 
 ---
 
-### Ablauf einer Anfrage (Beispiel: Events abrufen) [@Spring-Boot-Docs]
+### Umsetzung der Controller-Schicht im Backend
+
+Die Controller-Schicht bildet die Schnittstelle zwischen dem Backend und dem Frontend.
+Sie ist dafür verantwortlich, eingehende HTTP-Anfragen entgegenzunehmen, diese an die entsprechende Service-Schicht weiterzuleiten und die Antwort in strukturierter Form zurückzugeben.
+In Spring Boot werden Controller typischerweise mit der Annotation `@RestController` definiert.
+Diese ermöglicht es, REST-Endpunkte einfach zu erstellen und JSON-Antworten automatisch zu serialisieren (vgl. [@Spring-Boot-Docs]).
+
+Jeder Controller ist einer bestimmten Ressource zugeordnet, beispielsweise `events` oder `news`.
+Über `@RequestMapping` wird ein gemeinsamer Basispfad definiert, etwa `/api/v1/events`.
+Konkrete Endpunkte werden anschließend mit Annotationen wie `@GetMapping`, `@PostMapping`, `@PutMapping` oder `@DeleteMapping` umgesetzt (vgl. [@Spring-Boot-Docs]).
+Dadurch wird klar festgelegt, welche HTTP-Methode welche Funktion ausführt.
+
+Die Controller enthalten bewusst keine Geschäftslogik.
+Ihre Aufgabe besteht ausschließlich darin, Anfragen zu validieren, Parameter entgegenzunehmen und diese an die Service-Schicht weiterzugeben.
+Diese klare Trennung zwischen Controller und Service erhöht die Wartbarkeit des Systems und sorgt für eine übersichtliche Struktur.
+
+### Ablauf einer Anfrage (Beispiel: Events abrufen)
 
 Um die Funktionsweise zu verdeutlichen, wird folgend ein typischer Ablauf beschrieben:
 
@@ -349,6 +354,19 @@ public class EventsController {
 ```
 
 ---
+
+### Umsetzung der Service-Schicht im Backend
+Die Service-Schicht bildet das zentrale Element der Geschäftslogik im Backend.
+Während die Controller-Schicht ausschließlich für die Entgegennahme und Rückgabe von HTTP-Anfragen zuständig ist, übernimmt die Service-Schicht die eigentliche Verarbeitung der Daten.
+Sie koordiniert die Kommunikation mit externen Clients (z. B. CockpitClient oder WebUntisClient), wendet Geschäftsregeln an und bereitet die Daten für die Weitergabe an die Controller-Schicht auf.
+
+Ein wesentliches Konzept innerhalb der Service-Schicht ist die Verwendung von Data Transfer Objects (DTOs).
+DTOs dienen dazu, Daten strukturiert und kontrolliert zwischen den einzelnen Schichten zu übertragen, ohne interne Implementierungsdetails preiszugeben (vgl. [@DTOs-information]).
+Dadurch wird sichergestellt, dass das Backend klar zwischen interner Datenstruktur und externer API-Darstellung unterscheidet.
+
+Die Service-Schicht greift nicht direkt auf HTTP-Mechanismen zu, sondern arbeitet rein logisch.
+Dadurch bleibt sie unabhängig von der konkreten API-Implementierung und kann leichter getestet oder erweitert werden.
+Zudem ermöglicht diese Struktur eine saubere Trennung der Verantwortlichkeiten (Separation of Concerns), was die Wartbarkeit und Übersichtlichkeit des Systems deutlich verbessert.
 
 ### Service-Schicht (Geschäftslogik)
 
@@ -384,8 +402,19 @@ Dadurch bleibt die Geschäftslogik klar getrennt von der technischen Kommunikati
 
 ---
 
-### Verwendung von DTOs
+### Umsetzung und Einsatz von DTOs (Data Transfer Objects)
+Im Backend werden **DTOs (Data Transfer Objects)** eingesetzt, um Daten kontrolliert zwischen den einzelnen Schichten (Controller, Service) und nach außen zur REST API zu übertragen. 
+Ein DTO ist dabei ein eigenes, meist einfaches Objekt, das nur jene Felder enthält, die das Frontend wirklich benötigt.
+Dadurch wird verhindert, dass interne Strukturen oder unnötige Informationen direkt über die API sichtbar werden.
+Außerdem macht diese Trennung den Code übersichtlicher und reduziert das Risiko, dass sich Änderungen an internen Klassen direkt auf die API auswirken (vgl. [@DTOs-information]).
 
+In der praktischen Umsetzung werden DTOs vor allem in zwei Situationen verwendet: Erstens bei **Antworten** an das Frontend (Response-DTO), damit das Frontend eine klare und stabile Struktur erhält. 
+Zweitens bei **Anfragen** an das Backend (Request-DTO), um Eingabedaten sauber entgegenzunehmen und direkt validieren zu können.
+Die Umwandlung von internen Objekten (z. B. Cockpit-Datenmodelle) in DTOs passiert typischerweise in der Service-Schicht, da dort die Geschäftslogik liegt.
+So bleibt der Controller möglichst schlank und konzentriert sich auf die HTTP-Ebene.
+
+
+### Verwendung von DTOs
 DTOs (Data Transfer Objects) dienen dazu, nur die Daten nach außen zu geben, die das Frontend wirklich benötigt.  
 Interne Felder oder CMS-spezifische Informationen werden nicht direkt weitergegeben. [@DTOs-information]
 
@@ -418,21 +447,12 @@ public record EventDto(
 
 ---
 
-### API-Versionierung und Struktur
-Die API ist versioniert aufgebaut.  
-Alle Endpunkte befinden sich unter:
-
-- `/api/v1/...`
-
-Diese Struktur ermöglicht es, später eine neue Version (`/api/v2`) einzuführen, ohne bestehende Clients zu beeinflussen.
-
-```java
-@RequestMapping("/api/v1/events")
-```
----
-
 ### CockpitClient (CMS-Anbindung)
-Der **CockpitClient** ist die zentrale Verbindung zwischen Backend und dem **Cockpit CMS**. Seine Aufgabe ist es, Inhalte wie News, Events, Karten oder Laborpläne aus dem CMS abzurufen und dem Backend als Java-Objekte bereitzustellen. Damit bleibt die Kommunikation mit dem CMS an einer Stelle gebündelt: Controller und Services müssen keine URLs, Header oder Speziallogik für Cockpit kennen, sondern rufen nur Methoden wie `getNews(...)` oder `getAppointments(...)` auf. Die Zugriffsdaten (CMS-URL und API-Key) werden über eine eigene Konfiguration (`CockpitConfig`) eingebunden. Zusätzlich wurde die maximale In-Memory-Größe des WebClients erhöht, damit auch größere Medien (z. B. Bilder) verarbeitet werden können. Bei Fehlern (z. B. falscher API-Key, CMS nicht erreichbar) fängt der Client Ausnahmen ab und gibt sichere Rückgabewerte zurück (z. B. `List.of()` oder `null`), damit das Backend stabil bleibt und das Frontend nicht durch Exceptions „abstürzt“.
+Der **CockpitClient** ist die zentrale Verbindung zwischen Backend und dem **Cockpit CMS**.
+Seine Aufgabe ist es, Inhalte wie News, Events, Karten oder Laborpläne aus dem CMS abzurufen und dem Backend als Java-Objekte bereitzustellen. Damit bleibt die Kommunikation mit dem CMS an einer Stelle gebündelt: Controller und Services müssen keine URLs, Header oder Speziallogik für Cockpit kennen, sondern rufen nur Methoden wie `getNews(...)` oder `getAppointments(...)` auf.
+Die Zugriffsdaten (CMS-URL und API-Key) werden über eine eigene Konfiguration (`CockpitConfig`) eingebunden.
+Zusätzlich wurde die maximale In-Memory-Größe des WebClients erhöht, damit auch größere Medien (z. B. Bilder) verarbeitet werden können.
+Bei Fehlern (z. B. falscher API-Key, CMS nicht erreichbar) fängt der Client Ausnahmen ab und gibt sichere Rückgabewerte zurück (z. B. `List.of()` oder `null`), damit das Backend stabil bleibt und das Frontend nicht durch Exceptions „abstürzt“.
 
 **CockpitClient – Beispiel für den Abruf von News über REST** [@SLF4J-Docs]
 ```java
@@ -466,7 +486,12 @@ public class CockpitClient {
 ```
 
 ### WebUntisClient (Stundenplan Anbindung)
-Der **WebUntisClient** dient dazu, externe Informationen aus **WebUntis** abzurufen und im Infopoint anzuzeigen (z. B. Tagesübersicht für Lehrer oder Klassen). Der Client nutzt ebenfalls den **WebClient**, um HTTP-Anfragen an WebUntis zu senden. Im Gegensatz zum **CockpitClient** arbeitet WebUntis hier mit einem GET-Request auf einen Monitor-Endpunkt, bei dem ein Request-Body mit Parametern wie `date` und `format` mitgeschickt wird. Da Eingaben vom Frontend fehlerhaft sein können (z. B. ein ungültiges Datum), normalisiert der Client zuerst den Datumswert und verwendet bei Fehlern automatisch das aktuelle Datum als Fallback. Zusätzlich gibt es eine Schutzlogik (`safeFetchDayOverview`): Falls WebUntis nicht erreichbar ist oder ein Fehler auftritt, wird nicht einfach eine Exception weitergeworfen, sondern ein leeres, aber gültiges JSON-Objekt zurückgegeben. Das sorgt dafür, dass die Anzeige am Infopoint weiterhin funktioniert, auch wenn die externe Quelle kurzzeitig Probleme hat.
+Der **WebUntisClient** dient dazu, externe Informationen aus **WebUntis** abzurufen und im Infopoint anzuzeigen (z. B. Tagesübersicht für Lehrer oder Klassen).
+Der Client nutzt ebenfalls den **WebClient**, um HTTP-Anfragen an WebUntis zu senden.
+Im Gegensatz zum **CockpitClient** arbeitet WebUntis hier mit einem GET-Request auf einen Monitor-Endpunkt, bei dem ein Request-Body mit Parametern wie `date` und `format` mitgeschickt wird.
+Da Eingaben vom Frontend fehlerhaft sein können (z. B. ein ungültiges Datum), normalisiert der Client zuerst den Datumswert und verwendet bei Fehlern automatisch das aktuelle Datum als Fallback.
+Zusätzlich gibt es eine Schutzlogik (`safeFetchDayOverview`): Falls WebUntis nicht erreichbar ist oder ein Fehler auftritt, wird nicht einfach eine Exception weitergeworfen, sondern ein leeres, aber gültiges JSON-Objekt zurückgegeben.
+Das sorgt dafür, dass die Anzeige am Infopoint weiterhin funktioniert, auch wenn die externe Quelle kurzzeitig Probleme hat.
 
 **WebUntisClient - Abruf der Tagesübersicht für Klassen mit Fallback** [@SLF4J-Docs]
 ```java
@@ -506,6 +531,109 @@ public class WebUntisClient {
     }
 }
 ```
+
+### Utility-Klassen im Backend
+
+Neben Controllern, Services und DTOs wurden im Backend mehrere **Utility-Klassen** (kurz: *Utils*) umgesetzt.
+Diese Klassen enthalten wiederverwendbare Hilfslogik, die an mehreren Stellen benötigt wird, aber **nicht direkt** in Controller oder Services gehört. 
+Typische Aufgaben sind z. B. das **Auslesen und Aufbereiten von WebUntis-JSON**, das **Suchen/Filtern** von Daten oder kleine **Zeit-Konvertierungen**.
+Dadurch bleibt der restliche Code übersichtlich und doppelte Logik wird vermieden.
+Da WebUntis die Daten als JSON liefert, arbeiten diese Utils stark mit `JsonNode` und sicheren Zugriffen wie `node.path(...)`, damit das System auch bei fehlenden Feldern stabil bleibt (vgl. [@Jackson-Docs]).
+
+#### ClassFinder
+`ClassFinder` dient dazu, aus der WebUntis-Tagesübersicht **Klassen zu suchen** und bei Bedarf einen **Tagesplan** einer bestimmten Klasse zu erstellen.
+Die Klasse geht dabei durch die `rows` im JSON, prüft den `header` (Klassenname) und ermittelt zusätzlich, ob gerade eine aktuelle Stunde läuft. Dafür wird die aktuelle Zeit in das Untis-Zeitformat (z. B. 0815) umgerechnet und mit `startTime`/`endTime` verglichen.
+Außerdem werden **Events** (z. B. „Wandertag“) aus den Zellen gesammelt und bei unregelmäßigen Perioden als Anzeige-Text verwendet.
+
+```java
+public static List<ClassInfoDTO> search(JsonNode root, String query) {
+    String q = query.toLowerCase();
+    int now = ConvertToUntisTimeUtil.nowAsUntisTime();
+
+    for (JsonNode row : root.path("payload").path("rows")) {
+        String header = row.path("header").asText("").trim(); // Klassenname
+        if (!header.toLowerCase().contains(q)) continue;
+
+        // ... periods durchsuchen und aktuelle Stunde finden (now in start/end)
+    }
+    return results;
+}
+```
+
+### ConvertToUntisTimeUtil
+`ConvertToUntisTimeUtil` ist eine kleine Hilfsklasse, die die aktuelle Uhrzeit in das von WebUntis verwendete Zeitformat umwandelt.
+WebUntis arbeitet bei Zeiten häufig mit Ganzzahlen wie `0815` für 08:15 Uhr oder `1340` für 13:40 Uhr.
+Damit die aktuell laufende Unterrichtseinheit einfach ermittelt werden kann, liefert die Utility-Methode die aktuelle Zeit im Format `hour * 100 + minute`.
+
+Als Zeitzone wird bewusst `Europe/Vienna` verwendet, um sicherzustellen, dass die Zeitberechnung unabhängig von der Server- oder Container-Konfiguration korrekt erfolgt.
+Die Umsetzung basiert auf der `java.time`-API, die seit Java 8 Bestandteil der Standardbibliothek ist (vgl. [@Java-Time-Docs]).
+
+```java
+public class ConvertToUntisTimeUtil {
+
+    private static final ZoneId SCHOOL_ZONE = ZoneId.of("Europe/Vienna");
+
+    public static int nowAsUntisTime() {
+        LocalTime now = ZonedDateTime.now(SCHOOL_ZONE).toLocalTime();
+        return now.getHour() * 100 + now.getMinute();
+    }
+}
+```
+
+### TeacherFinder
+
+Die Klasse `TeacherFinder` übernimmt die Suche und Verarbeitung von Lehrerdaten aus der WebUntis-Tagesübersicht.
+Sie arbeitet ähnlich wie der `ClassFinder`, berücksichtigt jedoch zusätzliche Informationen wie Lehrerkürzel sowie Vor- und Nachname.
+Ziel ist es, aus der von WebUntis gelieferten JSON-Struktur strukturierte DTOs zu erzeugen, die im Backend weiterverwendet oder direkt an das Frontend übergeben werden können.
+
+Ein zentrales Element ist die Methode `firstNonBlank(...)`.
+Da WebUntis je nach Situation unterschiedliche JSON-Schlüssel für Fachbezeichnungen verwendet, prüft diese Methode mehrere mögliche Felder und gibt das erste nicht-leere Ergebnis zurück.
+Dadurch wird sichergestellt, dass auch bei variierender Datenstruktur ein gültiger Fachname ermittelt werden kann.
+
+```java
+private static String firstNonBlank(JsonNode node, String... keys) {
+    for (String key : keys) {
+        String value = node.path(key).asText("");
+        if (!value.isBlank()) {
+            return value.trim();
+        }
+    }
+    return "";
+}
+```
+
+### TeacherHeaderParser
+
+Der `TeacherHeaderParser` ist dafür zuständig, den von WebUntis gelieferten Header-String eines Lehrers in einzelne Bestandteile zu zerlegen.
+In der Regel enthält dieser String Informationen wie **Nachname**, **Vorname** und **Kürzel**, beispielsweise im Format:
+Da diese Informationen als kombinierter Text geliefert werden, wird zur Analyse ein regulärer Ausdruck (Regex) verwendet.
+Reguläre Ausdrücke ermöglichen es, strukturierte Textmuster gezielt zu erkennen und einzelne Teile daraus zu extrahieren (vgl. [@Java-Regex-Docs]).
+
+Falls der Header nicht dem erwarteten Muster entspricht, wird ein `TeacherInfoDTO` mit Default-Werten zurückgegeben. Dadurch wird verhindert, dass das Backend durch fehlerhafte oder unerwartete Eingaben abstürzt.
+Gleichzeitig kann die Oberfläche weiterhin eine sinnvolle Anzeige darstellen.
+
+```java
+public class TeacherHeaderParser {
+
+    private static final Pattern PATTERN =
+            Pattern.compile("(.+?),\\s*(.+?)\\s*\\((.+?)\\)");
+
+    public static TeacherInfoDTO parse(String header) {
+        Matcher m = PATTERN.matcher(header);
+        if (!m.matches()) {
+            return new TeacherInfoDTO(header, "", "", "", null);
+        }
+        return new TeacherInfoDTO(
+                header,
+                m.group(1).trim(), // Nachname
+                m.group(2).trim(), // Vorname
+                m.group(3).trim(), // Kürzel
+                null
+        );
+    }
+}
+```
+
 ### Zusammenfassung der Backend-Implementierung
 
 Durch die klare Trennung von Controller, Service und DTOs wurde eine saubere und wartbare Struktur geschaffen.  
