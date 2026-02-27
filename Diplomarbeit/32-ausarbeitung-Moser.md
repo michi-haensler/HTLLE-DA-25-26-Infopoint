@@ -32,160 +32,177 @@ Zusätzlich sollte ein digitales Informationssystem **erweiterbar und skalierbar
 
 ## Theorie
 
+### Überblick und Zielsetzung des Theorie-Teils
+Der Theorie-Teil dient dazu, den fachlichen und technischen Kontext bereitzustellen, der für das Verständnis des anschließenden praktischen Abschnitts notwendig ist.
+Er definiert zentrale Begriffe, erläutert die verwendeten Technologien und liefert die Grundlage für die Designentscheidungen im Projekt.
+Durch diese Einbettung wird die praktische Umsetzung nicht nur als Eigenleistung dargestellt, sondern als Konsequenz aus etablierten Prinzipien und Methoden.
+Die Zielsetzung besteht darin, dem Leser einen kohärenten Überblick über Backend-Systeme im Allgemeinen und die spezifischen Komponenten des Infopoint-Projektes im Besonderen zu vermitteln.
+Der Abschnitt soll ausreichend theoretisches Wissen bereitstellen, um auch ohne tiefe Vorkenntnisse die Architektur und Implementierung des Backends nachvollziehen zu können.
+Abschließend wird verdeutlicht, wie die einzelnen Konzepte im späteren Praxis-Teil konkret angewendet werden.
+Diese Verknüpfung erleichtert dem Leser die Orientierung und stärkt das Verständnis für die gewählten Technologien und Strukturen.
+
+### Begriffe und grundlegende Konzepte
+Bevor auf konkrete Frameworks und Werkzeuge eingegangen wird, ist es sinnvoll, einige generelle Fachbegriffe zu klären. Diese dienen als gemeinsamer Referenzrahmen und verhindern Missverständnisse bei späteren Diskussionen über Architektur oder Code.
+Zu diesen grundlegenden Konzepten gehören insbesondere die Client-Server-Architektur, HTTP als Kommunikationsprotokoll sowie die Prinzipien von REST. Darüber hinaus werden allgemeine Aspekte der Datenrepräsentation angesprochen, etwa das JSON-Format und Serialisierungstechniken.
+Die Kenntnis dieser Begriffe erleichtert nicht nur das Verständnis des Infopoint-Backends, sondern ist allgemein für die Entwicklung moderner Webanwendungen von Bedeutung.
+Die Auswahl und Definition dieser Begriffe folgt der gängigen Literatur aus der Softwarearchitektur und den Webstandards (z. B. RFC 7231 für HTTP). Eine präzise Terminologie bildet die Basis für wiederholbare Kommunikation zwischen Entwicklern und ist ein wichtiges Merkmal wissenschaftlicher Texte.
+Zudem wird im Verlauf der Arbeit kontinuierlich auf diese Grundbegriffe zurückgegriffen; sie dienen als Anker für tiefergehende Erklärungen und helfen, Komplexität schrittweise aufzubauen.
+
+#### Client-Server-Architektur
+Das Modell der Client-Server-Architektur trennt die Systeme in zwei Rollen: den Client, der Dienste anfordert, und den Server, der sie bereitstellt.
+Diese Trennung erlaubt eine modulare Entwicklung und eine klare Verantwortungszuweisung. Clients können unterschiedliche Technologien verwenden, solange sie das vereinbarte Protokoll beherrschen.
+Im Kontext des Infopoint-Projektes fungiert das Frontend als Client, das HTTP-Anfragen an das Spring-Boot-Backend sendet.
+Das Backend bearbeitet diese Anfragen, führt Geschäftslogik aus und greift bei Bedarf auf externe Systeme wie ein CMS zu. Die Architekturschicht zwischen beiden ist durch eine klar definierte API charakterisiert.
+Ein Vorteil der Client-Server-Struktur ist die Skalierbarkeit: Server können unabhängig von den Clients vervielfältigt oder ausgetauscht werden, während die Clients unverändert bleiben.
+Dies unterstützt spätere Erweiterungen und einen stabilen Betrieb.
+Historisch gesehen geht die Client-Server-Architektur auf frühe Netzwerkanwendungen zurück und bildet die Grundlage für moderne Webarchitekturen. Sie erlaubt auch den Einsatz von Zwischenschichten wie Proxies oder Load-Balancers, die zusätzliche Funktionen wie Caching, Sicherheitsfilter oder Verkehrsverteilung übernehmen können.
+Neben dem klassischen Modell existieren Varianten wie Peer-to-Peer oder Serverless, doch für die vorliegende Anwendung bleibt das traditionelle Client-Server-Paradigma aufgrund seiner Vorhersagbarkeit und Unterstützung durch etablierte Technologien die sinnvollste Wahl.
+
+#### HTTP, URIs und Statuscodes
+HTTP (Hypertext Transfer Protocol) bildet die Grundlage der Kommunikation zwischen Client und Server im Web. Es definiert Methoden wie GET, POST, PUT und DELETE zur Manipulation von Ressourcen und verwendet URIs (Uniform Resource Identifiers) zur eindeutigen Adressierung dieser Ressourcen.
+Statuscodes liefern dem Client unmittelbares Feedback über den Erfolg oder Misserfolg einer Anfrage. Codes im Bereich 2xx signalisieren Erfolg, 4xx weisen auf Clientfehler hin und 5xx zeigen an, dass auf Serverseite ein Problem aufgetreten ist. Eine konsistente Nutzung dieser Codes ist essenziell für eine verständliche und zuverlässig integrierbare API.
+HTTP ist zustandslos, wird jedoch häufig durch Mechanismen wie Cookies oder Tokens erweitert, um Sitzungsinformationen zu übertragen. Moderne Implementierungen nutzen zudem persistenten Verbindungen (Keep-Alive) und Komprimierung, um Latenzzeiten zu reduzieren.
+In der praktischen Umsetzung des Backends werden Statuscodes unter anderem durch Exception-Handler in Spring Boot gesteuert, die Fehlerinformationen in JSON-Strukturen kapseln und so eine gleichmäßige Schnittstelle für das Frontend gewährleisten. Zusätzlich werden Header wie `Content-Type` und `Cache-Control` verwendet, um das Verhalten von Clients zu steuern und eine korrekte Interpretation der Daten sicherzustellen.
+
+#### REST-Architekturprinzipien
+Representational State Transfer (REST) beschreibt ein Set an Designprinzipien für verteilte Systeme. REST orientiert sich an Ressourcen, die durch URIs identifiziert und durch Repräsentationen (z. B. JSON) ausgetauscht werden. Zustandslosigkeit bedeutet, dass jede HTTP-Anfrage alle nötigen Informationen enthält, um verarbeitet zu werden; der Server speichert keinen Sitzungszustand.
+Weitere REST-Charakteristika sind eine einheitliche Schnittstelle, Schichtbarkeit und Cachebarkeit. Gemeinsam verbessern sie die Modularität und erleichtern die Entwicklung skalierbarer Systems. In Spring Boot lassen sich diese Prinzipien durch die Verwendung von `@RestController` und passenden HTTP-Methoden direkt abbilden.
+Ein erweitertes REST-Prinzip ist HATEOAS (Hypermedia as the Engine of Application State), bei dem Antworten Links enthalten, die den Client durch die verfügbaren Aktionen führen. Zwar wurde HATEOAS im Infopoint-Backend nicht vollständig implementiert, so wird es dennoch in der Theorie als Möglichkeit zur Reduzierung der Kopplung zwischen Client und Server erwähnt.
+Im Infopoint-Backend dient REST als architektonisches Leitbild für alle API-Endpunkte. Die Ressourcen wie `events` oder `news` werden konsistent benannt und über versionierte Pfade zur Verfügung gestellt, sodass das Frontend unabhängig von internen Implementierungen arbeiten kann. Die Einhaltung von REST-Prinzipien erleichtert außerdem die Nutzung generischer HTTP-Clients und Testing-Werkzeuge.
+
+#### Datenformate: JSON und Serialisierung
+JSON (JavaScript Object Notation) ist das dominierende Format für den Datenaustausch in Web-APIs. Es ist leichtgewichtig, menschenlesbar und wird von praktisch allen Programmiersprachen unterstützt. Serialisierung bezeichnet den Prozess, ein Objekt in eine byte- oder textbasierte Repräsentation zu überführen; Deserialisierung kehrt diesen Vorgang um.
+In Java-Anwendungen übernimmt die Bibliothek Jackson diesen Vorgang automatisch, sobald HTTP-Nachrichten über `@RestController` verarbeitet werden. Die richtige Konfiguration von Serialisierungsregeln (z. B. Formatierung von Datumstypen oder Ignorieren von Nullwerten) ist wichtig, um Kompatibilität zwischen Backend und Frontend sicherzustellen.
+Ein weiterer Aspekt ist die Versionierung der Datenformate. Änderungen an DTOs müssen so gestaltet werden, dass ältere Clients weiterhin funktionstüchtig bleiben; Erweiterbare Strukturen und opt-in-Felder sind übliche Strategien.
+
+### Aufgaben und Verantwortlichkeiten von Backend-Systemen
+
+Ein Backend übernimmt vielfältige Aufgaben: Verwaltung von persistenten Daten, Ausführung geschäftlicher Regeln, Authentifizierung und Autorisierung, Validierung von Eingaben sowie die Orchestrierung von Drittservices. Darüber hinaus setzt es Nicht-Funktionale Anforderungen um, beispielsweise Sicherheit, Performance und Skalierbarkeit.
+Ein weiteres zentrales Thema ist die Behandlung von Nebenläufigkeit und Transaktionen. Da mehrere Clients gleichzeitig auf geteilte Ressourcen zugreifen, muss das System Mechanismen zur Synchronisation und zum Rollback bereitstellen. In Java-basierten Backends erfolgt dies häufig über deklarative Transaktionsverwaltung (z. B. `@Transactional`), die atomare Operationen in Datenbanken gewährleistet.
+Im Infopoint-Projekt ist das Backend das Bindeglied zwischen dem Cockpit CMS und dem Infopoint-Frontend. Es übernimmt die Aufgabe, Inhalte zu laden, zu filtern und in geeigneter Form bereitzustellen. Dabei sorgt es für Konsistenz, wie beispielsweise einheitliche Datumsformate und vollständige Einträge.
+Zudem isoliert das Backend das Frontend von technischen Details externer Systeme. Durch klar definierte Schnittstellen wird vermieden, dass Änderungen am CMS direkt Auswirkungen auf die Benutzeroberfläche haben. Diese Abstraktion erleichtert die Wartung und ermöglicht unabhängigere Weiterentwicklungen.
+Schließlich fungiert das Backend oft als Kontrollpunkt für Logging, Monitoring und Auditierung. Jede wichtige Aktion wird protokolliert, wodurch sich Betriebszustände analysieren und Fehlerquellen eingrenzen lassen.
+
+### Frameworks und Laufzeitumgebungen
+Frameworks bieten wiederkehrende Bausteine und abstrahieren allgemeine Aufgaben. Sie verkürzen die Entwicklungszeit, indem sie beispielsweise den Lebenszyklus von Komponenten, Konfiguration oder Zugriff auf Bibliotheken standardisieren. Laufzeitumgebungen stellen die Ausführungsplattform zur Verfügung, oft einschließlich eingebetteter Webserver und Managementschnittstellen.
+Die Wahl eines Frameworks beeinflusst nicht nur die Code-Architektur, sondern auch die erforderlichen Skills im Team sowie die verfügbare Dokumentation und Community-Unterstützung. In Java-Projekten sind neben Spring Boot auch Jakarta EE (ehemals Java EE) oder Micronaut gängig; Spring Boot wurde im Infopoint-Projekt aufgrund seiner ausgereiften Integrationen und der aktiven Community gewählt.
+Laufzeitumgebungen wie der eingesetzte Tomcat-Servlet-Container oder eingebettete Alternativen vereinfachen Deployments, da sie zusammen mit dem Anwendungscode ausgeliefert werden können und keine externen Installationen erfordern.
+
+### Spring Boot — Konzepte und Kernkomponenten
+Spring Boot ist ein Framework, das auf dem Spring-Ökosystem aufbaut und die schnelle Erstellung produktionsfähiger Anwendungen ermöglicht. Es bietet vordefinierte Konfigurationen, sogenannte "Starters", und einen eingebetteten Server, sodass Anwendungen als selbstständige JARs ausgeführt werden können.
+Die Autokonfiguration übernimmt dabei die Auswahl und Einrichtung zahlreicher Komponenten basierend auf den entdeckten Bibliotheken und Einstellungen. Dies reduziert den Konfigurationsaufwand erheblich und erlaubt es Entwicklern, sich auf die Geschäftslogik zu konzentrieren.
+Kernkomponenten sind unter anderem der ApplicationContext für Bean-Management, das Web-Framework Spring MVC für REST-Endpunkte und die Unterstützung vielfältiger Datenzugriffstechnologien (JPA, JDBC, MongoDB, etc.).
+Spring Boot ist zudem gut für den Aufbau von Microservices geeignet, da es modular einsetzbar ist und leichtgewichtige Anwendungen unterstützt. In verteilten Umgebungen ist die Fähigkeit, Anwendungen schnell zu starten und mit minimaler Konfiguration zu betreiben, ein großer Vorteil.
+Die umfangreiche Ökosphäre um Spring Boot, inklusive Spring Cloud, bietet zahlreiche zusätzliche Module für Konfigurationsmanagement, Service Discovery und Resilienz. Obwohl im Infopoint-Projekt keine vollständige Microservice-Architektur zum Einsatz kommt, erleichtert das Framework künftig mögliche Erweiterungen in diese Richtung.
+
+#### Dependency Injection und Inversion of Control
+
+Dependency Injection (DI) ist ein Entwurfsmuster, bei dem Komponenten ihre Abhängigkeiten nicht selbst erstellen, sondern vom Framework bereitgestellt bekommen. Diese Umkehrung der Kontrolle (Inversion of Control, IoC) ermöglicht lose Kopplung und erleichtert das Testen, da Mock-Objekte einfach injiziert werden können.
+Spring realisiert DI durch Annotationen wie `@Autowired` oder durch Konstruktorinjektion, wobei letztere als best practice gilt. Der ApplicationContext verwaltet den Lebenszyklus der Beans und injiziert sie zur Laufzeit.
+Durch DI können Komponenten in verschiedenen Kontexten wiederverwendet werden, da sie nicht auf feste Implementierungen angewiesen sind. Dies fördert die Modularität und steigert die Flexibilität bei Änderungen.
+
+#### Autokonfiguration, Starters und Typische Annotationen
+
+Autokonfiguration ist ein Feature von Spring Boot, das basierend auf der Klassenpfad-Analyse automatisch Konfigurations-Benutzer bereitstellt. Starters sind Sammlungen von Abhängigkeiten, die typische Funktionalitäten bündeln, z. B. `spring-boot-starter-web` für Webanwendungen.
+Typische Annotationen umfassen `@SpringBootApplication` am Haupteinstiegspunkt, `@RestController` für Web-Controller, `@Service` für Geschäftslogik und `@Repository` für Datenzugriff. Diese Annotationen sind mehr als schmückend; sie werden vom Framework gelesen und bewirken spezifisches Verhalten.
+Die Kombination aus Autokonfiguration und Starters erlaubt es, neue Projekte mit wenig Boilerplate-Code zu starten und dennoch bei Bedarf tiefgehende Konfigurationen vorzunehmen.
+
+### Erstellung von REST-APIs mit Spring Boot
+
+Die Bereitstellung von REST-APIs ist eine der Standardanwendungen von Spring Boot. Eine API definiert Endpunkte, über die Clients Ressourcen abrufen oder manipulieren können. Die Konvention von URI-Strukturen und HTTP-Methoden wird dabei eingehalten.
+Spring Boot stellt dafür das MVC-Modul zur Verfügung, mit dem Handler-Methoden einfach definiert werden. Response Bodies werden automatisch in JSON konvertiert, und Request Bodies können validiert werden, bevor sie in die Geschäftslogik gelangen.
+Neben der Implementierung der Endpunkte beinhaltet die API-Erstellung auch Aspekte wie Sicherheit, Dokumentation und Versionierung, die im Rahmen von Spring Boot ebenfalls unterstützt werden.
+
+#### Controller, Routing und HTTP-Methoden
+
+Controller sind Java-Klassen, die mit `@RestController` gekennzeichnet werden. Methoden in diesen Klassen werden über Mapping-Annotationen wie `@GetMapping` oder `@PostMapping` einem URI-Pfad und einer HTTP-Methode zugeordnet.
+Routing kann dynamische Pfadvariablen (`@PathVariable`), Abfragen (`@RequestParam`) oder Header verarbeiten. Die Struktur sollte intuitiv und konsistent sein, um die Entwicklung des Frontends zu erleichtern.
+Die Verwendung der richtigen HTTP-Methode ist nicht nur semantisch wichtig, sondern beeinflusst auch Caching-Verhalten und Sicherheit. Beispielsweise sollten GET-Anfragen idempotent sein, während POST für nicht-idempotente Operationen genutzt wird.
+
+#### DTOs, Mapping und Validation
+
+DTOs (Data Transfer Objects) trennen die interne Domänenlogik von der externen Schnittstelle. Sie verhindern, dass interne Entitäten oder sensible Felder nach außen durchgereicht werden. DTOs erleichtern zudem die Anpassung der API bei Änderungen an internen Modellen.
+Mapping zwischen Domänenobjekten und DTOs kann manuell erfolgen oder mit Bibliotheken wie MapStruct automatisiert werden. Validation wird in der Regel mithilfe von Bean Validation (JSR 380) und Annotationen wie `@NotNull`, `@Size` oder `@Pattern` umgesetzt.
+Durch validierte DTOs gelangen nur korrekte Daten in die Geschäftslogik. Fehler werden früh erkannt und in verständlichen Antworten an den Client zurückgegeben.
+
+#### Fehlerbehandlung und Exception Handling
+
+Eine konsistente Fehlerbehandlung ist für eine robuste API unverzichtbar. In Spring lässt sich dies über `@ControllerAdvice` und `@ExceptionHandler` realisieren, um bestimmte Exceptions in strukturierte HTTP-Antworten zu transformieren.
+Dabei werden intern geworfene Ausnahmen wie `IllegalArgumentException` oder eigene Domain-spezifische Exceptions abgefangen und entsprechende Statuscodes (z. B. 400 Bad Request, 404 Not Found) zurückgegeben.
+Schließlich sollte die Fehlerantwort ausreichend Informationen für das Frontend oder den API-Consumer bereithalten, ohne intern zu detailliert zu werden. Log-Ausgaben ergänzen die Rückmeldungen auf Serverseite.
+
+### Grundlangen von Maven
+
+Maven ist ein weit verbreitetes Build- und Projektmanagement-Tool für Java. Es verwaltet Abhängigkeiten, führt den Build-Prozess durch und unterstützt Plug-ins für zusätzliche Aufgaben wie Testing oder Dokumentation. Grundlage ist die deklarative `pom.xml`.
+Maven ermöglicht reproduzierbare Builds durch ein einheitliches Verzeichnislayout und einen festgelegten Lifecycle mit Phasen wie `compile`, `test`, `package` und `install`. Plugins können an diese Phasen angehängt werden, um zusätzliche Schritte auszuführen.
+Die Abhängigkeitsscopes (`compile`, `provided`, `test`, `runtime`) steuern, welche Bibliotheken in welchen Phasen des Build- und Laufzeitprozesses zur Verfügung stehen. Transitive Abhängigkeiten werden automatisch aufgelöst, was die Verwaltung vereinfacht, aber gelegentlich zu Konflikten führt, die dann über das Enforcer-Plugin oder Version-Management gelöst werden müssen.
+Für das Infopoint-Projekt wurden unter anderem das Compiler-Plugin zur Festlegung der Java-Version und das Surefire-Plugin für die Ausführung von Unit-Tests konfiguriert. Zusätzlich sorgt das Spring Boot Maven Plugin dafür, dass beim Package-Schritt ein ausführbares JAR inklusive aller benötigten Abhängigkeiten entsteht.
+
+#### pom.xml, Lebenszyklus und Plugins
+
+Die `pom.xml` enthält Gruppennamen, Artifakt-IDs, Versionsangaben sowie die Liste der Abhängigkeiten. Sie definiert auch Properties und Profile, die je nach Umgebung unterschiedliche Konfigurationen erlauben.
+Plugins steuern einzelne Teile des Build-Prozesses. Das Spring Boot Maven Plugin erzeugt beispielsweise ein ausführbares JAR und kann den Anwendungstart im Entwicklungskontext unterstützen.
+Durch das Festlegen von Versionsnummern und die Nutzung von Repositories wird sichergestellt, dass alle Entwickler und CI-Server dieselben Abhängigkeiten verwenden.
+
+#### WebClient
+
+`WebClient` ist Teil von Spring WebFlux und ermöglicht asynchrone, nicht-blockierende HTTP-Anfragen. Im Vergleich zum älteren `RestTemplate` bietet es eine reaktive API und bessere Skalierbarkeit.
+Die reaktive Programmierung von `WebClient` basiert auf dem Projekt Reactor und verwendet die Typen `Mono` und `Flux` zur Darstellung von Einzelergebnissen bzw. Datenströmen. Durch die deklarative Fehlerbehandlung und die Möglichkeit, Rückgriff auf Backpressure zu nehmen, lassen sich robuste Integrationen implementieren.
+Im Infopoint-Backend wird `WebClient` zur Kommunikation mit externen Systemen wie dem Cockpit CMS oder WebUntis verwendet. Es erlaubt die Konfiguration von Timeouts, Fehlerbehandlung und die Anpassung der In-Memory-Größe für große Antworten.
+Durch die Nutzung von `WebClient` kann das Backend auch bei hoher Last stabil bleiben, da Threads nicht blockiert werden während auf Antworten gewartet wird. Außerdem erleichtert die einheitliche Schnittstelle die Implementierung von Retry-Mechanismen, Logging und Metriken, da alle HTTP-Aufrufe über denselben Typ ablaufen.
+
+### Content-Management-Systeme (Cockpit) — Architektur und Integration
+
+Content-Management-Systeme trennen die Inhalte einer Anwendung von deren Darstellung und Logik. Das Cockpit CMS ermöglicht Redakteuren, Inhalte zu erstellen und zu pflegen, ohne direkt in den Quellcode eingreifen zu müssen.
+Das Backend des Infopoint-Projektes integriert Cockpit über eine REST-API. Ein dedizierter `CockpitClient` kapselt die Kommunikation, sodass Änderungen am CMS minimalen Einfluss auf den Anwendungscode haben.
+Wichtige Aspekte der Integration sind Authentifizierung mittels API-Schlüssel, Umgang mit paginierten Ergebnissen und Caching, um die Performance zu verbessern und Ausfallzeiten des CMS abzufangen.
+
+### Sicherheit im Backend
+
+Sicherheit umfasst sowohl Authentifizierung (Wer ist der Benutzer?) als auch Autorisierung (Darf er das tun?). In REST-APIs werden häufig Token-basierte Verfahren wie JWT oder OAuth2 eingesetzt.
+Zusätzlich zur klassischen Authentifizierung sollte die Anwendung auch gegen gängige Angriffe wie Cross-Site Scripting (XSS), SQL-Injection oder CSRF geschützt sein. Dies wird teils durch Framework-Funktionalitäten (z. B. automatische Parameterbindung) und teils durch explizite Prüfungen realisiert.
+Das Infopoint-Backend selbst stellt primär öffentliche Daten bereit; dennoch wurden Mechanismen implementiert, um administrative Endpunkte oder interne Funktionen schützen zu können. Zudem wird eingehende Datenvalidierung als wesentlicher Sicherheitsaspekt betrachtet. Die Validierung erfolgt nicht nur auf der Oberfläche, sondern auch serverseitig, um bösartige Eingaben zu unterbinden.
+Zusätzliche Schutzmaßnahmen umfassen die Konfiguration von CORS-Regeln, Input-Sanitization und der Einsatz von HTTPS zur Verschlüsselung des Datenverkehrs. Geheimnisse wie API-Keys werden nicht im Quellcode gespeichert, sondern über Umgebungsvariablen oder Secret-Management-Systeme eingespielt. Regelmäßige Updates der verwendeten Bibliotheken reduzieren zudem das Risiko bekannter Sicherheitslücken.
+
+### Konfiguration und Profile (z. B. application.properties / application.yml)
+
+Konfigurationseigenschaften ermöglichen das Parametrisieren einer Anwendung ohne Codeänderungen. Spring Boot liest hierfür die Dateien `application.properties` oder `application.yml` ein und unterstützt Profile wie `dev`, `test` oder `prod`.
+Über Profile kann z. B. die Basis-URL des CMS oder ein API-Key pro Umgebung festgelegt werden. In sensiblen Produktionsumgebungen sollten solche Werte über Umgebungsvariablen oder spezielle Secret-Manager eingespielt werden
+Die Trennung von Konfiguration und Code erleichtert den Wechsel zwischen Entwicklungs- und Produktionsumgebungen und minimiert das Risiko, vertrauliche Daten irrtümlich zu veröffentlichen.
+
+#### Containerisierung (Docker) und docker-compose
+
+Docker ermöglicht das Verpacken der Anwendung samt aller Abhängigkeiten in einem Container. Dies garantiert, dass sie in verschiedenen Umgebungen identisch ausgeführt wird. `docker-compose` vereinfacht die lokale Entwicklung durch Orchestrierung mehrerer Services wie Backend, CMS und Datenbank.
+Im Projekt enthält die Backend-Docker-Datei Anweisungen zum Bauen und Starten des Spring-Boot-JARs sowie zur Konfiguration der Netzwerkverbindungen zu anderen Containern.
+Das Zusammenspiel mit `docker-compose` erlaubt das schnelle Aufsetzen einer vollständigen Testumgebung inklusive Cockpit und optionalen Datenbanken.
+
+### API-Dokumentation und Versionierung
+
+Eine klare API-Dokumentation ist für die Zusammenarbeit zwischen Backend- und Frontend-Teams essentiell. OpenAPI/Swagger bietet sowohl maschinenlesbare Spezifikationen als auch eine interaktive Benutzeroberfläche.
+Versionierung der API, z. B. durch Pfadsegmente wie `/api/v1/`, stellt sicher, dass bestehende Clients bei Erweiterungen oder Änderungen weiter funktionieren. Langfristig können so mehrere Versionen parallel betrieben werden.
+Im Infopoint-Backend wurde Swagger automatisch aus den Controller-Definitionen erzeugt und dient sowohl als Dokumentationsquelle als auch als Prüfwerkzeug während der Entwicklung.
+
 ### Grundlagen von Backend-Systemen
-Das Backend ist der serverseitige Teil von jeder Softwareanwendung. 
-Es gibt viele verschiede Arten von Backends in Bezug auf das Aussehen aber im Kern
-erfüllen sie alle den selben Zweck. Dieser ist und bleibt die Datenverarbeitung und
-Beschaffung dieser. Es ist für die Benutzer nie direkt sichtbar sondern verbirgt
-sich hinter dem Frontend.
-Im Gegensatz zum Frontend, welches für die Benutzeroberfläche zuständig ist, 
-konzentriert sich das Backend auf die Geschäftlogik der ganzen Application. 
-Besonders bei Webanwendungen spielt das Backend eine zentrale Rolle, da es als Vermittler zwischen der Benutzeroberfläche und Datenhaltung fungiert.
 
-### Abgrenzung zwischen Frontend und Backend
-Bei der Entwicklung moderner Webanwendungen ist eine klare Abgrenzung zwischen Frontend und Backend von zentraler Bedeutung. Das Frontend stellt die Benutzeroberfläche dar und ist für die visuelle Darstellung sowie die Interaktion mit dem Benutzer zuständig. Es zeigt Inhalte an, nimmt Eingaben entgegen und leitet diese in Form von Anfragen an das Backend weiter. Für den Benutzer ist ausschließlich das Frontend sichtbar.
+Das Backend, wie bereits eingangs erwähnt, bildet das "Herz" der Anwendung. Es ist verantwortlich für alle Operationen, die nicht direkt mit der Darstellung zusammenhängen. Hier werden Datenbanken angesprochen, Geschäftsregeln formuliert und externe Systeme angebunden.
 
-Das Backend hingegen arbeitet im Hintergrund und übernimmt die gesamte Datenverarbeitung sowie die Geschäftslogik des Systems. Es verarbeitet die vom Frontend gesendeten Anfragen, überprüft und validiert die Daten und stellt die angeforderten Informationen wieder bereit. Zudem ist das Backend für die Verwaltung der Inhalte und deren strukturierte Bereitstellung verantwortlich, beispielsweise über eine REST-API.
+Obwohl es für Endanwender nicht sichtbar ist, prägt die Qualität des Backends unmittelbar die Nutzererfahrung, da es Verfügbarkeit, Antwortzeiten und Datenkonsistenz bestimmt. Eine mangelhafte Implementierung kann zu inkonsistenten Daten, langen Wartezeiten oder Ausfällen führen, selbst wenn das Frontend perfekt gestaltet ist.
 
-Durch diese klare Trennung wird das System übersichtlicher und besser wartbar. Änderungen an der Benutzeroberfläche können vorgenommen werden, ohne das Backend anpassen zu müssen, und umgekehrt. Darüber hinaus ermöglicht die Abgrenzung eine parallele Entwicklung von Frontend und Backend, was den Entwicklungsprozess effizienter gestaltet. Für das Infopoint-System stellt diese Trennung sicher, dass Inhalte zuverlässig verarbeitet und unabhängig von der Darstellung verwaltet werden können.
+Ein gut gestaltetes Backend trennt klar zwischen Schichten (Präsentation, Logik, Daten), unterstützt durch dokumentierte Schnittstellen, um zukünftige Erweiterungen und Wartung zu erleichtern. Dieses Schichtenmodell wird in der Literatur häufig als "Layered Architecture" bezeichnet und ist Bestandteil von Architekturmuster-Katalogen (z. B. [@buschmann1996pattern]).
+
+#### Schichten und Designmuster
+
+Typische Schichten umfassen die Präsentationsschicht (Controller/Rest), die Geschäftslogikschicht (Services) und die Persistenzschicht (Repository/DAO). Diese klare Trennung ermöglicht es, einzelne Schichten unabhängig zu testen und auszutauschen. Zudem finden sich innerhalb dieser Schichten wiederkehrende Designmuster wie Factory, Singleton oder Strategy, die bewährte Lösungen für häufige Probleme bieten.
+
+Besonders wichtig ist die Verwendung von Data Transfer Objects (DTOs) und Boundary-Interfaces, die die interne Domäne vom externen API-Contract abkoppeln. Dadurch bleibt das Backend resistent gegenüber Veränderungen in der Datenrepräsentation und ermöglicht parallele Entwicklungen an Front- und Backend.
 
 
-#### Die Aufgaben eines Backends lassen sich in folgende Bereiche gliedern:
-- Datenverarbeitung: Eingehende Anfragen vom Frontend werden verarbeitet, validiert und entsprechend beantwortet.
-- Datenverwaltung: Das Backend speichert und verwaltet Daten.
-- Schnittstellenbereitstellung: Über Programmierschnittstellen (APIs) stellt das Backend Daten für das Frontend oder andere Systeme zur Verfügung.
-- Sicherheit: Authentifizierung, Autorisierung und Schutz sensibler Daten sind zentrale Aufgaben des Backends.
-- Geschäftslogik: Regeln und Abläufe der Anwendung werden im Backend umgesetzt, unabhängig von der Darstellung im Frontend.
+Ein Backend kann entweder vertikal skalieren (mehr Ressourcen pro Instanz) oder horizontal (mehr Instanzen). Statelose Architekturen erleichtern letzteren Ansatz und eignen sich hervorragend für Cloud-Umgebungen, in denen Auto-Scaling genutzt wird. Persistente Zustände werden in externen, dafür optimierten Systemen gehalten (Datenbanken, Cache-Cluster), um die Kopplung zwischen Instanzen zu minimieren.
 
-### Client-Server-Architektur
-Moderne Webanwendungen basieren in der Regel auf einer sogenannten Client-Server-Architektur. 
-Dabei fungiert der Client (z. B. ein Infopoint-Terminal) als Anfragesteller, während der Server 
-die Anfrage verarbeitet und eine entsprechende Antwort zurückliefert.
-Der Client sendet dafür eine Anfrage mithilfe des HTTP-Protokolls an das Backend. Dieses verarbeitet die Anfrage,
-greift gegebenenfalls auf das CMS zu und sendet die Ergebnisse in formatierter Form, meist als JSON-Daten, zurück.
-Diese klare Trennung führt zu einer besseren Wartbarkeit und erleichtert die parallele Entwicklung von Frontend und Backend.
+Hochverfügbarkeit erreicht man durch Redundanz (mehrere Instanzen über mehrere Verfügbarkeitszonen) sowie durch Monitoring und Self-Healing. Cloud-Anbieter bieten hierfür native Dienste an, doch auch on-premises können Load-Balancer und Cluster-Technologien dieses Ziel unterstützen.
 
-### Programmierschnittstellen (APIs)
-Um die Kommunikation zwischen Frontend und Backend zu ermöglichen,
-werden sogenannte APIs (Application Programming Interfaces) verwendet. 
-Eine weit verbreitete Architekturform ist dabei REST (Representational State Transfer).
+Diese erweiterten Grundlagen legen ein fundiertes Verständnis dafür, weshalb der praktische Teil dieser Arbeit so strukturiert und umgesetzt wurde. Die nachfolgenden Kapitel erläutern im Detail, wie die hier beschriebenen Prinzipien konkret im Infopoint-Backend realisiert wurden und welche Entscheidungen zu treffen waren, um die beschriebenen Anforderungen zu erfüllen.
 
-#### REST-APIs basieren auf standardisierten HTTP-Methoden:
-- **GET** – Abrufen von Daten
-- **POST** – Erstellen neuer Datensätze
-- **PUT/PATCH** – Aktualisieren bestehender Daten
-- **DELETE** – Löschen von Daten
-
-Durch diese Struktur wird eine klare und einheitliche Kommunikation zwischen den einzelnen Systemkomponenten gewährleistet. 
-Dies ist besonders bei größeren Projekten oder bei der späteren Erweiterung des Systems von Vorteil.
-
-#### Ressourcen, Endpunkte und Datenformat
-- Ressourcenorientierte, sprechende Pfade (z. B. `/api/v1/events`, `/api/v1/news`).
-- Daten werden in der Regel als JSON übertragen; Request- und Response-Schemas sind eindeutig definiert (DTOs, Validierung).
-- Versionierung über den Pfad (`/api/v1/...`) ermöglicht spätere, inkompatible Änderungen ohne das Frontend zu brechen.
-
-Beispiel:
-
-GET /api/v1/events -> 200 OK
-```json
-[
-	{ "id": 1, "title": "Tag der offenen Tür", "date": "2026-03-15" },
-	{ "id": 2, "title": "Infoabend", "date": "2026-04-10" }
-]
-```
-
-#### Statuscodes und Fehlerbehandlung
-- 200/201 für erfolgreiche Lese-/Schreiboperationen, 204 bei leerer Antwort.
-- 400 bei ungültigen Eingaben (Validierungsfehler), 401/403 bei fehlender/ungültiger Authentifizierung bzw. Autorisierung, 404 wenn Ressource nicht existiert, 500 bei unerwarteten Fehlern.
-- Einheitliches Fehlerformat (z. B. `{ "timestamp": ..., "status": 400, "error": "Bad Request", "message": "title must not be blank" }`) erleichtert Debugging und Frontend-Handling.
-
-#### Sicherheit und Integrität
-- CORS-Konfiguration schränkt erlaubte Ursprünge und Methoden ein.
-- Eingaben werden serverseitig validiert (z. B. via Bean Validation) und geloggt; sensible Daten werden nie im Klartext zurückgegeben.
-- Optional: Authentifizierung mittels Token (z. B. Bearer/JWT) für administrative Endpunkte.
-
-#### Dokumentation und Tests
-- Automatisierte API-Dokumentation (OpenAPI/Swagger) erleichtert Verständnis und Zusammenarbeit.
-- Manuelle Tests z. B. mit Postman/REST Client, automatisierte Tests über Integrationstests im Backend.
-
-#### API-Designrichtlinien und Versionierung
-
-Die entwickelte REST-API folgt klaren und einheitlichen Designrichtlinien, um eine einfache Nutzung und gute Wartbarkeit zu gewährleisten. Die Endpunkte sind ressourcenorientiert aufgebaut und verwenden Pfade, wie zum Beispiel `/api/v1/events`. Dadurch ist sofort ersichtlich, welche Art von Daten über einen Endpunkt angesprochen wird. Die API liefert ihre Antworten im JSON-Format, wobei die Feldnamen einheitlich in camelCase gehalten sind.
-
-Für die Verarbeitung von Anfragen werden die HTTP-Methoden entsprechend ihrer Bedeutung eingesetzt. GET dient zum Abrufen von Daten, POST zum Erstellen neuer Einträge, PUT oder PATCH zum Aktualisieren bestehender Daten und DELETE zum Entfernen von Einträgen. Dabei wird darauf geachtet, dass bestimmte Operationen idempotent sind, das heißt, dass mehrmaliges Ausführen derselben Anfrage zum gleichen Ergebnis führt. Zusätzlich werden HTTP-Statuscodes konsistent verwendet, um dem Frontend klare Rückmeldungen über den Erfolg oder Fehler einer Anfrage zu geben.
-
-Für größere Datenmengen unterstützt die API standardisierte Query-Parameter zur Paginierung, Sortierung und Filterung. Über Parameter wie page und size können Datensätze seitenweise abgerufen werden, während sort eine definierte Reihenfolge ermöglicht. Fehlerfälle werden in einem einheitlichen, maschinenlesbaren Format zurückgegeben, sodass sie vom Frontend eindeutig erkannt und verarbeitet werden können.
-
-Die Versionierung der API erfolgt über den URL-Pfad. Rückwärtskompatible Änderungen, wie kleinere Erweiterungen oder Verbesserungen, werden innerhalb derselben Version umgesetzt. Größere Änderungen, die bestehende Funktionen beeinflussen könnten, werden ausschließlich über eine neue Hauptversion, beispielsweise `/api/v2`, eingeführt. Veraltete Endpunkte werden gekennzeichnet und über eine Deprecation-Policy angekündigt, um eine geordnete Umstellung zu ermöglichen.
-
-Zeit- und Datumsangaben werden einheitlich in UTC gespeichert und übertragen. Optional werden Mechanismen wie **Last-Modified** verwendet, um unnötige Datenübertragungen zu vermeiden. Insgesamt stellt das API-Design sicher, dass die Schnittstellen klar strukturiert sind und keine internen Implementierungsdetails nach außen preisgegeben werden.
-
-### Backend Technologien:
-#### Überblick:
-Für die Umsetzung des Backends wurde das Java-Framework **Spring Boot** eingesetzt. 
-Spring Boot eignet sich besonders für die Entwicklung moderner Web- und REST-basierter Anwendungen,
-da es eine klare Projektstruktur, integrierte Serverfunktionalität sowie eine einfache Erweiterbarkeit durch zusätzliche Module bietet.
-Die Verwaltung der Abhängigkeiten erfolgte mithilfe von Apache Maven. Maven ermöglicht es,
-externe Bibliotheken zentral über die **pom.xml** zu definieren und automatisch in das Projekt einzubinden.
-Dadurch wird sichergestellt, dass alle verwendeten Technologien in einer einheitlichen und reproduzierbaren Version vorliegen. 
-
-#### Spring Boot als Backend-Framework:
-Spring Boot bildet die Grundlage des Backends und übernimmt zentrale Aufgaben wie:
-- Bereitstellung eines HTTP-Servers
-- Verarbeitung von REST-Anfragen
-- Routing von Endpunkten
-- Integration zusätzlicher Module (z. B. Validierung, Tests)
-
-Durch den Einsatz von Spring Boot konnte auf umfangreiche manuelle Konfiguration verzichtet werden, da viele Standardeinstellungen bereits vorkonfiguriert sind. Dies beschleunigte die Entwicklung und erhöhte die Wartbarkeit des Codes.
-
-#### Eingesetzte Maven-Dependencies:
-Für die Umsetzung der Backend-Funktionalität wurden mehrere Spring-Boot-Starter sowie zusätzliche Bibliotheken eingebunden.
-Diese übernehmen jeweils klar definierte Aufgaben innerhalb des Systems.
-
-#### Spring Boot Starter Web:
-Der Spring Boot Starter Web stellt alle notwendigen Komponenten zur Verfügung, um eine klassische REST-basierte Webanwendung zu entwickeln.
-Dazu zählen unter anderem:
-- Unterstützung für HTTP-Requests (GET, POST, PUT, DELETE)
-- Controller-Struktur zur Verarbeitung von Anfragen
-- JSON-Serialisierung und -Deserialisierung
-
-Diese Dependency bildet die Basis für die Kommunikation zwischen Frontend und Backend.
-
-#### Spring Boot Starter Validation:
-Der Spring Boot Starter Validation wird zur Validierung von Eingabedaten verwendet.
-Damit können eingehende Anfragen überprüft werden, bevor sie weiterverarbeitet werden.
-Beispiele für Validierungen sind:
-- Pflichtfelder
-- Längenbeschränkungen von Textfeldern
-- Formatüberprüfungen (z. B. Strings, Zahlenwerte)
-
-Diese Validierungen erhöhen die Datenqualität und tragen zur Sicherheit und Stabilität des Backends bei.
-
-#### Spring Boot Starter Test:
-Für Testzwecke wurde der Spring Boot Starter Test eingebunden.
-Diese Dependency stellt Werkzeuge für das Testen von Komponenten, Services und Schnittstellen zur Verfügung.
-Durch Tests kann sichergestellt werden, dass einzelne Funktionen korrekt arbeiten und Änderungen am Code keine unerwünschten Nebeneffekte verursachen.
-
-#### Lombok:
-Zur Reduktion von Boilerplate-Code (Code der oft vor kommt) wurde die Bibliothek Lombok eingesetzt.
-Lombok ermöglicht es, häufig benötigte Methoden wie Getter, Setter oder Konstruktoren automatisch zu generieren.
-Dadurch bleibt der Quellcode übersichtlich und besser lesbar, während gleichzeitig der Entwicklungsaufwand reduziert wird. 
-Lombok wird ausschließlich zur Compile-Zeit (Wenn das Programm ausgeführt wird) verwendet und ist nicht Bestandteil der laufenden Anwendung.
-
-### Content-Management-System (CMS) // TODO: Erweitern
-#### Definition und Zweck eines CMS: 
-Ein Content-Management-System (CMS) ist eine Softwarelösung, die es ermöglicht, Inhalte einer Anwendung einfach und benutzerfreundlich zu verwalten.
-Inhalte können dabei Texte, Bilder, Veranstaltungen oder andere informationsrelevante Daten sein.
-Der große Vorteil eines CMS besteht darin, dass Änderungen an Inhalten ohne direkte Anpassung des Quellcodes vorgenommen werden können.
-
-#### Aufgaben eines CMS im Backend:
-Das CMS ist eng mit dem Backend verknüpft und übernimmt unter anderem folgende Aufgaben:
-- Erstellen, Bearbeiten und Löschen von Inhalten
-- Strukturierte Speicherung der Inhalte
-- Verwaltung von Benutzern und Rollen
-- Bereitstellung der Inhalte über das Backend an das Frontend
-
-Durch diese Funktionalitäten wird eine klare Trennung zwischen Inhalt und Darstellung erreicht. Das Frontend stellt lediglich die Inhalte dar, während das CMS für deren Verwaltung verantwortlich ist.
 
 
 ## Praktische Arbeit
