@@ -35,8 +35,7 @@ Zusätzlich sollte ein digitales Informationssystem **erweiterbar und skalierbar
 ### Überblick und Zielsetzung des Theorie-Teils
 Der Theorie-Teil dient dazu, den fachlichen und technischen Kontext bereitzustellen, der für das Verständnis des anschließenden praktischen Abschnitts notwendig ist.
 Er definiert zentrale Begriffe, erläutert die verwendeten Technologien und liefert die Grundlage für die Designentscheidungen im Projekt.
-Durch diese Einbettung wird die praktische Umsetzung nicht nur als Eigenleistung dargestellt, sondern als Konsequenz aus etablierten Prinzipien und Methoden.
-Die Zielsetzung besteht darin, dem Leser einen kohärenten Überblick über Backend-Systeme im Allgemeinen und die spezifischen Komponenten des Infopoint-Projektes im Besonderen zu vermitteln.
+Die Zielsetzung besteht darin, dem Leser einen guten Überblick über Backend-Systeme im Allgemeinen und die spezifischen Komponenten des Infopoint-Projektes im Besonderen zu vermitteln.
 Der Abschnitt soll ausreichend theoretisches Wissen bereitstellen, um auch ohne tiefe Vorkenntnisse die Architektur und Implementierung des Backends nachvollziehen zu können.
 Abschließend wird verdeutlicht, wie die einzelnen Konzepte im späteren Praxis-Teil konkret angewendet werden.
 Diese Verknüpfung erleichtert dem Leser die Orientierung und stärkt das Verständnis für die gewählten Technologien und Strukturen.
