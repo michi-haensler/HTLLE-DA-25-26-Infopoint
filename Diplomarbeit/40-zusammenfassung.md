@@ -16,12 +16,12 @@ Zum Schluss geben Sie noch einen Ausblick was die nächsten Schritte sein könnt
 
 Das Infopoint-System folgt einer klassischen dreischichtigen Architektur, bestehend aus einem
 Frontend, einem Backend und einem Content-Management-System (CMS). Alle drei Komponenten werden
-als Docker-Container betrieben und laufen über ein gemeinsames internes
-Docker-Bridge-Netzwerk (`infopoint-network`). Die vollständige Orchestrierung erfolgt mittels
+als Docker-Container betrieben und kommunizieren über ein gemeinsames internes
+Docker-Bridge-Netzwerk (`infopoint-network`). Die vollständige Orchestrierung erfolgt mittels
 Docker Compose, was eine reproduzierbare Deploymentumgebung auf jedem kompatiblen Host-System
-gewährleistet.
+gewährleistet.
 
-Die Kommunikation zwischen den Schichten erfolgt über den REST-API vom Frontend an das Backend. 
+Die Kommunikation zwischen den Schichten erfolgt über den REST-API vom Frontend an das Backend. 
 Das Backend seinerseits kommuniziert mit dem Cockpit-CMS sowie mit der externen WebUntis-Schnittstelle.
 
 ### Technologiestack
