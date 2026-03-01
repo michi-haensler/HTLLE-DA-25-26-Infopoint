@@ -8,3 +8,5 @@ Eine zeitgemäße Lösung für diese Problemstellung stellt der Infopoint dar. D
 
 Die vorliegende Arbeit verfolgt das Ziel, eine Auswahl geeigneter Infopoint-Systeme verschiedener Preiskategorien zu evaluieren und der Schulleitung zur Entscheidungsfindung vorzulegen. Im Anschluss an die Hardwareauswahl erfolgt die Entwicklung einer maßgeschneiderten Softwarelösung. Diese umfasst sowohl die Gestaltung der Benutzeroberfläche als auch die Implementierung der Datenhaltung sowie die Integration von Schnittstellen zu Drittanbieterapplikationen.
 
+Die Motivation für dieses Projekt ergibt sich wie erwähnt aus den Anforderungen des Schulalltags. Wiederholt tritt beispielsweise die Situation ein, dass Lehrpersonen gesucht werden müssen. Der konventionelle Lösungsansatz erfordert das Aufsuchen eines Klassenraums, um die dort unterrichtende Lehrkraft um eine Standortabfrage zu bitten. Ein Infopoint ermöglicht eine deutlich effizientere Lösung dieses Problems. Darüber hinaus lassen sich auch reguläre Informationsflüsse, etwa Raumpläne für den Tag der offenen Tür oder Anmeldemodalitäten für Sportveranstaltungen, über einen Infopoint ressourcenschonender kommunizieren.
+
