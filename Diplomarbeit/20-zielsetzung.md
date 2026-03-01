@@ -1,8 +1,6 @@
 # Zielsetzung
 
-Das primäre Ziel der vorliegenden Arbeit besteht in der Entwicklung und Implementierung eines vollständig funktionsfähigen Infopoints, der im Schulgebäude installiert wird und sowohl Schülerinnen und Schülern als auch Lehrkräften relevante Informationen bereitstellt.
-
-Das übergeordnete Ziel besteht darin, allen Personen im schulischen Umfeld einen zentralen Zugangspunkt zur Informationsbeschaffung bereitzustellen. Die Realisierung erfordert sowohl die Beschaffung geeigneter Hardware als auch die Entwicklung einer maßgeschneiderten Softwarelösung.
+Das primäre Ziel der vorliegenden Arbeit besteht in der Entwicklung und Implementierung eines vollständig funktionsfähigen Infopoints, der im Schulgebäude installiert wird und sowohl Schülerinnen und Schülern als auch Lehrkräften relevante Informationen bereitstellt. Das übergeordnete Ziel besteht darin, allen Personen im schulischen Umfeld einen zentralen Zugangspunkt zur Informationsbeschaffung bereitzustellen. Die Realisierung erfordert sowohl die Beschaffung geeigneter Hardware als auch die Entwicklung einer maßgeschneiderten Softwarelösung.
 
 ## Ziele
 
