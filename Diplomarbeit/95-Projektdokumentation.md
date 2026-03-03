@@ -366,7 +366,7 @@
 
 : Projektstatus Stand 09. Januar 2026
 
-## Projektfortschritt 9. Januar bis 1. Februar 2026
+### Projektfortschritt 9. Januar bis 1. Februar 2026
 
 #### Gesamtstatus: verzögert
 * Das Projekt hat sich an einigen Stellen verzögert, befindet sich aber auf dem Weg zur Fertigstellung.
@@ -396,7 +396,7 @@
 
 : Projektstatus Stand 01. Februar 2026
 
-## Projektfortschritt 1. Februar bis 26. Februar 2026
+### Projektfortschritt 1. Februar bis 26. Februar 2026
 
 #### Gesamtstatus: im Plan
 * Das Projekt hat sich an einigen Stellen verzögert, befindet sich aber auf dem Weg zur Fertigstellung.
@@ -433,7 +433,7 @@
 
 : Projektstatus Stand 26. Februar 2026
 
-## Projektfortschritt 26. Februar bis 6. März 2026
+### Projektfortschritt 26. Februar bis 6. März 2026
 
 #### Gesamtstatus: im Plan
 * Das Projekt befindet sich derzeit im Plan.
