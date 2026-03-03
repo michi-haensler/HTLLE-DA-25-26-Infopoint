@@ -353,7 +353,7 @@
 |:-------------------------------------------|:---------------------|:------------------------------|
 | Docker Deployment fertiggestellt           | 6h                   | Michael Hänsler               |
 | Frontend Integration fertiggestellt        | 5h                   | Lukas Fellegger               |
-| Theorieteil fertiggestellt                 | 20h                  | Simon Moser                   |
+| Theorieteil verschriftlichen               | 20h                  | Simon Moser                   |
 | Projektmanagement                          | 2h                   | Michael Hänsler               |
 
 #### Notwendige Entscheidungen
@@ -366,7 +366,102 @@
 
 : Projektstatus Stand 09. Januar 2026
 
+## Projektfortschritt 9. Januar bis 1. Februar 2026
 
+#### Gesamtstatus: verzögert
+* Das Projekt hat sich an einigen Stellen verzögert, befindet sich aber auf dem Weg zur Fertigstellung.
+
+| Dimension           | Status            |  Maßnahmen
+|:--------------------|:------------------|:---------------------------------------------|
+| Leistungsziele      | verzögert         | zusätzliche Zeit einplanen                   |
+| Terminziele         | verzögert         | Zeitplan anpassen                            |
+| Kostenziele         | In Ordnung        | keine                                        |
+| Teamarbeit          | optimal           | keine                                        |
+
+:Projektstatus am 2026-02-23
+
+#### durchgeführte Arbeiten im Berichtszeitraum
+| durchgeführte Arbeit                       | zeitlicher Aufwand.  | Teammitglied                  |    
+|:-------------------------------------------|:---------------------|:------------------------------|
+| Bugfixing und Erweiterungen im Frontend    | 16h                  | Lukas Fellegger               |
+| Bugfixing und Erweiterungen im Backend     | 8h                   | Simon Moser                   |
+| Projektmanagement                          | 1h                   | Michael Hänsler               |
+
+#### Notwendige Entscheidungen
+* Zeitplan anpassen
+
+#### Nächste Schritte
+* Testphase fortsetzen
+* Vorbereitung auf die 2. Zwischenpräsentation
+
+: Projektstatus Stand 01. Februar 2026
+
+## Projektfortschritt 1. Februar bis 26. Februar 2026
+
+#### Gesamtstatus: im Plan
+* Das Projekt hat sich an einigen Stellen verzögert, befindet sich aber auf dem Weg zur Fertigstellung.
+
+| Dimension           | Status            |  Maßnahmen
+|:--------------------|:------------------|:---------------------------------------------|
+| Leistungsziele      | im Plan           | keine                                        |
+| Terminziele         | im Plan           | keine                                        |
+| Kostenziele         | In Ordnung        | keine                                        |
+| Teamarbeit          | optimal           | keine                                        |
+
+:Projektstatus am 2026-02-26
+
+#### durchgeführte Arbeiten im Berichtszeitraum
+| durchgeführte Arbeit                       | zeitlicher Aufwand.  | Teammitglied                  |    
+|:-------------------------------------------|:---------------------|:------------------------------|
+| Deployment auf Endgerät durchgeführt       | 10h                  | Michael Hänsler               |
+| Unterstützung für Deployment               | 3h                   | Simon Moser                   |
+| Unterstützung für Deployment               | 3h                   | Lukas Fellegger               |
+| Testphase durchführen                      | 5h                   | Simon Moser                   |
+| Testphase durchführen                      | 5h                   | Lukas Fellegger               |   
+| Testphase durchführen                      | 5h                   | Michael Hänsler               |
+| Projektmanagement                          | 1h                   | Michael Hänsler               |
+| Vorbereitung der 2. Zwischenpräsentation   | 5h                   | Simon Moser                   |
+| Vorbereitung der 2. Zwischenpräsentation   | 5h                   | Lukas Fellegger               |
+| Vorbereitung der 2. Zwischenpräsentation   | 5h                   | Michael Hänsler               |
+
+#### Notwendige Entscheidungen
+* keine
+
+#### Nächste Schritte
+* Finalisierung der schriftlichen Arbeit
+* Projektabschluss
+
+: Projektstatus Stand 26. Februar 2026
+
+## Projektfortschritt 26. Februar bis 6. März 2026
+
+#### Gesamtstatus: im Plan
+* Das Projekt befindet sich derzeit im Plan.
+
+| Dimension           | Status            |  Maßnahmen
+|:--------------------|:------------------|:---------------------------------------------|
+| Leistungsziele      | im Plan           | keine                                        |
+| Terminziele         | im Plan           | keine                                        |  
+| Kostenziele         | In Ordnung        | keine                                        |
+| Teamarbeit          | optimal           | keine                                        |
+
+:Projektstatus am 2026-03-06
+
+#### durchgeführte Arbeiten im Berichtszeitraum
+| durchgeführte Arbeit                       | zeitlicher Aufwand.  | Teammitglied                  |    
+|:-------------------------------------------|:---------------------|:------------------------------|
+| Finalisierung der schriftlichen Arbeit     | 15h                  | Michael Hänsler               |
+| Finalisierung der schriftlichen Arbeit     | 15h                  | Lukas Fellegger               |
+| Finalisierung der schriftlichen Arbeit     | 15h                  | Simon Moser                   |
+| Projektmanagement & Projektabschluss       | 9h                   | Michael Hänsler               |
+
+#### Notwendige Entscheidungen
+* keine
+
+#### Nächste Schritte
+* Abgabe der schriftlichen Arbeit
+
+: Projektstatus Stand 06. März 2026
 
 
 

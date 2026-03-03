@@ -1,5 +1,5 @@
 ---
-da-titel: Infopoint
+da-titel: Digitales Infopoint-System zur Orientierung und Informationsvermittlung an der HTL Leoben
 
 da-jahr: 2025/2026
 
@@ -13,17 +13,20 @@ da-author:
 - vorname: Michael 
   nachname: Hänsler
   klasse: 5BHWIN
-  thema: Recherche, Konzeption & Design, Projektmanagement
+  thema: Recherche, Konzeption & Design, Docker, Projektmanagement
   ki-tools:
-  - name: ChatGPT4o
-    zweck: Informationsbeschaffung und Bildgenerierung 
+  - name: ChatGPT 5.2
+    zweck: Informationsbeschaffung & Bildgenerierung
+
+  - name: Claude Opus 4.5
+    zweck: Rechtschreibprüfung, Textoptimierung
 
 - vorname: Simon 
   nachname: Moser
   klasse: 5BHWIN
   thema: Backend und Datenverwaltung
   ki-tools:
-  - name: ChatGPT5.2
+  - name: ChatGPT 5.2
     zweck: Informationsbeschaffung und Ki Assistiertes Programmieren
 
 - vorname: Lukas 
@@ -43,14 +46,14 @@ da-kurzfassung-de: Hier kommt eine deutsche Kurzfassung hin.
 da-kurzfassung-en: Hier kommt eine englische Kurzfassung hin.
 
 
-da-kiquellen:
-- ki: ChatGPT4
-  short-prompt: Erklärung Pandoc
-  pdf-file: gpt-pandoc.pdf
-
-- ki: ChatGPT3.5
-  short-prompt: Aufbau eines Atoms
-  pdf-file: gpt-atom.pdf
+# da-kiquellen:
+# - ki: ChatGPT4
+#  short-prompt: Erklärung Pandoc
+#  pdf-file: gpt-pandoc.pdf
+#
+#- ki: ChatGPT3.5
+#  short-prompt: Aufbau eines Atoms
+#  pdf-file: gpt-atom.pdf
 
 
 da-appendix:

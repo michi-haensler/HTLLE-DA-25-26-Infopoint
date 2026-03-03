@@ -61,6 +61,16 @@ Das Gesamtprojekt beläuft sich auf Kosten von 24.373,00 Euro.
 
 ##### Projektkosten (tatsächlich)
 
+| Kostenpunkt | Geplant | Tatsächlich | Abweichung |
+|:---|---:|---:|:---|
+| Personal (3 Personen) | 24.300,00 € | 24.300,00 € | keine |
+| ChatGPT Plus | 23,00 € | 23,00 € | keine |
+| DA-Binden | 50,00 € | 50,00 € | keine |
+| Hardware | 0,00 € (Auftraggeber) | 0,00 € | keine |
+| **Gesamt** | **24.373,00 €** | **24.373,00 €** | **keine** |
+
+: Tatsächliche Projektkosten
+
 <!-- ToDo: Am Ende der Diplomarbeit ist hier eine Aufstellung der tatsächlich angefallenen Kosten einzufügen. -->
 
 #### Projektrisiken
