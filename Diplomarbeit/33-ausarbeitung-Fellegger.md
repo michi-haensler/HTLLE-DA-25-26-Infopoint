@@ -7,7 +7,7 @@
 
 Mein Aufgabenbereich innerhalb des Projekts umfasste die Frontend-Entwicklung der Anwendung. Ziel war es, eine übersichtliche, moderne und benutzerfreundliche Oberfläche zu erstellen, die auf unterschiedlichen Endgeräten zuverlässig funktioniert.
 
-Für die Umsetzung des Frontends wurde das Framework React Native verwendet. Dieses ermöglicht die Entwicklung plattformübergreifender Anwendungen auf Basis von JavaScript und erlaubt es, eine gemeinsame Codebasis für mehrere Betriebssysteme zu nutzen. Dadurch konnte der Entwicklungsaufwand reduziert und gleichzeitig eine konsistente Benutzeroberfläche gewährleistet werden.
+Für die Umsetzung des Frontends wurde das Framework React verwendet. Dieses ermöglicht die Entwicklung moderner Single Page Applications auf Basis von JavaScript bzw. TypeScript und zeichnet sich durch eine komponentenbasierte Architektur aus, die eine hohe Wiederverwendbarkeit und Wartbarkeit des Codes fördert. Dadurch konnte eine konsistente und erweiterbare Benutzeroberfläche realisiert werden.
 
 Ein zentraler Fokus lag auf der strukturierten Umsetzung der Benutzeroberfläche. Einzelne Komponenten wurden modular aufgebaut, um die Wartbarkeit und Erweiterbarkeit des Codes zu verbessern. Durch die Wiederverwendung dieser Komponenten konnte eine einheitliche Gestaltung der Anwendung erreicht werden. Zusätzlich wurde darauf geachtet, dass die Oberfläche klar strukturiert und intuitiv bedienbar ist.
 

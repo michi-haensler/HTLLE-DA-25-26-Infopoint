@@ -16,7 +16,7 @@ da-author:
   thema: Recherche, Konzeption & Design, Docker, Projektmanagement
   ki-tools:
   - name: ChatGPT 5.2
-    zweck: Informationsbeschaffung & Bildgenerierung
+    zweck: Bildgenerierung
 
   - name: Claude Opus 4.5
     zweck: Rechtschreibprüfung, Textoptimierung
@@ -41,9 +41,31 @@ da-betreuer:
 - paraffe: stse
   name: Sebastian Steiner
 
-da-kurzfassung-de: Hier kommt eine deutsche Kurzfassung hin.
+da-kurzfassung-de: Im Rahmen dieser Diplomarbeit wurde ein digitales Infopoint-System für die HTL Leoben entwickelt, 
+  das Schülerinnen und Schülern sowie Besucherinnen und Besuchern einen schnellen und
+  unkomplizierten Zugang zu schulrelevanten Informationen bietet. Das System stellt Funktionen wie
+  eine Echtzeit-Lehrkraftsuche auf Basis des Schulstundenplans, aktuelle Schulneuigkeiten und
+  Termine, Gebäudepläne sowie Laborstundenpläne bereit. Es wurde als dreischichtige Webanwendung
+  realisiert, bestehend aus einem React-Frontend, einem Spring-Boot-Backend und dem headless CMS
+  Cockpit, die vollständig über Docker Compose containerisiert und orchestriert werden. Die
+  Stundenplaninformationen werden über die öffentlich zugängliche Monitor-API von WebUntis
+  abgerufen, während redaktionelle Inhalte über das CMS verwaltet werden. Als Endgerät wird ein
+  handelsüblicher PC mit Ubuntu Desktop im Kiosk-Modus eingesetzt. Die Benutzeroberfläche wurde
+  für den Touchscreen-Betrieb im öffentlichen Raum optimiert und orientiert sich an den Grundsätzen
+  des nutzerzentrierten Designs. Das Projektmanagement erfolgte nach der Scrumban-Methode unter
+  Verwendung von GitHub Projects.
 
-da-kurzfassung-en: Hier kommt eine englische Kurzfassung hin.
+da-kurzfassung-en: This diploma thesis presents the development of a digital infopoint system for HTL Leoben,
+  designed to provide students and visitors with quick and easy access to school-related information.
+  The system offers features such as a real-time teacher locator based on the school timetable,
+  current news and events, building maps, and laboratory timetables. It was implemented as a
+  three-tier web application consisting of a React frontend, a Spring Boot backend, and the headless
+  CMS Cockpit, all fully containerised and orchestrated using Docker Compose. Timetable data is
+  retrieved via the publicly accessible monitor API of WebUntis, while editorial content is managed
+  through the CMS. The system is deployed on a standard PC running Ubuntu Desktop in kiosk mode.
+  The user interface was optimised for touchscreen use in a public environment and follows the
+  principles of user-centred design. Project management was carried out using the Scrumban
+  methodology with GitHub Projects.
 
 
 # da-kiquellen:
@@ -57,9 +79,9 @@ da-kurzfassung-en: Hier kommt eine englische Kurzfassung hin.
 
 
 da-appendix:
-- abschnitt: Technische Dokumentation
-  pdf-file: pandoc-manual.pdf
-  seiten: 53-73
+#- abschnitt: Technische Dokumentation
+#  pdf-file: pandoc-manual.pdf
+#  seiten: 53-73
 
 - abschnitt: Betreuungsprotokolle
   pdf-file: betreuungsprotokolle.pdf    

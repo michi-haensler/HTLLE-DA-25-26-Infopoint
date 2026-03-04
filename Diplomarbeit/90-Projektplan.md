@@ -6,12 +6,12 @@
 ### Projektauftrag
 
 Der Projektauftrag umfasst die Entwicklung eines digitalen Infopoints für die HTL Leoben. Dieser Infopoint soll zentrale schulrelevante Informationen wie Stundenplanänderungen, Vertretungen und schulinterne Neuigkeiten anzeigen. Die Informationen werden über ein Touch-Display bereitgestellt, das an einem zentralen Ort im Schulgebäude montiert wird. Die Hardware wird nicht eigenständig entwickelt. Stattdessen wird eine All-in-One-Lösung evaluiert, die idealerweise keine proprietäre Software mitbringt, sodass die projektspezifische Anwendung direkt darauf bereitgestellt werden kann. Als Verwaltungssystem für Inhalte ist die Integration eines Open-Source-CMS vorgesehen.
-Ein besonderer Fokus liegt auf der benutzerfreundlichen Gestaltung der Oberfläche sowie auf Mehrsprachigkeit, um eine zukunftsfähige Lösung zu gewährleisten.
+Ein besonderer Fokus liegt auf der benutzerfreundlichen Gestaltung der Oberfläche, um eine zukunftsfähige Lösung zu gewährleisten.
 
 
 #### Projektziele
 
-Das Projekt verfolgt mehrere Kernziele. Zunächst erfolgt die Auswahl eines geeigneten Hardwaresystems für den Schulbetrieb im Innenbereich. Darauf aufbauend wird ein funktionales Infopoint-System für Touch-Displays entwickelt, das aktuelle schulische Informationen wie Veranstaltungen, Raumpläne, Stundenpläne, den Aufenthalt von Lehrpersonen sowie einen Social-Media-Feed darstellt. Die Administrierbarkeit wird durch die Integration eines Content-Management-Systems (CMS) gewährleistet. Das UI/UX-Design fokussiert auf Barrierefreiheit und Mehrsprachigkeit (Deutsch und Englisch). Die Lösung wird zukunftssicher und erweiterbar konzipiert.
+Das Projekt verfolgt mehrere Kernziele. Zunächst erfolgt die Auswahl eines geeigneten Hardwaresystems für den Schulbetrieb im Innenbereich. Darauf aufbauend wird ein funktionales Infopoint-System für Touch-Displays entwickelt, das aktuelle schulische Informationen wie Veranstaltungen, Raumpläne, Stundenpläne, den Aufenthalt von Lehrpersonen sowie einen Social-Media-Feed darstellt. Die Administrierbarkeit wird durch die Integration eines Content-Management-Systems (CMS) gewährleistet. Das UI/UX-Design fokussiert auf Barrierefreiheit. Die Lösung wird zukunftssicher und erweiterbar konzipiert.
 
 #### Nicht-Ziele bzw. nicht Inhalte
 
@@ -236,7 +236,7 @@ Der Endverbraucher sucht über die Lehrersuchfunktion des Infopoints nach einer 
 Der Endverbraucher wählt auf dem Homescreen die Funktion „Lehrperson suchen".
 
 #### Vorbedingung
-Der Infopoint ist betriebsbereit und der Endverbraucher befindet sich auf dem Homescreen. Die Lehrerdaten sind im CMS gepflegt.
+Der Infopoint ist betriebsbereit und der Endverbraucher befindet sich auf dem Homescreen. Der aktuelle Stundenplan ist über WebUntis abrufbar.
 
 #### Nachbedingung
 Der Endverbraucher hat den aktuellen Aufenthaltsort der gesuchten Lehrperson in Erfahrung gebracht.

@@ -458,7 +458,7 @@
 #### Notwendige Entscheidungen
 * keine
 
-#### Nächste Schritte
+#### Finaler Schritt
 * Abgabe der schriftlichen Arbeit
 
 : Projektstatus Stand 06. März 2026

@@ -11,6 +11,8 @@ Zum Schluss geben Sie noch einen Ausblick was die nächsten Schritte sein könnt
 -->
 ## Entstehungsprozess
 
+Die Entwicklung des Infopoint-Systems erfolgte in mehreren iterativen Phasen, beginnend mit einer Anforderungsanalyse und der Erstellung von Mockups für die Benutzeroberfläche. Nach der Festlegung der Systemarchitektur und des Technologiestacks wurde zunächst das Backend mit den grundlegenden API-Endpunkten implementiert, gefolgt von der Entwicklung des Frontends als React Single-Page Application. Parallel dazu wurden die Inhalte im Cockpit-CMS angelegt und die Integration mit der WebUntis-API realisiert. Abschließend erfolgten umfangreiche Tests, Fehlerbehebungen und Optimierungen, bevor das System in einer produktiven Umgebung bereitgestellt wurde. 
+
 ## Systembeschreibung der entwickelten Lösung
 
 ### Systemarchitektur
@@ -31,7 +33,7 @@ Das Backend seinerseits kommuniziert mit dem Cockpit-CMS sowie mit der externen 
 |---------|-------------|---------|
 | Frontend | React | 19 |
 | Frontend | TypeScript | 5.9 |
-| Frontend | Vite | 7 |
+| Frontend | Vite | 6 |
 | Frontend | React Router DOM | 6 |
 | Backend | Java | 21 |
 | Backend | Spring Boot | 3.3.5 |
@@ -42,8 +44,6 @@ Das Backend seinerseits kommuniziert mit dem Cockpit-CMS sowie mit der externen 
 :Technologiestack
 
 ### Systemkomponenten
-
-Das System besteht aus den folgenden Hauptkomponenten:
 
 **Frontend (React SPA)**
 
@@ -73,6 +73,7 @@ Die API gliedert sich in folgende Ressourcen:
 | `/api/v1/news` | GET | Neuigkeiten aus dem CMS |
 | `/api/v1/news/{id}` | GET | Einzelnen Beitrag laden |
 | `/api/v1/teacher-finder/search?q=&date=` | GET | Lehrersuche via WebUntis |
+| `/api/v1/teacher-finder/day?date=` | GET | Tagesübersicht aller Lehrkräfte |
 | `/api/v1/class-finder/search?q=&date=` | GET | Klassensuche via WebUntis |
 | `/api/v1/class-finder/all?date=` | GET | Alle Klassen eines Tages |
 | `/api/v1/laborplaene` | GET | Alle Laborstundenpläne |
@@ -151,8 +152,11 @@ zugänglicher Monitoransichten.
 
 ## Erfahrungen und Herausforderungen
 
+Die größte technische Herausforderung im Projektverlauf stellte die Integration der WebUntis-Schnittstelle dar, da für die verwendete Monitor-API keine offizielle Dokumentation vorlag und die Schnittstelle durch eigenständige Analyse des Netzwerkverkehrs erschlossen werden musste. Diese Arbeiten verursachten gemeinsam mit der aufwändigeren als erwarteten Cockpit-CMS-Anbindung eine Gesamtverzögerung von rund acht Wochen, die durch Mehrarbeit und Anpassung des Zeitplans vollständig aufgeholt wurde. Auf der Frontend-Seite erforderte die einheitliche Darstellung strukturell sehr unterschiedlicher Inhaltstypen sowie die Optimierung der Oberfläche für den Kiosk-Einsatz im öffentlichen Raum besondere gestalterische Sorgfalt. Insgesamt vermittelte das Projekt allen Beteiligten praxisnahe Erfahrungen mit einem industrienahen Technologiestack, die weit über den schulischen Unterrichtsstoff hinausgehen, und verdeutlichte den Wert einer transparenten Projektkommunikation sowie einer frühzeitigen Auseinandersetzung mit externen Abhängigkeiten.
+
 ## Erweiterungsmöglichkeiten
 
+Aus technischer Sicht bietet das System mehrere sinnvolle Ausbaumöglichkeiten. Eine naheliegende Erweiterung wäre die vollständige Integration in das schulinterne Netzwerk, sodass der Infopoint ausschließlich über die schulinterne Infrastruktur erreichbar ist und damit sowohl die Sicherheit als auch die Verfügbarkeit im Schulbetrieb verbessert werden. Darüber hinaus könnte die Inhaltspflege im Cockpit-CMS durch eine standardisierte externe API-Schnittstelle ermöglicht werden, wodurch berechtigte Personen Inhalte wie Neuigkeiten oder Termine direkt aus anderen Schulsystemen heraus oder über eigens entwickelte Verwaltungsoberflächen remote einpflegen könnten, ohne den direkten Zugang zum CMS-Backend zu benötigen.
 
 <!-- 
 ## Lesen und lesen lassen
