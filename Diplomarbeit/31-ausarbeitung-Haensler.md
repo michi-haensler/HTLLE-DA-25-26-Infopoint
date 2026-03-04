@@ -374,9 +374,9 @@ Für die Verwaltung und Aktualisierung der Inhalte ist es erforderlich, den Kios
 
 Die Nutzererfahrung des Infopoint-Systems wurde darauf ausgerichtet, eine schnelle und intuitive Navigation zu ermöglichen. Bei Inaktivität zeigt das System zunächst einen Standby-Bildschirm an, der durch Berührung des Touchscreens, einen Mausklick oder einen Tastendruck verlassen werden kann. Anschließend wird der Homescreen angezeigt, der verschiedene Optionen wie die Lehrersuchfunktion, den Lageplan des Schulgebäudes sowie Informationen zu aktuellen Veranstaltungen bietet. Durch die Verwendung klar erkennbarer Icons und einer logischen Anordnung der Navigationselemente können die Nutzerinnen und Nutzer die gewünschten Informationen mit wenigen Interaktionsschritten abrufen. Die Reaktionszeiten der Benutzeroberfläche wurden optimiert, um ein flüssiges Nutzungserlebnis zu gewährleisten.
 
-![Standby-Ansicht\label{fig:Standby-Ansicht}](img/StandbyScreen-Final.png){width=50%}
+![Standby-Ansicht\label{fig:Standby-Ansicht}](img/StandbyScreen-Final.png){width=100%}
 
-![Home-Bildschirm\label{fig:Home-Bildschirm}](img/HomeScreen-Final.png){width=50%}
+![Home-Bildschirm\label{fig:Home-Bildschirm}](img/HomeScreen-Final.png){width=100%}
 
 ### Fazit und Ausblick
 
