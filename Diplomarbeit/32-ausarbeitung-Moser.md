@@ -157,11 +157,11 @@ Der Service lässt sich dadurch schnell, zuverlässig und isoliert testen eine z
 
 #### ApplicationContext und Bean-Verwaltung
 Der **ApplicationContext** ist das Herzstück von Spring und Dependency Injection in Java.
-Er ist ein Container, der die Instanziierung, Konfiguration und Verwaltung aller **Beans** (verwaltete Objekte) übernimmt.
-Ein Bean ist in der Spring-Terminologie einfach ein Javaobjekt, das vom Spring-Container verwaltet wird typischerweise Services, Controller, Repositories oder Konfigurationsklassen.
-Der ApplicationContext durchläuft dabei einen definierten Lifecycle beim Start der Anwendung scannt er die Klassenpfade nach Annotationen wie `@Component`, `@Service`, `@Repository` oder `@RestController`.
+Als Container übernimmt der ApplicationContext die Instanziierung, Konfiguration und Verwaltung aller **Beans** (verwaltete Objekte).
+Ein Bean ist in der Spring-Terminologie ein Javaobjekt, das vom Spring-Container verwaltet wird, typischerweise Services, Controller, Repositories oder Konfigurationsklassen.
+Der ApplicationContext durchläuft dabei einen definierten Lifecycle: Beim Start der Anwendung werden die Klassenpfade nach Annotationen wie `@Component`, `@Service`, `@Repository` oder `@RestController` gescannt.
 Für jede gefundene Klasse wird eine einzelne Instanz (Singleton) erzeugt und im Container registriert.
-Danach werden Dependency-Injection-Anforderungen aufgelöst findet der Container einen `@Autowired EventService` in einem Controller, sucht er nach einem registrierten `EventService`-Bean, instanziiert ihn falls nötig, und injiziert ihn.
+Danach werden Dependency-Injection-Anforderungen aufgelöst wird dabei in einem Controller ein `@Autowired EventService` gefunden, wird nach einem registrierten `EventService`-Bean gesucht, dieses bei Bedarf instanziiert und anschließend injiziert.
 Dieser Prozess wird **Bean Wiring** genannt und erfolgt automatisch und deklarativ. [@spring-boot] [@spring-beans]
 Ein großer Vorteil des ApplicationContext ist die zentrale Lebenszyklus-Verwaltung.
 Der Container kümmert sich um Initialisierung, Abhängigkeitsauflösung und Cleanup (Destruktoren).
@@ -243,7 +243,7 @@ Durch das Festlegen von Versionsnummern und die Nutzung von Repositories wird si
 `WebClient` ist Teil von Spring WebFlux und ermöglicht asynchrone, nicht-blockierende HTTP-Anfragen. Im Vergleich zum älteren `RestTemplate` bietet es eine reaktive API und bessere Skalierbarkeit. [@spring-webclient]
 Die reaktive Programmierung von `WebClient` basiert auf dem Projekt Reactor und verwendet die Typen `Mono` und `Flux` zur Darstellung von Einzelergebnissen bzw. Datenströmen. Durch die deklarative Fehlerbehandlung und die Möglichkeit, Rückgriff auf Backpressure zu nehmen, lassen sich robuste Integrationen implementieren.
 In Backend-Anwendungen wird `WebClient` häufig zur Kommunikation mit externen Systemen verwendet.
-Er erlaubt die Konfiguration von Timeouts, Fehlerbehandlung und die Anpassung der In-Memory-Größe für große Antworten.
+Dieser erlaubt die Konfiguration von Timeouts, Fehlerbehandlung und die Anpassung der In-Memory-Größe für große Antworten.
 Durch die Nutzung von `WebClient` kann das Backend auch bei hoher Last stabil bleiben, da Threads nicht blockiert werden während auf Antworten gewartet wird.
 Außerdem erleichtert die einheitliche Schnittstelle die Implementierung von Retry-Mechanismen, Logging und Metriken, da alle HTTP-Aufrufe über denselben Typ ablaufen. [@spring-webclient]
 
