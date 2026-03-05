@@ -571,6 +571,7 @@ Der Client liefert dann sichere Rückgabewerte wie `List.of()` oder `null` zurü
 Damit bleibt das Backend auch bei externen Störungen lauffähig und das Frontend erhält definierte Antworten statt unkontrollierter Exceptions.
 
 **CockpitClient - Beispiel für den Abruf von News über REST** [@SLF4J-Docs]
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="CMS-Integrationscomponent (CockpitClient)" .java}
 @Component
 public class CockpitClient {
@@ -636,6 +637,7 @@ Stattdessen wird ein definiertes, gültiges JSON-Objekt zurückgegeben, sodass d
 Dieses Fehlerverhalten ist für den Schulbetrieb wesentlich, weil kurzfristige Störungen externer Systeme dadurch nicht unmittelbar zu einem Ausfall der Anzeige führen.
 
 **WebUntisClient - Abruf der Tagesübersicht für Klassen mit Fallback** 
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Stundenplan-Integrationscomponent (WebUntisClient)" .java}
 @Component
 public class WebUntisClient {
