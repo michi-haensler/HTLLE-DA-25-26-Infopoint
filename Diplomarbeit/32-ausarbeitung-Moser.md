@@ -152,7 +152,7 @@ Ein Mock (oder Stub) ist ein Testobjekt, das echte abhängige Komponenten imitie
 Als Beispiel beim Testen des `EventService` möchte der Entwickler nicht auf die echte Cockpit-API aufreifen, da dies langsam ist, externe Abhängigkeiten schafft und Tests flüchtig macht (fragile tests).
 Stattdessen wird ein Mock-CockpitClient bereitgestellt, der beispielsweise immer vordefinierte Test-Events zurückgibt.
 Der Service wird so getestet mit diesem Mock injiziert und verhält sich damit unabhängig von der tatsächlichen CMS-Verfügbarkeit.
-Beliebte Mock-Bibliotheken in Java/Spring sind **Mockito** oder **EasyMock**, die das Erstellen und Verwalten von Mocks vereinfachen. [@mockito-docs]
+Beliebte Mock-Bibliotheken in Java/Spring sind **Mockito** oder **EasyMock**, die das Erstellen und Verwalten von Mocks vereinfachen. [@mockito]
 Der Service lässt sich dadurch schnell, zuverlässig und isoliert testen eine zentrale Anforderung professioneller Softwareentwicklung. [@testing-practices]
 
 #### ApplicationContext und Bean-Verwaltung
@@ -166,7 +166,7 @@ Dieser Prozess wird **Bean Wiring** genannt und erfolgt automatisch und deklarat
 Ein großer Vorteil des ApplicationContext ist die zentrale Lebenszyklus-Verwaltung.
 Der Container kümmert sich um Initialisierung, Abhängigkeitsauflösung und Cleanup (Destruktoren).
 Entwickler müssen sich nicht um manuelle Objekt-Erzeugung kümmern, sondern definieren lediglich, welche Beans es gibt und wie sie zusammenhängen.
-Dies reduziert Boilerplate-Code und Fehlerquellen. [@spring-ioc-container]
+Dies reduziert Boilerplate-Code und Fehlerquellen. [@spring-IOC-Container]
 In größeren Projekten können auch mehrere ApplicationContexte nebeneinander existieren (z. B. für Tests mit speziellen Konfigurationen), wodurch weitere Flexibilität entsteht.
 In typischen Spring-Boot-Anwendungen wird ein auto-konfigurierter ApplicationContext verwendet, der basierend auf den Starter-Dependencies automatisch eine angemessene Konstellation von Beans aufbaut.
 
