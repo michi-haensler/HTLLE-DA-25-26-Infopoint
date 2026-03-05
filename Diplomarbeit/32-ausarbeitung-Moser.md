@@ -439,7 +439,7 @@ Die Anfrage wird vom Controller entgegengenommen.
 Der Controller hat in diesem Ablauf die Aufgabe, die eingehenden Parameter entgegenzunehmen und den Aufruf an die Service-Schicht weiterzuleiten.
 Fachliche Verarbeitung oder externe Kommunikation finden an dieser Stelle bewusst nicht statt.
 
-```java
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="REST-Controller für Events" .java}
 @RestController
 @RequestMapping("/api/v1/events")
 public class EventsController {
@@ -455,8 +455,7 @@ public class EventsController {
         return eventService.get(limit);
     }
 }
-
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Im Code kennzeichnet `@RestController` die Klasse als REST-Controller, sodass Rückgabewerte automatisch als JSON serialisiert werden können.
 Mit `@RequestMapping("/api/v1/events")` wird der Basispfad definiert, auf den sich alle Methoden der Klasse beziehen.
@@ -487,7 +486,7 @@ Ein zentraler Bestandteil ist die Kommunikation mit dem Cockpit CMS.
 Dafür wird eine eigene Client-Klasse (`CockpitClient`) eingesetzt, die die externe HTTP-Kommunikation kapselt und vom restlichen Service-Code entkoppelt.
 Dadurch bleiben die Service-Methoden auf Geschäftslogik fokussiert, während Details wie Endpunkte, Header oder Fehler der externen API im Integrationslayer gebündelt bleiben.
 
-```java
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Service mit Dependency Injection" .java}
 @Service
 public class EventService {
 
@@ -501,7 +500,7 @@ public class EventService {
         return cockpitClient.getAppointments(limit); // <-- holt Events
     }
 }
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In diesem Beispiel ruft die Methode `get(int limit)` die Methode `getAppointments(limit)` des `CockpitClient` auf.
 Der Service selbst enthält keine direkte HTTP-Logik, sondern delegiert diese Aufgabe vollständig an den Client.
@@ -536,7 +535,7 @@ Für die Ausgabe am Infopoint stehen vor allem fachlich relevante Inhalte im Vor
 Dadurch entsteht eine stabile und verständliche Schnittstelle, die unabhängig von internen Modelländerungen weiterverwendet werden kann.
 Gleichzeitig wird verhindert, dass sensible oder technisch irrelevante Felder unbeabsichtigt nach außen gelangen.
 
-```java
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Data Transfer Object für Events" .java}
 public record EventDto(
         Long id,
         String title,
@@ -547,7 +546,7 @@ public record EventDto(
         String description,
         String imageUrl
 ) {}
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Der gezeigte `EventDto` ist als Java-Record umgesetzt.
 Diese Form eignet sich besonders für Transferobjekte, da Records kompakt, unveränderlich und klar strukturiert sind.
@@ -572,7 +571,7 @@ Der Client liefert dann sichere Rückgabewerte wie `List.of()` oder `null` zurü
 Damit bleibt das Backend auch bei externen Störungen lauffähig und das Frontend erhält definierte Antworten statt unkontrollierter Exceptions.
 
 **CockpitClient - Beispiel für den Abruf von News über REST** [@SLF4J-Docs]
-```java
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="CMS-Integrationscomponent (CockpitClient)" .java}
 @Component
 public class CockpitClient {
 
@@ -600,7 +599,7 @@ public class CockpitClient {
         }
     }
 }
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Im gezeigten Code markiert `@Component` die Klasse als Spring-Bean.
 Dadurch kann der Client im Service per Dependency Injection verwendet werden.
@@ -637,7 +636,7 @@ Stattdessen wird ein definiertes, gültiges JSON-Objekt zurückgegeben, sodass d
 Dieses Fehlerverhalten ist für den Schulbetrieb wesentlich, weil kurzfristige Störungen externer Systeme dadurch nicht unmittelbar zu einem Ausfall der Anzeige führen.
 
 **WebUntisClient - Abruf der Tagesübersicht für Klassen mit Fallback** 
-```java
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Stundenplan-Integrationscomponent (WebUntisClient)" .java}
 @Component
 public class WebUntisClient {
 
@@ -673,7 +672,7 @@ public class WebUntisClient {
                 .block();
     }
 }
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Im gezeigten Code markiert `@Component` die Klasse als Spring-Bean und ermöglicht die Nutzung per Dependency Injection in höheren Schichten.
 Im Konstruktor wird ein `WebClient` mit fixer `baseUrl` aufgebaut, wodurch alle Requests konsistent gegen denselben WebUntis-Host ausgeführt werden.
@@ -704,7 +703,7 @@ Ergänzend werden besondere Einträge wie Veranstaltungen oder Abweichungen im S
 Bei unregelmäßigen Zeitfenstern können diese Informationen als Anzeigehinweis in den resultierenden DTOs verwendet werden.
 Dadurch steht dem Frontend nicht nur eine reine Trefferliste, sondern eine fachlich angereicherte Sicht auf den Klassenstatus zur Verfügung.
 
-```java
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Klassensuche mit Zeitfilter" .java}
 public static List<ClassInfoDTO> search(JsonNode root, String query) {
     String q = query.toLowerCase();
     int now = ConvertToUntisTimeUtil.nowAsUntisTime();
@@ -717,7 +716,7 @@ public static List<ClassInfoDTO> search(JsonNode root, String query) {
     }
     return results;
 }
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Im Code zeigt die Methode `search(...)` den zentralen Ablauf der Klassenfilterung.
 Der Suchbegriff wird zunächst vereinheitlicht, damit Vergleiche unabhängig von Groß- und Kleinschreibung erfolgen.
@@ -735,7 +734,7 @@ Die Verwendung einer festen Zeitzone (`Europe/Vienna`) verhindert inkonsistente 
 Damit bleibt das Verhalten auch in unterschiedlichen Laufzeitumgebungen reproduzierbar.
 Die Implementierung basiert auf der `java.time`-API und folgt damit dem aktuellen Standard für sichere und präzise Zeitverarbeitung in Java. [@Java-Time-Docs]
 
-```java
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Zeitformat-Konvertierung für WebUntis" .java}
 public class ConvertToUntisTimeUtil {
 
     private static final ZoneId SCHOOL_ZONE = ZoneId.of("Europe/Vienna");
@@ -745,7 +744,7 @@ public class ConvertToUntisTimeUtil {
         return now.getHour() * 100 + now.getMinute();
     }
 }
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Im gezeigten Ausschnitt definiert `SCHOOL_ZONE` die projektrelevante Referenzzeitzone als Konstante.
 Die Methode `nowAsUntisTime()` liest den aktuellen Zeitpunkt zonensicher aus und reduziert ihn auf die lokale Uhrzeit.
@@ -761,7 +760,7 @@ Da WebUntis je nach Datensatz unterschiedliche Feldnamen für inhaltlich ähnlic
 Zurückgegeben wird der erste nicht-leere Wert, wodurch uneinheitliche Datenstrukturen ohne zusätzlichen Spezialfallcode abgefangen werden.
 Dieses Vorgehen erhöht die Fehlertoleranz und verhindert, dass einzelne fehlende Felder die gesamte Lehreransicht beeinträchtigen.
 
-```java
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Defensive Feldauswahl bei JSON-Verarbeitung" .java}
 private static String firstNonBlank(JsonNode node, String... keys) {
     for (String key : keys) {
         String value = node.path(key).asText("");
@@ -771,7 +770,7 @@ private static String firstNonBlank(JsonNode node, String... keys) {
     }
     return "";
 }
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Im Code wird dieses Prinzip durch die Schleife über `keys` sichtbar.
 Jeder potenzielle Schlüssel wird über `node.path(key).asText("")` sicher gelesen.
@@ -788,7 +787,7 @@ Gleichzeitig berücksichtigt die Implementierung, dass externe Systeme nicht imm
 Wenn ein Header nicht dem erwarteten Muster entspricht, wird dennoch ein gültiges `TeacherInfoDTO` mit Default-Werten erzeugt.
 Dadurch werden harte Abbrüche vermieden und die Oberfläche bleibt trotz unvollständiger Eingangsdaten funktionsfähig.
 
-```java
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Regex-basierter Parser für Lehrerinformationen" .java}
 public class TeacherHeaderParser {
 
     private static final Pattern PATTERN =
@@ -808,7 +807,7 @@ public class TeacherHeaderParser {
         );
     }
 }
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Im gezeigten Ausschnitt definiert `PATTERN` das erwartete Strukturformat des Header-Strings.
 Die Methode `parse(String header)` führt zunächst ein vollständiges Muster-Matching durch.
