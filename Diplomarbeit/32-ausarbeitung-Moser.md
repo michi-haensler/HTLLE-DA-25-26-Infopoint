@@ -22,7 +22,7 @@ Hier werden Datenbanken angesprochen, Geschäftsregeln formuliert und externe Sy
 Obwohl es für Endanwender nicht sichtbar ist, prägt die Qualität des Backends unmittelbar die Nutzererfahrung, da es Verfügbarkeit, Antwortzeiten und Datenkonsistenz bestimmt.
 Eine mangelhafte Implementierung kann zu inkonsistenten Daten, langen Wartezeiten oder Ausfällen führen, selbst wenn das Frontend perfekt gestaltet ist.
 Ein gut gestaltetes Backend trennt klar zwischen Schichten (Präsentation, Logik, Daten), unterstützt durch dokumentierte Schnittstellen, um zukünftige Erweiterungen und Wartung zu erleichtern.
-Dieses Schichtenmodell wird in der Literatur häufig als "Layered Architecture" bezeichnet und ist Bestandteil von Architekturmuster-Katalogen. [@buschmann1996pattern]
+Dieses Schichtenmodell wird in der Literatur häufig als "Layered Architecture" bezeichnet und ist Bestandteil von Architekturmuster-Katalogen. [@backend-basics]
 
 ### Abgrenzung zwischen Frontend und Backend
 Bei der Entwicklung moderner Webanwendungen ist eine klare Abgrenzung zwischen Frontend und Backend von zentraler Bedeutung.
