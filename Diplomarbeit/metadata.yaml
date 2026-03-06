@@ -33,6 +33,10 @@ da-author:
   nachname: Fellegger
   klasse: 5BHWIN
   thema: Frontend und Anzeige
+  ki-tools:
+  - name: ChatGPT 5.2
+    zweck: Informationsbeschaffung, Ki Assistiertes Programmieren und Textoptimierung
+
 
 da-betreuer:
 - paraffe: zama
