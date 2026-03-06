@@ -590,6 +590,7 @@ Seiten verwenden zu können. Zusätzlich wird über die aktuelle URL erkenntlich
 gemacht, welcher Navigationspunkt aktiv ist. Dadurch ist die Orientierung für
 Benutzerinnen und Benutzer gegeben.
 
+\newpage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Beispielcode implementierung Header" .tsx}
 import { Link, useLocation } from "react-router-dom";
 
@@ -808,6 +809,7 @@ export async function getTeacherDay(shortCode: string, date: string): Promise<Te
     return res.json();
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Der Rückgabewert des Service-Moduls wird anschließend in der Seitenkomponente
 TeachersPage verarbeitet. Dort werden Eingaben (Suchbegriff und Datum) als
 State verwaltet, API-Anfragen asynchron ausgelöst und die Ergebnisse mit
