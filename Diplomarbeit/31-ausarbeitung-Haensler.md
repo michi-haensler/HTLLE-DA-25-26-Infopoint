@@ -116,40 +116,40 @@ Für die Kollaboration unterstützt Adobe XD die Zusammenarbeit im Team, indem A
 
 #### Projektlebenszyklus in Softwareprojekten
 
-Der Projektlebenszyklus in Softwareprojekten umfasst mehrere Phasen, die den gesamten Prozess von der Initiierung bis zum Abschluss des Projekts strukturieren. Diese Phasen helfen dabei, das Projekt systematisch zu planen, durchzuführen und zu überwachen. [@Projektmanagement, S. 66]
+Der Projektlebenszyklus in Softwareprojekten umfasst mehrere Phasen, die den gesamten Prozess von der Initiierung bis zum Abschluss des Projekts strukturieren. Diese Phasen helfen dabei, das Projekt systematisch zu planen, durchzuführen und zu überwachen. ([@Projektmanagement] S. 66)
 
-In der Initiierungsphase wird das Projekt definiert und die Machbarkeit bewertet. Es werden die Ziele, Anforderungen und der Umfang des Projekts festgelegt, Stakeholder identifiziert und erste Ressourcen geplant. Darauf folgt die Planungsphase, in der detaillierte Pläne für die Durchführung erstellt werden. Dies umfasst die Erstellung eines Projektplans, die Zuweisung von Ressourcen, die Festlegung von Zeitplänen und die Identifizierung von Risiken. [@Projektmanagement, S. 32]
+In der Initiierungsphase wird das Projekt definiert und die Machbarkeit bewertet. Es werden die Ziele, Anforderungen und der Umfang des Projekts festgelegt, Stakeholder identifiziert und erste Ressourcen geplant. Darauf folgt die Planungsphase, in der detaillierte Pläne für die Durchführung erstellt werden. Dies umfasst die Erstellung eines Projektplans, die Zuweisung von Ressourcen, die Festlegung von Zeitplänen und die Identifizierung von Risiken. ([@Projektmanagement] S. 32)
 
-Während der Ausführungsphase werden die geplanten Aktivitäten umgesetzt. Das Entwicklungsteam arbeitet an der Erstellung der Software, während das Projektmanagement den Fortschritt überwacht und sicherstellt, dass die Ziele erreicht werden. Die Phase der Überwachung und Kontrolle läuft parallel zur Ausführung und umfasst die kontinuierliche Überwachung des Projektfortschritts. Es werden Leistungsindikatoren verfolgt, Abweichungen vom Plan identifiziert und gegebenenfalls Korrekturmaßnahmen ergriffen. [@Projektmanagement, S. 110-112]
+Während der Ausführungsphase werden die geplanten Aktivitäten umgesetzt. Das Entwicklungsteam arbeitet an der Erstellung der Software, während das Projektmanagement den Fortschritt überwacht und sicherstellt, dass die Ziele erreicht werden. Die Phase der Überwachung und Kontrolle läuft parallel zur Ausführung und umfasst die kontinuierliche Überwachung des Projektfortschritts. Es werden Leistungsindikatoren verfolgt, Abweichungen vom Plan identifiziert und gegebenenfalls Korrekturmaßnahmen ergriffen. ([@Projektmanagement] S. 110-112)
 
-In der Abschlussphase wird das Projekt formal beendet. Die Software wird ausgeliefert, Dokumentationen erstellt und eine Nachbesprechung durchgeführt, um Erfahrungen zu sammeln und Verbesserungen für zukünftige Projekte zu identifizieren. [@Projektmanagement, S. 135-137]
+In der Abschlussphase wird das Projekt formal beendet. Die Software wird ausgeliefert, Dokumentationen erstellt und eine Nachbesprechung durchgeführt, um Erfahrungen zu sammeln und Verbesserungen für zukünftige Projekte zu identifizieren. ([@Projektmanagement] S. 135-137)
 
 
 #### Agile Methoden (Kanban, Scrum) im Überblick
 
-Im Bereich des agilen Projektmanagements haben sich zwei Methoden besonders etabliert. Kanban ist eine agile Methode, die sich auf die Visualisierung des Arbeitsflusses konzentriert. Es verwendet ein Kanban-Board, um Aufgaben in verschiedenen Phasen des Workflows darzustellen, beispielsweise „To Do", „In Progress" und „Done". Teams ziehen Aufgaben durch den Workflow basierend auf ihrer Kapazität, was zu einer kontinuierlichen Verbesserung und Anpassung führt. Kanban fördert Transparenz und Flexibilität, da es keine festen Iterationen gibt und Prioritäten jederzeit angepasst werden können. [@Projektmanagement, S.95-96]
+Im Bereich des agilen Projektmanagements haben sich zwei Methoden besonders etabliert. Kanban ist eine agile Methode, die sich auf die Visualisierung des Arbeitsflusses konzentriert. Es verwendet ein Kanban-Board, um Aufgaben in verschiedenen Phasen des Workflows darzustellen, beispielsweise „To Do", „In Progress" und „Done". Teams ziehen Aufgaben durch den Workflow basierend auf ihrer Kapazität, was zu einer kontinuierlichen Verbesserung und Anpassung führt. Kanban fördert Transparenz und Flexibilität, da es keine festen Iterationen gibt und Prioritäten jederzeit angepasst werden können. ([@Projektmanagement] S. 95-96)
 
-Scrum hingegen basiert auf festen Iterationen, sogenannten Sprints. Ein Sprint dauert in der Regel zwei bis vier Wochen, in denen ein funktionsfähiges Produktinkrement erstellt wird. Scrum umfasst spezifische Rollen wie den Product Owner, Scrum Master und das Entwicklungsteam. Es beinhaltet regelmäßige Meetings wie Daily Stand-ups, Sprint Planning, Sprint Review und Retrospektiven, um den Fortschritt zu überwachen und kontinuierliche Verbesserungen zu fördern. Scrum legt großen Wert auf Zusammenarbeit, Selbstorganisation und Anpassungsfähigkeit. [@Projektmanagement S. 95-96] 
+Scrum hingegen basiert auf festen Iterationen, sogenannten Sprints. Ein Sprint dauert in der Regel zwei bis vier Wochen, in denen ein funktionsfähiges Produktinkrement erstellt wird. Scrum umfasst spezifische Rollen wie den Product Owner, Scrum Master und das Entwicklungsteam. Es beinhaltet regelmäßige Meetings wie Daily Stand-ups, Sprint Planning, Sprint Review und Retrospektiven, um den Fortschritt zu überwachen und kontinuierliche Verbesserungen zu fördern. Scrum legt großen Wert auf Zusammenarbeit, Selbstorganisation und Anpassungsfähigkeit. ([@Projektmanagement] S. 95-96) 
 
 #### Aufgaben- und Zeitplanung
 
-Effektive Aufgaben- und Zeitplanung ist entscheidend für den Erfolg von Softwareprojekten. Aufgabenmanagement-Tools wie Jira, Trello, GitHub Projects oder MS Project ermöglichen es Teams, Aufgaben zu erstellen, zuzuweisen und den Fortschritt zu verfolgen. Diese Tools bieten Funktionen wie Kanban-Boards, To-Do-Listen und Kalenderansichten, um die Organisation zu erleichtern. [@Projektmanagement, S. 79-81]
+Effektive Aufgaben- und Zeitplanung ist entscheidend für den Erfolg von Softwareprojekten. Aufgabenmanagement-Tools wie Jira, Trello, GitHub Projects oder MS Project ermöglichen es Teams, Aufgaben zu erstellen, zuzuweisen und den Fortschritt zu verfolgen. Diese Tools bieten Funktionen wie Kanban-Boards, To-Do-Listen und Kalenderansichten, um die Organisation zu erleichtern. ([@Projektmanagement] S. 79-81)
 
-Für die Zeitplanung hilft die Verwendung von Gantt-Diagrammen oder Zeitplänen dabei, den Projektzeitrahmen zu visualisieren und wichtige Meilensteine zu identifizieren. Dies ermöglicht es dem Team, den Fortschritt zu überwachen und sicherzustellen, dass das Projekt im Zeitplan bleibt. [@Projektmanagement, S.79]
+Für die Zeitplanung hilft die Verwendung von Gantt-Diagrammen oder Zeitplänen dabei, den Projektzeitrahmen zu visualisieren und wichtige Meilensteine zu identifizieren. Dies ermöglicht es dem Team, den Fortschritt zu überwachen und sicherzustellen, dass das Projekt im Zeitplan bleibt. ([@Projektmanagement] S.79)
 
-Die Priorisierung von Aufgaben basierend auf ihrer Wichtigkeit und Dringlichkeit hilft dem Team, sich auf die wichtigsten Aktivitäten zu konzentrieren. Methoden wie die MoSCoW-Methode (Must have, Should have, Could have, Won't have) können dabei unterstützen. [@Projektmanagement, S. 64]
+Die Priorisierung von Aufgaben basierend auf ihrer Wichtigkeit und Dringlichkeit hilft dem Team, sich auf die wichtigsten Aktivitäten zu konzentrieren. Methoden wie die MoSCoW-Methode (Must have, Should have, Could have, Won't have) können dabei unterstützen. ([@Projektmanagement] S. 64)
 
 #### Verwendung digitaler Tools für Projektorganisation
 
-Die Projektorganisation profitiert von verschiedenen digitalen Werkzeugen. Kommunikationstools wie Slack, Microsoft Teams oder Zoom erleichtern die Kommunikation und Zusammenarbeit im Team, insbesondere bei verteilten Teams. Für die Dokumentation ermöglichen Plattformen wie Confluence, Notion oder Google Docs die zentrale Speicherung und gemeinsame Bearbeitung von Projektdokumentationen. [@Projektmanagement, S. 99-100]
+Die Projektorganisation profitiert von verschiedenen digitalen Werkzeugen. Kommunikationstools wie Slack, Microsoft Teams oder Zoom erleichtern die Kommunikation und Zusammenarbeit im Team, insbesondere bei verteilten Teams. Für die Dokumentation ermöglichen Plattformen wie Confluence, Notion oder Google Docs die zentrale Speicherung und gemeinsame Bearbeitung von Projektdokumentationen. ([@Projektmanagement] S. 99-100)
 
 Im Bereich der Versionskontrolle helfen Systeme wie Git und Plattformen wie GitHub oder GitLab dabei, den Code zu verwalten, Änderungen nachzuverfolgen und die Zusammenarbeit im Entwicklungsteam zu erleichtern. 
 
 #### Risiken und Qualitätsmanagement
 
-Das Risikomanagement umfasst die Identifizierung, Bewertung und Steuerung von Risiken und ist entscheidend, um potenzielle Probleme frühzeitig zu erkennen und zu mitigieren. Dies beinhaltet die Erstellung eines Risikoregisters und die Entwicklung von Strategien zur Risikobewältigung. [@Projektmanagement, S. 91]
+Das Risikomanagement umfasst die Identifizierung, Bewertung und Steuerung von Risiken und ist entscheidend, um potenzielle Probleme frühzeitig zu erkennen und zu mitigieren. Dies beinhaltet die Erstellung eines Risikoregisters und die Entwicklung von Strategien zur Risikobewältigung. ([@Projektmanagement] S. 91)
 
-Das Qualitätsmanagement zielt auf die Sicherstellung der Softwarequalität durch kontinuierliche Tests, Code-Reviews und die Einhaltung von Standards ab. Dies ist wichtig, um ein zuverlässiges und benutzerfreundliches Produkt zu liefern. Qualitätsmanagementprozesse sollten in den gesamten Projektlebenszyklus integriert werden. [@Projektmanagement, S. 91]
+Das Qualitätsmanagement zielt auf die Sicherstellung der Softwarequalität durch kontinuierliche Tests, Code-Reviews und die Einhaltung von Standards ab. Dies ist wichtig, um ein zuverlässiges und benutzerfreundliches Produkt zu liefern. Qualitätsmanagementprozesse sollten in den gesamten Projektlebenszyklus integriert werden. ([@Projektmanagement] S. 91)
 
 ### Grundlagen zu Deployment & Containerisierung
 

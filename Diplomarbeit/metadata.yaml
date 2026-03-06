@@ -16,7 +16,7 @@ da-author:
   thema: Recherche, Konzeption & Design, Docker, Projektmanagement
   ki-tools:
   - name: ChatGPT 5.2
-    zweck: Bildgenerierung
+    zweck: Bildgenerierung, Informationsbeschaffung
 
   - name: Claude Opus 4.5
     zweck: Rechtschreibprüfung, Textoptimierung
@@ -68,14 +68,14 @@ da-kurzfassung-en: This diploma thesis presents the development of a digital inf
   methodology with GitHub Projects.
 
 
-# da-kiquellen:
-# - ki: ChatGPT4
-#  short-prompt: Erklärung Pandoc
-#  pdf-file: gpt-pandoc.pdf
-#
-#- ki: ChatGPT3.5
-#  short-prompt: Aufbau eines Atoms
-#  pdf-file: gpt-atom.pdf
+da-kiquellen:
+- ki: ChatGPT5.2
+  short-prompt: Create a Docker Compose Architecture
+  pdf-file: Docker-Compose-Architecture.pdf  
+
+- ki: ChatGPT5.2
+  short-prompt: Aufbau eines Docker Setups für 3 Komponenten
+  pdf-file: Docker-Setup.pdf
 
 
 da-appendix:
@@ -93,5 +93,5 @@ da-appendix:
 
 - abschnitt: Diplomatbeitsvereinbarung Deutsch
   pdf-file: HTL-DA-Doku-DE.pdf
-  
+    
 ---
