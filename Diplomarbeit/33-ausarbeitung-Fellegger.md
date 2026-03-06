@@ -757,7 +757,7 @@ auf die API in ein eigenes Service-Modul ausgelagert. Dieses kapselt die
 URL-Erstellung, die Parameterübergabe sowie die Fehlerbehandlung und liefert
 strukturierte Daten zurück.
 
-##### Service-Modul für die API-Kommunikation
+#### Service-Modul für die API-Kommunikation
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Lehrersuche CMS-/Backend-Anbindung" .tsx}
 export type TeacherInfoDTO = {
@@ -815,7 +815,7 @@ TeachersPage verarbeitet. Dort werden Eingaben (Suchbegriff und Datum) als
 State verwaltet, API-Anfragen asynchron ausgelöst und die Ergebnisse mit
 Lade- und Fehlerzustand in der Oberfläche dargestellt.
 
-##### Verwendung des Service-Moduls in der TeachersPage
+#### Verwendung des Service-Moduls in der TeachersPage
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Auszug aus TeachersPage" .tsx}
 useEffect(() => {
