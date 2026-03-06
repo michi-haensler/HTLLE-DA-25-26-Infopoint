@@ -510,7 +510,7 @@ die Wartbarkeit des Codes verbessert und spätere Anpassungen
 vereinfacht. Zugriff auf externe Datenquellen
 getrennt.
 
-![Standby-Ansicht\label{fig:Standby-Ansicht}](img/Projektstrukturbaum_Frontend.png){width=100%}
+![Projektstruktur-Frontend\label{fig:Projektstruktur-Frontend}](img/Projektstrukturbaum_Frontend.png){width=100%}
 
 ### Umsetzung der Navigation und des Routings
 
