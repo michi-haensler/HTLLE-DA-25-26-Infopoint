@@ -33,7 +33,7 @@ für die visuelle Aufbereitung der Inhalte sowie für die Benutzerinteraktion
 verantwortlich ist, erfolgt die Verwaltung und Speicherung der Daten auf
 Serverseite. Durch diese Trennung ist es möglich das Frontend unabhängig vom
 Backend weiterzuentwickeln oder auszutauschen, ohne das gesamte System neu
-konzipieren zu müssen [@client_server_wiki].
+konzipieren zu müssen.
 
 Dieses Architekturmodell ermöglicht es, Inhalte dynamisch vom Server zu laden. Die benötigten 
 Daten werden dabei zur Laufzeit vom Server angefordert.
@@ -114,7 +114,7 @@ Inhaltsänderungen ohne einen vollständigen Neuladevorgang. Dadurch entsteht
 ein flüssiges und reaktionsschnelles Benutzererlebnis, das insbesondere bei
 einem öffentlich zugänglichen Infopoint von großer Bedeutung ist. Kurze
 Reaktionszeiten erleichtern die Informationsaufnahme und tragen zur
-Akzeptanz des Systems bei [@spa_wiki].
+Akzeptanz des Systems bei.
 
 Ein weiteres Merkmal von Single Page Applications liegt in der klaren Trennung
 zwischen Daten und Darstellung. Das Frontend lädt die benötigten Inhalte über
