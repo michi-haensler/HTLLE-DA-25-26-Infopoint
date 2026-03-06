@@ -187,12 +187,11 @@ Der Informationsfluss ist wie folgt geregelt: Änderungen werden im Team-Chat un
 
 ### 08.04.2026: Diplomarbeits-Abschlusspräsentation
     
-
+\newpage
 ## Anwendungsfälle
 
 Dieser Abschnitt beschreibt die Anwendungsfälle (Use Cases) der Anwendung. Die Beschreibung erfolgt auf hohem Abstraktionsniveau ohne implementierungsspezifische Details.
 
-\newpage
 ### Informationen beschaffen
 
 #### Kurzbeschreibung
