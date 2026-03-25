@@ -43,7 +43,7 @@ Clients können unterschiedliche Technologien verwenden, solange sie das vereinb
 In typischen Webanwendungen fungiert das Frontend als Client, das HTTP-Anfragen an ein Backend sendet.
 Das Backend bearbeitet diese Anfragen, führt Geschäftslogik aus und greift bei Bedarf auf externe Systeme wie ein CMS zu.
 Die Architekturschicht zwischen beiden ist durch eine klar definierte API charakterisiert.
-Ein Vorteil der Client-Server-Struktur ist die Skalierbarkeit Server können unabhängig von den Clients vervielfältigt oder ausgetauscht werden, während die Clients unverändert bleiben.
+Ein Vorteil der Client-Server-Struktur ist die Skalierbarkeit, die Server können unabhängig von den Clients vervielfältigt oder ausgetauscht werden, während die Clients unverändert bleiben.
 Dies unterstützt spätere Erweiterungen und einen stabilen Betrieb.
 Historisch gesehen geht die Client-Server-Architektur auf frühe Netzwerkanwendungen zurück und bildet die Grundlage für moderne Webarchitekturen.
 Sie erlaubt auch den Einsatz von Zwischenschichten wie Proxies oder Load-Balancers, die zusätzliche Funktionen wie Caching, Sicherheitsfilter oder Verkehrsverteilung übernehmen können.
