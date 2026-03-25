@@ -62,10 +62,10 @@ Zusätzlich werden Header wie `Content-Type` und `Cache-Control` verwendet, um d
 
 ### REST-Architekturprinzipien
 Representational State Transfer (REST) beschreibt ein Set an Designprinzipien für verteilte Systeme.
-REST orientiert sich an Ressourcen, die durch URIs identifiziert und durch Repräsentationen (z. B. JSON) ausgetauscht werden.
-Zustandslosigkeit bedeutet, dass jede HTTP-Anfrage alle nötigen Informationen enthält, um verarbeitet zu werden der Server speichert keinen Sitzungszustand.
+REST orientiert sich an Ressourcen, die durch URIs identifiziert und durch Repräsentationen (JSON) ausgetauscht werden.
+Zustandslosigkeit bedeutet, dass jede HTTP-Anfrage alle nötigen Informationen enthält, um verarbeitet zu werden Der Server speichert keinen Sitzungszustand.
 Weitere REST-Charakteristika sind eine einheitliche Schnittstelle, Schichtbarkeit und Cachebarkeit.
-Gemeinsam verbessern sie die Modularität und erleichtern die Entwicklung skalierbarer Systems.
+Gemeinsam verbessern sie die Modularität und erleichtern die Entwicklung skalierbarer Systeme.
 In Spring Boot lassen sich diese Prinzipien durch die Verwendung von `@RestController` und passenden HTTP-Methoden direkt abbilden.
 Ein erweitertes REST-Prinzip ist HATEOAS (Hypermedia as the Engine of Application State), bei dem Antworten Links enthalten, die den Client durch die verfügbaren Aktionen führen.
 HATEOAS wird in der Praxis nicht in jedem Backend vollständig umgesetzt, wird jedoch in der Theorie als Möglichkeit zur Reduzierung der Kopplung zwischen Client und Server betrachtet.
@@ -76,30 +76,30 @@ Die Einhaltung von REST-Prinzipien erleichtert außerdem die Nutzung generischer
 ### Datenformate: JSON und Serialisierung
 JSON (JavaScript Object Notation) ist das dominierende Format für den Datenaustausch in Web-APIs.
 Es ist leichtgewichtig, menschenlesbar und wird von praktisch allen Programmiersprachen unterstützt.
-Serialisierung bezeichnet den Prozess, ein Objekt in eine byte- oder textbasierte Repräsentation zu überführen Deserialisierung kehrt diesen Vorgang um.
+Serialisierung bezeichnet den Prozess, ein Objekt in eine byte- oder textbasierte Repräsentation zu überführen, Deserialisierung kehrt diesen Vorgang um.
 In Java-Anwendungen übernimmt die Bibliothek Jackson diesen Vorgang automatisch, sobald HTTP-Nachrichten über `@RestController` verarbeitet werden.
 
 ### Jackson Serialisierungsbibliothek für Java
 Jackson ist eine hochperformante Java-Bibliothek für die Verarbeitung von JSON-Daten.
 Sie bietet Funktionalität für das Serialisieren (Konvertieren) von Java-Objekten in JSON und das Deserialisieren (Parsen) von JSON-Strings in Java-Objekte.
-Im Kontext von Spring Boot erfolgt diese Umwandlung automatisch und transparent wenn eine Controller-Methode ein Java-Objekt zurückgibt, serialisiert Jackson es automatisch zu JSON wenn der Request-Body JSON enthält, deserialisiert Jackson ihn in das entsprechende Java-Objekt.
-Jackson bietet zahlreiche Annotationen zur Steuerung dieses Prozesses. [@json-jackson]
+In Spring Boot erfolgt diese Umwandlung automatisch und transparent wenn eine Controller-Methode ein Java-Objekt zurückgibt, serialisiert Jackson es automatisch zu JSON wenn der Request-Body JSON enthält, deserialisiert Jackson ihn in das entsprechende Java-Objekt.
+Jackson bietet zahlreiche Annotationen zur Steuerung dieses Prozesses. [@json-jackson]   
 Die Annotation `@JsonProperty` wird beispielsweise verwendet, um die JSON-Feldnamen explizit zu definieren, falls diese von den Java-Attributnamen abweichen.
-`@JsonIgnore` ermöglicht es, bestimmte Felder bei der Serialisierung auszulassen dies ist besonders wichtig, um sensible Daten nicht nach außen zu geben.
-`@JsonFormat` kontrolliert die Formatierung von Datumstypen oder Dezimalzahlen, während `@JsonInclude` steuert, ob null-Werte oder leere Sammlungen in der JSON-Ausgabe enthalten sein sollen. [@jackson-java]
+`@JsonIgnore` ermöglicht es, bestimmte Felder bei der Serialisierung auszulassen Dies ist besonders wichtig, um sensible Daten nicht nach außen zu geben.
+`@JsonFormat` kontrolliert die Formatierung von Datumstypen oder Dezimalzahlen, während `@JsonInclude` steuert, ob null-Werte oder leere Sammlungen in der JSON-Ausgabe enthalten sein sollen. [@jackson-java]   
 Ein zentraler Vorteil von Jackson liegt in seiner Flexibilität und Erweiterbarkeit.
 Neben einfachen Datentypen kann Jackson auch komplexe Strukturen (Listen, Maps, verschachtelte Objekte) verarbeiten.
 Custom Serializer und Deserializer erlauben es, für spezielle Datentypen maßgeschneiderte Konvertierungslogik zu definieren, etwa um UTC-Zeiten korrekt zu handhaben oder proprietäre Formate zu parsen.
 Die „ObjectMapper"-Klasse ist das Herzstück von Jackson.
 Über sie werden Serialisierungs- und Deserialisierungsoperationen durchgeführt.
 In vielen Backend-Systemen wird die ObjectMapper-Konfiguration zentralisiert, um konsistente Verhaltensweisen sicherzustellen, beispielsweise die Behandlung unbekannter Felder oder die Standardzeitzone.
-Die richtige Konfiguration von Serialisierungsregeln (z. B. Formatierung von Datumstypen oder Ignorieren von Nullwerten) ist wichtig, um Kompatibilität zwischen Backend und Frontend sicherzustellen.
+Die richtige Konfiguration von Serialisierungsregeln (z.B. Formatierung von Datumstypen oder Ignorieren von Nullwerten) ist wichtig, um Kompatibilität zwischen Backend und Frontend sicherzustellen.
 Ein weiterer Aspekt ist die Versionierung der Datenformate.
 Änderungen an DTOs müssen so gestaltet werden, dass ältere Clients weiterhin funktionstüchtig bleiben Erweiterbare Strukturen und opt-in-Felder sind übliche Strategien. [@json-mdn-web-docs] [@serialization-json]
 
 ### Aufgaben und Verantwortlichkeiten von Backend-Systemen
-Ein Backend übernimmt vielfältige Aufgaben Verwaltung von persistenten Daten, Ausführung geschäftlicher Regeln, Authentifizierung und Autorisierung, Validierung von Eingaben sowie die Orchestrierung von Drittservices.
-Darüber hinaus setzt es Nicht-Funktionale Anforderungen um, beispielsweise Sicherheit, Performance und Skalierbarkeit.
+Ein Backend übernimmt vielfältige Aufgaben wie die Verwaltung von persistenten Daten, Ausführung geschäftlicher Regeln, Authentifizierung und Autorisierung, Validierung von Eingaben sowie die Orchestrierung von Drittservices.
+Darüber hinaus setzt es nicht funktionale Anforderungen um, beispielsweise Sicherheit, Performance und Skalierbarkeit.
 Ein weiteres zentrales Thema ist die Behandlung von Nebenläufigkeit und Transaktionen.
 Da mehrere Clients gleichzeitig auf geteilte Ressourcen zugreifen, muss das System Mechanismen zur Synchronisation und zum Rollback bereitstellen.
 In Java-basierten Backends erfolgt dies häufig über deklarative Transaktionsverwaltung (z. B. `@Transactional`), die atomare Operationen in Datenbanken gewährleistet.
@@ -114,103 +114,105 @@ Jede wichtige Aktion wird protokolliert, wodurch sich Betriebszustände analysie
 
 ### Frameworks und Laufzeitumgebungen
 Frameworks bieten wiederkehrende Bausteine und abstrahieren allgemeine Aufgaben.
-Sie verkürzen die Entwicklungszeit, indem sie beispielsweise den Lebenszyklus von Komponenten, Konfiguration oder Zugriff auf Bibliotheken standardisieren.
+Sie verkürzen die Entwicklungszeit, indem sie beispielsweise den Lebenszyklus von Komponenten die Konfiguration sowie den Zugriff auf Bibliotheken standardisieren.
 Laufzeitumgebungen stellen die Ausführungsplattform zur Verfügung, oft einschließlich eingebetteter Webserver und Managementschnittstellen.
-Die Wahl eines Frameworks beeinflusst nicht nur die Code-Architektur, sondern auch die erforderlichen Skills im Team sowie die verfügbare Dokumentation und Community-Unterstützung.
+Die Wahl eines Frameworks beeinflusst nicht nur die Code-Architektur, sondern auch die erforderlichen Fähigkeiten im Team als auch die verfügbare Dokumentation.
 In Java-Projekten sind neben Spring Boot auch Jakarta EE (ehemals Java EE) gängig, wobei Spring Boot aufgrund seiner ausgereiften Integrationen und der aktiven Community häufig gewählt wird.
-Laufzeitumgebungen wie der eingesetzte Tomcat-Servlet-Container oder eingebettete Alternativen vereinfachen Deployments, da sie zusammen mit dem Anwendungscode ausgeliefert werden können und keine externen Installationen erfordern. [@frameworks]
+Laufzeitumgebungen wie der eingesetzte Tomcat Servlet-Container oder eingebettete Alternativen vereinfachen Prozesse, da sie zusammen mit dem Anwendungscode ausgeliefert werden können und keine externen Installationen erfordern. [@frameworks]
 
 ### Spring Boot Konzepte und Kernkomponenten
 Spring Boot ist ein Framework, das auf dem Spring-Ökosystem aufbaut und die schnelle Erstellung produktionsfähiger Anwendungen ermöglicht.
-Es bietet vordefinierte Konfigurationen, sogenannte "Starters", und einen eingebetteten Server, sodass Anwendungen als selbstständige JARs ausgeführt werden können.
-Die Autokonfiguration übernimmt dabei die Auswahl und Einrichtung zahlreicher Komponenten basierend auf den entdeckten Bibliotheken und Einstellungen.
+Es bietet vordefinierte Konfigurationen, sogenannte "Starters", und einen eingebetteten Server, sodass Anwendungen als selbstständige JARs (Java Dateien) ausgeführt werden können.
+Die Autokonfiguration übernimmt dabei die Auswahl und Einrichtung zahlreicher Komponenten basierend auf den eingebundenen Bibliotheken und Einstellungen.
 Dies reduziert den Konfigurationsaufwand erheblich und erlaubt es Entwicklern, sich auf die Geschäftslogik zu konzentrieren.
 Kernkomponenten sind unter anderem der ApplicationContext für Bean-Management, das Web-Framework Spring MVC für REST-Endpunkte und die Unterstützung vielfältiger Datenzugriffstechnologien (JPA, JDBC, MongoDB, etc.).
-Spring Boot ist zudem gut für den Aufbau von Microservices geeignet, da es modular einsetzbar ist und leichtgewichtige Anwendungen unterstützt.
+Spring Boot ist zudem gut für den Aufbau von Microservices geeignet, da es modular einsetzbar ist und resourcenschonende Anwendungen unterstützt.
 In verteilten Umgebungen ist die Fähigkeit, Anwendungen schnell zu starten und mit minimaler Konfiguration zu betreiben, ein großer Vorteil.
-Die umfangreiche Ökosphäre um Spring Boot, inklusive Spring Cloud, bietet zahlreiche zusätzliche Module für Konfigurationsmanagement, Service Discovery und Resilienz.
+Das umfangreiche Ökosystem rund um Spring Boot, inklusive Spring Cloud, bietet zahlreiche zusätzliche Module für Konfigurationsmanagement, Service Discovery und Resilienz.
 Auch wenn nicht jede Anwendung als vollständige Microservice-Architektur umgesetzt wird, erleichtert das Framework potenzielle Erweiterungen in diese Richtung. [@spring-boot] [@java-spring-boot]
 
 ### Dependency Injection und Inversion of Control
 Dependency Injection (DI) ist ein Entwurfsmuster, bei dem Komponenten ihre Abhängigkeiten nicht selbst erstellen, sondern vom Framework bereitgestellt bekommen.
-Diese Umkehrung der Kontrolle (Inversion of Control, IoC) ist eines der Kernprinzipien moderner anwendungsorientierter Programmierung und führt zu größerer Flexibilität, einfacher Testbarkeit und besserer Wartbarkeit.
-Spring realisiert DI durch Annotationen wie `@Autowired` oder bevorzugt durch Konstruktorinjektion, wobei die Konstruktor-Variante als best practice gilt, da sie Abhängigkeiten explizit macht und unveränderliche (immutable) Objektzustände ermöglicht. [@dependency-injection-and-IoC] [@spring-boot]
+Diese Umkehrung der Kontrolle (Inversion of Control, IoC) ist eines der Kernprinzipien moderner anwendungsorientierter programmierung und führt zu größerer Flexibilität, einfacher Testbarkeit und bessere Wartbarkeit.
+Spring realisiert DI durch Annotationen wie `@Autowired` oder bevorzugt durch Konstruktorinjektion, wobei die Konstruktor-Variante als Best Practice gilt, da sie Abhängigkeiten explizit macht und unveränderliche (immutable) Objektzustände ermöglicht. [@dependency-injection-and-IoC] [@spring-boot]
 
 #### Lose Kopplung durch Dependency Injection
 Ohne Dependency Injection müssten Komponenten ihre Abhängigkeiten selbst instanziieren.
-Dies führt zu enger Kopplung wenn beispielsweise ein `EventService` direkt ein `CockpitClient`-Objekt erzeugt (`new CockpitClient()`), ist die Service-Klasse fest an diese konkrete Implementierung gebunden.
+Dies führt zu enger Kopplung, wenn beispielsweise ein `EventService` direkt ein `CockpitClient`-Objekt erzeugt (`new CockpitClient()`), ist die Service-Klasse fest an diese konkrete Implementierung gebunden.
 Änderungen am CockpitClient wirken sich unmittelbar auf den Service aus, und das System wird schwer wartbar.
-Mit Dependency Injection hingegen erhält der Service das `CockpitClient`-Objekt von außen typischerweise über einen Constructor-Parameter oder eine Setter-Methode.
-Dies nennt man **lose Kopplung** (loose coupling) der Service kennt lediglich die Schnittstelle oder abstrakte Basis des Clients, nicht die konkrete Implementierung.
+Mit Dependency Injection hingegen erhält der Service das `CockpitClient`-Objekt von außen typischerweise über einen Konstruktorparameter oder eine Setter-Methode.
+Dies nennt man lose Kopplung (loose coupling).
+Der Service kennt lediglich die Schnittstelle oder eine abstrakte Basis des Clients und nicht die konkrete Implementierung.
 Das erlaubt es, verschiedene Implementierungen auszutauchen, ohne den Service-Code zu ändern.
-Dies ist besonders wertvoll in größeren Projekten, wo mehrere Teams unabhängig arbeiten und Schnittstellen stabil halten müssen.
-Zudem wird die Wartbarkeit erheblich verbessert, da Änderungen lokalisiert bleiben und nicht wellenartig durch das System ausbreiten. [@coupling-in-java]
+Dies ist besonders wertvoll in größeren Projekten, in denen mehrere Teams unabhängig arbeiten und Schnittstellen stabil halten müssen.
+Zudem wird die Wartbarkeit erheblich verbessert, da Änderungen lokalisiert bleiben und sich nicht wellenartig durch das System ausbreiten. [@coupling-in-java]
 
 #### Mock-Objekte und Testing
-Ein direkter praktischer Vorteil von loser Kopplung ist die Möglichkeit, beim **Testen** Mock-Objekte zu verwenden.
+Ein direkter praktischer Vorteil von loser Kopplung ist die Möglichkeit, beim Testen Mock-Objekte zu verwenden.
 Ein Mock (oder Stub) ist ein Testobjekt, das echte abhängige Komponenten imitiert, aber vordefinierte, kontrollierte Verhaltensweisen aufweist.
-Als Beispiel beim Testen des `EventService` möchte der Entwickler nicht auf die echte Cockpit-API aufreifen, da dies langsam ist, externe Abhängigkeiten schafft und Tests flüchtig macht (fragile tests).
+Als Beispiel beim Testen des `EventService` möchte der Entwickler nicht auf die echte Cockpit-API aufreifen, da dies langsam ist, externe Abhängigkeiten schafft und Tests flüchtig macht (instabile tests).
 Stattdessen wird ein Mock-CockpitClient bereitgestellt, der beispielsweise immer vordefinierte Test-Events zurückgibt.
-Der Service wird so getestet mit diesem Mock injiziert und verhält sich damit unabhängig von der tatsächlichen CMS-Verfügbarkeit.
-Beliebte Mock-Bibliotheken in Java/Spring sind **Mockito** oder **EasyMock**, die das Erstellen und Verwalten von Mocks vereinfachen. [@mockito]
-Der Service lässt sich dadurch schnell, zuverlässig und isoliert testen eine zentrale Anforderung professioneller Softwareentwicklung. [@testing-practices]
+Der Service wird mit diesem injizierten Mock getestet und verhält sich damit unabhängig von der tatsächlichen Verfügbarkeit des CMS.
+Beliebte Mock-Bibliotheken in Java/Spring sind Mockito oder EasyMock, die das Erstellen und Verwalten von Mocks vereinfachen. [@mockito]
+Der Service lässt sich dadurch schnell, zuverlässig und isoliert testen, was eine zentrale Anforderung professioneller Softwareentwicklung ist. [@testing-practices]
 
 #### ApplicationContext und Bean-Verwaltung
-Der **ApplicationContext** ist das Herzstück von Spring und Dependency Injection in Java.
-Als Container übernimmt der ApplicationContext die Instanziierung, Konfiguration und Verwaltung aller **Beans** (verwaltete Objekte).
-Ein Bean ist in der Spring-Terminologie ein Javaobjekt, das vom Spring-Container verwaltet wird, typischerweise Services, Controller, Repositories oder Konfigurationsklassen.
-Der ApplicationContext durchläuft dabei einen definierten Lifecycle: Beim Start der Anwendung werden die Klassenpfade nach Annotationen wie `@Component`, `@Service`, `@Repository` oder `@RestController` gescannt.
+Der ApplicationContext ist das Herzstück von Spring und Dependency Injection in Java.
+Als Container übernimmt der ApplicationContext die Instanziierung, Konfiguration und Verwaltung aller Beans (verwaltete Objekte).
+Ein Bean ist in der Spring-Terminologie ein Java Objekt, das vom Spring-Container verwaltet wird, typischerweise Services, Controller, Repositories oder Konfigurationsklassen.
+Der ApplicationContext durchläuft dabei einen definierten Lifecycle, wobei beim Start der Anwendung die Klassenpfade nach Annotationen wie `@Component`, `@Service`, `@Repository` oder `@RestController` gescannt werden.
 Für jede gefundene Klasse wird eine einzelne Instanz (Singleton) erzeugt und im Container registriert.
 Danach werden Dependency-Injection-Anforderungen aufgelöst wird dabei in einem Controller ein `@Autowired EventService` gefunden, wird nach einem registrierten `EventService`-Bean gesucht, dieses bei Bedarf instanziiert und anschließend injiziert.
-Dieser Prozess wird **Bean Wiring** genannt und erfolgt automatisch und deklarativ. [@spring-boot] [@spring-beans]
+Dieser Prozess wird Bean Wiring genannt und erfolgt automatisch und deklarativ. [@spring-boot] [@spring-beans]   
 Ein großer Vorteil des ApplicationContext ist die zentrale Lebenszyklus-Verwaltung.
 Der Container kümmert sich um Initialisierung, Abhängigkeitsauflösung und Cleanup (Destruktoren).
 Entwickler müssen sich nicht um manuelle Objekt-Erzeugung kümmern, sondern definieren lediglich, welche Beans es gibt und wie sie zusammenhängen.
-Dies reduziert Boilerplate-Code und Fehlerquellen. [@spring-IOC-Container]
-In größeren Projekten können auch mehrere ApplicationContexte nebeneinander existieren (z. B. für Tests mit speziellen Konfigurationen), wodurch weitere Flexibilität entsteht.
+Dies reduziert Boilerplate-Code und Fehlerquellen. [@spring-IOC-Container]   
+In größeren Projekten können auch mehrere ApplicationContexte nebeneinander existieren (z.B. für Tests mit speziellen Konfigurationen), wodurch weitere Flexibilität entsteht.
 In typischen Spring-Boot-Anwendungen wird ein auto-konfigurierter ApplicationContext verwendet, der basierend auf den Starter-Dependencies automatisch eine angemessene Konstellation von Beans aufbaut.
 
 ### Autokonfiguration, Starters und Typische Annotationen
-Autokonfiguration ist ein Feature von Spring Boot, das basierend auf der Klassenpfad-Analyse automatisch Konfigurations-Benutzer bereitstellt.
+Autokonfiguration ist ein Feature von Spring Boot, das basierend auf der Klassenpfad analyse automatisch Konfigurations benutzer bereitstellt.
 Starters sind Sammlungen von Abhängigkeiten, die typische Funktionalitäten bündeln, z. B. `spring-boot-starter-web` für Webanwendungen.
 Typische Annotationen umfassen `@SpringBootApplication` am Haupteinstiegspunkt, `@RestController` für Web-Controller, `@Service` für Geschäftslogik und `@Repository` für Datenzugriff.
-Diese Annotationen sind mehr als schmückend sie werden vom Framework gelesen und bewirken spezifisches Verhalten.
-Die Kombination aus Autokonfiguration und Starters erlaubt es, neue Projekte mit wenig Boilerplate-Code zu starten und dennoch bei Bedarf tiefgehende Konfigurationen vorzunehmen. [@spring-autoconfiguration]
+Diese Annotationen werden vom Framework gelesen und bewirken spezifisches Verhalten.
+Die Kombination aus Autokonfiguration und Starters erlaubt es neue Projekte mit wenig Boilerplate-Code zu starten und dennoch bei Bedarf Konfigurationen vorzunehmen. [@spring-autoconfiguration]
 
 ### Erstellung von REST-APIs mit Spring Boot
 Die Bereitstellung von REST-APIs ist eine der Standardanwendungen von Spring Boot.
 Eine API definiert Endpunkte, über die Clients Ressourcen abrufen oder manipulieren können.
 Die Konvention von URI-Strukturen und HTTP-Methoden wird dabei eingehalten.
 Spring Boot stellt dafür das MVC-Modul zur Verfügung, mit dem Handler-Methoden einfach definiert werden.
-Response Bodies werden automatisch in JSON konvertiert, und Request Bodies können validiert werden, bevor sie in die Geschäftslogik gelangen.
+Responsebodies werden automatisch in JSON konvertiert, und Request Bodies können validiert werden, bevor sie in die Geschäftslogik gelangen.
 Neben der Implementierung der Endpunkte beinhaltet die API-Erstellung auch Aspekte wie Sicherheit, Dokumentation und Versionierung, die im Rahmen von Spring Boot ebenfalls unterstützt werden. [@rest-api-with-spring-boot]
 
 ### Controller, Routing und HTTP-Methoden
 Controller sind Java-Klassen, die mit `@RestController` gekennzeichnet werden.
-Methoden in diesen Klassen werden über Mapping-Annotationen wie `@GetMapping` oder `@PostMapping` einem URI-Pfad und einer HTTP-Methode zugeordnet. [@routes-and-controllers]
-Routing kann dynamische Pfadvariablen (`@PathVariable`), Abfragen (`@RequestParam`) oder Header verarbeiten.
+Methoden in diesen Klassen werden über Mapping-Annotationen wie `@GetMapping` oder `@PostMapping` einem URI-Pfad und einer HTTP-Methode zugeordnet. [@routes-and-controllers]   
+Routing kann dynamische Pfadvariablen (`@PathVariable`), Anfrageparameter (`@RequestParam`) oder Header verarbeiten.
 Die Struktur sollte intuitiv und konsistent sein, um die Entwicklung des Frontends zu erleichtern.
-Die Verwendung der richtigen HTTP-Methode ist nicht nur semantisch wichtig, sondern beeinflusst auch Caching-Verhalten und Sicherheit.
+Die Verwendung der richtigen HTTP-Methode ist nicht nur semantisch wichtig, sondern beeinflusst auch das Caching-Verhalten und  die Sicherheit.
 Beispielsweise sollten GET-Anfragen idempotent sein, während POST für nicht-idempotente Operationen genutzt wird. [@mdn-routes-and-controllers]
 
-### DTOs (Data Transfer Objects)
+### Data Transfer Objects (DTO)
 DTOs (Data Transfer Objects) trennen die interne Domänenlogik von der externen Schnittstelle.
 Sie verhindern, dass interne Entitäten oder sensible Felder nach außen durchgereicht werden.
 DTOs erleichtern zudem die Anpassung der API bei Änderungen an internen Modellen.
-Mapping zwischen Domänenobjekten und DTOs kann manuell erfolgen oder mit Bibliotheken wie MapStruct automatisiert werden.
-Validation wird in der Regel mithilfe von Bean Validation und Annotationen wie `@NotNull`, `@Size` oder `@Pattern` umgesetzt. [@DTOs-information]
+Das Mapping zwischen Domänenobjekten und DTOs kann manuell erfolgen oder mit Bibliotheken wie MapStruct automatisiert werden.
+Die Validierung wird in der Regel mithilfe von Bean Validation und Annotationen wie `@NotNull`, `@Size` oder `@Pattern` umgesetzt. [@DTOs-information]
 Durch validierte DTOs gelangen nur korrekte Daten in die Geschäftslogik.
 Fehler werden früh erkannt und in verständlichen Antworten an den Client zurückgegeben. [@dto-info]
 
 ### Fehlerbehandlung und Exception Handling
 Eine konsistente Fehlerbehandlung ist für eine robuste API unverzichtbar.
 In Spring lässt sich dies über `@ExceptionHandler` realisieren, um bestimmte Exceptions in strukturierte HTTP-Antworten zu transformieren. [@exeption-handling-spring]
-Dabei werden intern geworfene Ausnahmen wie `IllegalArgumentException` oder eigene Domain-spezifische Exceptions abgefangen und entsprechende Statuscodes (z. B. 400 Bad Request, 404 Not Found) zurückgegeben.
-Schließlich sollte die Fehlerantwort ausreichend Informationen für das Frontend oder den API-Consumer bereithalten, ohne intern zu detailliert zu werden. Log-Ausgaben ergänzen die Rückmeldungen auf Serverseite. [@exeption-handling-spring]
+Dabei werden intern ausgelöste Ausnahmen wie `IllegalArgumentException` oder eigene domänenspezifische Ausnahmen abgefangen und entsprechende Statuscodes (z. B. 400 Bad Request, 404 Not Found) zurückgegeben.
+Schließlich sollte die Fehlerantwort ausreichend Informationen für das Frontend oder den API Benutzer bereithalten, ohne intern zu detailliert zu werden.
+Log-Ausgaben ergänzen die Rückmeldungen auf Serverseite. [@exeption-handling-spring]
 
-### XML (Extensible Markup Language)
-XML ist ein textbasiertes Format zur strukturierten Darstellung und zum Austausch von Daten zwischen Systemen.
-Im Gegensatz zu JSON beschreibt XML Informationen über verschachtelte Elemente, Attribute und klar definierte Öffnungs- und Schließtags.
+### Extensible Markup Language (XML)
+Extensible Markup Language ist ein textbasiertes Format zur strukturierten Darstellung und zum Austausch von Daten zwischen Systemen.
+Im Gegensatz zu JSON beschreibt XML Informationen über verschachtelte Elemente, Attribute und klar definierte Start- und Endtags.
 Dadurch eignet sich XML besonders für Szenarien, in denen eine streng validierbare Dokumentstruktur benötigt wird.
 Ein zentraler Vorteil ist die Möglichkeit, Daten über Schemasprachen wie XSD (XML Schema Definition) formal zu prüfen.
 So kann sichergestellt werden, dass ausgetauschte Dokumente einem festgelegten Aufbau folgen und frühzeitig auf Konsistenzfehler geprüft werden.
@@ -234,63 +236,67 @@ In solchen Projekten wird unter anderem das Compiler-Plugin zur Festlegung der J
 Zusätzlich sorgt das Spring Boot Maven Plugin dafür, dass beim Package-Schritt ein ausführbares JAR inklusive aller benötigten Abhängigkeiten entsteht. [@Maven-Docs]
 
 ### pom.xml, Lebenszyklus und Plugins
-Die `pom.xml` enthält Gruppennamen, Artifakt-IDs, Versionsangaben sowie die Liste der Abhängigkeiten. [@pom-inhalt]
+Die `pom.xml` enthält Gruppennamen, Artefakt-IDs, Versionsangaben sowie die Liste der Abhängigkeiten. [@pom-inhalt]
 Sie definiert auch Properties und Profile, die je nach Umgebung unterschiedliche Konfigurationen erlauben.
-Plugins steuern einzelne Teile des Build-Prozesses. Das Spring Boot Maven Plugin erzeugt beispielsweise ein ausführbares JAR und kann den Anwendungstart im Entwicklungskontext unterstützen.
+Plugins steuern einzelne Teile des Build-Prozesses.
+Das Spring-Boot-Maven-Plugin erzeugt beispielsweise ein ausführbares JAR und kann die Anwendungsart im Entwicklungskontext unterstützen.
 Durch das Festlegen von Versionsnummern und die Nutzung von Repositories wird sichergestellt, dass alle Entwickler und CI-Server dieselben Abhängigkeiten verwenden. [@Maven-Docs]
 
 ### WebClient
-`WebClient` ist Teil von Spring WebFlux und ermöglicht asynchrone, nicht-blockierende HTTP-Anfragen. Im Vergleich zum älteren `RestTemplate` bietet es eine reaktive API und bessere Skalierbarkeit. [@spring-webclient]
-Die reaktive Programmierung von `WebClient` basiert auf dem Projekt Reactor und verwendet die Typen `Mono` und `Flux` zur Darstellung von Einzelergebnissen bzw. Datenströmen. Durch die deklarative Fehlerbehandlung und die Möglichkeit, Rückgriff auf Backpressure zu nehmen, lassen sich robuste Integrationen implementieren.
+`WebClient` ist Teil von Spring WebFlux und ermöglicht asynchrone, nicht-blockierende HTTP-Anfragen.
+Im Vergleich zum älteren `RestTemplate` bietet es eine reaktive API und bessere Skalierbarkeit. [@spring-webclient]   
+Die reaktive Programmierung von `WebClient` basiert auf dem Projekt Reactor und verwendet die Typen `Mono` und `Flux` zur Darstellung von Einzelergebnissen bzw. Datenströmen.
+Dank deklarativer Fehlerbehandlung und der Möglichkeit lassen sich robuste Integrationen implementieren.
 In Backend-Anwendungen wird `WebClient` häufig zur Kommunikation mit externen Systemen verwendet.
-Dieser erlaubt die Konfiguration von Timeouts, Fehlerbehandlung und die Anpassung der In-Memory-Größe für große Antworten.
+Der Webclient erlaubt die Konfiguration von Timeouts, Fehlerbehandlung und die Anpassung der In-Memory-Größe für große Antworten.
 Durch die Nutzung von `WebClient` kann das Backend auch bei hoher Last stabil bleiben, da Threads nicht blockiert werden während auf Antworten gewartet wird.
 Außerdem erleichtert die einheitliche Schnittstelle die Implementierung von Retry-Mechanismen, Logging und Metriken, da alle HTTP-Aufrufe über denselben Typ ablaufen. [@spring-webclient]
 
 ### Content-Management-Systeme (Cockpit)
-Content-Management-Systeme trennen die Inhalte einer Anwendung von deren Darstellung und Logik.
-Das Cockpit CMS ermöglicht Redakteuren, Inhalte zu erstellen und zu pflegen, ohne direkt in den Quellcode eingreifen zu müssen. [@cockpit]
+Content-Management-Systeme (CMS) trennen die Inhalte einer Anwendung von deren Darstellung und Logik.
+Das Cockpit CMS ermöglicht Redakteuren, Inhalte zu erstellen und zu pflegen, ohne direkt in den Quellcode eingreifen zu müssen. [@cockpit]   
 Backends können Cockpit über eine REST-API integrieren.
 Ein dedizierter `CockpitClient` kapselt die Kommunikation, sodass Änderungen am CMS minimalen Einfluss auf den Anwendungscode haben.
 Wichtige Aspekte der Integration sind Authentifizierung mittels API-Schlüssel, Umgang mit paginierten Ergebnissen und Caching, um die Performance zu verbessern und Ausfallzeiten des CMS abzufangen. [@what-is-a-cms]
 
 ### Sicherheit im Backend
 Sicherheit umfasst sowohl Authentifizierung als auch Autorisierung.
-In REST-APIs werden häufig Token-basierte Verfahren wie JWT oder OAuth2 eingesetzt.
+In REST-APIs werden häufig token basierte Verfahren wie JWT oder OAuth2 eingesetzt.
 Zusätzlich zur klassischen Authentifizierung sollte die Anwendung auch gegen gängige Angriffe wie Cross-Site Scripting (XSS), SQL-Injection oder CSRF geschützt sein.
 Dies wird teils durch Framework-Funktionalitäten und teils durch explizite Prüfungen realisiert.
 Regelmäßige Updates der verwendeten Bibliotheken reduzieren zudem das Risiko bekannter Sicherheitslücken.
 
 ### Sicherheit durch Netzwerk-Isolation
-Ein wesentlicher Sicherheitsvorteil vieler lokal betriebener Systeme ist ihre Netzwerk-Isolation.
-Das Backend läuft auf dem lokalen Gerät (Localhost), auf dem sich auch die Benutzeroberfläche befindet.
-Das System ist ausschließlich im **Schulnetzwerk** erreichbar und damit physisch wie technisch von außen abgeschottet.
+Ein wesentlicher Sicherheitsvorteil vieler lokal betriebener Systeme ist ihre Netzwerk isolation.
+Das Backend läuft auf dem lokalen Gerät (localhost), auf dem sich auch die Benutzeroberfläche befindet.
+Das System ist ausschließlich im Schulnetzwerk erreichbar und damit physisch wie technisch von außen abgeschottet.
 Dies bedeutet konkret, dass externe Angreifer aus dem Internet grundsätzlich keinen Zugriff auf das Backend haben können.
 Angriffe müssen daher von Geräten im Schulnetzwerk ausgehen, was das Angriffsrisiko drastisch reduziert.
 Durch diese Architektur entfallen viele der klassischen Sicherheitsmaßnahmen, die für öffentlich erreichbare Systeme notwendig wären.
 Dennoch sollten auch in solchen Backends Schutzmechanismen implementiert werden, um vor internen Fehlverwendungen und potenziellen Risiken zu bewahren.
-Diese Netzwerk-basierte Sicherheit ist oft unter dem Begriff **Perimeter Security** oder **Defense in Depth** bekannt und stellt eine erste Verteidigungslinie dar. [@perimeter-security]
+Diese Netzwerk basierte Sicherheit ist oft unter dem Begriff Perimeter Security oder Defense in Depth bekannt und stellt eine erste Verteidigungslinie dar. [@perimeter-security]
 
 ### Datenschutz und Eingabevalidierung
 Das beschriebene Backend stellt primär öffentliche Daten bereit (z. B. Events, Neuigkeiten, Stundenpläne).
 Dennoch wurden Mechanismen implementiert, um administrative Endpunkte oder interne Funktionen schützen zu können.
 Eingehende Datenvalidierung ist dabei ein wesentlicher Sicherheitsaspekt.
 Die Validierung erfolgt nicht nur auf der Oberfläche (Frontend), sondern auch serverseitig im Backend, um bösartige oder fehlerhaft formatierte Eingaben zu unterbinden.
-Dies verhindert beispielsweise, dass ungültige Datumsangaben zu Fehlern führen oder dass Inhalte vom CMS mit unerwarteten Datentypen das System beschädigen.
+Dies verhindert beispielsweise, dass ungültige Datumsangaben zu Fehlern führen oder dass Inhalte des CMS mit unerwarteten Datentypen das System beschädigen.
 
 ### Konfiguration und Profile (z. B. application.properties / application.yml)
 Konfigurationseigenschaften ermöglichen das Parametrisieren einer Anwendung ohne Codeänderungen.
-Spring Boot liest hierfür die Dateien `application.properties` oder `application.yml` ein und unterstützt Profile wie `dev`, `test` oder `prod`. [@spring-application.properties]
+Spring Boot liest hierfür die Dateien `application.properties` oder `application.yml` ein und unterstützt Profile wie `dev`, `test` oder `prod`. [@spring-application.properties]   
 Das Profil `dev` steht für die lokale Entwicklungsumgebung und enthält typischerweise Werte, die eine schnelle Entwicklung unterstützen, etwa ausführlichere Logs oder lokale Service-URLs.
 Das Profil `test` wird für automatisierte und manuelle Testläufe verwendet und stellt reproduzierbare Testkonfigurationen bereit, damit Tests unabhängig von produktiven Systemen durchgeführt werden können.
 Das Profil `prod` beschreibt die Produktivumgebung mit stabilen, abgesicherten Einstellungen für den Echtbetrieb, beispielsweise restriktivere Logging-Levels und verbindliche Zielsysteme.
 Durch diese Profiltrennung kann dieselbe Anwendung in unterschiedlichen Umgebungen mit jeweils passenden Konfigurationswerten betrieben werden, ohne den Quellcode zu verändern.
 Über Profile kann z. B. die Basis-URL des CMS oder ein API-Key pro Umgebung festgelegt werden.
-In sensiblen Produktionsumgebungen sollten solche Werte über Umgebungsvariablen oder spezielle Secret-Manager eingespielt werden
+In sensiblen Produktionsumgebungen sollten solche Werte über Umgebungsvariablen oder spezielle Manager Systeme eingespielt werden.
 Die Trennung von Konfiguration und Code erleichtert den Wechsel zwischen Entwicklungs- und Produktionsumgebungen und minimiert das Risiko, vertrauliche Daten irrtümlich zu veröffentlichen. [@spring-application.properties]
 
 #### Containerisierung (Docker) und docker-compose
-Docker ermöglicht das Verpacken der Anwendung samt aller Abhängigkeiten in einem Container. Dies garantiert, dass sie in verschiedenen Umgebungen identisch ausgeführt wird. `docker-compose` vereinfacht die lokale Entwicklung durch Orchestrierung mehrerer Services wie Backend, CMS und Datenbank.
+Docker ermöglicht das Verpacken der Anwendung samt aller Abhängigkeiten in einem Container. Dies garantiert, dass sie in verschiedenen Umgebungen identisch ausgeführt wird.
+Die `docker-compose` vereinfacht die lokale Entwicklung durch Orchestrierung mehrerer Services wie Backend, CMS und Datenbank.
 Im Projekt enthält die Backend-Docker-Datei Anweisungen zum Bauen und Starten des Spring-Boot-JARs sowie zur Konfiguration der Netzwerkverbindungen zu anderen Containern.
 Das Zusammenspiel mit `docker-compose` erlaubt das schnelle Aufsetzen einer vollständigen Testumgebung inklusive Cockpit und optionalen Datenbanken. [@docker-compose] [@docker]
 
@@ -298,12 +304,12 @@ Das Zusammenspiel mit `docker-compose` erlaubt das schnelle Aufsetzen einer voll
 Eine klare API-Dokumentation ist für die Zusammenarbeit zwischen Backend- und Frontend-Teams essentiell.
 OpenAPI/Swagger bietet sowohl maschinenlesbare Spezifikationen als auch eine interaktive Benutzeroberfläche.
 Versionierung der API, z. B. durch Pfadsegmente wie `/api/v1/`, stellt sicher, dass bestehende Clients bei Erweiterungen oder Änderungen weiter funktionieren.
-Langfristig können so mehrere Versionen parallel betrieben werden. [@spring-api-versioning]
-In vielen Anwendungen wird dies über Pfadsegmente realisiert.
+Langfristig können so mehrere Versionen parallel betrieben werden. 
+In vielen Anwendungen wird dies über Pfadsegmente realisiert. [@spring-api-versioning]
 
 ### Schichten und Designmuster
 Typische Schichten umfassen die Präsentationsschicht (Controller/Rest), die Geschäftslogikschicht (Services) und die Persistenzschicht (Repository/DAO).
-Diese klare Trennung ermöglicht es, einzelne Schichten unabhängig zu testen und auszutauschen. [@schichten-architektur]
+Diese klare Trennung ermöglicht es, einzelne Schichten unabhängig zu testen und auszutauschen. [@schichten-architektur]   
 Zudem finden sich innerhalb dieser Schichten wiederkehrende Designmuster wie Factory, Singleton oder Strategy, die bewährte Lösungen für häufige Probleme bieten.
 Besonders wichtig ist die Verwendung von Data Transfer Objects (DTOs) und Boundary-Interfaces, die die interne Domäne vom externen API-Contract abkoppeln.
 Dadurch bleibt das Backend resistent gegenüber Veränderungen in der Datenrepräsentation und ermöglicht parallele Entwicklungen an Front- und Backend.
@@ -311,16 +317,14 @@ Ein Backend kann entweder vertikal skalieren (mehr Ressourcen pro Instanz) oder 
 Statelose Architekturen erleichtern letzteren Ansatz und eignen sich hervorragend für Cloud-Umgebungen, in denen Auto-Scaling genutzt wird.
 Persistente Zustände werden in externen, dafür optimierten Systemen gehalten (Datenbanken), um die Kopplung zwischen Instanzen zu minimieren.
 Hochverfügbarkeit erreicht man durch Redundanz (mehrere Instanzen über mehrere Verfügbarkeitszonen) sowie durch Monitoring und Self-Healing.
-Cloud-Anbieter bieten hierfür native Dienste an, doch auch on-premises können Load-Balancer und Cluster-Technologien dieses Ziel unterstützen.
-Diese erweiterten Grundlagen legen ein fundiertes Verständnis dafür, weshalb der praktische Teil dieser Arbeit so strukturiert und umgesetzt wurde.
-Die nachfolgenden Kapitel erläutern im Detail, wie die hier beschriebenen Prinzipien in einer konkreten Backend-Implementierung realisiert wurden und welche Entscheidungen zu treffen waren, um die beschriebenen Anforderungen zu erfüllen. [@schichten-architektur]
+Cloud-Anbieter bieten hierfür native Dienste an, doch auch on-premises können Load-Balancer und Cluster-Technologien dieses Ziel unterstützen. [@schichten-architektur]
 
 
 
 ## Praktische Arbeit
 
 ### Überblick über die praktische Umsetzung
-Der praktische Teil beschreibt die konkrete Umsetzung der zuvor im Theorie-Teil definierten Konzepte.
+Der praktische Teil beschreibt die konkrete Umsetzung der zuvor im Theorie Teil definierten Konzepte.
 Im Mittelpunkt stehen der technische Aufbau des Spring-Boot-Backends, die Anbindung von Cockpit CMS und WebUntis, die Strukturierung der API-Endpunkte sowie die Verarbeitung und Aufbereitung der gelieferten Inhalte für den Infopoint.
 Die Umsetzung begann mit der fachlichen Abstimmung der tatsächlich benötigten Datenobjekte und ihrer Feldstrukturen.
 Darauf aufbauend wurden konkrete Endpunkte, Antwortformate und Validierungsregeln festgelegt, damit das Frontend die Daten konsistent abrufen und ohne zusätzliche Nachbearbeitung anzeigen kann.
@@ -330,24 +334,24 @@ Neben der reinen Implementierung lag der Fokus auf nachvollziehbaren Datenflüss
 Die Systemgrenzen wurden so definiert, dass jede Komponente eine eindeutige Aufgabe erfüllt.
 Das Cockpit CMS dient ausschließlich der redaktionellen Pflege von Inhalten.
 Das Backend übernimmt den technischen Zugriff auf diese Inhalte, führt Plausibilitätsprüfungen und Transformationen durch und stellt die Ergebnisse über versionierte REST-Endpunkte bereit. Das Frontend übernimmt ausschließlich Darstellung und Interaktion.
-Ein typischer Ablauf verdeutlicht diese Trennung nach der Erfassung eines Events im CMS wird der Datensatz über den Backend-Integrationslayer geladen, im Service validiert und in ein geeignetes DTO überführt. Erst anschließend erfolgt die Bereitstellung über `/api/v1/events`, sodass im Frontend eine konsistente und bereits aufbereitete Darstellung möglich ist. Durch diese Abgrenzung bleiben Änderungen in einer Schicht lokal und führen nicht zu unnötigen Anpassungen in den übrigen Systemteilen.
+Ein typischer Ablauf verdeutlicht diese Trennung nach der Erfassung eines Events im CMS wird der Datensatz über den Backend-Integrationslayer geladen, im Service validiert und in ein geeignetes DTO überführt. Erst anschließend erfolgt die Bereitstellung über den Endpunkt `/api/v1/events`, sodass im Frontend eine konsistente und bereits aufbereitete Darstellung möglich ist. Durch diese Abgrenzung bleiben Änderungen in einer Schicht lokal und führen nicht zu unnötigen Anpassungen in den übrigen Systemteilen.
 
 ### Projektsetup und Entwicklungsumgebung
 Zu Beginn der praktischen Umsetzung des Backends wurde eine strukturierte und stabile Basis geschaffen.
 Das Backend wurde als eigenständiges Spring-Boot-Projekt umgesetzt und klar vom Frontend getrennt.
 Diese Trennung ermöglicht eine unabhängige Weiterentwicklung beider Systeme und sorgt für eine saubere Aufgabenteilung innerhalb des Projekts.
-Als Entwicklungsumgebung wurde **IntelliJ IDEA** verwendet.
+Als Entwicklungsumgebung wurde IntelliJ IDEA verwendet.
 IntelliJ bietet eine umfassende Unterstützung für Spring Boot und Maven und erleichtert dadurch die Entwicklung erheblich.
 Funktionen wie automatische Code-Vervollständigung, integrierte Fehleranalyse, Refactoring-Werkzeuge sowie eine direkte Integration von Build- und Run-Konfigurationen ermöglichen eine effiziente und strukturierte Arbeitsweise.
-Das Projekt wurde mit **Maven** verwaltet, wodurch alle Abhängigkeiten zentral in der `pom.xml` definiert sind.
-IntelliJ übernimmt dabei automatisch das Laden und Verwalten der benötigten Libraries (**dependencies**) [@Maven-Docs].
+Das Projekt wurde mit Maven verwaltet, wodurch alle Abhängigkeiten zentral in der `pom.xml` definiert sind.
+IntelliJ übernimmt dabei automatisch das Laden und Verwalten der benötigten Bibliotheken (dependencies) [@Maven-Docs].   
 Änderungen an Dependencies werden direkt erkannt und in das Projekt integriert.
 Dies sorgt für eine konsistente und reproduzierbare Entwicklungsumgebung.
-Ein weiterer wichtiger Bestandteil der Entwicklungsumgebung war die Nutzung eines Versionsverwaltungssystems (Git) [@Git-Docs].
+Ein weiterer wichtiger Bestandteil der Entwicklungsumgebung war die Nutzung eines Versionsverwaltungssystems (Git) [@Git-Docs].   
 Dadurch konnten Änderungen am Backend nachvollziehbar dokumentiert, Zwischenstände gesichert und bei Bedarf frühere Versionen wiederhergestellt werden.
 Dies unterstützte sowohl die eigene Arbeitsweise als auch die Zusammenarbeit im Team.
 Insgesamt bildete die gewählte Entwicklungsumgebung die Grundlage für eine effiziente und strukturierte Backend-Entwicklung.
-Durch die Kombination aus **IntelliJ** und **Maven** konnte eine stabile, gut wartbare und reproduzierbare Projektstruktur geschaffen werden.
+Durch die Kombination aus IntelliJ und Maven konnte eine stabile, gut wartbare und reproduzierbare Projektstruktur geschaffen werden.
 
 ### Projekt- und Ordnerstruktur des Backends
 Bei der Umsetzung des Backends wurde von Beginn an auf eine klare und nachvollziehbare Projektstruktur geachtet.
@@ -357,12 +361,12 @@ Der Quellcode befindet sich im Verzeichnis `src/main/java`, während Konfigurati
 Innerhalb des Hauptpakets wurde der Code zusätzlich logisch gegliedert.
 Die wichtigsten Unterpakete sind:
 
-- `controller` - Enthält die REST-Controller, welche die HTTP-Anfragen entgegennehmen.
+- `controller` - Enthält die REST-Controller, die HTTP-Anfragen entgegennehmen.
 - `service` - Beinhaltet die Geschäftslogik der Anwendung.
 - `clients` - Enthält externe Schnittstellen, z. B. den CockpitClient und WebUntisClient.
 - `dto` - Definiert Data Transfer Objects zur strukturierten Datenübertragung.
 - `config` - Beinhaltet Konfigurationsklassen (z. B. für WebClient oder CMS-Zugriff).
-- `util` - Stellt Hilfsklassen zur leichteren Verarbeitung von Daten (z.B. TimeConverter)
+- `util` - Stellt Hilfsklassen zur leichteren Verarbeitung von Daten (z. B. TimeConverter)
 
 Diese klare Trennung sorgt dafür, dass jede Klasse eine eindeutige Aufgabe hat und Verantwortlichkeiten nicht vermischt werden.
 Änderungen an einer Schicht, beispielsweise an der API oder an der CMS-Anbindung, können dadurch durchgeführt werden, ohne andere Teile des Systems unnötig zu beeinflussen.
@@ -371,7 +375,7 @@ Die durchdachte Projektstruktur bildet somit eine wichtige Grundlage für eine s
 ![Projektstruktur\label{fig:Projektstruktur}](img/Backend_Projektstruktur.PNG){width=100%}
 
 ### Vorgehen und erstellte Artefakte
-Im Rahmen der Umsetzung sind mehrere sogenannte **Artefakte** entstanden.  
+Im Rahmen der Umsetzung sind mehrere sogenannte Artefakte entstanden.  
 Als Artefakte bezeichnet man alle greifbaren Ergebnisse, die während eines Entwicklungsprozesses erstellt werden.
 Dabei handelt es sich nicht nur um fertigen Programmcode, sondern auch um Konzepte, Entwürfe, Definitionen oder Dokumentationen, die für die Umsetzung notwendig sind.  
 Artefakte helfen dabei, das System strukturiert zu planen, nachvollziehbar umzusetzen und später leichter zu warten oder zu erweitern.
@@ -395,9 +399,9 @@ Die Dokumentation diente nicht nur als technische Referenz, sondern auch als ver
 
 ### Planung und Systemarchitektur
 Die Planung der Systemarchitektur folgte dem Prinzip einer klaren Schichtentrennung, um Verantwortlichkeiten eindeutig zuzuordnen und Änderungen kontrollierbar zu halten.
-In der Controller-Schicht werden HTTP-Anfragen entgegengenommen, Parameter geprüft und standardisierte Responses zurückgegeben.
+In der Controller-Schicht werden HTTP-Anfragen entgegengenommen, Parameter geprüft und standardisierte Antworten zurückgegeben.
 Die eigentliche Geschäftslogik liegt in der Service-Schicht, in der Daten zusammengeführt, fachlich verarbeitet und für die Ausgabe vorbereitet werden.
-Die Datenübertragung zwischen den Schichten erfolgt über DTOs, damit die API nur wohldefinierte und stabile Strukturen nach außen liefert.
+Die Datenübertragung zwischen den Schichten erfolgt über DTOs, damit die API nur gut definierte und stabile Strukturen nach außen liefert.
 Diese Trennung verhindert, dass interne Modelländerungen ungewollt auf die öffentliche Schnittstelle durchschlagen.
 Gleichzeitig erleichtert sie Tests, da jede Schicht unabhängig geprüft und validiert werden kann.
 Die CMS-Anbindung wurde als eigener Integrationsbereich umgesetzt, der den Zugriff auf Cockpit kapselt und dadurch den restlichen Anwendungscode von externen API-Details entlastet. Änderungen an CMS-Endpoints, Authentifizierungsmechanismen oder Datenformaten können damit lokal im Integrationslayer vorgenommen werden, ohne Controller- oder Service-Code umfassend anpassen zu müssen.
@@ -407,7 +411,7 @@ Zusätzlich verbessert sie die Erweiterbarkeit, weil neue Ressourcen, Endpunkte 
 ### Implementierung des Backends
 Die Implementierung des Backends erfolgte nach dem Prinzip der klaren Schichtentrennung.
 Ziel war es, eine übersichtliche und wartbare Struktur zu schaffen, bei der jede Schicht eine klar definierte Aufgabe übernimmt.
-Eine typische Anfrage durchläuft dabei einen klaren, reproduzierbaren Verarbeitungspfad zunächst trifft die HTTP-Anfrage im Controller ein, wo Parameter entgegengenommen, formale Eingaben geprüft und die zuständige Service-Methode aufgerufen wird.
+Eine typische Anfrage durchläuft dabei einen klaren, reproduzierbaren Verarbeitungspfad zuerst trifft die HTTP-Anfrage im Controller ein, wo Parameter entgegengenommen, formale Eingaben geprüft und die zuständige Service-Methode aufgerufen wird.
 Anschließend erfolgt in der Service-Schicht die fachliche Verarbeitung der Daten, einschließlich der Kommunikation mit externen Quellen wie Cockpit CMS oder WebUntis sowie der Anwendung projektspezifischer Regeln.
 Nach der Verarbeitung werden die Ergebnisse in geeignete DTOs überführt, um eine stabile und konsistente Ausgabe gegenüber dem Frontend sicherzustellen.
 Der Controller erstellt darauf basierend eine standardisierte HTTP-Antwort mit passendem Statuscode und strukturierter JSON-Nutzlast.
@@ -420,16 +424,16 @@ Diese Kombination aus Schichtentrennung, standardisiertem Datenfluss und struktu
 Die Controller-Schicht bildet die Schnittstelle zwischen dem Backend und dem Frontend.
 Sie ist dafür verantwortlich, eingehende HTTP-Anfragen entgegenzunehmen, diese an die entsprechende Service-Schicht weiterzuleiten und die Antwort in strukturierter Form zurückzugeben.
 In Spring Boot werden Controller typischerweise mit der Annotation `@RestController` definiert.
-Diese ermöglicht es, REST-Endpunkte einfach zu erstellen und JSON-Antworten automatisch zu serialisieren (vgl. [@Spring-Boot-Docs]).
+Diese ermöglicht es, REST-Endpunkte einfach zu erstellen und JSON-Antworten automatisch zu serialisieren. [@Spring-Boot-Docs]   
 Jeder Controller ist einer bestimmten Ressource zugeordnet, beispielsweise `events` oder `news`.
 Über `@RequestMapping` wird ein gemeinsamer Basispfad definiert, etwa `/api/v1/events`.
-Konkrete Endpunkte werden anschließend mit Annotationen wie `@GetMapping`, `@PostMapping`, `@PutMapping` oder `@DeleteMapping` umgesetzt (vgl. [@Spring-Boot-Docs]).
+Konkrete Endpunkte werden anschließend mit Annotationen wie `@GetMapping`, `@PostMapping`, `@PutMapping` oder `@DeleteMapping` umgesetzt. [@Spring-Boot-Docs]   
 Dadurch wird klar festgelegt, welche HTTP-Methode welche Funktion ausführt.
 Die Controller enthalten bewusst keine Geschäftslogik.
 Ihre Aufgabe besteht ausschließlich darin, Anfragen zu validieren, Parameter entgegenzunehmen und diese an die Service-Schicht weiterzugeben.
 Diese klare Trennung zwischen Controller und Service erhöht die Wartbarkeit des Systems und sorgt für eine übersichtliche Struktur.
 
-### Ablauf einer Anfrage (Beispiel: Events abrufen)
+### Ablauf einer Anfrage (Beispiel Events abrufen)
 Um die Funktionsweise zu verdeutlichen, wird im Folgenden ein typischer Ablauf für das Abrufen von Events beschrieben.
 Dabei wird sichtbar, wie die Schichten im Backend zusammenarbeiten und an welcher Stelle welche Verantwortung liegt.
 Ein Client sendet eine HTTP-GET-Anfrage an den Endpunkt `GET /api/v1/events/{limit}`.
@@ -463,7 +467,7 @@ Die Abhängigkeit `EventService` wird über den Konstruktor injiziert.
 Dadurch bleibt der Controller testbar und lose gekoppelt, weil keine direkte Instanziierung innerhalb der Klasse erfolgt.
 Die Methode `get(@PathVariable int limit)` ist über `@GetMapping("/{limit}")` an GET-Anfragen mit Pfadparameter gebunden.
 Nach dem Methodenaufruf `eventService.get(limit)` wird das Ergebnis als `List<CockpitEvent>` zurückgegeben und von Spring/Jackson in eine JSON-Antwort umgewandelt.
-In der Praxis folgt danach die weitere Verarbeitung in der Service-Schicht dort werden die Events aus der angebundenen Quelle geladen, bei Bedarf gefiltert oder sortiert und anschließend an den Controller zurückgegeben.
+In der Praxis folgt danach die weitere Verarbeitung in der Service Schicht Dort werden die Events aus der angebundenen Quelle geladen, bei Bedarf gefiltert oder sortiert und anschließend an den Controller zurückgegeben.
 Der Controller liefert auf dieser Basis die standardisierte HTTP-Antwort an das Frontend.
 Auf diese Weise bleibt der Datenfluss klar nachvollziehbar und die Rollen der einzelnen Schichten sind sauber getrennt.
 
@@ -505,27 +509,27 @@ public class EventService {
 In diesem Beispiel ruft die Methode `get(int limit)` die Methode `getAppointments(limit)` des `CockpitClient` auf.
 Der Service selbst enthält keine direkte HTTP-Logik, sondern delegiert diese Aufgabe vollständig an den Client.
 Diese Aufgabentrennung erhöht die Wartbarkeit, da Änderungen an der CMS-Anbindung nicht zwangsläufig Anpassungen in der Geschäftslogik erfordern.
-Der gezeigte Code verdeutlicht dieses Muster die Annotation `@Service` markiert die Klasse als Spring-Bean der Geschäftslogik.
+Der gezeigte Code verdeutlicht dieses Muster Die Annotation `@Service` markiert die Klasse als Spring-Bean der Geschäftslogik.
 Über den Konstruktor wird der `CockpitClient` injiziert, wodurch eine lose Kopplung entsteht.
 Die Methode `get(int limit)` fungiert als fachliche Service-Schnittstelle und steuert, wie viele Datensätze angefordert werden.
 In einer erweiterten Ausbaustufe können an dieser Stelle zusätzliche Regeln umgesetzt werden, etwa eine Begrenzung ungültiger Werte, Sortierlogik nach Datum oder die Umwandlung in API-spezifische DTOs.
-Durch diese Struktur bleibt der Datenfluss klar nachvollziehbar der Controller delegiert den Aufruf an den Service, der Service beschafft und verarbeitet die Daten über den Client, und das Ergebnis wird anschließend in standardisierter Form an den Controller zurückgegeben.
+Durch diese Struktur bleibt der Datenfluss klar nachvollziehbar Der Controller delegiert den Aufruf an den Service, der Service beschafft und verarbeitet die Daten über den Client, und das Ergebnis wird anschließend in standardisierter Form an den Controller zurückgegeben.
 Damit wird eine saubere Trennung zwischen Transportebene, Geschäftslogik und externer Integration erreicht.
 
 ### Umsetzung und Einsatz von DTOs (Data Transfer Objects)
-Im Backend werden **DTOs (Data Transfer Objects)** eingesetzt, um Daten kontrolliert zwischen den einzelnen Schichten (Controller, Service) und nach außen zur REST API zu übertragen. 
+Im Backend werden DTOs (Data Transfer Objects) eingesetzt, um Daten kontrolliert zwischen den einzelnen Schichten (Controller, Service) und nach außen zur REST API zu übertragen. 
 Ein DTO ist dabei ein eigenes, meist einfaches Objekt, das nur jene Felder enthält, die das Frontend wirklich benötigt.
 Dadurch wird verhindert, dass interne Strukturen oder unnötige Informationen direkt über die API sichtbar werden.
-Außerdem macht diese Trennung den Code übersichtlicher und reduziert das Risiko, dass sich Änderungen an internen Klassen direkt auf die API auswirken (vgl. [@DTOs-information]).
+Außerdem macht diese Trennung den Code übersichtlicher und reduziert das Risiko, dass sich Änderungen an internen Klassen direkt auf die API auswirken. [@DTOs-information]   
 
-In der praktischen Umsetzung werden DTOs vor allem in zwei Situationen verwendet: Erstens bei **Antworten** an das Frontend (Response-DTO), damit das Frontend eine klare und stabile Struktur erhält. 
-Zweitens bei **Anfragen** an das Backend (Request-DTO), um Eingabedaten sauber entgegenzunehmen und direkt validieren zu können.
-Die Umwandlung von internen Objekten (z. B. Cockpit-Datenmodelle) in DTOs passiert typischerweise in der Service-Schicht, da dort die Geschäftslogik liegt.
-So bleibt der Controller möglichst schlank und konzentriert sich auf die HTTP-Ebene.
+In der praktischen Umsetzung werden DTOs vor allem in zwei Situationen verwendet.
+DTOs kommen einerseits bei Antworten an das Frontend (Response-DTO) zum Einsatz, damit dort eine klare und stabile Struktur bereitsteht.
+Andererseits werden sie bei Anfragen an das Backend (Request-DTO) verwendet, um Eingabedaten sauber entgegenzunehmen und direkt validieren zu können.
+Die Umwandlung interner Objekte (z. B. Cockpit-Datenmodelle) in DTOs erfolgt typischerweise in der Service-Schicht, da dort die Geschäftslogik liegt und der Controller dadurch möglichst schlank bleibt und sich auf die HTTP-Ebene konzentriert.
 
 
-### Verwendung von DTOs
-DTOs (Data Transfer Objects) dienen dazu, nur die Daten nach außen zu geben, die das Frontend wirklich benötigt. [@DTOs-information] 
+### Verwendung von Data Transfer Objects
+Data Transfer Objects (DTOs) dienen dazu, nur die Daten nach außen zu geben, die das Frontend tatsächlich benötigt. [@DTOs-information]      
 Interne Felder oder CMS-spezifische Informationen werden nicht direkt weitergegeben. 
 Ein Event-Datensatz im CMS enthält in der Regel deutlich mehr Informationen, als für die reine Anzeige im Frontend erforderlich sind.
 Neben inhaltlichen Feldern wie Titel oder Beschreibung können auch technische Metadaten enthalten sein, beispielsweise interne Kennungen, Zeitstempel zur Erstellung und Aktualisierung oder systeminterne Zusatzinformationen.
@@ -554,7 +558,8 @@ Jedes Feld beschreibt dabei explizit einen Teil der API-Antwort.
 Zeitangaben wie `start` und `end` werden als `Instant` modelliert, wodurch eine eindeutige und zeitzonenunabhängige Repräsentation möglich ist.
 In der praktischen Verarbeitung werden interne Datenmodelle in diesen DTO-Typ transformiert, bevor eine Antwort an das Frontend gesendet wird.
 Dadurch bleibt die API konsistent, auch wenn sich interne Entitäten oder externe CMS-Felder ändern.
-Zusätzlich erleichtert dieses Vorgehen die Versionierung der Schnittstelle Erweiterungen können gezielt über neue DTO-Felder erfolgen, ohne bestehende Clients zu brechen.
+Zusätzlich erleichtert dieses Vorgehen die Versionierung der Schnittstelle.
+Erweiterungen können gezielt über neue DTO-Felder erfolgen, ohne bestehende Clients zu brechen.
 
 ### CockpitClient (CMS-Anbindung)
 Der CockpitClient bildet die zentrale Integrationskomponente zwischen Backend und Cockpit CMS.
@@ -568,11 +573,9 @@ Zusätzlich wurde die maximale In-Memory-Größe des `WebClient` erhöht.
 Diese Anpassung ist wichtig, damit auch größere Responses oder Medieninhalte stabil verarbeitet werden können.
 Im Fehlerfall, etwa bei ungültigem API-Key oder kurzfristiger Nichterreichbarkeit des CMS, werden Ausnahmen kontrolliert behandelt.
 Der Client liefert dann sichere Rückgabewerte wie `List.of()` oder `null` zurück.
-Damit bleibt das Backend auch bei externen Störungen lauffähig und das Frontend erhält definierte Antworten statt unkontrollierter Exceptions.
+Damit bleibt das Backend auch bei externen Störungen lauffähig und das Frontend erhält definierte Antworten statt unkontrollierter Exceptions, wie das folgende CockpitClient-Beispiel für den Abruf von News über REST zeigt.
 
-**CockpitClient - Beispiel für den Abruf von News über REST** [@SLF4J-Docs]
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="CMS-Integrationscomponent (CockpitClient)" .java}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="CMS-Integrationskomponente (CockpitClient)" .java}
 @Component
 public class CockpitClient {
 
@@ -602,7 +605,7 @@ public class CockpitClient {
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Im gezeigten Code markiert `@Component` die Klasse als Spring-Bean.
+Im oben angeführten Code markiert `@Component` die Klasse als Spring-Bean.
 Dadurch kann der Client im Service per Dependency Injection verwendet werden.
 Der Konstruktor übernimmt zwei zentrale Abhängigkeiten.
 Über `WebClient.Builder` wird der HTTP-Client konfiguriert.
@@ -624,7 +627,7 @@ Dadurch bleibt die WebUntis-spezifische Kommunikation in einer dedizierten Klass
 Service- und Controller-Klassen müssen damit keine Details zu Endpunkten, Headern oder Request-Formaten kennen.
 Die eigentliche Geschäftslogik bleibt dadurch klar von der externen Systemkommunikation getrennt.
 Im Gegensatz zur Cockpit-Anbindung werden in diesem Fall Monitor-Daten über einen POST-Aufruf auf `/monitor/dayoverview/data` geladen.
-Die Request enthält die Parameter `date` und `format`, mit denen der gewünschte Tagesausschnitt präzise festgelegt wird.
+Die Anfrage (Request) enthält die Parameter `date` und `format`, mit denen der gewünschte Tagesausschnitt präzise festgelegt wird.
 Da Datumswerte vom Frontend fehlerhaft übergeben werden können, wird das Eingabedatum vor dem Abruf über `normalizeDate(...)` vereinheitlicht.
 Dieses Vorgehen reduziert Folgeschäden in späteren Verarbeitungsschritten und erhöht die Robustheit der Schnittstelle.
 Zusätzlich enthält der Client eine Fallback-Strategie für unterschiedliche WebUntis-Formatbezeichnungen.
@@ -634,11 +637,9 @@ Damit können variationsbedingte Unterschiede in der externen Datenquelle abgefa
 Eine weitere Schutzebene liegt in `safeFetchDayOverview(...)`.
 Bei Verbindungsproblemen oder unerwarteten Antwortformaten wird kein unkontrollierter Fehler bis in die API-Schicht durchgereicht.
 Stattdessen wird ein definiertes, gültiges JSON-Objekt zurückgegeben, sodass das Frontend weiterhin arbeitsfähig bleibt.
-Dieses Fehlerverhalten ist für den Schulbetrieb wesentlich, weil kurzfristige Störungen externer Systeme dadurch nicht unmittelbar zu einem Ausfall der Anzeige führen.
+Dieses Fehlerverhalten ist für den Schulbetrieb wesentlich, weil kurzfristige Störungen externer Systeme dadurch nicht unmittelbar zu einem Ausfall der Anzeige führen, wie das folgende WebUntisClient-Beispiel zum Abruf der Tagesübersicht für Klassen mit Fallback zeigt.
 
-**WebUntisClient - Abruf der Tagesübersicht für Klassen mit Fallback** 
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Stundenplan-Integrationscomponent (WebUntisClient)" .java}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Stundenplan-Integrationskomponente (WebUntisClient)" .java}
 @Component
 public class WebUntisClient {
 
@@ -679,8 +680,8 @@ public class WebUntisClient {
 Im gezeigten Code markiert `@Component` die Klasse als Spring-Bean und ermöglicht die Nutzung per Dependency Injection in höheren Schichten.
 Im Konstruktor wird ein `WebClient` mit fixer `baseUrl` aufgebaut, wodurch alle Requests konsistent gegen denselben WebUntis-Host ausgeführt werden.
 Die Methode `getClassOverview(String date)` übernimmt die Eingabevalidierung auf Integrationsniveau, indem der Datumswert zunächst normalisiert wird.
-Anschließend wird ein zweistufiger Abruf durchgeführt, der unterschiedliche Formatwerte tolerant behandelt.
-Die Methode `fetchDayOverviewByFormat(...)` erstellt den Request-Body über ein `Map`-Objekt und sendet den Aufruf als HTTP-POST.
+Anschließend wird ein zweistufiger Abruf durchgeführt, der unterschiedliche Formatwerte tolerant behandelt.   
+Die Methode `fetchDayOverviewByFormat()` erstellt den Request-Body über ein `Map`-Objekt und sendet den Aufruf als HTTP-POST.
 Über den URI-Builder werden Pfad und Query-Parameter (`school=htlleoben`) reproduzierbar zusammengesetzt.
 Der Header `X-Requested-With` bildet das erwartete Request-Profil der Zielschnittstelle nach.
 Mit `retrieve()` und `bodyToMono(JsonNode.class)` wird die Antwort in eine JSON-Struktur überführt.
@@ -696,7 +697,7 @@ Die Utility-Schicht trägt damit wesentlich zur Wartbarkeit bei, weil Änderunge
 Da WebUntis-Daten als JSON vorliegen, basieren diese Hilfsklassen stark auf `JsonNode` und defensiven Zugriffsmustern wie `node.path(...)`.
 Dieses Vorgehen reduziert das Risiko von Laufzeitfehlern bei fehlenden oder optionalen Feldern und erhöht die Stabilität der gesamten Datenpipeline. [@Jackson-Docs]
 
-#### ClassFinder
+#### ClassFinder (Hilfsklasse zur Suche und Aufbereitung von Klasseninformationen)
 `ClassFinder` übernimmt die Aufgabe, aus der WebUntis-Tagesübersicht gezielt Klasseninformationen zu extrahieren und für die weitere Verarbeitung aufzubereiten.
 Die Suche erfolgt über die `rows`-Einträge im JSON, wobei der jeweilige `header` als Klassenbezeichnung ausgewertet wird.
 Zusätzlich wird ermittelt, ob zum aktuellen Zeitpunkt eine Unterrichtseinheit aktiv ist.
@@ -710,11 +711,11 @@ public static List<ClassInfoDTO> search(JsonNode root, String query) {
     String q = query.toLowerCase();
     int now = ConvertToUntisTimeUtil.nowAsUntisTime();
 
+    // ... periods durchsuchen und aktuelle Stunde finden (now in start/end)
     for (JsonNode row : root.path("payload").path("rows")) {
         String header = row.path("header").asText("").trim(); // Klassenname
         if (!header.toLowerCase().contains(q)) continue;
 
-        // ... periods durchsuchen und aktuelle Stunde finden (now in start/end)
     }
     return results;
 }
@@ -727,7 +728,7 @@ Die Iteration über `root.path("payload").path("rows")` stellt sicher, dass auch
 Über `header.toLowerCase().contains(q)` wird eine tolerante Teilstring-Suche umgesetzt.
 Treffer können anschließend um Zusatzinformationen wie laufende Stunde, Fach oder Ereignisse erweitert und in `ClassInfoDTO` überführt werden.
 
-### ConvertToUntisTimeUtil
+#### ConvertToUntisTimeUtil (Hilfsklasse zur Umrechnung in das Untis-Zeitformat)
 `ConvertToUntisTimeUtil` stellt eine kompakte, aber zentrale Hilfsfunktion für zeitabhängige Logik bereit.
 WebUntis verwendet Zeitangaben häufig als Ganzzahlen im Format `HHmm`, beispielsweise `0815` oder `1340`.
 Für Vergleiche mit Stundenplaneinträgen ist daher eine einheitliche Umrechnung der aktuellen Systemzeit in dieses Schema erforderlich.
@@ -753,7 +754,7 @@ Die Methode `nowAsUntisTime()` liest den aktuellen Zeitpunkt zonensicher aus und
 Der Ausdruck `hour * 100 + minute` erzeugt anschließend genau jenes numerische Format, das in den WebUntis-Daten für Zeitfenstervergleiche erwartet wird.
 Dadurch kann die Fachlogik in Such- und Parser-Klassen direkt mit kompatiblen Werten arbeiten, ohne eigene Zeitkonvertierungen duplizieren zu müssen.
 
-### TeacherFinder
+#### TeacherFinder (Hilfsklasse zur Suche und Aufbereitung von Lehrerdaten)
 `TeacherFinder` übernimmt die Suche und Verdichtung von Lehrerdaten aus derselben WebUntis-Quelle.
 Die Klasse orientiert sich konzeptionell am `ClassFinder`, erweitert die Verarbeitung jedoch um lehrerspezifische Informationen wie Kürzel, Vorname und Nachname.
 Ziel ist die Erzeugung strukturierter DTOs, die innerhalb des Backends konsistent weiterverarbeitet oder direkt über die API ausgegeben werden können.
@@ -780,11 +781,11 @@ Sobald ein verwertbarer Inhalt gefunden wird, wird dieser bereinigt und unmittel
 Falls kein Feld belegt ist, liefert die Methode einen leeren String als definierten Standardwert.
 Damit bleibt das Aufruferverhalten vorhersagbar, auch wenn Eingangsdaten unvollständig sind.
 
-### TeacherHeaderParser
+#### TeacherHeaderParser (Hilfsklasse zur Zerlegung von Lehrer-Headern)
 `TeacherHeaderParser` ist für die Zerlegung des von WebUntis gelieferten Header-Strings verantwortlich.
 Dieser Header enthält typischerweise kombinierte Angaben zu Nachname, Vorname und Kürzel in einem einzigen Textfeld.
 Für die strukturierte Extraktion wird ein regulärer Ausdruck eingesetzt.
-Mit diesem Ansatz lassen sich feste Textmuster zuverlässig in Einzelbestandteile auftrennen, ohne umfangreiche manuelle Stringoperationen zu benötigen. [@Java-Regex-Docs]
+Mit diesem Ansatz lassen sich feste Textmuster zuverlässig in Einzelbestandteile auftrennen, ohne umfangreiche manuelle Stringoperationen zu benötigen. [@Java-Regex-Docs]   
 Gleichzeitig berücksichtigt die Implementierung, dass externe Systeme nicht immer konsistente Formate liefern.
 Wenn ein Header nicht dem erwarteten Muster entspricht, wird dennoch ein gültiges `TeacherInfoDTO` mit Default-Werten erzeugt.
 Dadurch werden harte Abbrüche vermieden und die Oberfläche bleibt trotz unvollständiger Eingangsdaten funktionsfähig.
@@ -826,11 +827,11 @@ Ein wesentlicher Schwerpunkt lag auf der Anbindung externer Systeme.
 Über den CockpitClient werden redaktionelle Inhalte aus dem CMS kontrolliert geladen und in ein für das Frontend nutzbares Format überführt.
 Über den WebUntisClient werden Stundenplaninformationen robust abgerufen und bei Fehlern über definierte Fallback-Mechanismen abgesichert.
 Diese Integrationsstrategie reduziert die Kopplung zwischen Frontend und Fremdsystemen und erhöht zugleich die Ausfallsicherheit der Anwendung.
-Zusätzlich wurde Wert auf Datenqualität und kontrollierbare Fehlerbehandlung gelegt.
+Zusätzlich wurde Wert auf Datenqualität und strukturierte Fehlerbehandlung gelegt.
 Eingaben werden validiert, Antworten werden über DTOs standardisiert und Fehlersituationen werden als konsistente Rückmeldungen bereitgestellt.
 Damit wurde sichergestellt, dass das Backend nicht nur funktional korrekt arbeitet, sondern auch unter realistischen Betriebsbedingungen verlässlich bleibt.
 Für den weiteren Ausbau bestehen mehrere sinnvolle Entwicklungspfade.
-Dazu zählen die Erweiterung zusätzlicher Ressourcenendpunkte und die Vertiefung von Monitoring Funktionen.
+Dazu zählen die Erweiterung zusätzlicher Ressourcenendpunkte und die Vertiefung von Monitoring-Funktionen.
 Ebenso bietet die gewählte Architektur eine gute Basis für eine feinere Konfiguration je Zielumgebung.
 Insgesamt stellt das Backend damit eine belastbare und zukunftsfähige Grundlage für den digitalen Infopoint im schulischen Alltag dar.
 
