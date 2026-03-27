@@ -45,10 +45,10 @@ Das Backend seinerseits kommuniziert mit dem Cockpit-CMS sowie mit der externen 
 
 ### Systemkomponenten
 
-**Frontend (React SPA)**
+#### Frontend (React SPA)
 
 Das Frontend stellt eine kiosktaugliche Benutzeroberfläche bereit. Beim ersten Aufruf wird ein
-Screensaver angezeigt; erst nach einer Benutzerinteraktion (Klick oder Tastendruck) wird die
+Screensaver angezeigt. Erst nach einer Benutzerinteraktion (Klick oder Tastendruck) wird die
 Hauptnavigation zugänglich. Die Hauptseite bietet eine Kachelnavigation mit folgenden Modulen:
 
 - **Neuigkeiten** - aktuelle Schulnews aus dem CMS, mit Detailansicht je Beitrag
@@ -62,7 +62,7 @@ Das Routing erfolgt client-seitig über React Router DOM. Alle Seiten sind als l
 Komponenten unter eigenem Pfad erreichbar (z. B. `/teachers`, `/stundenplan/klassen`,
 `/laborstundenplan/:id`).
 
-**Backend (Spring Boot REST-API)**
+#### Backend (Spring Boot REST-API)
 
 Das Backend exponiert eine versionierte REST-API unter dem Basispfad `/api/v1/` auf Port 8888.
 Die API gliedert sich in folgende Ressourcen:
@@ -86,7 +86,7 @@ Die API gliedert sich in folgende Ressourcen:
 
 :Schnittstellen
 
-Die interne Struktur des Backends folgt dem klassischen Schichtmodell: Controller nehmen
+Die interne Struktur des Backends folgt dem klassischen Schichtmodell. Controller nehmen
 HTTP-Anfragen entgegen und delegieren an Service-Klassen, welche die Geschäftslogik
 kapseln. Für die Kommunikation mit externen Systemen sind dedizierte Client-Klassen
 (`CockpitClient`, `WebUntisClient`) vorgesehen. Hilfsklassen (`TeacherFinder`,
@@ -94,10 +94,10 @@ kapseln. Für die Kommunikation mit externen Systemen sind dedizierte Client-Kla
 WebUntis zurückgelieferten Daten. Data-Transfer-Objekte (DTOs) entkoppeln die interne
 Datenstruktur von der API-Darstellung.
 
-**Content-Management-System (Cockpit CMS)**
+#### Content-Management-System (Cockpit CMS)
 
 Cockpit CMS wird als headless CMS eingesetzt und ist ausschließlich für das Redaktionspersonal
-der Schule zugänglich (Port 8080). Es verwaltet folgende Inhaltstypen: Neuigkeiten (`news`),
+der Schule zugänglich (Port 8080). Es verwaltet die Inhaltstypen Neuigkeiten (`news`),
 Termine (`events`), Gebäudepläne (`maps`) sowie Laborstundenpläne (`laborplaene`). Das Backend
 greift über die Cockpit-REST-API mit einem API-Schlüssel auf diese Inhalte zu.
 
@@ -124,7 +124,7 @@ Das System bindet zwei externe Dienste an:
 
 - **WebUntis** (`htlleoben.webuntis.com`): Die öffentlich zugängliche Monitor-API von WebUntis
   liefert Tagesübersichten für Lehrkräfte und Klassen. Die Schnittstelle wird über HTTP-POST mit
-  JSON-Body angesprochen; eine Authentifizierung ist für die Monitoransicht nicht erforderlich.
+  JSON-Body angesprochen. Eine Authentifizierung ist für die Monitoransicht nicht erforderlich.
 
 - **Instagram**: Die Anwendung verfügt über eine eigene Seite für einen Instagram-Feed
   (`/insta`). Die konkrete Einbindung (über einen Iframe) ist in der gleichnamigen Frontend-Komponente (`InstaFeedPage`) umgesetzt.
@@ -146,13 +146,13 @@ gedacht. Das CMS (Port 8080) und das Backend (Port 8888) sind im Produktivbetrie
 Netzwerkkonfiguration oder einen vorgeschalteten Reverse Proxy zu schützen. Die Authentifizierung
 gegenüber dem Cockpit-CMS erfolgt über einen API-Schlüssel, der als Umgebungsvariable
 (`COCKPIT_API_KEY`) konfiguriert wird und nicht im Quellcode hinterlegt ist. Personenbezogene
-Daten werden im System nicht gespeichert; Stundenplan-Abfragen erfolgen auf Basis öffentlich
+Daten werden im System nicht gespeichert. Stundenplan-Abfragen erfolgen auf Basis öffentlich
 zugänglicher Monitoransichten. 
 
 
 ## Erfahrungen und Herausforderungen
 
-Die größte technische Herausforderung im Projektverlauf stellte die Integration der WebUntis-Schnittstelle dar, da für die verwendete Monitor-API keine offizielle Dokumentation vorlag und die Schnittstelle durch eigenständige Analyse des Netzwerkverkehrs erschlossen werden musste. Diese Arbeiten verursachten gemeinsam mit der aufwändigeren als erwarteten Cockpit-CMS-Anbindung eine Gesamtverzögerung von rund acht Wochen, die durch Mehrarbeit und Anpassung des Zeitplans vollständig aufgeholt wurde. Auf der Frontend-Seite erforderte die einheitliche Darstellung strukturell sehr unterschiedlicher Inhaltstypen sowie die Optimierung der Oberfläche für den Kiosk-Einsatz im öffentlichen Raum besondere gestalterische Sorgfalt. Insgesamt vermittelte das Projekt allen Beteiligten praxisnahe Erfahrungen mit einem industrienahen Technologiestack, die weit über den schulischen Unterrichtsstoff hinausgehen, und verdeutlichte den Wert einer transparenten Projektkommunikation sowie einer frühzeitigen Auseinandersetzung mit externen Abhängigkeiten.
+Die größte technische Herausforderung im Projektverlauf stellte die Integration der WebUntis-Schnittstelle dar, da für die verwendete Monitor-API keine offizielle Dokumentation vorlag und die Schnittstelle durch eigenständige Analyse des Netzwerkverkehrs erschlossen werden musste. Diese Arbeiten verursachten gemeinsam mit der aufwändigeren Cockpit-CMS-Anbindung eine Gesamtverzögerung von rund acht Wochen, die durch Mehrarbeit und Anpassung des Zeitplans vollständig aufgeholt wurde. Auf der Frontend-Seite erforderte die einheitliche Darstellung strukturell sehr unterschiedlicher Inhaltstypen sowie die Optimierung der Oberfläche für den Kiosk-Einsatz im öffentlichen Raum besondere gestalterische Sorgfalt. Insgesamt vermittelte das Projekt allen Beteiligten praxisnahe Erfahrungen mit einem industrienahen Technologiestack, die weit über den schulischen Unterrichtsstoff hinausgehen, und verdeutlichte den Wert einer transparenten Projektkommunikation sowie einer frühzeitigen Auseinandersetzung mit externen Abhängigkeiten.
 
 ## Erweiterungsmöglichkeiten
 

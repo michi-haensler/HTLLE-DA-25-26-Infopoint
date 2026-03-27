@@ -50,23 +50,23 @@ da-kurzfassung-de: Im Rahmen dieser Diplomarbeit wurde ein digitales Infopoint-S
   unkomplizierten Zugang zu schulrelevanten Informationen bietet. Das System stellt Funktionen wie
   eine Echtzeit-Lehrkraftsuche auf Basis des Schulstundenplans, aktuelle Schulneuigkeiten und
   Termine, Gebäudepläne sowie Laborstundenpläne bereit. Es wurde als dreischichtige Webanwendung
-  realisiert, bestehend aus einem React-Frontend, einem Spring-Boot-Backend und dem headless CMS
+  realisiert, bestehend aus einem React-Frontend, einem Spring-Boot-Backend und dem headless Content-Management-System
   Cockpit, die vollständig über Docker Compose containerisiert und orchestriert werden. Die
   Stundenplaninformationen werden über die öffentlich zugängliche Monitor-API von WebUntis
-  abgerufen, während redaktionelle Inhalte über das CMS verwaltet werden. Als Endgerät wird ein
+  abgerufen, während redaktionelle Inhalte über das Content-Management-System verwaltet werden. Als Endgerät wird ein
   handelsüblicher PC mit Ubuntu Desktop im Kiosk-Modus eingesetzt. Die Benutzeroberfläche wurde
   für den Touchscreen-Betrieb im öffentlichen Raum optimiert und orientiert sich an den Grundsätzen
-  des nutzerzentrierten Designs. Das Projektmanagement erfolgte nach der Scrumban-Methode unter
+  des nutzerzentrierten Designs. Das Projektmanagement erfolgte nach der Methode Scrumban unter
   Verwendung von GitHub Projects.
 
 da-kurzfassung-en: This diploma thesis presents the development of a digital infopoint system for HTL Leoben,
   designed to provide students and visitors with quick and easy access to school-related information.
   The system offers features such as a real-time teacher locator based on the school timetable,
-  current news and events, building maps, and laboratory timetables. It was implemented as a
+  current news and events, building maps, and laboratory schedules. It was implemented as a
   three-tier web application consisting of a React frontend, a Spring Boot backend, and the headless
-  CMS Cockpit, all fully containerised and orchestrated using Docker Compose. Timetable data is
-  retrieved via the publicly accessible monitor API of WebUntis, while editorial content is managed
-  through the CMS. The system is deployed on a standard PC running Ubuntu Desktop in kiosk mode.
+  Content-Management-System Cockpit, all fully containerised and orchestrated using Docker Compose. Timetable data is
+  retrieved via the publicly accessible monitor API provided by WebUntis, while editorial content is managed
+  through the Content-Management-System. The system is deployed on a standard PC running Ubuntu Desktop in kiosk mode.
   The user interface was optimised for touchscreen use in a public environment and follows the
   principles of user-centred design. Project management was carried out using the Scrumban
   methodology with GitHub Projects.

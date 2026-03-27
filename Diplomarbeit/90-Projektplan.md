@@ -5,17 +5,16 @@
 
 ### Projektauftrag
 
-Der Projektauftrag umfasst die Entwicklung eines digitalen Infopoints für die HTL Leoben. Dieser Infopoint soll zentrale schulrelevante Informationen wie Stundenplanänderungen, Vertretungen und schulinterne Neuigkeiten anzeigen. Die Informationen werden über ein Touch-Display bereitgestellt, das an einem zentralen Ort im Schulgebäude montiert wird. Die Hardware wird nicht eigenständig entwickelt. Stattdessen wird eine All-in-One-Lösung evaluiert, die idealerweise keine proprietäre Software mitbringt, sodass die projektspezifische Anwendung direkt darauf bereitgestellt werden kann. Als Verwaltungssystem für Inhalte ist die Integration eines Open-Source-CMS vorgesehen.
-Ein besonderer Fokus liegt auf der benutzerfreundlichen Gestaltung der Oberfläche, um eine zukunftsfähige Lösung zu gewährleisten.
+Der Projektauftrag umfasst die Entwicklung eines digitalen Infopoints für die HTL Leoben. Dieser Infopoint soll zentrale schulrelevante Informationen wie Stundenplanänderungen, Vertretungen und schulinterne Neuigkeiten anzeigen. Die Informationen werden über ein Touch-Display bereitgestellt, das an einem zentralen Ort im Schulgebäude installiert wird. Die Hardware wird im Rahmen der Diplomarbeit nicht eigenständig entwickelt. Als Verwaltungssystem für Inhalte ist die Integration eines Open-Source-CMS vorgesehen. Ein besonderer Fokus liegt auf der benutzerfreundlichen Gestaltung der Oberfläche, um eine langfristig nutzbare Lösung zu gewährleisten.
 
 
 #### Projektziele
 
-Das Projekt verfolgt mehrere Kernziele. Zunächst erfolgt die Auswahl eines geeigneten Hardwaresystems für den Schulbetrieb im Innenbereich. Darauf aufbauend wird ein funktionales Infopoint-System für Touch-Displays entwickelt, das aktuelle schulische Informationen wie Veranstaltungen, Raumpläne, Stundenpläne, den Aufenthalt von Lehrpersonen sowie einen Social-Media-Feed darstellt. Die Administrierbarkeit wird durch die Integration eines Content-Management-Systems (CMS) gewährleistet. Das UI/UX-Design fokussiert auf Barrierefreiheit. Die Lösung wird zukunftssicher und erweiterbar konzipiert.
+Das Projekt verfolgt mehrere Kernziele. Ziel ist es ein funktionales Infopoint-System für Touch-Displays zu entwickeln, das aktuelle schulische Informationen wie Veranstaltungen, Raumpläne, Stundenpläne, den aktuellen Aufenthaltsort von Lehrpersonen sowie einen Social-Media-Feed darstellt. Die Administrierbarkeit wird durch die Integration eines Content-Management-Systems (CMS) gewährleistet. Das UI/UX-Design fokussiert auf einfache, selbsterklärende Bedienung. Die Lösung wird zukunftssicher und erweiterbar konzipiert.
 
 #### Nicht-Ziele bzw. nicht Inhalte
 
-Explizit vom Projektumfang ausgeschlossen sind die Entwicklung eines eigenen Hardwaresystems, die Anzeige der vollständigen Stundentafel der Lehrpersonen, die Lokalisierung des Systems in sämtliche Sprachen sowie die Entwicklung eines eigenständigen CMS-Systems.
+Explizit vom Projektumfang ausgeschlossen sind die Entwicklung eines eigenen Hardwaresystems, die Anzeige der vollständigen Stundentafel der Lehrpersonen, die Lokalisierung des Systems in mehreren Sprachen sowie die Entwicklung eines eigenständigen CMS-Systems.
 
 #### Projektnutzen
 
@@ -77,7 +76,7 @@ Das Gesamtprojekt beläuft sich auf Kosten von 24.373,00 Euro.
 
 | Risiko         | EW  | Auswirkungen     | Maßnahmen     |
 |:--------------:|:---:| :----------------|:--------------|
-| Grafische Oberfläche nicht einfach zu verstehen| 10% | Infopoint wird kaum genutzt | An Best-Practice-Beispielen orientieren und gegebenenfalls Usability-Test durchführen |
+| Grafische Oberfläche schwer zu verstehen| 10% | Infopoint wird kaum genutzt | An Best-Practice-Beispielen orientieren und gegebenenfalls Usability-Test durchführen |
 | Fehlende Kommunikation mit dem Betreuer | 10% | Entscheidungen verzögern sich und es entstehen Unsicherheiten | Regelmäßige Besprechungen einplanen |
 | Probleme mit der WebUntis-Schnittstelle  | 20% | Feature, um Lehrer zu finden und Stundenpläne anzuzeigen, kann nicht umgesetzt werden | Früh genug mit der Schnittstelle befassen und diese testen |
 | Verzögerung im Zeitplan | 30% | Das Projekt kann nicht rechtzeitig abgeschlossen werden | Früh genug anfangen und genügend Puffer einplanen |
@@ -119,7 +118,7 @@ Das Gesamtprojekt beläuft sich auf Kosten von 24.373,00 Euro.
 
 Sämtliche Änderungen am Projektumfang, den Meilensteinen oder Anwendungsfällen erfordern eine Abstimmung mit dem Betreuer und gegebenenfalls dem Auftraggeber.
 
-Der Informationsfluss ist wie folgt geregelt: Änderungen werden im Team-Chat und in Besprechungen dokumentiert. Der Betreuer und der Projektleiter werden über alle Änderungen informiert. Alle Änderungen werden schriftlich im Änderungsprotokoll des GitHub-Repositorys vermerkt.
+Der Informationsfluss ist wie folgt geregelt. Änderungen werden im Team-Chat und in Besprechungen dokumentiert. Der Betreuer und der Projektleiter werden über alle Änderungen informiert. Alle Änderungen werden schriftlich im Änderungsprotokoll des GitHub-Repositorys vermerkt.
 
 ## Meilensteine
 
@@ -127,7 +126,7 @@ Der Informationsfluss ist wie folgt geregelt: Änderungen werden im Team-Chat un
 
 - Antrag Diplomarbeitsportal gestellt
 
-### 19.09.2025: Recherche Abgeschlossen
+### 19.09.2025: Recherche abgeschlossen
 
 - Recherche zu verschiedenen Infopoint Systemen in unterschiedlichen Preiskategorien abgeschlossen
 - Auswahl wird dem Auftraggeber vorgelegt
@@ -149,9 +148,9 @@ Der Informationsfluss ist wie folgt geregelt: Änderungen werden im Team-Chat un
 
 - Vereinigung von Front- und Backend abgeschlossen
 
-### 10.11.2025: 1. Zwischenpräsentation
+### 12.11.2025: 1. Zwischenpräsentation
 
-- Präsentation des aktuellen Stands
+- Präsentation des aktuellen Stands der Diplomarbeit
 
 ### 17.11.2025: Testphase auf Endgerät abgeschlossen
 
@@ -177,13 +176,13 @@ Der Informationsfluss ist wie folgt geregelt: Änderungen werden im Team-Chat un
 - Abgabe der ersten Gesamtversion
 
 
-### 23.02.2026: 2. Zwischenpräsentation
+### 26.02.2026: 2. Zwischenpräsentation
 
-- Präsentation des aktuellen Standes 
+- Präsentation des aktuellen Standes der Diplomarbeit
 
 ### 06.03.2026: Abgabe der finalen Korrekturversion in Papierform
 
-### 07-04-2026: Abgabeschluss der Bibliotheksversion
+### 07.04.2026: Abgabeschluss der Bibliotheksversion
 
 ### 08.04.2026: Diplomarbeits-Abschlusspräsentation
     
@@ -211,16 +210,16 @@ Endverbraucher (Schülerinnen und Schüler, Besucherinnen und Besucher)
 
 #### Standardablauf
 
-1. Der Endverbraucher nähert sich dem Infopoint und tippt auf den Standby-Bildschirm.
-2. Das System wechselt vom Standby-Modus zum Homescreen.
+1. Der Endverbraucher tippt auf den Standby-Bildschirm.
+2. Das System wechselt vom Standby-Modus in den Homescreen.
 3. Auf dem Homescreen wird eine Übersicht der verfügbaren Funktionen angezeigt.
 4. Der Endverbraucher wählt eine gewünschte Funktion, etwa Veranstaltungen oder Neuigkeiten.
-5. Das System lädt die aktuellen Daten über die REST-API aus dem CMS und zeigt sie an.
-6. Der Endverbraucher liest die dargestellten Informationen.
+5. Das System lädt die aktuellen Daten über die REST-API aus dem CMS und zeigt diese an.
+6. Der Endverbraucher sieht sich die dargestellten Informationen an.
 7. Nach einer Phase der Inaktivität kehrt das System automatisch in den Standby-Modus zurück.
 
 #### Fehlersituationen
-Das System kann aufgrund einer fehlenden oder unterbrochenen Verbindung zum Backend nicht auf aktuelle Daten zugreifen.
+Das System kann aufgrund einer fehlenden Verbindung zum Backend nicht auf aktuelle Daten zugreifen.
 
 #### Systemzustand im Fehlerfall
 Dem Endverbraucher wird eine entsprechende Fehlermeldung angezeigt. Das System bleibt betriebsbereit und kehrt nach einer definierten Zeit in den Standby-Modus zurück.

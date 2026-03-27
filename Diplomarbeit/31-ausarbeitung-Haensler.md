@@ -19,20 +19,20 @@ Die konkreten Aufgaben eines Infopoint-Systems lassen sich in mehrere Kategorien
 
 Eine weitere zentrale Funktion ist die Anzeige aktueller Informationen. Infopoint-Systeme ermöglichen die Darstellung von Veranstaltungshinweisen, Ankündigungen, Wetterberichten oder Verkehrsinformationen. Dies gewährleistet, dass Nutzerinnen und Nutzer stets über relevante Neuigkeiten informiert sind. Auf Campusgeländen von Hochschulen und Schulen findet sich dieser Anwendungsfall häufig, wobei Informationen über Informationstage, aktuelle Veranstaltungen oder Projekte angezeigt werden. [@Infopoints]
 
-Im Bereich Service und Self-Service bieten zahlreiche Infopoint-Systeme Funktionen wie den Ticketerwerb, Reservierungen oder das Ausfüllen von Formularen an. Dies erleichtert den Nutzerinnen und Nutzern den Zugang zu Dienstleistungen, reduziert den Bedarf an persönlicher Interaktion, minimiert Wartezeiten und steigert somit die Effizienz.
+Im Bereich Service und Self-Service bieten zahlreiche Infopoint-Systeme Funktionen wie den Ticketerwerb, Reservierungen oder das Ausfüllen von Formularen an. Dies erleichtert den Nutzerinnen und Nutzern den Zugang zu Dienstleistungen, reduziert den Bedarf an persönlicher Interaktion, minimiert Wartezeiten und steigert somit die Effizienz. [@Infopoints]
 
 #### Einsatzgebiete und Nutzen in Bildungseinrichtungen
 
 Die genannten Aufgabenbereiche weisen eine hohe Relevanz für Bildungseinrichtungen auf. Der Aspekt Orientierung und Navigation erweist sich als besonders bedeutsam. Insbesondere an Tagen der offenen Tür, an denen zahlreiche Besucherinnen und Besucher das Schulgebäude frequentieren, ist eine effektive Informationsvermittlung unverzichtbar. Die Orientierung in unbekannten Gebäuden kann ohne entsprechende Hilfsmittel zeitaufwendig sein und dazu führen, dass relevante Bereiche nicht aufgefunden werden. Benutzerfreundliche Anlaufstellen wie Infopoints ermöglichen es Besucherinnen und Besuchern, gewünschte Informationen effizient abzurufen. [@Infopoints]
 
-Der Aspekt Anzeige aktueller Informationen ist für Bildungseinrichtungen ebenfalls von erheblicher Bedeutung. Schulen und Universitäten verfügen häufig über eine Vielzahl von Veranstaltungen, Kursen und Ankündigungen, die den Schülerinnen und Schülern sowie Studierenden kommuniziert werden müssen. Infopoint-Systeme können als zentrale Informationsquelle fungieren und gewährleisten, dass alle Beteiligten stets über relevante Neuigkeiten informiert sind. Dies fördert die Kommunikation innerhalb der Bildungseinrichtung. Darüber hinaus wird die Nachhaltigkeit gefördert, da papierbasierte Aushänge an Pinnwänden reduziert werden können. [@Infopoints]
+Die Anzeige aktueller Informationen ist für Bildungseinrichtungen ebenfalls von erheblicher Bedeutung. Schulen und Universitäten verfügen häufig über eine Vielzahl von Veranstaltungen, Kursen und Ankündigungen, die den Schülerinnen und Schülern sowie Studierenden kommuniziert werden müssen. Infopoint-Systeme können als zentrale Informationsquelle fungieren und gewährleisten, dass alle Beteiligten stets über relevante Neuigkeiten informiert sind. Dies fördert die Kommunikation innerhalb der Bildungseinrichtung. Darüber hinaus wird die Nachhaltigkeit gefördert, da papierbasierte Aushänge an Pinnwänden reduziert werden können. [@Infopoints]
 
 
 #### Anforderungen an moderne digitale Informationslösungen
 
 Moderne digitale Informationslösungen müssen eine Reihe von Anforderungen erfüllen, um effektiv und benutzerfreundlich zu sein. An erster Stelle steht die Benutzerfreundlichkeit. Die Systeme sollten intuitiv und einfach zu bedienen sein, damit Nutzerinnen und Nutzer aller Altersgruppen und technischen Fähigkeiten problemlos darauf zugreifen können. Eine klare Navigation, verständliche Symbole und eine logische Struktur sind hierfür entscheidend. [@Lee_Park_Park_Kim_2023]
 
-Die Aktualität der bereitgestellten Informationen ist ebenfalls von zentraler Bedeutung. Die Inhalte müssen stets aktuell und relevant sein, was eine einfache Möglichkeit zur Aktualisierung erfordert. Sei es durch automatisierte Prozesse oder manuelle Eingriffe. [@Lee_Park_Park_Kim_2023]
+Die Aktualität der bereitgestellten Informationen ist ebenfalls von zentraler Bedeutung. Die Inhalte müssen stets aktuell und relevant sein, was eine einfache Möglichkeit zur Aktualisierung erfordert, sei es durch automatisierte Prozesse oder manuelle Eingriffe. [@Lee_Park_Park_Kim_2023]
 
 Hinsichtlich der Skalierbarkeit sollten die Lösungen in der Lage sein, mit dem Wachstum der Nutzerbasis und den sich ändernden Anforderungen der Bildungseinrichtung mitzuwachsen. Dies kann die Integration neuer Funktionen oder die Erweiterung der Infrastruktur umfassen. Schließlich sollten moderne Informationssysteme eine nahtlose Integration in bestehende IT-Infrastrukturen und Softwarelösungen ermöglichen, um einen reibungslosen Informationsfluss zu gewährleisten. [@Lee_Park_Park_Kim_2023]
 
@@ -44,15 +44,15 @@ Die technische Struktur eines Infopoint-Systems ist grundlegend überschaubar un
 
 Der Computer bildet die zentrale Recheneinheit eines Infopoints und ist für die Verarbeitung und Visualisierung der Inhalte verantwortlich. Auf diesem läuft das Betriebssystem. Die Leistungsfähigkeit des Computers bestimmt, welche Komplexität die dargestellten Inhalte aufweisen können. Ein Beispiel für komplexere Inhalte wäre ein dreidimensionaler Raumplan eines Gebäudes. [@Infopoints-Hardware]
 
-Das Display stellt die wichtigste Komponente des Infopoints dar, da es die Schnittstelle zwischen System und Endbenutzer bildet. Hierbei lässt sich zwischen zwei Varianten unterscheiden. Die erste Variante besteht in der Verwendung eines einfachen Bildschirms zur Darstellung statischer Inhalte. Die zweite Variante umfasst den Einsatz eines Touchscreens, wodurch der Infopoint interaktiv wird und eine Vielzahl weiterer Funktionsmöglichkeiten für die Benutzerinteraktion eröffnet. [@Infopoints-Hardware]
+Das Display stellt die wichtigste Komponente des Infopoints dar, da es die Schnittstelle zwischen System und Endbenutzer bildet. Hierbei wird zwischen zwei Varianten unterscheiden. Die erste Variante besteht in der Verwendung eines einfachen Bildschirms zur Darstellung statischer Inhalte. Die zweite Variante umfasst den Einsatz eines Touchscreens, wodurch der Infopoint interaktiv wird und eine Vielzahl weiterer Funktionsmöglichkeiten für die Benutzerinteraktion eröffnet. [@Infopoints-Hardware]
 
-Das Gehäuse bildet den ersten visuellen Eindruck des Infopoints. Es vereint die Komponenten und gewährleistet ein ansprechendes Erscheinungsbild. Das Gehäuse kann so gestaltet werden, dass es sich in die vorhandene Inneneinrichtung einfügt, sofern eine entsprechende Anfertigung erfolgt. Darüber hinaus ist das Gehäuse maßgeblich für den Einsatzzweck. Bei einer Außeninstallation muss es beispielsweise die Komponenten vor Witterungseinflüssen schützen. [@Infopoints-Hardware]
+Das Gehäuse bildet den ersten visuellen Eindruck des Infopoints. Es vereint die Komponenten und gewährleistet ein ansprechendes Erscheinungsbild. Das Gehäuse kann so gestaltet werden, dass es sich in die vorhandene Inneneinrichtung einfügt, sofern eine entsprechende Anfertigung erfolgt. Darüber hinaus ist das Gehäuse maßgeblich für den jeweiligen Einsatzzweck. Bei einer Außeninstallation muss es beispielsweise die Komponenten vor Witterungseinflüssen schützen. [@Infopoints-Hardware]
 
 #### Kriterien für die Hardwareauswahl
 
 Bei der Auswahl der Hardware für ein Infopoint-System sind mehrere Kriterien zu berücksichtigen, um sicherzustellen, dass das System den Anforderungen der Bildungseinrichtung entspricht.
 
-An erster Stelle steht die Leistung. Die Hardware muss ausreichend leistungsfähig sein, um die geplanten Anwendungen und Inhalte reibungslos auszuführen. Dies umfasst die Prozessorleistung, den Arbeitsspeicher und die Grafikkapazitäten. Da Infopoint-Systeme häufig rund um die Uhr in Betrieb sind, ist zudem die Zuverlässigkeit von besonderer Bedeutung. Die Hardware muss robust sein, um Ausfallzeiten zu minimieren.
+An erster Stelle steht die Leistungsfähigkeit. Die Hardware muss ausreichend leistungsfähig sein, um die geplanten Anwendungen und Inhalte reibungslos auszuführen. Dies umfasst die Prozessorleistung, den Arbeitsspeicher und die Grafikkapazitäten. Da Infopoint-Systeme häufig rund um die Uhr in Betrieb sind, ist zudem die Zuverlässigkeit von besonderer Bedeutung. Die Hardware muss robust sein, um Ausfallzeiten zu minimieren.
 
 Aus wirtschaftlicher Perspektive spielen Energieeffizienz und Kosten eine entscheidende Rolle. Energieeffiziente Hardware trägt dazu bei, die Betriebskosten zu senken und die Umweltbelastung zu reduzieren. Das Budget der Bildungseinrichtung erfordert dabei ein ausgewogenes Verhältnis zwischen Leistung, Qualität und Anschaffungskosten.
 
@@ -76,9 +76,9 @@ Falls das Personal für die Bedienung oder Wartung der Hardware geschult werden 
 
 Nutzerzentriertes Design (User-Centered Design, UCD) ist ein Ansatz im Designprozess, welcher den Fokus auf die Bedürfnisse, Erwartungen und Einschränkungen des Endbenutzers legt. Dieser Ansatz ist besonders wichtig bei der Entwicklung von Informationssystemen wie Infopoints, da diese direkt von einer Vielzahl von Nutzern verwendet und verstanden werden müssen. [@User-Centered-Design]
 
-Durch die Berücksichtigung der Nutzerbedürfnisse wird eine verbesserte Benutzererfahrung sichergestellt. Das System wird intuitiv und einfach zu bedienen, was zu einer positiven Benutzererfahrung führt und die Akzeptanz sowie die Nutzungsintensität positiv beeinflusst. Konkret bedeutet dies, dass Nutzerinnen und Nutzer auf den ersten Blick erfassen können, wie sie zu den gewünschten Informationen gelangen. [@User-Centered-Design; @UI-UX]
+Durch die Berücksichtigung der Nutzerbedürfnisse wird eine verbesserte Benutzererfahrung sichergestellt. Das System wird intuitiv und einfach zu bedienen, was zu einer positiven Benutzererfahrung führt und die Akzeptanz sowie die Nutzungsintensität positiv beeinflusst. Konkret bedeutet dies, dass Nutzerinnen und Nutzer auf den ersten Blick erfassen können, wie sie zu den gewünschten Informationen gelangen. ([@User-Centered-Design] & [@UI-UX]) 
 
-Ein nutzerzentriertes Design ermöglicht zudem eine erhöhte Effizienz. Nutzerinnen und Nutzer können ihre Aufgaben schneller erledigen, was besonders in Bildungseinrichtungen relevant ist, wo zeitliche Ressourcen begrenzt sind. Wichtige Funktionen und Informationen sollten mit möglichst wenigen Interaktionsschritten erreichbar sein, um eine aufwendige Navigation durch komplexe Menüstrukturen zu vermeiden. [@User-Centered-Design; @UI-UX]
+Ein nutzerzentriertes Design ermöglicht zudem eine erhöhte Effizienz. Nutzerinnen und Nutzer können ihre Aufgaben schneller erledigen, was besonders in Bildungseinrichtungen relevant ist, wo zeitliche Ressourcen begrenzt sind. Wichtige Funktionen und Informationen sollten mit möglichst wenigen Interaktionsschritten erreichbar sein, um eine aufwendige Navigation durch komplexe Menüstrukturen zu vermeiden. ([@User-Centered-Design] & [@UI-UX])
 
 Wenn das Design auf die Fähigkeiten und Erwartungen der Nutzerinnen und Nutzer abgestimmt ist, wird die Fehlerquote bei der Bedienung minimiert, was zu einer reibungsloseren Nutzung führt. Darüber hinaus sind Nutzerinnen und Nutzer, die ein System als benutzerfreundlich empfinden, eher zufrieden und bereit, es regelmäßig zu verwenden. Diese höhere Zufriedenheit trägt zur langfristigen Nutzung und zum Erfolg des Infopoint-Systems bei. [@User-Centered-Design]
 
@@ -135,7 +135,7 @@ Scrum hingegen basiert auf festen Iterationen, sogenannten Sprints. Ein Sprint d
 
 Effektive Aufgaben- und Zeitplanung ist entscheidend für den Erfolg von Softwareprojekten. Aufgabenmanagement-Tools wie Jira, Trello, GitHub Projects oder MS Project ermöglichen es Teams, Aufgaben zu erstellen, zuzuweisen und den Fortschritt zu verfolgen. Diese Tools bieten Funktionen wie Kanban-Boards, To-Do-Listen und Kalenderansichten, um die Organisation zu erleichtern. ([@Projektmanagement] S. 79-81)
 
-Für die Zeitplanung hilft die Verwendung von Gantt-Diagrammen oder Zeitplänen dabei, den Projektzeitrahmen zu visualisieren und wichtige Meilensteine zu identifizieren. Dies ermöglicht es dem Team, den Fortschritt zu überwachen und sicherzustellen, dass das Projekt im Zeitplan bleibt. ([@Projektmanagement] S.79)
+Für die Zeitplanung hilft die Verwendung von Gantt-Diagrammen oder strukturierten Zeitplänen dabei, den Projektzeitrahmen zu visualisieren und wichtige Meilensteine zu identifizieren. Dies ermöglicht es dem Team, den Fortschritt zu überwachen und sicherzustellen, dass das Projekt im Zeitplan bleibt. ([@Projektmanagement] S.79)
 
 Die Priorisierung von Aufgaben basierend auf ihrer Wichtigkeit und Dringlichkeit hilft dem Team, sich auf die wichtigsten Aktivitäten zu konzentrieren. Methoden wie die MoSCoW-Methode (Must have, Should have, Could have, Won't have) können dabei unterstützen. ([@Projektmanagement] S. 64)
 
@@ -159,7 +159,7 @@ Das Deployment von Software auf unterschiedlicher Hardware kann eine Vielzahl vo
 
 Eine wesentliche Herausforderung stellen inkompatible Betriebssysteme dar. Verschiedene Hardwareplattformen können unterschiedliche Betriebssysteme verwenden, was zu Problemen bei der Ausführung der Software führen kann. Beispielsweise kann eine Anwendung, die für Windows entwickelt wurde, nicht ohne Weiteres auf einem Linux-basierten System laufen. [@Docker-Benefits]
 
-Hinzu kommt die Problematik unterschiedlicher Abhängigkeiten und Bibliotheken. Unterschiedliche Hardware kann unterschiedliche Versionen von Abhängigkeiten und Bibliotheken erfordern, was zu Konflikten führen kann, wenn die Software auf einer Plattform läuft, die nicht die erforderlichen Versionen unterstützt. [@Docker-Benefits]
+Hinzu kommt die Problematik unterschiedlicher Abhängigkeiten und Bibliotheken. Unterschiedliche Hardware kann unterschiedliche Versionen diverser Abhängigkeiten und Bibliotheken erfordern, was zu Konflikten führen kann, wenn die Software auf einer Plattform läuft, die nicht die erforderlichen Versionen unterstützt. [@Docker-Benefits]
 
 Leistungsunterschiede zwischen verschiedenen Hardwarekonfigurationen können die Ausführungsgeschwindigkeit und das Verhalten der Software beeinflussen. Eine Anwendung, die auf leistungsstarker Hardware gut funktioniert, kann auf schwächerer Hardware langsam oder instabil sein. Auch unterschiedliche Netzwerkkonfigurationen und Sicherheitsrichtlinien können den Zugriff auf Ressourcen und Dienste beeinträchtigen, die für die Software erforderlich sind. [@Docker-Benefits]
 
@@ -169,19 +169,19 @@ Schließlich kann die Wartung und Aktualisierung auf verschiedenen Hardwareplatt
 
 Zur Lösung der genannten Deployment-Herausforderungen haben sich zwei Technologien etabliert. Virtualisierung ist eine Technologie, die es ermöglicht, mehrere virtuelle Maschinen (VMs) auf einer physischen Hardware zu betreiben. Jede VM kann ein eigenes Betriebssystem und Anwendungen ausführen, was die Isolation und Flexibilität erhöht. Virtualisierung wird häufig verwendet, um Serverressourcen effizienter zu nutzen und verschiedene Umgebungen für Entwicklung, Test und Produktion bereitzustellen. [@Docker-ContainerVsVM]
 
-Containerisierung stellt eine leichtgewichtigere Alternative zur Virtualisierung dar, bei der Anwendungen und ihre Abhängigkeiten in isolierten Containern verpackt werden. Container teilen sich den Kernel des Host-Betriebssystems, was zu einer geringeren Ressourcennutzung und schnelleren Startzeiten führt. Containerisierung ermöglicht es Entwicklern, Anwendungen konsistent über verschiedene Umgebungen hinweg bereitzustellen, unabhängig von der zugrunde liegenden Hardware. [@Docker-ContainerVsVM]
+Containerisierung stellt eine resourcen schonende Alternative zur Virtualisierung dar, bei der Anwendungen und ihre Abhängigkeiten in isolierten Containern verpackt werden. Container teilen sich den Kernel des Host-Betriebssystems, was zu einer geringeren Ressourcennutzung und schnelleren Startzeiten führt. Containerisierung ermöglicht es Entwicklern, Anwendungen konsistent über verschiedene Umgebungen hinweg bereitzustellen, unabhängig von der zugrunde liegenden Hardware. [@Docker-ContainerVsVM]
 
 #### Docker - Funktionsweise und Vorteile
 
-Docker ist eine weit verbreitete Plattform für die Containerisierung von Anwendungen. Es ermöglicht Entwicklern, Anwendungen und ihre Abhängigkeiten in sogenannten Docker-Containern zu verpacken, die auf jedem System mit Docker-Unterstützung ausgeführt werden können. [@Docker-ContainerVsVM]
+Docker ist eine etablierte Plattform für die Containerisierung von Anwendungen. Es ermöglicht Entwicklern, Anwendungen und ihre Abhängigkeiten in sogenannten Docker-Containern zu verpacken, die auf jedem System mit Docker-Unterstützung ausgeführt werden können. [@Docker-ContainerVsVM]
 
-Die Funktionsweise von Docker basiert auf dem Konzept der Containerisierung. Docker verwendet Container, um Anwendungen und ihre Abhängigkeiten zu isolieren. Jeder Container enthält alles, was die Anwendung benötigt, um ausgeführt zu werden, einschließlich Bibliotheken, Konfigurationsdateien und Laufzeitumgebungen. Die Grundlage dafür bilden Docker Images, schreibgeschützte Vorlagen, die die Anwendungsumgebung definieren. Sie können aus einem Dockerfile erstellt werden, das die Schritte zur Erstellung des Images beschreibt. Images können in Registries wie Docker Hub gespeichert und geteilt werden. Die Docker Engine ist die Laufzeitumgebung, die Container erstellt und verwaltet sowie das Starten, Stoppen und Überwachen von Containern auf dem Host-System ermöglicht. [@Docker-ContainerVsVM]
+Die Funktionsweise von Docker basiert auf dem Konzept der Containerisierung. Docker verwendet Container, um Anwendungen und ihre Abhängigkeiten zu isolieren. Jeder Container enthält alles, was die Anwendung benötigt, um ausgeführt zu werden, einschließlich Bibliotheken, Konfigurationsdateien und Laufzeitumgebungen. Die Grundlage dafür bilden Docker Images, schreibgeschützte Vorlagen, die die Anwendungsumgebung definieren. Sie können aus einem Dockerfile erstellt werden, das die Schritte zur Erstellung des Images beschreibt. Images können in Registries, wie beispielsweise Docker Hub, gespeichert und geteilt werden. Die Docker Engine ist die Laufzeitumgebung, die Container erstellt und verwaltet sowie das Starten, Stoppen und Überwachen von Containern auf dem Host-System ermöglicht. [@Docker-ContainerVsVM]
 
 Die Vorteile von Docker sind vielfältig. Die Portabilität ermöglicht es, Docker-Container auf verschiedenen Systemen und Plattformen auszuführen, ohne dass Änderungen an der Anwendung erforderlich sind, was das Deployment und die Skalierung von Anwendungen erleichtert. Die Konsistenz wird dadurch gewährleistet, dass Container alle Abhängigkeiten enthalten, sodass die Anwendung in verschiedenen Umgebungen gleich funktioniert. Dies vereinfacht Entwicklungs- und Testprozesse. Schließlich zeichnen sich Docker-Container durch Ressourceneffizienz aus. Sie sind leichtgewichtig und benötigen weniger Ressourcen als virtuelle Maschinen, was zu einer besseren Ausnutzung der Hardware führt. [@Docker-ContainerVsVM]
 
 #### Images, Container, Volumes & Multi-Container-Setups
 
-Für das Verständnis von Docker sind vier zentrale Konzepte relevant. Images sind die Blaupausen für Container und enthalten das Dateisystem und die Konfiguration, die zum Ausführen einer Anwendung erforderlich sind. Images können versioniert und in Registries gespeichert werden, um sie einfach zu verteilen. [@Docker]
+Für das Verständnis von Docker sind vier zentrale Konzepte relevant. Images sind die Vorlagen für Container und enthalten das Dateisystem und die Konfiguration, die zum Ausführen einer Anwendung erforderlich sind. Images können versioniert und in Registries gespeichert werden, um sie einfach zu verteilen. [@Docker]
 
 Container sind laufende Instanzen von Docker-Images. Sie sind isoliert und enthalten alle notwendigen Komponenten, um die Anwendung auszuführen. Container können gestartet, gestoppt und gelöscht werden, ohne das Host-System zu beeinträchtigen. [@Docker]
 
@@ -226,11 +226,11 @@ Eine Evaluierung und der Erwerb dedizierter Infopoint-Hardware konnten im Rahmen
 
 #### Vorgehen beim Designprozess
 
-Der Designprozess für das Infopoint-System begann mit der Erstellung von Wireframes, um die grundlegende Struktur und Anordnung der Benutzeroberfläche zu planen. Anschließend wurden detaillierte Mockups erstellt, die das endgültige Design und Layout des Systems visualisieren. Dabei wurde besonderes Augenmerk auf Benutzerfreundlichkeit und Barrierefreiheit gelegt, um sicherzustellen, dass das System für alle Nutzergruppen zugänglich ist.
+Der Designprozess für das Infopoint-System umfasste zunächst die Erstellung von Wireframes, um die grundlegende Struktur und Anordnung der Benutzeroberfläche zu planen. Anschließend wurden detaillierte Mockups erstellt, die das endgültige Design und Layout des Systems visualisieren. Dabei wurde besonderes Augenmerk auf Benutzerfreundlichkeit und Barrierefreiheit gelegt, um sicherzustellen, dass das System für alle Nutzergruppen zugänglich ist.
 
 #### Erstellung der Wireframes in Adobe XD
 
-Für den Infopoint wurden in Adobe XD zunächst Wireframes für die zentralen Seiten erstellt: den Homescreen mit der Kachelnavigation, die Lehrersuche sowie den Lageplan. Dabei wurden verschiedene Anordnungen der Navigationselemente getestet, um die für einen Kiosk-Betrieb optimale Balance zwischen Übersichtlichkeit und Informationsdichte zu finden. Die finalen Wireframes legten die Seitenstruktur fest und dienten dem Frontend-Entwickler als verbindliche Grundlage für die Implementierung.
+Für den Infopoint wurden in Adobe XD zunächst Wireframes für die zentralen Seiten erstellt. Teile davon waren der Homescreen mit der Kachelnavigation, die Lehrersuche sowie den Lageplan. Dabei wurden verschiedene Anordnungen der Navigationselemente getestet, um die für einen Kiosk-Betrieb optimale Balance zwischen Übersichtlichkeit und Informationsdichte zu finden. Die finalen Wireframes legten die Seitenstruktur fest und dienten dem Frontend-Entwickler als verbindliche Grundlage für die Implementierung.
 
 ![Wireframe\label{fig:Wireframe}](img/Wireframe.png){width=100%}
 
@@ -254,7 +254,7 @@ Die Erstellung von Mockups ermöglichte es dem Projektteam, insbesondere dem Fro
 
 #### Strukturierung der Aufgaben in GitHub Projects
 
-Im Rahmen des Projekts wurde eine Kombination aus Kanban und Scrum angewandt, die häufig als Scrumban bezeichnet wird. Dieses Hybridmodell kombiniert feste Sprints mit der Organisation der Aufgaben in einem Kanban-Board. Zu diesem Zweck wurde ein GitHub Project mit einem Kanban-Board und einer Roadmap erstellt, in dem die Aufgaben für die Entwicklung des Infopoint-Systems organisiert werden. Das Board wurde in die Spalten „To Do", „In Progress" und „Done" unterteilt, um den Status der Aufgaben übersichtlich darzustellen. Jede Aufgabe bzw. jedes Issue wurde mit einer präzisen Beschreibung, Priorität, Zuweisung und einem definierten Fälligkeitsdatum versehen, um die Koordination im Team zu optimieren. Zusätzlich wurden die Aufgaben an Meilensteine geknüpft, um einen besseren Überblick über den Gesamtstatus des Projekts zu gewährleisten. Die Roadmap bot darüber hinaus eine strukturierte Übersicht zur Planung und Zeiteinschätzung.
+Im Rahmen des Projekts wurde eine Kombination aus Kanban und Scrum angewandt, die häufig als Scrumban bezeichnet wird. Dieses Hybridmodell kombiniert feste Sprints mit der Organisation der Aufgaben in einem Kanban-Board. Zu diesem Zweck wurde ein GitHub Project mit einem Kanban-Board und einer Roadmap erstellt, in dem die Aufgaben für die Entwicklung des Infopoint-Systems organisiert werden. Das Board wurde in die Spalten "To Do", "In Progress" und "Done" unterteilt, um den Status der Aufgaben übersichtlich darzustellen. Jede Aufgabe bzw. jedes Issue wurde mit einer präzisen Beschreibung, Priorität, Zuweisung und einem definierten Fälligkeitsdatum versehen. Zusätzlich wurden die Aufgaben an Meilensteine geknüpft, um einen besseren Überblick über den Gesamtstatus des Projekts zu gewährleisten. Die Roadmap bot darüber hinaus eine strukturierte Übersicht zur Planung und Zeiteinschätzung.
 
 ![Kanban-Board\label{fig:Kanban-Board}](img/Canban-Board.png){width=100%}
 
@@ -274,23 +274,23 @@ Die Kombination aus Kanban und Scrum (Scrumban) ist eine effektive Methode für 
 
 #### Aufbau der Docker-Umgebung
 
-Die Docker-Umgebung für das Infopoint-System wurde so konzipiert, dass die verschiedenen Komponenten des Systems Frontend, Backend und CMS in separaten Containern isoliert betrieben werden. Jeder Container enthält die notwendigen Abhängigkeiten und Konfigurationen zur Ausführung der jeweiligen Komponente. Die Kommunikation zwischen den Containern erfolgt über definierte REST-API-Schnittstellen, um eine modulare und skalierbare Architektur zu gewährleisten. Zur Vereinfachung der Verwaltung und Bereitstellung der Multi-Container-Anwendung wurden die Container über ein Docker-Compose-File orchestriert. Das Docker-Compose-File definiert die Dienste, Netzwerke und Volumes, die für den Betrieb des Infopoint-Systems erforderlich sind, und ermöglicht es, das gesamte System mit einem einzigen Befehl zu starten.
+Die Docker-Umgebung für das Infopoint-System wurde so konzipiert, dass die verschiedenen Komponenten des Systems bestehend aus Frontend, Backend und Content-Management-System in separaten Containern isoliert betrieben werden. Jeder Container enthält die notwendigen Abhängigkeiten und Konfigurationen zur Ausführung der jeweiligen Komponente. Die Kommunikation zwischen den Containern erfolgt über definierte REST-API-Schnittstellen, um eine modulare und skalierbare Architektur zu gewährleisten. Zur Vereinfachung der Verwaltung und Bereitstellung der Multi-Container-Anwendung wurden die Container über ein Docker-Compose-File orchestriert. Das Docker-Compose-File definiert die Dienste, Netzwerke und Volumes, die für den Betrieb des Infopoint-Systems erforderlich sind, und ermöglicht es, das gesamte System mit einem einzigen Befehl zu starten.
 
-#### Containerisierung des Frontends, Backends und CMS
+#### Containerisierung des Frontends, Backends und Content-Management-System
 
-Jede Komponente des Infopoint-Systems wurde in einem dedizierten Docker-Container containerisiert. Das Frontend wurde mittels eines Webserver-Containers bereitgestellt, der die Benutzeroberfläche hostet. Das Backend wird in einem separaten Container ausgeführt, welcher die Geschäftslogik und Datenverarbeitung übernimmt. Das CMS wurde ebenfalls in einem eigenständigen Container betrieben, wobei dieses nicht über ein eigenes Programm, sondern über ein vorgefertigtes Docker-Image läuft. Dieses Image enthält die notwendige Software zum Betrieb des CMS und ermöglicht eine unkomplizierte Verwaltung und Aktualisierung der Inhalte des Infopoint-Systems. Die Kommunikation zwischen den Containern erfolgt, wie bereits dargelegt, über definierte REST-API-Schnittstellen in einem internen Netzwerk, um eine modulare und skalierbare Architektur zu realisieren.
+Jede Komponente des Infopoint-Systems wurde in einem dedizierten Docker-Container containerisiert. Das Frontend wurde mittels eines Webserver-Containers bereitgestellt, der die Benutzeroberfläche hostet. Das Backend wird in einem separaten Container ausgeführt, welcher die Geschäftslogik und Datenverarbeitung übernimmt. Das Content-Management-System wurde ebenfalls in einem eigenständigen Container betrieben, wobei dieses nicht über ein eigenes Programm, sondern über ein vorgefertigtes Docker-Image läuft. Dieses Image enthält die notwendige Software zum Betrieb des Content-Management-System und ermöglicht eine unkomplizierte Verwaltung und Aktualisierung der Inhalte des Infopoint-Systems. Die Kommunikation zwischen den Containern erfolgt, wie bereits dargelegt, über definierte REST-API-Schnittstellen in einem internen Netzwerk, um eine modulare und skalierbare Architektur zu realisieren. [@Docker-Compose-Architektur]
 
 ![Docker-Aufbau\label{fig:Docker-Aufbau}](img/Docker-Composition.png){width=100%}
 
 #### Multi-Container-Komposition
 
-Die Multi-Container-Komposition wurde mit Docker Compose realisiert, um die Verwaltung und Bereitstellung der verschiedenen Container zu erleichtern. Das Docker-Compose-File definiert die Dienste für Frontend, Backend und CMS sowie die Netzwerke und Volumes, die für den Betrieb des Infopoint-Systems erforderlich sind. Durch die Verwendung von Docker Compose können sämtliche Container mit einem einzigen Befehl gestartet, gestoppt und verwaltet werden, was den Deployment-Prozess auch für Anwender ohne tiefgreifende technische Kenntnisse erheblich vereinfacht. 
+Die Multi-Container-Komposition wurde mit Docker Compose realisiert, um die Verwaltung und Bereitstellung der verschiedenen Container zu erleichtern. Das Docker-Compose-File definiert die Dienste für Frontend, Backend und Content-Management-System sowie die Netzwerke und Volumes, die für den Betrieb des Infopoint-Systems erforderlich sind. Durch die Verwendung von Docker Compose können sämtliche Container mit einem einzigen Befehl gestartet, gestoppt und verwaltet werden, was den Deployment-Prozess auch für Anwender ohne tiefgreifende technische Kenntnisse erheblich vereinfacht. [@Docker-Setup]
 
 Das Docker-Compose File sieht wie folgt aus:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{caption="Docker-Compose" .yaml}
 services:
-  # Cockpit CMS
+  # Cockpit Content-Management-System
   cockpit:
     image: cockpithq/cockpit:core-latest
     container_name: infopoint-cockpit
@@ -342,7 +342,7 @@ networks:
     driver: bridge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Nach dem erstmaligen Starten des Systems werden dem Endanwender in Docker Desktop lediglich die drei Container für Frontend, Backend und CMS angezeigt, welche gemeinsam im Infopoint-Container zusammengefasst sind und per Mausklick gestartet bzw. gestoppt werden können. Im finalen Betriebsszenario wird das System so konfiguriert, dass es automatisch beim Systemstart initialisiert wird, um eine kontinuierliche Verfügbarkeit zu gewährleisten. 
+Nach dem erstmaligen Starten des Systems werden dem Endanwender in Docker Desktop lediglich die drei Container für Frontend, Backend und Content-Management-System angezeigt, welche gemeinsam im Infopoint-Container zusammengefasst sind und per Mausklick gestartet bzw. gestoppt werden können. Im finalen Betriebsszenario wird das System so konfiguriert, dass es automatisch beim Systemstart initialisiert wird, um eine kontinuierliche Verfügbarkeit zu gewährleisten. 
 
 ![Docker-Desktop\label{fig:Docker-Desktop}](img/Docker-Desktop.png){width=100%}
 
@@ -368,7 +368,7 @@ Das fertige Infopoint-System präsentiert sich als benutzerfreundliche und funkt
 
 Das System ist derzeit auf einem Schul-PC implementiert, auf dem Ubuntu Desktop als Betriebssystem installiert ist. Ubuntu wurde so konfiguriert, dass beim Systemstart automatisch eine Überprüfung des GitHub-Repositorys erfolgt. Sofern Änderungen im Repository vorliegen, wird dieses auf dem lokalen System aktualisiert und die Docker-Container werden neu gebaut. Im Anschluss startet das System automatisch im Kiosk-Modus, wodurch der Browser im Vollbildmodus geöffnet wird und die Benutzeroberfläche des Infopoints anzeigt.
 
-Für die Verwaltung und Aktualisierung der Inhalte ist es erforderlich, den Kiosk-Modus zu verlassen und das CMS-System über den Browser aufzurufen. Dort werden die vorgefertigten Collections angezeigt, in denen Daten ergänzt, geändert oder gelöscht werden können. Die Bedienung des CMS wurde bewusst einfach gehalten, um auch Personen ohne tiefgreifende technische Kenntnisse die Pflege der Inhalte zu ermöglichen.
+Für die Verwaltung und Aktualisierung der Inhalte ist es erforderlich, den Kiosk-Modus zu verlassen und das Content-Management-System über den Browser aufzurufen. Dort werden die vorgefertigten Collections angezeigt, in denen Daten ergänzt, geändert oder gelöscht werden können. Die Bedienung des Content-Management-System wurde bewusst einfach gehalten, um auch Personen ohne tiefgreifende technische Kenntnisse die Pflege der Inhalte zu ermöglichen.
 
 #### Bedienablauf und Nutzererfahrung
 
@@ -398,7 +398,7 @@ Eine naheliegende Erweiterung stellt die vollständige Integration in das Schuln
 
 Eine weitere Erweiterungsmöglichkeit besteht in der Integration des Infopoints in die Schulhomepage. Hierbei könnten ausgewählte Funktionen des Infopoints auch über die Webpräsenz der Schule zugänglich gemacht werden, sodass Schülerinnen und Schüler sowie Erziehungsberechtigte relevante Informationen auch von externen Geräten abrufen können. Dies würde den Nutzen des Systems über den physischen Standort hinaus erweitern.
 
-Schließlich bietet sich die Integration des CMS-Systems des Infopoints mit dem Content-Management-System der Schulhomepage an. Eine solche Verknüpfung würde die Datenpflege erheblich vereinfachen, da Inhalte nur einmal eingepflegt werden müssten und automatisch auf beiden Plattformen verfügbar wären. Dies würde nicht nur den administrativen Aufwand reduzieren, sondern auch die Konsistenz der bereitgestellten Informationen sicherstellen.
+Schließlich bietet sich die Integration des Content-Management-System des Infopoints mit dem Content-Management-System der Schulhomepage an. Eine solche Verknüpfung würde die Datenpflege erheblich vereinfachen, da Inhalte nur einmal eingepflegt werden müssten und automatisch auf beiden Plattformen verfügbar wären. Dies würde nicht nur den administrativen Aufwand reduzieren, sondern auch die Konsistenz der bereitgestellten Informationen sicherstellen.
 
 Darüber hinaus wäre die Implementierung weiterer Funktionen denkbar, etwa einen barrierefreien Zugang über eine Sprachausgabe, oder die Erweiterung um mehrsprachige Unterstützung für internationale Schülerinnen und Schüler.
 
