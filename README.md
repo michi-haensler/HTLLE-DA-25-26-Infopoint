@@ -25,7 +25,6 @@ Dieses Handbuch ist die zentrale Anlaufstelle für Setup, Betrieb, Inhalte, Erwe
 - [Betrieb und Deployment](#betrieb-und-deployment)
 - [Fehlerbehebung](#fehlerbehebung)
 - [FAQ](#faq)
-- [Mitwirken](#mitwirken)
 
 ---
 
@@ -205,8 +204,3 @@ Regelmäßige Backups von [Infopoint/resources/cockpit-data/](Infopoint/resource
 
 ---
 
-## Mitwirken
-
-Beiträge sind willkommen. Dokumentiert Änderungen in dieser Datei und haltet eure Module gut strukturiert.
-
-Wenn ihr Hilfe mit dem Diplomarbeit‑Template braucht, findet ihr diese in [USAGE.md](USAGE.md).
